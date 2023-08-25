@@ -1,1 +1,10 @@
-"appName" = "Banking";
+"TabBar.accounts" = "Accounts";
+"TabBar.payments" = "Payments";
+"TabBar.transfer" = "Transfer";
+"TabBar.services" = "Services";
+"TabBar.settings" = "Settings";
+
+"NavigationBar.loguot" = "Log out";
+
+"AccountsScreen.title" = "Accounts";
+

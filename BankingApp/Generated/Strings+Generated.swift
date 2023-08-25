@@ -10,8 +10,26 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
-  /// Banking
-  internal static let appName = L10n.tr("Localizable", "appName", fallback: "Banking")
+  internal enum AccountsScreen {
+    /// Accounts
+    internal static let title = L10n.tr("Localizable", "AccountsScreen.title", fallback: "Accounts")
+  }
+  internal enum NavigationBar {
+    /// Log out
+    internal static let loguot = L10n.tr("Localizable", "NavigationBar.loguot", fallback: "Log out")
+  }
+  internal enum TabBar {
+    /// Accounts
+    internal static let accounts = L10n.tr("Localizable", "TabBar.accounts", fallback: "Accounts")
+    /// Payments
+    internal static let payments = L10n.tr("Localizable", "TabBar.payments", fallback: "Payments")
+    /// Services
+    internal static let services = L10n.tr("Localizable", "TabBar.services", fallback: "Services")
+    /// Settings
+    internal static let settings = L10n.tr("Localizable", "TabBar.settings", fallback: "Settings")
+    /// Transfer
+    internal static let transfer = L10n.tr("Localizable", "TabBar.transfer", fallback: "Transfer")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces
