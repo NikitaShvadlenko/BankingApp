@@ -3,7 +3,7 @@ strings:
     - BankingApp/Resources/Strings/en.lproj
   outputs:
     - templateName: structured-swift5
-      output: Hydrate/Generated/Strings+Generated.swift
+      output: BankingApp/Generated/Strings+Generated.swift
 
 xcassets:
   inputs:

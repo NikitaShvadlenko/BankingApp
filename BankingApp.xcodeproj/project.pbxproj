@@ -130,28 +130,28 @@
 			path = BankingApp;
 			sourceTree = "<group>";
 		};
-		"TEMP_58FC245B-2FF5-40CD-A733-6559C3532315" /* Packages */ = {
+		"TEMP_0265DDAB-F82F-46DC-8D1E-66F6CED424B3" /* Packages */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Packages;
 			sourceTree = "<group>";
 		};
-		"TEMP_5DC48AB0-7BEA-48FF-BF74-55FE6F7A78E0" /* SharedResources */ = {
+		"TEMP_3F2A572C-7956-48ED-A65A-D2791995D941" /* SharedResources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = SharedResources;
 			sourceTree = "<group>";
 		};
-		"TEMP_5DED4BB1-6493-46A4-81F2-FC7B41F0D63A" /* SharedResources */ = {
+		"TEMP_ED1871E0-2CAD-4D5E-B938-E8C11C378ECD" /* SharedResources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = SharedResources;
 			sourceTree = "<group>";
 		};
-		"TEMP_B775FA6F-5222-4986-9BDC-63A4E0AABB4C" /* Sources */ = {
+		"TEMP_FC27177A-9722-48CC-B51D-8E2400939639" /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 			);
