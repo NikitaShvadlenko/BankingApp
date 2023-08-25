@@ -1,11 +1,11 @@
 import UIKit
 
-enum MainScreenAssembly {
-    static func assemble() -> AssembledModule<MainScreenModuleInput> {
-        let viewController = MainScreenViewController()
-        let presenter = MainScreenPresenter()
-        let interactor = MainScreenInteractor()
-        let router = MainScreenRouter()
+enum AccountsScreenAssembly {
+    static func assemble() -> AssembledModule<AccountsScreenModuleInput> {
+        let viewController = AccountsScreenViewController()
+        let presenter = AccountsScreenPresenter()
+        let interactor = AccountsScreenInteractor()
+        let router = AccountsScreenRouter()
 
         viewController.presenter = presenter
 

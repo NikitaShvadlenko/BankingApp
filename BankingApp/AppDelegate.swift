@@ -16,12 +16,12 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
         var viewControllers = [UIViewController]()
 
-        let mainScreenViewController = MainScreenAssembly.assemble().viewController
-        let mainScreenNavigationController = UINavigationController(
-            rootViewController: mainScreenViewController
+        let accountsScreenViewController = AccountsScreenAssembly.assemble().viewController
+        let accountsScreenNavigationController = UINavigationController(
+            rootViewController: accountsScreenViewController
         )
 
-        viewControllers.append(mainScreenNavigationController)
+        viewControllers.append(accountsScreenNavigationController)
 
         tabBarController.setViewControllers(viewControllers, animated: false)
 

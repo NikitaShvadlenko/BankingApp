@@ -1,6 +1,6 @@
 import UIKit
 
-final class MainScreenView: UIView {
+final class AccountsScreenView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureViews()
@@ -14,7 +14,7 @@ final class MainScreenView: UIView {
 }
 
 // MARK: - Private methods
-extension MainScreenView {
+extension AccountsScreenView {
     private func configureViews() {
         backgroundColor = .white
     }
