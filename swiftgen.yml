@@ -1,0 +1,15 @@
+strings:
+  inputs:
+    - BankingApp/Resources/Strings/en.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: Hydrate/Generated/Strings+Generated.swift
+
+xcassets:
+  inputs:
+    - BankingApp/Resources/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      params:
+        forceProvidesNamespaces: true
+      output: BankingApp/Generated/XCAssets+Generated.swift
