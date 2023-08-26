@@ -5,7 +5,9 @@ final class AccountsScreenView: UIView {
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(AccountOverviewCell.self, forCellReuseIdentifier: "\(AccountOverviewCell.self)")
+        tableView.estimatedRowHeight = 120
+        tableView.register(AccountOverviewImageCell.self, forCellReuseIdentifier: "\(AccountOverviewImageCell.self)")
+        tableView.register(AccountOverviewTextCell.self, forCellReuseIdentifier: "\(AccountOverviewTextCell.self)")
         return tableView
     }()
 

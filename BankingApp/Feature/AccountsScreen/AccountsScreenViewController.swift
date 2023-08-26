@@ -16,6 +16,7 @@ final class AccountsScreenViewController: UIViewController {
     }
 
     func setTableViewManager(_ manager: ManagesAccountsScreenTable) {
+        manager.tableView = accountsScreenView.tableView
         accountsScreenView.tableView.dataSource = manager
         accountsScreenView.tableView.delegate = manager
     }

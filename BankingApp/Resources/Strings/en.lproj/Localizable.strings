@@ -8,5 +8,5 @@
 
 "AccountsScreen.title" = "Accounts";
 
-"AmountInDolars" = "$ %@";
-"AmountInDolarsAvailible" = "$ %@ Availible";
+"AmountInDolars" = "$%@";
+"AmountInDolarsAvailible" = "$%@ Availible";
