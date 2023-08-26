@@ -4,7 +4,7 @@ extension UIImage {
     public convenience init?(
         sfSymbol: SFSymbolRepresentable,
         withConfiguration configuration: SymbolConfiguration =
-        UIImage.SymbolConfiguration(pointSize: 18, weight: .light, scale: .large)
+        UIImage.SymbolConfiguration(pointSize: 14, weight: .light, scale: .large)
     ) {
         self.init(systemName: sfSymbol.systemName, withConfiguration: configuration)
     }

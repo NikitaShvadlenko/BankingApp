@@ -4,7 +4,6 @@ final class AccountsScreenView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureViews()
-
     }
 
     @available(*, unavailable)

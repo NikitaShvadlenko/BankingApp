@@ -24,21 +24,21 @@
 		5A4C2DAFBB0145B1E1FB0455 /* PaymentsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7120B30142B7CE6D0F1ACE3 /* PaymentsScreenInteractor.swift */; };
 		5DFC33DF32A7B0ADE44EDF74 /* ServicesScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2BDF7292C861A62B0E3E2B /* ServicesScreenView.swift */; };
 		5E885AA7A7E36AD402520AA1 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27C306F0B5C89B6C8A249D /* Strings+Generated.swift */; };
+		600D41176DEF970B2541DC17 /* UIImage+SfSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65367829F91FE4FAB4648A93 /* UIImage+SfSymbol.swift */; };
 		62D6936920D2FC31FA5E5AB8 /* SettingsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0EA0B7118D4E60498CB01A /* SettingsScreenInteractor.swift */; };
 		67532C9AA2D43560FF96F54B /* AccountsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC62F89810A0622AEADDA103 /* AccountsScreenView.swift */; };
+		68D39199D4A56D72E877FFC1 /* TabBarItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7D066AE9D3BF2519A3D05 /* TabBarItemType.swift */; };
 		86C62C752820F6EFB33934C8 /* PaymentsScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34B867C5A62EF08DB56139 /* PaymentsScreenContract.swift */; };
 		8C2A40F69D98674D4F912B79 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A36B596A8A92184D1595E9C9 /* SnapKit */; };
 		932A0B787FCB84070CA6B2A5 /* TransferScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D719B98BF697191FF2E7A53B /* TransferScreenView.swift */; };
+		997F8C812A9F3EFABAD94DB0 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F44FA0DA28412EF979F1E /* SFSymbol.swift */; };
 		999B63D93B1331D08B853314 /* TransferScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF421FDAC6C4D5E319AE5E28 /* TransferScreenAssembly.swift */; };
 		99C829495DF01EBCAFFB4109 /* SettingsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A4C0F15692927DF3E1D54 /* SettingsScreenRouter.swift */; };
 		9D9BE43890557C08719B4A7F /* ServicesScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D191C7F6A0DA05F4B8A3CE2 /* ServicesScreenAssembly.swift */; };
 		A63B0B4DE4575B9B3E80CC91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C719EA72C5EBB6C2F3F24203 /* LaunchScreen.storyboard */; };
 		A6E9DD4437B3E8AC832F3307 /* SettingsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB253AECFEAECCC05002EF45 /* SettingsScreenPresenter.swift */; };
 		A9A2D1DB9E82236BC5959D2A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794C6A6CE57F5B9DDBCEB6C /* XCAssets+Generated.swift */; };
-		B4747BD02A997916004B4323 /* UIImage+SfSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747BCF2A997916004B4323 /* UIImage+SfSymbol.swift */; };
-		B4747BD22A997941004B4323 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747BD12A997941004B4323 /* SFSymbol.swift */; };
-		B4747BD52A998089004B4323 /* TabBarItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747BD42A998089004B4323 /* TabBarItemType.swift */; };
-		B4747BD72A9980F6004B4323 /* TabBarItemFacotry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747BD62A9980F6004B4323 /* TabBarItemFacotry.swift */; };
+		B4747BD92A998E44004B4323 /* AccountDisplayStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747BD82A998E44004B4323 /* AccountDisplayStyle.swift */; };
 		B738C6C7EDCBA20EEFB0AF35 /* AccountsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72929E57AD96BBF353839695 /* AccountsScreenAssembly.swift */; };
 		BD2872B19494900FD19ABCDA /* ServicesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D8D8BF3970E6CD6DB3B05 /* ServicesScreenViewController.swift */; };
 		C46EFC3840858EF8C38CF11C /* TransferScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E180760F09260AAD1553F /* TransferScreenPresenter.swift */; };
@@ -51,6 +51,7 @@
 		E596C46B76C40518C2333F0F /* AccountsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03708250E7672F99683D5E05 /* AccountsScreenRouter.swift */; };
 		E78A9A2927289BC575D92BDB /* AccountsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EE1DCF7928EE143EF2CA13 /* AccountsScreenViewController.swift */; };
 		E8BC0255A4013A73906B038D /* ServicesScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48CA06C96CD02B77DB5AAC9 /* ServicesScreenRouter.swift */; };
+		EAFBEF9EC326EB07490F554C /* TabBarItemFacotry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E69BBF6E013F1E51CE63FD /* TabBarItemFacotry.swift */; };
 		EC9F917F92A80CD80EA42D7B /* ServicesScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351758FFE5C240AFBFB3995F /* ServicesScreenPresenter.swift */; };
 		F643C891F4BBA56D5C3B4E28 /* PaymentsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1551D8F5AFF685C82EF0F5A /* PaymentsScreenAssembly.swift */; };
 		FAC3A9A7B02744148B6922E8 /* PaymentsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027ACB59A52A89C09E20A6F7 /* PaymentsScreenRouter.swift */; };
@@ -62,6 +63,7 @@
 		03708250E7672F99683D5E05 /* AccountsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenRouter.swift; sourceTree = "<group>"; };
 		0590BF6C649D9E099C3E33AE /* PaymentsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenPresenter.swift; sourceTree = "<group>"; };
 		15F3EBBE5C9768B61445D95B /* SettingsScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenAssembly.swift; sourceTree = "<group>"; };
+		161F44FA0DA28412EF979F1E /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		18034036EE0AD4B432F631D8 /* PaymentsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenViewController.swift; sourceTree = "<group>"; };
 		206716304A169081BB4C6F43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A27C306F0B5C89B6C8A249D /* Strings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
@@ -75,8 +77,10 @@
 		4B7238FF17C8A850282D899C /* AssembledModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembledModule.swift; sourceTree = "<group>"; };
 		4D0EA0B7118D4E60498CB01A /* SettingsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenInteractor.swift; sourceTree = "<group>"; };
 		4D191C7F6A0DA05F4B8A3CE2 /* ServicesScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenAssembly.swift; sourceTree = "<group>"; };
+		50C7D066AE9D3BF2519A3D05 /* TabBarItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemType.swift; sourceTree = "<group>"; };
 		5130D4AE9A1168FDF5F37A67 /* TransferScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenInteractor.swift; sourceTree = "<group>"; };
 		5716BB70094C19D0B1ACA644 /* SettingsScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenContract.swift; sourceTree = "<group>"; };
+		65367829F91FE4FAB4648A93 /* UIImage+SfSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+SfSymbol.swift"; sourceTree = "<group>"; };
 		66FBC288434D218C2668E52D /* PaymentsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenView.swift; sourceTree = "<group>"; };
 		722B5C4E10B35B94FF1CAD70 /* AccountsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenPresenter.swift; sourceTree = "<group>"; };
 		72929E57AD96BBF353839695 /* AccountsScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenAssembly.swift; sourceTree = "<group>"; };
@@ -84,12 +88,10 @@
 		818E180760F09260AAD1553F /* TransferScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenPresenter.swift; sourceTree = "<group>"; };
 		839A4C0F15692927DF3E1D54 /* SettingsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenRouter.swift; sourceTree = "<group>"; };
 		8FE5EF05BEF7BB5BEC969A4D /* TransferScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenRouter.swift; sourceTree = "<group>"; };
+		96E69BBF6E013F1E51CE63FD /* TabBarItemFacotry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemFacotry.swift; sourceTree = "<group>"; };
 		9E2BDF7292C861A62B0E3E2B /* ServicesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenView.swift; sourceTree = "<group>"; };
 		AB72D4FA06582041BFFEF62D /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
-		B4747BCF2A997916004B4323 /* UIImage+SfSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SfSymbol.swift"; sourceTree = "<group>"; };
-		B4747BD12A997941004B4323 /* SFSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
-		B4747BD42A998089004B4323 /* TabBarItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemType.swift; sourceTree = "<group>"; };
-		B4747BD62A9980F6004B4323 /* TabBarItemFacotry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemFacotry.swift; sourceTree = "<group>"; };
+		B4747BD82A998E44004B4323 /* AccountDisplayStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDisplayStyle.swift; sourceTree = "<group>"; };
 		C3FC342E37276002153F9CC8 /* TransferScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenContract.swift; sourceTree = "<group>"; };
 		C48CA06C96CD02B77DB5AAC9 /* ServicesScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenRouter.swift; sourceTree = "<group>"; };
 		CC62F89810A0622AEADDA103 /* AccountsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenView.swift; sourceTree = "<group>"; };
@@ -167,8 +169,8 @@
 		65E47B4887C9EC319CDDE702 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				B4747BCF2A997916004B4323 /* UIImage+SfSymbol.swift */,
 				4B7238FF17C8A850282D899C /* AssembledModule.swift */,
+				65367829F91FE4FAB4648A93 /* UIImage+SfSymbol.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -177,8 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				4B26FAE525F40468CAE7C2C4 /* Assets.xcassets */,
-				B4747BD12A997941004B4323 /* SFSymbol.swift */,
 				C719EA72C5EBB6C2F3F24203 /* LaunchScreen.storyboard */,
+				161F44FA0DA28412EF979F1E /* SFSymbol.swift */,
 				7A787C96F1C7A8C9E7BF07F6 /* Strings */,
 			);
 			path = Resources;
@@ -218,21 +220,21 @@
 			isa = PBXGroup;
 			children = (
 				3FBC2D277E658E89EA45EB05 /* AppDelegate.swift */,
-				B4747BD32A99805F004B4323 /* TabBar */,
 				E4F82C7E60425D32D7F21DBC /* Info.plist */,
 				D7FFBF0619037DCE3C68E4F0 /* Feature */,
 				4CFCC1ECC0E39FA02DAF7CFA /* Generated */,
 				6A63ABDE857104941E2A55F2 /* Resources */,
+				AA31B024EB6563FF22C9D2D3 /* TabBar */,
 				65E47B4887C9EC319CDDE702 /* Utils */,
 			);
 			path = BankingApp;
 			sourceTree = "<group>";
 		};
-		B4747BD32A99805F004B4323 /* TabBar */ = {
+		AA31B024EB6563FF22C9D2D3 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				B4747BD42A998089004B4323 /* TabBarItemType.swift */,
-				B4747BD62A9980F6004B4323 /* TabBarItemFacotry.swift */,
+				96E69BBF6E013F1E51CE63FD /* TabBarItemFacotry.swift */,
+				50C7D066AE9D3BF2519A3D05 /* TabBarItemType.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				72929E57AD96BBF353839695 /* AccountsScreenAssembly.swift */,
+				B4747BD82A998E44004B4323 /* AccountDisplayStyle.swift */,
 				E25E534976CC9FD5B285D308 /* AccountsScreenContract.swift */,
 				450AAADF3C16C0AA0AB1929D /* AccountsScreenInteractor.swift */,
 				722B5C4E10B35B94FF1CAD70 /* AccountsScreenPresenter.swift */,
@@ -385,15 +388,14 @@
 				33E2F3D09DE5394376798C2F /* AppDelegate.swift in Sources */,
 				3580609BEF4E7B10247ECB7D /* AssembledModule.swift in Sources */,
 				F643C891F4BBA56D5C3B4E28 /* PaymentsScreenAssembly.swift in Sources */,
-				B4747BD22A997941004B4323 /* SFSymbol.swift in Sources */,
 				86C62C752820F6EFB33934C8 /* PaymentsScreenContract.swift in Sources */,
 				5A4C2DAFBB0145B1E1FB0455 /* PaymentsScreenInteractor.swift in Sources */,
 				4E15C016CBFE79DC891D75D5 /* PaymentsScreenPresenter.swift in Sources */,
 				FAC3A9A7B02744148B6922E8 /* PaymentsScreenRouter.swift in Sources */,
 				E042F716E513528C3EFD7FE7 /* PaymentsScreenView.swift in Sources */,
 				1134C238897F008DAF8381ED /* PaymentsScreenViewController.swift in Sources */,
+				997F8C812A9F3EFABAD94DB0 /* SFSymbol.swift in Sources */,
 				9D9BE43890557C08719B4A7F /* ServicesScreenAssembly.swift in Sources */,
-				B4747BD52A998089004B4323 /* TabBarItemType.swift in Sources */,
 				505240510EDD907305A44797 /* ServicesScreenContract.swift in Sources */,
 				DD683AA83823CF68A1ED0FC0 /* ServicesScreenInteractor.swift in Sources */,
 				EC9F917F92A80CD80EA42D7B /* ServicesScreenPresenter.swift in Sources */,
@@ -404,19 +406,21 @@
 				0C0502E2CA4BFEFE79574F84 /* SettingsScreenContract.swift in Sources */,
 				62D6936920D2FC31FA5E5AB8 /* SettingsScreenInteractor.swift in Sources */,
 				A6E9DD4437B3E8AC832F3307 /* SettingsScreenPresenter.swift in Sources */,
-				B4747BD72A9980F6004B4323 /* TabBarItemFacotry.swift in Sources */,
 				99C829495DF01EBCAFFB4109 /* SettingsScreenRouter.swift in Sources */,
 				3CA01DC80D09BAAF5E97B12F /* SettingsScreenView.swift in Sources */,
 				C79618D8F1FE9445D26F6AAE /* SettingsScreenViewController.swift in Sources */,
 				5E885AA7A7E36AD402520AA1 /* Strings+Generated.swift in Sources */,
+				EAFBEF9EC326EB07490F554C /* TabBarItemFacotry.swift in Sources */,
+				68D39199D4A56D72E877FFC1 /* TabBarItemType.swift in Sources */,
 				999B63D93B1331D08B853314 /* TransferScreenAssembly.swift in Sources */,
 				336B1962911237385FAFA0DC /* TransferScreenContract.swift in Sources */,
 				4F249CD535E792B1CA61F464 /* TransferScreenInteractor.swift in Sources */,
 				C46EFC3840858EF8C38CF11C /* TransferScreenPresenter.swift in Sources */,
 				38BEE40C4654FFA417886BC8 /* TransferScreenRouter.swift in Sources */,
-				B4747BD02A997916004B4323 /* UIImage+SfSymbol.swift in Sources */,
 				932A0B787FCB84070CA6B2A5 /* TransferScreenView.swift in Sources */,
+				B4747BD92A998E44004B4323 /* AccountDisplayStyle.swift in Sources */,
 				E1CB0743F65A3FD050D1DC75 /* TransferScreenViewController.swift in Sources */,
+				600D41176DEF970B2541DC17 /* UIImage+SfSymbol.swift in Sources */,
 				A9A2D1DB9E82236BC5959D2A /* XCAssets+Generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
