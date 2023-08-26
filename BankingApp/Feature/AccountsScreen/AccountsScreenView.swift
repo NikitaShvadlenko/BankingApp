@@ -1,6 +1,13 @@
 import UIKit
 
 final class AccountsScreenView: UIView {
+
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(AccountOverviewCell.self, forCellReuseIdentifier: "\(AccountOverviewCell.self)")
+        return tableView
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureViews()

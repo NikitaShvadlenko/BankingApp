@@ -10,6 +10,14 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// $ %@
+  internal static func amountInDolars(_ p1: Any) -> String {
+    return L10n.tr("Localizable", "AmountInDolars", String(describing: p1), fallback: "$ %@")
+  }
+  /// $ %@ Availible
+  internal static func amountInDolarsAvailible(_ p1: Any) -> String {
+    return L10n.tr("Localizable", "AmountInDolarsAvailible", String(describing: p1), fallback: "$ %@ Availible")
+  }
   internal enum AccountsScreen {
     /// Accounts
     internal static let title = L10n.tr("Localizable", "AccountsScreen.title", fallback: "Accounts")

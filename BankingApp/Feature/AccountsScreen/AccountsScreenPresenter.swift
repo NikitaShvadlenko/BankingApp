@@ -38,7 +38,7 @@ extension AccountsScreenPresenter: AccountsScreenInteractorOutput {
         case .failure(let error):
             switch error {
             case .failedToRetrieveItem:
-                view?.setAccountDisplayStyle(AccountDisplayStyle.textFirst)
+                view?.setAccountDisplayStyle(AccountDisplayStyle.list)
             case .noAccountStyles:
                 fatalError("No account styles")
             }

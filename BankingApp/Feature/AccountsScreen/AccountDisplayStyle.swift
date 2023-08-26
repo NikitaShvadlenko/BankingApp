@@ -9,6 +9,6 @@
 import Foundation
 
 enum AccountDisplayStyle: CaseIterable, Codable {
-    case textFirst
-    case imageFirst
+    case list
+    case image
 }

@@ -19,7 +19,7 @@ final class AccountsScreenViewController: UIViewController {
 // MARK: - AccountsScreenViewInput
 extension AccountsScreenViewController: AccountsScreenViewInput {
     func setAccountDisplayStyle(_ selectedStyle: AccountDisplayStyle) {
-        print("Reload tableView with animation (or let manager handle this)")
+        print("Reload tableView with animation (and change the cell style)")
         setAccountDisplayIcon(newStyle: selectedStyle)
     }
 
@@ -67,9 +67,9 @@ extension AccountsScreenViewController {
 
     private func setAccountDisplayIcon(newStyle: AccountDisplayStyle) {
         switch newStyle {
-        case .textFirst:
+        case .list:
             navigationItem.leftBarButtonItem?.image = UIImage(sfSymbol: SFSymbol.list)
-        case .imageFirst:
+        case .image:
             navigationItem.leftBarButtonItem?.image = UIImage(sfSymbol: SFSymbol.rectangleOnRectangle)
         }
     }
