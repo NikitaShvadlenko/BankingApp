@@ -10,23 +10,29 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
-
-        let tabBarController = UITabBarController()
+        let tabBarController = createTabBarController()
         window.rootViewController = tabBarController
-
-        var viewControllers = [UIViewController]()
-
-        let accountsScreenViewController = AccountsScreenAssembly.assemble().viewController
-        let accountsScreenNavigationController = UINavigationController(
-            rootViewController: accountsScreenViewController
-        )
-
-        viewControllers.append(accountsScreenNavigationController)
-
-        tabBarController.setViewControllers(viewControllers, animated: false)
 
         self.window = window
         window.makeKeyAndVisible()
         return true
+    }
+}
+
+// MARK: - Private Methods
+extension AppDelegate {
+    private func createTabBarController() -> UITabBarController {
+        let tabBarController = UITabBarController()
+        var viewControllers = [UIViewController]()
+        let tabBarItemTypes = TabBarItemType.allCases
+
+        for tabBarItemType in tabBarItemTypes {
+            let viewController = TabBarItemFactory.viewController(for: tabBarItemType)
+            viewControllers.append(viewController)
+        }
+
+        tabBarController.setViewControllers(viewControllers, animated: false)
+
+        return tabBarController
     }
 }

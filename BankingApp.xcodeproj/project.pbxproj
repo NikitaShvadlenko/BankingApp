@@ -37,6 +37,8 @@
 		A9A2D1DB9E82236BC5959D2A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794C6A6CE57F5B9DDBCEB6C /* XCAssets+Generated.swift */; };
 		B4747BD02A997916004B4323 /* UIImage+SfSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747BCF2A997916004B4323 /* UIImage+SfSymbol.swift */; };
 		B4747BD22A997941004B4323 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747BD12A997941004B4323 /* SFSymbol.swift */; };
+		B4747BD52A998089004B4323 /* TabBarItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747BD42A998089004B4323 /* TabBarItemType.swift */; };
+		B4747BD72A9980F6004B4323 /* TabBarItemFacotry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747BD62A9980F6004B4323 /* TabBarItemFacotry.swift */; };
 		B738C6C7EDCBA20EEFB0AF35 /* AccountsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72929E57AD96BBF353839695 /* AccountsScreenAssembly.swift */; };
 		BD2872B19494900FD19ABCDA /* ServicesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D8D8BF3970E6CD6DB3B05 /* ServicesScreenViewController.swift */; };
 		C46EFC3840858EF8C38CF11C /* TransferScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E180760F09260AAD1553F /* TransferScreenPresenter.swift */; };
@@ -86,6 +88,8 @@
 		AB72D4FA06582041BFFEF62D /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
 		B4747BCF2A997916004B4323 /* UIImage+SfSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SfSymbol.swift"; sourceTree = "<group>"; };
 		B4747BD12A997941004B4323 /* SFSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
+		B4747BD42A998089004B4323 /* TabBarItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemType.swift; sourceTree = "<group>"; };
+		B4747BD62A9980F6004B4323 /* TabBarItemFacotry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemFacotry.swift; sourceTree = "<group>"; };
 		C3FC342E37276002153F9CC8 /* TransferScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenContract.swift; sourceTree = "<group>"; };
 		C48CA06C96CD02B77DB5AAC9 /* ServicesScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenRouter.swift; sourceTree = "<group>"; };
 		CC62F89810A0622AEADDA103 /* AccountsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenView.swift; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				3FBC2D277E658E89EA45EB05 /* AppDelegate.swift */,
+				B4747BD32A99805F004B4323 /* TabBar */,
 				E4F82C7E60425D32D7F21DBC /* Info.plist */,
 				D7FFBF0619037DCE3C68E4F0 /* Feature */,
 				4CFCC1ECC0E39FA02DAF7CFA /* Generated */,
@@ -221,6 +226,15 @@
 				65E47B4887C9EC319CDDE702 /* Utils */,
 			);
 			path = BankingApp;
+			sourceTree = "<group>";
+		};
+		B4747BD32A99805F004B4323 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				B4747BD42A998089004B4323 /* TabBarItemType.swift */,
+				B4747BD62A9980F6004B4323 /* TabBarItemFacotry.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		BBD8B021C8D9B8152FC75F80 /* AccountsScreen */ = {
@@ -379,6 +393,7 @@
 				E042F716E513528C3EFD7FE7 /* PaymentsScreenView.swift in Sources */,
 				1134C238897F008DAF8381ED /* PaymentsScreenViewController.swift in Sources */,
 				9D9BE43890557C08719B4A7F /* ServicesScreenAssembly.swift in Sources */,
+				B4747BD52A998089004B4323 /* TabBarItemType.swift in Sources */,
 				505240510EDD907305A44797 /* ServicesScreenContract.swift in Sources */,
 				DD683AA83823CF68A1ED0FC0 /* ServicesScreenInteractor.swift in Sources */,
 				EC9F917F92A80CD80EA42D7B /* ServicesScreenPresenter.swift in Sources */,
@@ -389,6 +404,7 @@
 				0C0502E2CA4BFEFE79574F84 /* SettingsScreenContract.swift in Sources */,
 				62D6936920D2FC31FA5E5AB8 /* SettingsScreenInteractor.swift in Sources */,
 				A6E9DD4437B3E8AC832F3307 /* SettingsScreenPresenter.swift in Sources */,
+				B4747BD72A9980F6004B4323 /* TabBarItemFacotry.swift in Sources */,
 				99C829495DF01EBCAFFB4109 /* SettingsScreenRouter.swift in Sources */,
 				3CA01DC80D09BAAF5E97B12F /* SettingsScreenView.swift in Sources */,
 				C79618D8F1FE9445D26F6AAE /* SettingsScreenViewController.swift in Sources */,
