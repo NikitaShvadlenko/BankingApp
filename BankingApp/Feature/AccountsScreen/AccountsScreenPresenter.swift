@@ -5,32 +5,16 @@ final class AccountsScreenPresenter {
     weak var moduleOutput: AccountsScreenModuleOutput?
     var interactor: AccountsScreenInteractorInput?
     var router: AccountsScreenRouterInput?
-
-    let accountDisplayStyles = AccountDisplayStyle.allCases
-    var selectedDisplayStyleIndex = 0
 }
 
 // MARK: - AccountsScreenViewOutput
 extension AccountsScreenPresenter: AccountsScreenViewOutput {
     func viewDidRequestAccountDisplayStyle(_ view: AccountsScreenViewInput) {
-        guard !accountDisplayStyles.isEmpty else {
-            return
-        }
-        let selectedStyle = accountDisplayStyles[selectedDisplayStyleIndex]
-        view.setAccountDisplayStyle(selectedStyle)
+        interactor?.retrieveAccountDisplayStyle()
     }
 
     func viewDidTapDisplayStyleButton(_ view: AccountsScreenViewInput) {
-        print("Asking TableViewManager to change the tableViewCellStyle")
-        guard !accountDisplayStyles.isEmpty else {
-            return
-        }
-        selectedDisplayStyleIndex += 1
-        if selectedDisplayStyleIndex >= accountDisplayStyles.count {
-            selectedDisplayStyleIndex = 0
-        }
-        let selectedStyle = accountDisplayStyles[selectedDisplayStyleIndex]
-        view.setAccountDisplayStyle(selectedStyle)
+        interactor?.setNextDisplayStyle()
     }
 
     func viewDidTapLogoutButton(_ view: AccountsScreenViewInput) {
@@ -44,6 +28,22 @@ extension AccountsScreenPresenter: AccountsScreenViewOutput {
 
 // MARK: - AccountsScreenInteractorOutput
 extension AccountsScreenPresenter: AccountsScreenInteractorOutput {
+    func interactorDidRetrieveAccountDisplayStyle(
+        _ interactor: AccountsScreenInteractorInput,
+        result: Result<AccountDisplayStyle, UserSettingManagerError>
+    ) {
+        switch result {
+        case .success(let style):
+            view?.setAccountDisplayStyle(style)
+        case .failure(let error):
+            switch error {
+            case .failedToRetrieveItem:
+                view?.setAccountDisplayStyle(AccountDisplayStyle.textFirst)
+            case .noAccountStyles:
+                fatalError("No account styles")
+            }
+        }
+    }
 }
 
 // MARK: - AccountsScreenRouterOutput
@@ -55,8 +55,4 @@ extension AccountsScreenPresenter: AccountsScreenModuleInput {
     func configureModule(output: AccountsScreenModuleOutput?) {
         self.moduleOutput = output
     }
-}
-
-// MARK: - Private methods
-extension AccountsScreenPresenter {
 }

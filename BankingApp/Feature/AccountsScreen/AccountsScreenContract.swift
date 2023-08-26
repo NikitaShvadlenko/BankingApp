@@ -13,10 +13,16 @@ protocol AccountsScreenViewOutput {
 
 // sourcery: AutoMockable
 protocol AccountsScreenInteractorInput {
+    func retrieveAccountDisplayStyle()
+    func setNextDisplayStyle()
 }
 
 // sourcery: AutoMockable
 protocol AccountsScreenInteractorOutput: AnyObject {
+    func interactorDidRetrieveAccountDisplayStyle(
+        _ interactor:AccountsScreenInteractorInput,
+        result: Result<AccountDisplayStyle, UserSettingManagerError>
+    )
 }
 
 // sourcery: AutoMockable

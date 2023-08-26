@@ -1,5 +1,5 @@
 //
-//  AccountCellDisplayStyle.swift
+//  UserSettingManagerError.swift
 //  BankingApp
 //
 //  Created by Nikita Shvad on 26.08.2023.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum AccountDisplayStyle: CaseIterable, Codable {
-    case textFirst
-    case imageFirst
+enum UserSettingManagerError: Error {
+    case failedToRetrieveItem
+    case noAccountStyles
 }

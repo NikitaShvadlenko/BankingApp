@@ -8,7 +8,8 @@
 
 import Foundation
 
-protocol ManagesUserDefaults {
+protocol ManagesUserSettings {
     func saveAccountDisplayStyle(_ style: AccountDisplayStyle)
-    func retrieveAccountDisplayStyle() -> AccountDisplayStyle?
+    func retrieveAccountDisplayStyle() throws -> AccountDisplayStyle
+    func nextAccountDisplayStyle() throws -> AccountDisplayStyle
 }
