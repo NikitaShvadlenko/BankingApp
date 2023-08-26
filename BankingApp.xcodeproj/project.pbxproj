@@ -39,6 +39,9 @@
 		A6E9DD4437B3E8AC832F3307 /* SettingsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB253AECFEAECCC05002EF45 /* SettingsScreenPresenter.swift */; };
 		A9A2D1DB9E82236BC5959D2A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794C6A6CE57F5B9DDBCEB6C /* XCAssets+Generated.swift */; };
 		B4747BD92A998E44004B4323 /* AccountDisplayStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747BD82A998E44004B4323 /* AccountDisplayStyle.swift */; };
+		B4747BDC2A999323004B4323 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747BDB2A999323004B4323 /* UserDefaultsStorage.swift */; };
+		B4747BDE2A99939B004B4323 /* ManagesUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747BDD2A99939B004B4323 /* ManagesUserDefaults.swift */; };
+		B4747BE02A9993D3004B4323 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747BDF2A9993D3004B4323 /* UserDefaults+Extensions.swift */; };
 		B738C6C7EDCBA20EEFB0AF35 /* AccountsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72929E57AD96BBF353839695 /* AccountsScreenAssembly.swift */; };
 		BD2872B19494900FD19ABCDA /* ServicesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D8D8BF3970E6CD6DB3B05 /* ServicesScreenViewController.swift */; };
 		C46EFC3840858EF8C38CF11C /* TransferScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E180760F09260AAD1553F /* TransferScreenPresenter.swift */; };
@@ -92,6 +95,9 @@
 		9E2BDF7292C861A62B0E3E2B /* ServicesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenView.swift; sourceTree = "<group>"; };
 		AB72D4FA06582041BFFEF62D /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
 		B4747BD82A998E44004B4323 /* AccountDisplayStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDisplayStyle.swift; sourceTree = "<group>"; };
+		B4747BDB2A999323004B4323 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		B4747BDD2A99939B004B4323 /* ManagesUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagesUserDefaults.swift; sourceTree = "<group>"; };
+		B4747BDF2A9993D3004B4323 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		C3FC342E37276002153F9CC8 /* TransferScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenContract.swift; sourceTree = "<group>"; };
 		C48CA06C96CD02B77DB5AAC9 /* ServicesScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenRouter.swift; sourceTree = "<group>"; };
 		CC62F89810A0622AEADDA103 /* AccountsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenView.swift; sourceTree = "<group>"; };
@@ -221,6 +227,7 @@
 			children = (
 				3FBC2D277E658E89EA45EB05 /* AppDelegate.swift */,
 				E4F82C7E60425D32D7F21DBC /* Info.plist */,
+				B4747BDA2A999264004B4323 /* UserDefaultsStorage */,
 				D7FFBF0619037DCE3C68E4F0 /* Feature */,
 				4CFCC1ECC0E39FA02DAF7CFA /* Generated */,
 				6A63ABDE857104941E2A55F2 /* Resources */,
@@ -237,6 +244,16 @@
 				50C7D066AE9D3BF2519A3D05 /* TabBarItemType.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		B4747BDA2A999264004B4323 /* UserDefaultsStorage */ = {
+			isa = PBXGroup;
+			children = (
+				B4747BDB2A999323004B4323 /* UserDefaultsStorage.swift */,
+				B4747BDD2A99939B004B4323 /* ManagesUserDefaults.swift */,
+				B4747BDF2A9993D3004B4323 /* UserDefaults+Extensions.swift */,
+			);
+			path = UserDefaultsStorage;
 			sourceTree = "<group>";
 		};
 		BBD8B021C8D9B8152FC75F80 /* AccountsScreen */ = {
@@ -385,8 +402,10 @@
 				E596C46B76C40518C2333F0F /* AccountsScreenRouter.swift in Sources */,
 				67532C9AA2D43560FF96F54B /* AccountsScreenView.swift in Sources */,
 				E78A9A2927289BC575D92BDB /* AccountsScreenViewController.swift in Sources */,
+				B4747BDE2A99939B004B4323 /* ManagesUserDefaults.swift in Sources */,
 				33E2F3D09DE5394376798C2F /* AppDelegate.swift in Sources */,
 				3580609BEF4E7B10247ECB7D /* AssembledModule.swift in Sources */,
+				B4747BE02A9993D3004B4323 /* UserDefaults+Extensions.swift in Sources */,
 				F643C891F4BBA56D5C3B4E28 /* PaymentsScreenAssembly.swift in Sources */,
 				86C62C752820F6EFB33934C8 /* PaymentsScreenContract.swift in Sources */,
 				5A4C2DAFBB0145B1E1FB0455 /* PaymentsScreenInteractor.swift in Sources */,
@@ -403,6 +422,7 @@
 				5DFC33DF32A7B0ADE44EDF74 /* ServicesScreenView.swift in Sources */,
 				BD2872B19494900FD19ABCDA /* ServicesScreenViewController.swift in Sources */,
 				32FDF3B3CB8B233BE679EF16 /* SettingsScreenAssembly.swift in Sources */,
+				B4747BDC2A999323004B4323 /* UserDefaultsStorage.swift in Sources */,
 				0C0502E2CA4BFEFE79574F84 /* SettingsScreenContract.swift in Sources */,
 				62D6936920D2FC31FA5E5AB8 /* SettingsScreenInteractor.swift in Sources */,
 				A6E9DD4437B3E8AC832F3307 /* SettingsScreenPresenter.swift in Sources */,
