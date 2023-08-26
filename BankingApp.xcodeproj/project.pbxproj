@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,6 +35,8 @@
 		A63B0B4DE4575B9B3E80CC91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C719EA72C5EBB6C2F3F24203 /* LaunchScreen.storyboard */; };
 		A6E9DD4437B3E8AC832F3307 /* SettingsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB253AECFEAECCC05002EF45 /* SettingsScreenPresenter.swift */; };
 		A9A2D1DB9E82236BC5959D2A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794C6A6CE57F5B9DDBCEB6C /* XCAssets+Generated.swift */; };
+		B4747BD02A997916004B4323 /* UIImage+SfSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747BCF2A997916004B4323 /* UIImage+SfSymbol.swift */; };
+		B4747BD22A997941004B4323 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747BD12A997941004B4323 /* SFSymbol.swift */; };
 		B738C6C7EDCBA20EEFB0AF35 /* AccountsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72929E57AD96BBF353839695 /* AccountsScreenAssembly.swift */; };
 		BD2872B19494900FD19ABCDA /* ServicesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D8D8BF3970E6CD6DB3B05 /* ServicesScreenViewController.swift */; };
 		C46EFC3840858EF8C38CF11C /* TransferScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818E180760F09260AAD1553F /* TransferScreenPresenter.swift */; };
@@ -82,6 +84,8 @@
 		8FE5EF05BEF7BB5BEC969A4D /* TransferScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenRouter.swift; sourceTree = "<group>"; };
 		9E2BDF7292C861A62B0E3E2B /* ServicesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenView.swift; sourceTree = "<group>"; };
 		AB72D4FA06582041BFFEF62D /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
+		B4747BCF2A997916004B4323 /* UIImage+SfSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+SfSymbol.swift"; sourceTree = "<group>"; };
+		B4747BD12A997941004B4323 /* SFSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		C3FC342E37276002153F9CC8 /* TransferScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenContract.swift; sourceTree = "<group>"; };
 		C48CA06C96CD02B77DB5AAC9 /* ServicesScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenRouter.swift; sourceTree = "<group>"; };
 		CC62F89810A0622AEADDA103 /* AccountsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenView.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 		65E47B4887C9EC319CDDE702 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				B4747BCF2A997916004B4323 /* UIImage+SfSymbol.swift */,
 				4B7238FF17C8A850282D899C /* AssembledModule.swift */,
 			);
 			path = Utils;
@@ -168,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				4B26FAE525F40468CAE7C2C4 /* Assets.xcassets */,
+				B4747BD12A997941004B4323 /* SFSymbol.swift */,
 				C719EA72C5EBB6C2F3F24203 /* LaunchScreen.storyboard */,
 				7A787C96F1C7A8C9E7BF07F6 /* Strings */,
 			);
@@ -255,34 +261,6 @@
 				29584771D1C71EB79EDBC229 /* TransferScreen */,
 			);
 			path = Feature;
-			sourceTree = "<group>";
-		};
-		"TEMP_0E108ADF-8C1C-451C-AA58-F33055B5C996" /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		"TEMP_20CC0009-C337-4880-AFBA-D875118EBC69" /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Packages;
-			sourceTree = "<group>";
-		};
-		"TEMP_7A2E8A88-4BB3-4487-83BD-45020D7151F6" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_E91FE510-68BC-4482-9689-1F1F51F2912F" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +371,7 @@
 				33E2F3D09DE5394376798C2F /* AppDelegate.swift in Sources */,
 				3580609BEF4E7B10247ECB7D /* AssembledModule.swift in Sources */,
 				F643C891F4BBA56D5C3B4E28 /* PaymentsScreenAssembly.swift in Sources */,
+				B4747BD22A997941004B4323 /* SFSymbol.swift in Sources */,
 				86C62C752820F6EFB33934C8 /* PaymentsScreenContract.swift in Sources */,
 				5A4C2DAFBB0145B1E1FB0455 /* PaymentsScreenInteractor.swift in Sources */,
 				4E15C016CBFE79DC891D75D5 /* PaymentsScreenPresenter.swift in Sources */,
@@ -419,6 +398,7 @@
 				4F249CD535E792B1CA61F464 /* TransferScreenInteractor.swift in Sources */,
 				C46EFC3840858EF8C38CF11C /* TransferScreenPresenter.swift in Sources */,
 				38BEE40C4654FFA417886BC8 /* TransferScreenRouter.swift in Sources */,
+				B4747BD02A997916004B4323 /* UIImage+SfSymbol.swift in Sources */,
 				932A0B787FCB84070CA6B2A5 /* TransferScreenView.swift in Sources */,
 				E1CB0743F65A3FD050D1DC75 /* TransferScreenViewController.swift in Sources */,
 				A9A2D1DB9E82236BC5959D2A /* XCAssets+Generated.swift in Sources */,
