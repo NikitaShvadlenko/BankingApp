@@ -25,8 +25,7 @@ extension AccountsScreenView {
     private func configureViews() {
         addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.edges.equalToSuperview()
         }
     }
 }
