@@ -1,8 +1,9 @@
 import UIKit
+import SnapKit
 
 final class AccountsScreenView: UIView {
 
-    private lazy var tableView: UITableView = {
+    lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.register(AccountOverviewCell.self, forCellReuseIdentifier: "\(AccountOverviewCell.self)")
         return tableView
@@ -22,6 +23,10 @@ final class AccountsScreenView: UIView {
 // MARK: - Private methods
 extension AccountsScreenView {
     private func configureViews() {
-        backgroundColor = .white
+        addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
     }
 }

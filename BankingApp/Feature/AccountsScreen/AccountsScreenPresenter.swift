@@ -5,6 +5,7 @@ final class AccountsScreenPresenter {
     weak var moduleOutput: AccountsScreenModuleOutput?
     var interactor: AccountsScreenInteractorInput?
     var router: AccountsScreenRouterInput?
+    var accountsManager: ManagesAccountsScreenTable?
 }
 
 // MARK: - AccountsScreenViewOutput
@@ -23,6 +24,8 @@ extension AccountsScreenPresenter: AccountsScreenViewOutput {
 
     func viewDidLoad(_ view: AccountsScreenViewInput) {
         view.configureViews()
+        let data = AccountsProvider.provideAccounts()
+        accountsManager?.setAccounts(data)
     }
 }
 
@@ -34,10 +37,12 @@ extension AccountsScreenPresenter: AccountsScreenInteractorOutput {
     ) {
         switch result {
         case .success(let style):
+            accountsManager?.setAccountDisplayStyle(style)
             view?.setAccountDisplayStyle(style)
         case .failure(let error):
             switch error {
             case .failedToRetrieveItem:
+                accountsManager?.setAccountDisplayStyle(AccountDisplayStyle.list)
                 view?.setAccountDisplayStyle(AccountDisplayStyle.list)
             case .noAccountStyles:
                 fatalError("No account styles")

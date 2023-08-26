@@ -25,6 +25,8 @@ struct AccountOverviewImageStrategy: AccountOverviewDisplayStrategy {
         }
 
         let containerView = UIView()
+        containerView.backgroundColor = .white
+        contentView.addSubview(containerView)
         containerView.layer.cornerRadius = 8
 
         containerView.snp.makeConstraints { make in
@@ -70,7 +72,7 @@ extension AccountOverviewImageStrategy {
         availibleLabel.textAlignment = .center
 
         accountNameLabel.font = UIFont.systemFont(ofSize: 16)
-        amountLabel.font = UIFont.systemFont(ofSize: 20)
+        amountLabel.font = UIFont.systemFont(ofSize: 16)
         availibleLabel.font = UIFont.systemFont(ofSize: 12)
 
         accountNameLabel.textColor = Asset.Colors.primaryLabel.color

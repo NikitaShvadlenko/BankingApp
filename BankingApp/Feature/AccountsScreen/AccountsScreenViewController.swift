@@ -14,12 +14,17 @@ final class AccountsScreenViewController: UIViewController {
         super.viewDidLoad()
         presenter?.viewDidLoad(self)
     }
+
+    func setTableViewManager(_ manager: ManagesAccountsScreenTable) {
+        accountsScreenView.tableView.dataSource = manager
+        accountsScreenView.tableView.delegate = manager
+    }
 }
 
 // MARK: - AccountsScreenViewInput
 extension AccountsScreenViewController: AccountsScreenViewInput {
     func setAccountDisplayStyle(_ selectedStyle: AccountDisplayStyle) {
-        print("Reload tableView with animation (and change the cell style)")
+        accountsScreenView.tableView.reloadData()
         setAccountDisplayIcon(newStyle: selectedStyle)
     }
 
