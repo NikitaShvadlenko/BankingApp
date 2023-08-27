@@ -1,4 +1,6 @@
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -11,8 +13,10 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         let window = UIWindow(frame: UIScreen.main.bounds)
         let tabBarController = createTabBarController()
-        window.rootViewController = tabBarController
 
+        window.rootViewController = tabBarController
+        FirebaseApp.configure()
+        _ = Firestore.firestore()
         self.window = window
         window.makeKeyAndVisible()
         return true

@@ -19,6 +19,9 @@ packages:
   SnapKit:
     url: https://github.com/SnapKit/SnapKit
     minorVersion: 5.6.0
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk
+    minorVersion: 10.14.0
 
 targets:
   BankingApp:
@@ -28,13 +31,17 @@ targets:
       - path: "BankingApp"
     dependencies:
       - package: SnapKit
+      - package: Firebase
+        product: FirebaseAuth
+      - package: Firebase
+        product: FirebaseFirestore
     settings:
       base:
         TARGETED_DEVICE_FAMILY: 1
         DISPLAY_NAME: "BankingApp"
         INFOPLIST_FILE: "BankingApp/Info.plist"
         DEVELOPMENT_TEAM: BankingApp
-        PRODUCT_BUNDLE_IDENTIFIER: com.nikitaShvad.xylophone
+        PRODUCT_BUNDLE_IDENTIFIER: com.nikitaShvad.bankingApp
         CODE_SIGN_STYLE: Manual
       configs:
         Debug:
