@@ -29,7 +29,7 @@ protocol AccountsScreenInteractorOutput: AnyObject {
 
     func interactorDidRetrieveAccountDetails(
         _ interactor:AccountsScreenInteractorInput,
-        result: Result<User, Error>
+        result: Result<[Account], Error>
     )
 }
 

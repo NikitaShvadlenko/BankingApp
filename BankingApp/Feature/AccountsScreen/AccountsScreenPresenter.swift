@@ -37,11 +37,12 @@ extension AccountsScreenPresenter: AccountsScreenInteractorOutput {
 
     func interactorDidRetrieveAccountDetails(
         _ interactor: AccountsScreenInteractorInput,
-        result: Result<User, Error>
+        result: Result<[Account], Error>
     ) {
         switch result {
-        case .success(let user):
-            accountsManager?.setAccounts(user.accounts)
+        case .success(let accounts):
+            accountsManager?.setAccounts(accounts)
+            print(accounts)
         case .failure(let error):
             view?.displayFailedToFetchUsersAlert()
             print(error)

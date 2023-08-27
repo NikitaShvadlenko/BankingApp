@@ -35,4 +35,5 @@ enum TransactionType: String, Codable {
     case withdrawal = "Withdrawal"
     case credit = "Credit"
     case visaPurchase = "Visa Purchase"
+    case onlinePurchase = "Online Purchase"
 }

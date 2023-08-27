@@ -11,6 +11,6 @@ import Foundation
 protocol ProvidesAccounts {
     func fetchUserDetails(
         for name: String,
-        completion: @escaping (Result<User, Error>) -> Void
+        completion: @escaping (Result<[Account], Error>) -> Void
     )
 }

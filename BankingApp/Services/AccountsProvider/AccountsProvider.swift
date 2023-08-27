@@ -12,32 +12,33 @@ import FirebaseFirestore
 struct AccountsProvider: ProvidesAccounts {
     enum AccountsProviderError: Error {
         case documentNotFound
+        case snapshotNotCreated
     }
      func fetchUserDetails(
         for name: String,
-        completion: @escaping (Result<User, Error>) -> Void
+        completion: @escaping (Result<[Account], Error>) -> Void
     ) {
-        let accountsReference = Firestore.firestore().collection(FirebaseCollectionKeys.users.rawValue).document(name)
-        accountsReference.getDocument { document, error in
-            if let error = error {
-                completion(.failure(error))
-            } else {
-                if let document = document, document.exists {
-                    do {
-                        let jsonData = try JSONSerialization.data(
-                            withJSONObject: document.data() as Any,
-                            options: []
-                        )
-                        let decoder = JSONDecoder()
-                        let user = try decoder.decode(User.self, from: jsonData)
-                        completion(.success(user))
-                    } catch {
-                        completion(.failure(error))
-                    }
-                } else {
-                    completion(.failure(AccountsProviderError.documentNotFound))
+        var accounts = [Account]()
+        let accountsReference = Firestore.firestore().collection("/users/Jake Smith/accounts")
+        accountsReference.getDocuments { snapshot, _ in
+            guard let snapshot = snapshot else {
+                completion(.failure(AccountsProviderError.snapshotNotCreated))
+                return
+            }
+            for document in snapshot.documents {
+                let data = document.data()
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .iso8601
+                    let accountData = try decoder.decode(Account.self, from: jsonData)
+                    accounts.append(accountData)
+                } catch {
+                    completion(.failure(error))
+                    return
                 }
             }
+            completion(.success(accounts))
         }
     }
 }
