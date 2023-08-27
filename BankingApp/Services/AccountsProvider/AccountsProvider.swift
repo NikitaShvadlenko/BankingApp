@@ -13,7 +13,7 @@ struct AccountsProvider: ProvidesAccounts {
     enum AccountsProviderError: Error {
         case documentNotFound
     }
-    static func userDetails(
+     func fetchUserDetails(
         for name: String,
         completion: @escaping (Result<UserAccounts, Error>) -> Void
     ) {
