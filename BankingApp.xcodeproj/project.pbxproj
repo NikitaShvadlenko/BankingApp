@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0678B254EBD7D96BC8672D9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C191D9F183B7CDDE19B8A96 /* Localizable.strings */; };
 		0C0502E2CA4BFEFE79574F84 /* SettingsScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5716BB70094C19D0B1ACA644 /* SettingsScreenContract.swift */; };
 		1134C238897F008DAF8381ED /* PaymentsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18034036EE0AD4B432F631D8 /* PaymentsScreenViewController.swift */; };
+		197F93F6E638924C82C2D3EC /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5DF33EB32C6D6A801E369 /* HTTPMethod.swift */; };
+		21B319DBE41367CC2B95A303 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588DD8942A4020465E650EA6 /* DataMapper.swift */; };
 		2449D333861F701AAA253F12 /* ProvidesAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108AB9052D41DAECCD6D660E /* ProvidesAccounts.swift */; };
 		2554FC9FC45DB3C5D9791143 /* AccountsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450AAADF3C16C0AA0AB1929D /* AccountsScreenInteractor.swift */; };
 		2E58F306F901F9AE7DA4B70D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B26FAE525F40468CAE7C2C4 /* Assets.xcassets */; };
@@ -22,6 +24,7 @@
 		38BEE40C4654FFA417886BC8 /* TransferScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE5EF05BEF7BB5BEC969A4D /* TransferScreenRouter.swift */; };
 		3CA01DC80D09BAAF5E97B12F /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72D4FA06582041BFFEF62D /* SettingsScreenView.swift */; };
 		4477F05A19E152348F8C20D9 /* AccountOverviewTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E994250F1D53ABA25459E181 /* AccountOverviewTextCell.swift */; };
+		48587F9B8DBE0CE688FE2321 /* SessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2BB38C5F8C072AC4AAFCDA /* SessionProtocol.swift */; };
 		4E15C016CBFE79DC891D75D5 /* PaymentsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0590BF6C649D9E099C3E33AE /* PaymentsScreenPresenter.swift */; };
 		4F249CD535E792B1CA61F464 /* TransferScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130D4AE9A1168FDF5F37A67 /* TransferScreenInteractor.swift */; };
 		505240510EDD907305A44797 /* ServicesScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D5012687A2D2C672C5D166 /* ServicesScreenContract.swift */; };
@@ -29,6 +32,7 @@
 		5DFC33DF32A7B0ADE44EDF74 /* ServicesScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2BDF7292C861A62B0E3E2B /* ServicesScreenView.swift */; };
 		5E885AA7A7E36AD402520AA1 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27C306F0B5C89B6C8A249D /* Strings+Generated.swift */; };
 		600D41176DEF970B2541DC17 /* UIImage+SfSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65367829F91FE4FAB4648A93 /* UIImage+SfSymbol.swift */; };
+		6195A6E61F5F3ADDA0CED12F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6520677EA126B8FBD012B4D6 /* Session.swift */; };
 		62D6936920D2FC31FA5E5AB8 /* SettingsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0EA0B7118D4E60498CB01A /* SettingsScreenInteractor.swift */; };
 		67532C9AA2D43560FF96F54B /* AccountsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC62F89810A0622AEADDA103 /* AccountsScreenView.swift */; };
 		68D39199D4A56D72E877FFC1 /* TabBarItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7D066AE9D3BF2519A3D05 /* TabBarItemType.swift */; };
@@ -41,10 +45,13 @@
 		999B63D93B1331D08B853314 /* TransferScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF421FDAC6C4D5E319AE5E28 /* TransferScreenAssembly.swift */; };
 		99C829495DF01EBCAFFB4109 /* SettingsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A4C0F15692927DF3E1D54 /* SettingsScreenRouter.swift */; };
 		9D9BE43890557C08719B4A7F /* ServicesScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D191C7F6A0DA05F4B8A3CE2 /* ServicesScreenAssembly.swift */; };
+		A53D9CAAE707E825956DD73D /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0CA3763675D6F65031F9BE /* Mapper.swift */; };
 		A63B0B4DE4575B9B3E80CC91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C719EA72C5EBB6C2F3F24203 /* LaunchScreen.storyboard */; };
 		A6E9DD4437B3E8AC832F3307 /* SettingsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB253AECFEAECCC05002EF45 /* SettingsScreenPresenter.swift */; };
 		A9A2D1DB9E82236BC5959D2A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794C6A6CE57F5B9DDBCEB6C /* XCAssets+Generated.swift */; };
 		AB488A7E6858EB222FE0E113 /* AccountOverviewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4B1110FD2367FF86E3410 /* AccountOverviewImageCell.swift */; };
+		B0552C7F791822C80FD30A16 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0230A7C53250C97A2000939 /* Request.swift */; };
+		B4FDD79B2A9BFB5600B23FD4 /* AccountsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FDD79A2A9BFB5600B23FD4 /* AccountsRequest.swift */; };
 		B738C6C7EDCBA20EEFB0AF35 /* AccountsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72929E57AD96BBF353839695 /* AccountsScreenAssembly.swift */; };
 		BCA0DE30566EE01DBBF4DE05 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 66C22F3E9757749DB326E22E /* FirebaseAuth */; };
 		BD2872B19494900FD19ABCDA /* ServicesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D8D8BF3970E6CD6DB3B05 /* ServicesScreenViewController.swift */; };
@@ -80,6 +87,7 @@
 		03708250E7672F99683D5E05 /* AccountsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenRouter.swift; sourceTree = "<group>"; };
 		0590BF6C649D9E099C3E33AE /* PaymentsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenPresenter.swift; sourceTree = "<group>"; };
 		0883A36385D417F725D320A3 /* UserSettingManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingManagerError.swift; sourceTree = "<group>"; };
+		0A0CA3763675D6F65031F9BE /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 		0B040D4059193A8E07F5D554 /* ManagesUserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagesUserSettings.swift; sourceTree = "<group>"; };
 		0BA4B1110FD2367FF86E3410 /* AccountOverviewImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewImageCell.swift; sourceTree = "<group>"; };
 		108AB9052D41DAECCD6D660E /* ProvidesAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidesAccounts.swift; sourceTree = "<group>"; };
@@ -103,6 +111,8 @@
 		5130D4AE9A1168FDF5F37A67 /* TransferScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenInteractor.swift; sourceTree = "<group>"; };
 		547984CC8761D602DD3002DB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5716BB70094C19D0B1ACA644 /* SettingsScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenContract.swift; sourceTree = "<group>"; };
+		588DD8942A4020465E650EA6 /* DataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
+		6520677EA126B8FBD012B4D6 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		65367829F91FE4FAB4648A93 /* UIImage+SfSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+SfSymbol.swift"; sourceTree = "<group>"; };
 		66FBC288434D218C2668E52D /* PaymentsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenView.swift; sourceTree = "<group>"; };
 		722B5C4E10B35B94FF1CAD70 /* AccountsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenPresenter.swift; sourceTree = "<group>"; };
@@ -110,6 +120,7 @@
 		78F81110FCA258BD64513A3D /* AccountsScreenTableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenTableManager.swift; sourceTree = "<group>"; };
 		7A75B326C5065412DF45F3C4 /* SettingsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenViewController.swift; sourceTree = "<group>"; };
 		818E180760F09260AAD1553F /* TransferScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenPresenter.swift; sourceTree = "<group>"; };
+		81F5DF33EB32C6D6A801E369 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		839A4C0F15692927DF3E1D54 /* SettingsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenRouter.swift; sourceTree = "<group>"; };
 		870FD140B02C08B2EB8AE09D /* AccountOverviewCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewCellFactory.swift; sourceTree = "<group>"; };
 		8B0A090123ABF38C447F4AA4 /* AccountDisplayStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDisplayStyle.swift; sourceTree = "<group>"; };
@@ -120,19 +131,22 @@
 		AB72D4FA06582041BFFEF62D /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
 		B153799168FF3C4F5F2E8276 /* FirebaseCollectionKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionKeys.swift; sourceTree = "<group>"; };
 		B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		B4FDD79A2A9BFB5600B23FD4 /* AccountsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRequest.swift; sourceTree = "<group>"; };
 		B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		BC33D056B6D641A70321DB20 /* AccountOverviewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewCellProtocol.swift; sourceTree = "<group>"; };
 		C3FC342E37276002153F9CC8 /* TransferScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenContract.swift; sourceTree = "<group>"; };
 		C48CA06C96CD02B77DB5AAC9 /* ServicesScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenRouter.swift; sourceTree = "<group>"; };
 		CB32801D13EF28D459296F46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CC62F89810A0622AEADDA103 /* AccountsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenView.swift; sourceTree = "<group>"; };
+		CD2BB38C5F8C072AC4AAFCDA /* SessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProtocol.swift; sourceTree = "<group>"; };
 		D1551D8F5AFF685C82EF0F5A /* PaymentsScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenAssembly.swift; sourceTree = "<group>"; };
 		D719B98BF697191FF2E7A53B /* TransferScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenView.swift; sourceTree = "<group>"; };
+		E0230A7C53250C97A2000939 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		E25E534976CC9FD5B285D308 /* AccountsScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenContract.swift; sourceTree = "<group>"; };
 		E4F82C7E60425D32D7F21DBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E994250F1D53ABA25459E181 /* AccountOverviewTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewTextCell.swift; sourceTree = "<group>"; };
 		F1EE1DCF7928EE143EF2CA13 /* AccountsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenViewController.swift; sourceTree = "<group>"; };
-		F2DBD12A69C9059B0A92A05E /* BankingApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BankingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2DBD12A69C9059B0A92A05E /* BankingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7120B30142B7CE6D0F1ACE3 /* PaymentsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenInteractor.swift; sourceTree = "<group>"; };
 		F794C6A6CE57F5B9DDBCEB6C /* XCAssets+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		F96D8D8BF3970E6CD6DB3B05 /* ServicesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +181,28 @@
 				F96D8D8BF3970E6CD6DB3B05 /* ServicesScreenViewController.swift */,
 			);
 			path = ServicesScreen;
+			sourceTree = "<group>";
+		};
+		0297D7D1B1FB6B15322F3004 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				588DD8942A4020465E650EA6 /* DataMapper.swift */,
+				B4FDD79A2A9BFB5600B23FD4 /* AccountsRequest.swift */,
+				81F5DF33EB32C6D6A801E369 /* HTTPMethod.swift */,
+				6520677EA126B8FBD012B4D6 /* Session.swift */,
+				1E6B9556E77704CA46ED287B /* Protocols */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		1E6B9556E77704CA46ED287B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0A0CA3763675D6F65031F9BE /* Mapper.swift */,
+				E0230A7C53250C97A2000939 /* Request.swift */,
+				CD2BB38C5F8C072AC4AAFCDA /* SessionProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		29584771D1C71EB79EDBC229 /* TransferScreen */ = {
@@ -343,6 +379,7 @@
 		DDDFB450BFBECA2D1C4B8AAD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0297D7D1B1FB6B15322F3004 /* Session */,
 				9F9669C557DE73C8AF50064D /* AccountsProvider */,
 				BC6D02584F8B0EF5CD254F73 /* UserDefaultsStorage */,
 			);
@@ -367,34 +404,6 @@
 				E994250F1D53ABA25459E181 /* AccountOverviewTextCell.swift */,
 			);
 			path = AccountOverviewCell;
-			sourceTree = "<group>";
-		};
-		"TEMP_56BAAB04-2575-4AA6-B697-FE5DD3A3B1F2" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_5AC7305A-55EB-4074-91BD-924EEFB83BF4" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_81511AB6-5CAC-4B03-9812-766947F10650" /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Packages;
-			sourceTree = "<group>";
-		};
-		"TEMP_BD7E32A8-95AB-46EB-ABDC-96E919F1D94D" /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,8 +525,11 @@
 				E78A9A2927289BC575D92BDB /* AccountsScreenViewController.swift in Sources */,
 				33E2F3D09DE5394376798C2F /* AppDelegate.swift in Sources */,
 				3580609BEF4E7B10247ECB7D /* AssembledModule.swift in Sources */,
+				21B319DBE41367CC2B95A303 /* DataMapper.swift in Sources */,
 				8A913F4111B1C4897D7D83DB /* FirebaseCollectionKeys.swift in Sources */,
+				197F93F6E638924C82C2D3EC /* HTTPMethod.swift in Sources */,
 				E4579FC3516BC30386862969 /* ManagesUserSettings.swift in Sources */,
+				A53D9CAAE707E825956DD73D /* Mapper.swift in Sources */,
 				F643C891F4BBA56D5C3B4E28 /* PaymentsScreenAssembly.swift in Sources */,
 				86C62C752820F6EFB33934C8 /* PaymentsScreenContract.swift in Sources */,
 				5A4C2DAFBB0145B1E1FB0455 /* PaymentsScreenInteractor.swift in Sources */,
@@ -526,14 +538,18 @@
 				E042F716E513528C3EFD7FE7 /* PaymentsScreenView.swift in Sources */,
 				1134C238897F008DAF8381ED /* PaymentsScreenViewController.swift in Sources */,
 				2449D333861F701AAA253F12 /* ProvidesAccounts.swift in Sources */,
+				B0552C7F791822C80FD30A16 /* Request.swift in Sources */,
 				997F8C812A9F3EFABAD94DB0 /* SFSymbol.swift in Sources */,
 				9D9BE43890557C08719B4A7F /* ServicesScreenAssembly.swift in Sources */,
 				505240510EDD907305A44797 /* ServicesScreenContract.swift in Sources */,
+				B4FDD79B2A9BFB5600B23FD4 /* AccountsRequest.swift in Sources */,
 				DD683AA83823CF68A1ED0FC0 /* ServicesScreenInteractor.swift in Sources */,
 				EC9F917F92A80CD80EA42D7B /* ServicesScreenPresenter.swift in Sources */,
 				E8BC0255A4013A73906B038D /* ServicesScreenRouter.swift in Sources */,
 				5DFC33DF32A7B0ADE44EDF74 /* ServicesScreenView.swift in Sources */,
 				BD2872B19494900FD19ABCDA /* ServicesScreenViewController.swift in Sources */,
+				6195A6E61F5F3ADDA0CED12F /* Session.swift in Sources */,
+				48587F9B8DBE0CE688FE2321 /* SessionProtocol.swift in Sources */,
 				32FDF3B3CB8B233BE679EF16 /* SettingsScreenAssembly.swift in Sources */,
 				0C0502E2CA4BFEFE79574F84 /* SettingsScreenContract.swift in Sources */,
 				62D6936920D2FC31FA5E5AB8 /* SettingsScreenInteractor.swift in Sources */,
@@ -591,6 +607,7 @@
 				DEVELOPMENT_TEAM = BankingApp;
 				DISPLAY_NAME = BankingApp;
 				INFOPLIST_FILE = BankingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -733,6 +750,7 @@
 				DEVELOPMENT_TEAM = BankingApp;
 				DISPLAY_NAME = BankingApp;
 				INFOPLIST_FILE = BankingApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
