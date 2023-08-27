@@ -45,7 +45,6 @@
 		A9A2D1DB9E82236BC5959D2A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F794C6A6CE57F5B9DDBCEB6C /* XCAssets+Generated.swift */; };
 		AB488A7E6858EB222FE0E113 /* AccountOverviewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4B1110FD2367FF86E3410 /* AccountOverviewImageCell.swift */; };
 		B4FDD7932A9AEACE00B23FD4 /* UserAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FDD7922A9AEACE00B23FD4 /* UserAccounts.swift */; };
-		B4FDD7972A9B042100B23FD4 /* SeedingFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FDD7962A9B042100B23FD4 /* SeedingFirestore.swift */; };
 		B738C6C7EDCBA20EEFB0AF35 /* AccountsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72929E57AD96BBF353839695 /* AccountsScreenAssembly.swift */; };
 		BCA0DE30566EE01DBBF4DE05 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 66C22F3E9757749DB326E22E /* FirebaseAuth */; };
 		BD2872B19494900FD19ABCDA /* ServicesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D8D8BF3970E6CD6DB3B05 /* ServicesScreenViewController.swift */; };
@@ -119,7 +118,6 @@
 		AB72D4FA06582041BFFEF62D /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
 		B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B4FDD7922A9AEACE00B23FD4 /* UserAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccounts.swift; sourceTree = "<group>"; };
-		B4FDD7962A9B042100B23FD4 /* SeedingFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedingFirestore.swift; sourceTree = "<group>"; };
 		B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		BC33D056B6D641A70321DB20 /* AccountOverviewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewCellProtocol.swift; sourceTree = "<group>"; };
 		C3FC342E37276002153F9CC8 /* TransferScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenContract.swift; sourceTree = "<group>"; };
@@ -273,7 +271,6 @@
 			children = (
 				37D53AC6840CCF491F31B303 /* AccountsProvider.swift */,
 				108AB9052D41DAECCD6D660E /* ProvidesAccounts.swift */,
-				B4FDD7962A9B042100B23FD4 /* SeedingFirestore.swift */,
 			);
 			path = AccountsProvider;
 			sourceTree = "<group>";
@@ -533,7 +530,6 @@
 				E1CB0743F65A3FD050D1DC75 /* TransferScreenViewController.swift in Sources */,
 				600D41176DEF970B2541DC17 /* UIImage+SfSymbol.swift in Sources */,
 				C29611BE00B06AB4358233A8 /* UserDefaults+Extensions.swift in Sources */,
-				B4FDD7972A9B042100B23FD4 /* SeedingFirestore.swift in Sources */,
 				D6C9E142F815FEFD2C529DF9 /* UserDefaultsManager.swift in Sources */,
 				C8892AA8C89B1DAF6F2604BF /* UserSettingManagerError.swift in Sources */,
 				A9A2D1DB9E82236BC5959D2A /* XCAssets+Generated.swift in Sources */,
