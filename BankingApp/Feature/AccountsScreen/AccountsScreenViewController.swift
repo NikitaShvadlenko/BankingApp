@@ -24,6 +24,11 @@ final class AccountsScreenViewController: UIViewController {
 
 // MARK: - AccountsScreenViewInput
 extension AccountsScreenViewController: AccountsScreenViewInput {
+
+    func displayFailedToFetchUsersAlert() {
+        displayFailedToRetrieveDataAlert()
+    }
+
     func setAccountDisplayStyle(_ selectedStyle: AccountDisplayStyle) {
         accountsScreenView.tableView.reloadData()
         setAccountDisplayIcon(newStyle: selectedStyle)
@@ -88,5 +93,29 @@ extension AccountsScreenViewController {
     @objc
     private func didTapLogoutBarButton() {
 
+    }
+
+    private func displayFailedToRetrieveDataAlert() {
+        let alertController = UIAlertController(
+            title: L10n.AccountsScreen.somethigWentWrong,
+            message: L10n.AccountsScreen.failedToRetrieveData,
+            preferredStyle: .alert
+        )
+
+        let retryAction = UIAlertAction(
+            title: L10n.AccountsScreen.retry,
+            style: .default) { [weak self] _ in
+                guard let self else { return }
+                self.presenter?.viewDidRequestAccountsInformation(self)
+            }
+
+        let cancelAction = UIAlertAction(
+            title: L10n.AccountsScreen.cancel,
+            style: .cancel
+        )
+
+        alertController.addAction(retryAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
     }
 }

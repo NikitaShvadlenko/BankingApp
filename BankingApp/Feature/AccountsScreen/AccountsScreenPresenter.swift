@@ -10,6 +10,10 @@ final class AccountsScreenPresenter {
 
 // MARK: - AccountsScreenViewOutput
 extension AccountsScreenPresenter: AccountsScreenViewOutput {
+    func viewDidRequestAccountsInformation(_ view: AccountsScreenViewInput) {
+        interactor?.fetchAccounts(for: "Jake Smith")
+    }
+
     func viewDidRequestAccountDisplayStyle(_ view: AccountsScreenViewInput) {
         interactor?.retrieveAccountDisplayStyle()
     }
@@ -24,13 +28,26 @@ extension AccountsScreenPresenter: AccountsScreenViewOutput {
 
     func viewDidLoad(_ view: AccountsScreenViewInput) {
         view.configureViews()
-     //   let data = AccountsProvider.provideAccounts()
-       // accountsManager?.setAccounts(data)
+        interactor?.fetchAccounts(for: "Jake Smith")
     }
 }
 
 // MARK: - AccountsScreenInteractorOutput
 extension AccountsScreenPresenter: AccountsScreenInteractorOutput {
+
+    func interactorDidRetrieveAccountDetails(
+        _ interactor: AccountsScreenInteractorInput,
+        result: Result<User, Error>
+    ) {
+        switch result {
+        case .success(let user):
+            accountsManager?.setAccounts(user.accounts)
+        case .failure(let error):
+            view?.displayFailedToFetchUsersAlert()
+            print(error)
+        }
+    }
+
     func interactorDidRetrieveAccountDisplayStyle(
         _ interactor: AccountsScreenInteractorInput,
         result: Result<AccountDisplayStyle, UserSettingManagerError>

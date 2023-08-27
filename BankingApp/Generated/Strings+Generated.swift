@@ -19,6 +19,14 @@ internal enum L10n {
     return L10n.tr("Localizable", "AmountInDolarsAvailible", String(describing: p1), fallback: "$%@ Availible")
   }
   internal enum AccountsScreen {
+    /// Cancel
+    internal static let cancel = L10n.tr("Localizable", "AccountsScreen.cancel", fallback: "Cancel")
+    /// Failed to retrieve accounts data.
+    internal static let failedToRetrieveData = L10n.tr("Localizable", "AccountsScreen.failedToRetrieveData", fallback: "Failed to retrieve accounts data.")
+    /// Retry
+    internal static let retry = L10n.tr("Localizable", "AccountsScreen.retry", fallback: "Retry")
+    /// Something went wrong.
+    internal static let somethigWentWrong = L10n.tr("Localizable", "AccountsScreen.somethigWentWrong", fallback: "Something went wrong.")
     /// Accounts
     internal static let title = L10n.tr("Localizable", "AccountsScreen.title", fallback: "Accounts")
   }

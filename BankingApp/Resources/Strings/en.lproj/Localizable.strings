@@ -7,6 +7,11 @@
 "NavigationBar.loguot" = "Log out";
 
 "AccountsScreen.title" = "Accounts";
+"AccountsScreen.somethigWentWrong" = "Something went wrong.";
+"AccountsScreen.failedToRetrieveData" = "Failed to retrieve accounts data.";
+"AccountsScreen.retry" = "Retry";
+"AccountsScreen.cancel" = "Cancel";
 
 "AmountInDolars" = "$%@";
 "AmountInDolarsAvailible" = "$%@ Availible";
+

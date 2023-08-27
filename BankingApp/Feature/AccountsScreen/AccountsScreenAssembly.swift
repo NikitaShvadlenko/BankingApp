@@ -7,6 +7,7 @@ enum AccountsScreenAssembly {
         let interactor = AccountsScreenInteractor()
         let router = AccountsScreenRouter()
         let storage = UserDefaultsManager()
+        let accountsProvider = AccountsProvider()
         let tableManager = AccountsScreenTableManager()
 
         viewController.presenter = presenter
@@ -17,6 +18,7 @@ enum AccountsScreenAssembly {
         presenter.interactor = interactor
         presenter.router = router
 
+        interactor.accountProvider = accountsProvider
         interactor.presenter = presenter
         interactor.userSettingsManager = storage
 
