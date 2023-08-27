@@ -17,7 +17,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = tabBarController
         FirebaseApp.configure()
         _ = Firestore.firestore()
-        SeedingFirestore.seed()
         self.window = window
         window.makeKeyAndVisible()
         return true

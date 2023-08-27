@@ -10,7 +10,6 @@
 		0678B254EBD7D96BC8672D9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C191D9F183B7CDDE19B8A96 /* Localizable.strings */; };
 		0C0502E2CA4BFEFE79574F84 /* SettingsScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5716BB70094C19D0B1ACA644 /* SettingsScreenContract.swift */; };
 		1134C238897F008DAF8381ED /* PaymentsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18034036EE0AD4B432F631D8 /* PaymentsScreenViewController.swift */; };
-		150443ACA81236B4365D9D08 /* AccountData.json in Resources */ = {isa = PBXBuildFile; fileRef = 0EA809EC84CA2EE00599492F /* AccountData.json */; };
 		2449D333861F701AAA253F12 /* ProvidesAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108AB9052D41DAECCD6D660E /* ProvidesAccounts.swift */; };
 		2554FC9FC45DB3C5D9791143 /* AccountsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450AAADF3C16C0AA0AB1929D /* AccountsScreenInteractor.swift */; };
 		2E58F306F901F9AE7DA4B70D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B26FAE525F40468CAE7C2C4 /* Assets.xcassets */; };
@@ -26,7 +25,6 @@
 		4E15C016CBFE79DC891D75D5 /* PaymentsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0590BF6C649D9E099C3E33AE /* PaymentsScreenPresenter.swift */; };
 		4F249CD535E792B1CA61F464 /* TransferScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130D4AE9A1168FDF5F37A67 /* TransferScreenInteractor.swift */; };
 		505240510EDD907305A44797 /* ServicesScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D5012687A2D2C672C5D166 /* ServicesScreenContract.swift */; };
-		596484765CC25B4BB08ADC71 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C548CB2E4788292450D691F3 /* placeholder.png */; };
 		5A4C2DAFBB0145B1E1FB0455 /* PaymentsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7120B30142B7CE6D0F1ACE3 /* PaymentsScreenInteractor.swift */; };
 		5DFC33DF32A7B0ADE44EDF74 /* ServicesScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2BDF7292C861A62B0E3E2B /* ServicesScreenView.swift */; };
 		5E885AA7A7E36AD402520AA1 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27C306F0B5C89B6C8A249D /* Strings+Generated.swift */; };
@@ -84,7 +82,6 @@
 		0883A36385D417F725D320A3 /* UserSettingManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingManagerError.swift; sourceTree = "<group>"; };
 		0B040D4059193A8E07F5D554 /* ManagesUserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagesUserSettings.swift; sourceTree = "<group>"; };
 		0BA4B1110FD2367FF86E3410 /* AccountOverviewImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewImageCell.swift; sourceTree = "<group>"; };
-		0EA809EC84CA2EE00599492F /* AccountData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AccountData.json; sourceTree = "<group>"; };
 		108AB9052D41DAECCD6D660E /* ProvidesAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidesAccounts.swift; sourceTree = "<group>"; };
 		15F3EBBE5C9768B61445D95B /* SettingsScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenAssembly.swift; sourceTree = "<group>"; };
 		161F44FA0DA28412EF979F1E /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
@@ -127,7 +124,6 @@
 		BC33D056B6D641A70321DB20 /* AccountOverviewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewCellProtocol.swift; sourceTree = "<group>"; };
 		C3FC342E37276002153F9CC8 /* TransferScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenContract.swift; sourceTree = "<group>"; };
 		C48CA06C96CD02B77DB5AAC9 /* ServicesScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenRouter.swift; sourceTree = "<group>"; };
-		C548CB2E4788292450D691F3 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = "/Users/nikitashvad/Desktop/Documents/Xcode/Portfolio/Banking App/BankingApp/DummyData/placeholder.png"; sourceTree = "<absolute>"; };
 		CB32801D13EF28D459296F46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CC62F89810A0622AEADDA103 /* AccountsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenView.swift; sourceTree = "<group>"; };
 		D1551D8F5AFF685C82EF0F5A /* PaymentsScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenAssembly.swift; sourceTree = "<group>"; };
@@ -294,8 +290,6 @@
 		B4FDD7912A9AEA9200B23FD4 /* DummyData */ = {
 			isa = PBXGroup;
 			children = (
-				0EA809EC84CA2EE00599492F /* AccountData.json */,
-				C548CB2E4788292450D691F3 /* placeholder.png */,
 			);
 			path = DummyData;
 			sourceTree = "<group>";
@@ -450,12 +444,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				150443ACA81236B4365D9D08 /* AccountData.json in Resources */,
 				2E58F306F901F9AE7DA4B70D /* Assets.xcassets in Resources */,
 				BFC3F4BE96760834FEEC5552 /* GoogleService-Info.plist in Resources */,
 				A63B0B4DE4575B9B3E80CC91 /* LaunchScreen.storyboard in Resources */,
 				0678B254EBD7D96BC8672D9B /* Localizable.strings in Resources */,
-				596484765CC25B4BB08ADC71 /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

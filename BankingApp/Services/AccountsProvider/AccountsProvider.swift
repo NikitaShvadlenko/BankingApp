@@ -23,8 +23,4 @@ struct AccountsProvider: ProvidesAccounts {
             fatalError("Failed To decode")
         }
     }
-
-    static func loadDummyDataToFirestore() {
-        
-    }
 }
