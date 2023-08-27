@@ -7,20 +7,37 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 struct AccountsProvider: ProvidesAccounts {
-    static func provideAccounts() -> [Account] {
-        guard let jsonURL = Bundle.main.url(forResource: "AccountData", withExtension: "json") else {
-            fatalError("Could not find JSON file")
-        }
-        do {
-            let jsonData = try Data(contentsOf: jsonURL)
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            let accounts = try decoder.decode(UserAccounts.self, from: jsonData)
-            return accounts.accounts
-        } catch {
-            fatalError("Failed To decode")
+    enum AccountsProviderError: Error {
+        case documentNotFound
+    }
+    static func userDetails(
+        for name: String,
+        completion: @escaping (Result<UserAccounts, Error>) -> Void
+    ) {
+        let accountsReference = Firestore.firestore().collection(FirebaseCollectionKeys.users.rawValue).document(name)
+        accountsReference.getDocument { document, error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                if let document = document, document.exists {
+                    do {
+                        let jsonData = try JSONSerialization.data(
+                            withJSONObject: document.data() as Any,
+                            options: []
+                        )
+                        let decoder = JSONDecoder()
+                        let user = try decoder.decode(UserAccounts.self, from: jsonData)
+                        completion(.success(user))
+                    } catch {
+                        completion(.failure(error))
+                    }
+                } else {
+                    completion(.failure(AccountsProviderError.documentNotFound))
+                }
+            }
         }
     }
 }

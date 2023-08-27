@@ -9,5 +9,8 @@
 import Foundation
 
 protocol ProvidesAccounts {
-   static func provideAccounts() -> [Account]
+   static func userDetails(
+    for name: String,
+    completion: @escaping (Result<UserAccounts, Error>) -> Void
+   )
 }
