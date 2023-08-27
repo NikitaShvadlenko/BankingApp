@@ -15,7 +15,7 @@ struct AccountsProvider: ProvidesAccounts {
     }
      func fetchUserDetails(
         for name: String,
-        completion: @escaping (Result<UserAccounts, Error>) -> Void
+        completion: @escaping (Result<User, Error>) -> Void
     ) {
         let accountsReference = Firestore.firestore().collection(FirebaseCollectionKeys.users.rawValue).document(name)
         accountsReference.getDocument { document, error in
@@ -29,7 +29,7 @@ struct AccountsProvider: ProvidesAccounts {
                             options: []
                         )
                         let decoder = JSONDecoder()
-                        let user = try decoder.decode(UserAccounts.self, from: jsonData)
+                        let user = try decoder.decode(User.self, from: jsonData)
                         completion(.success(user))
                     } catch {
                         completion(.failure(error))
