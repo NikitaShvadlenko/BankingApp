@@ -6,6 +6,8 @@ final class AccountsScreenPresenter {
     var interactor: AccountsScreenInteractorInput?
     var router: AccountsScreenRouterInput?
     var accountsManager: ManagesAccountsScreenTable?
+
+    private var loadImageCompletions: [URL: (Data) -> Void] = [:]
 }
 
 // MARK: - AccountsScreenViewOutput
@@ -34,6 +36,15 @@ extension AccountsScreenPresenter: AccountsScreenViewOutput {
 
 // MARK: - AccountsScreenInteractorOutput
 extension AccountsScreenPresenter: AccountsScreenInteractorOutput {
+    func interactor(
+        _ interactor: AccountsScreenInteractorInput,
+        didFetchImageData data: Data,
+        forURL url: URL
+    ) {
+        let completion = loadImageCompletions[url]
+        loadImageCompletions.removeValue(forKey: url)
+        completion?(data)
+    }
 
     func interactorDidRetrieveAccountDetails(
         _ interactor: AccountsScreenInteractorInput,
@@ -42,7 +53,7 @@ extension AccountsScreenPresenter: AccountsScreenInteractorOutput {
         switch result {
         case .success(let accounts):
             accountsManager?.setAccounts(accounts)
-            print(accounts)
+            view?.setAccounts()
         case .failure(let error):
             view?.displayFailedToFetchUsersAlert()
             print(error)
@@ -68,7 +79,25 @@ extension AccountsScreenPresenter: AccountsScreenInteractorOutput {
         }
     }
 }
+// MARK: - AccountsScreenTableManagerDelegate
+extension AccountsScreenPresenter: AccountsScreenTableManagerDelegate {
+    func accountsScreenTableManager(
+        _ accountsScreenTableManager: ManagesAccountsScreenTable,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        print("Route to account")
+    }
 
+    func accountsScreenTableManager(
+        _ accountsScreenTableManager: ManagesAccountsScreenTable,
+        needsImageFor indexPath: IndexPath,
+        completion: @escaping (Data) -> Void) {
+            guard let accountsManager else { return }
+            let url = accountsScreenTableManager.accounts[indexPath.row].image
+            loadImageCompletions[url] = completion
+            interactor?.fetchImage(url: url)
+        }
+}
 // MARK: - AccountsScreenRouterOutput
 extension AccountsScreenPresenter: AccountsScreenRouterOutput {
 }

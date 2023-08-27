@@ -15,7 +15,25 @@ protocol ManagesAccountsScreenTable: UITableViewDataSource, UITableViewDelegate 
     func setAccounts(_ accounts: [Account])
 }
 
+protocol AccountsScreenTableManagerDelegate: AnyObject {
+    func accountsScreenTableManager(
+        _ accountsScreenTableManager: ManagesAccountsScreenTable,
+        didSelectItemAt indexPath: IndexPath
+    )
+
+    func accountsScreenTableManager(
+        _ accountsScreenTableManager: ManagesAccountsScreenTable,
+        needsImageFor indexPath: IndexPath,
+        completion: @escaping (_ imageData: Data) -> Void
+    )
+}
+
 final class AccountsScreenTableManager: NSObject {
+    private var imageWaitingIndexPaths = Set<IndexPath>()
+    var accounts: [Account] = []
+    weak var tableView: UITableView?
+    weak var delegate: AccountsScreenTableManagerDelegate?
+
     var style: AccountDisplayStyle = .list {
         didSet {
             switch style {
@@ -26,9 +44,6 @@ final class AccountsScreenTableManager: NSObject {
             }
         }
     }
-
-    var accounts: [Account] = []
-    weak var tableView: UITableView?
 }
 
 extension AccountsScreenTableManager: ManagesAccountsScreenTable {
@@ -67,15 +82,30 @@ extension AccountsScreenTableManager: UITableViewDataSource {
         }
 
         let account = accounts[indexPath.row]
-
-//        accountCell.configure(
-//            style: style,
-//            imageData: ,
-//            accountName: account.name,
-//            amount: account.amount,
-//            availible: account.availible
-//        )
+        accountCell.configure(
+            accountName: account.name,
+            amount: account.amount,
+            availible: account.availible
+        )
         return accountCell
+    }
+
+    func tableView(
+        _ tableView: UITableView,
+        willDisplay cell: UITableViewCell,
+        forRowAt indexPath: IndexPath
+    ) {
+        imageWaitingIndexPaths.insert(indexPath)
+        let cell = cell as? AccountOverviewCellProtocol
+        delegate?.accountsScreenTableManager(
+            self,
+            needsImageFor: indexPath,
+            completion: { [weak self, weak cell] (imageData: Data) in
+                guard self?.imageWaitingIndexPaths.contains(indexPath) == true else { return }
+                self?.imageWaitingIndexPaths.remove(indexPath)
+                cell?.configureImage(imageData)
+            }
+        )
     }
 }
 

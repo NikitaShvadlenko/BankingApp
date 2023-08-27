@@ -24,6 +24,9 @@ final class AccountsScreenViewController: UIViewController {
 
 // MARK: - AccountsScreenViewInput
 extension AccountsScreenViewController: AccountsScreenViewInput {
+    func setAccounts() {
+        accountsScreenView.tableView.reloadData()
+    }
 
     func displayFailedToFetchUsersAlert() {
         displayFailedToRetrieveDataAlert()
