@@ -8,6 +8,13 @@
 
 import Foundation
 
-enum FirebaseCollectionKeys: String {
-    case users
+enum FirebaseCollectionKeys {
+    case transactions(name: String)
+
+    var key: String {
+        switch self {
+        case .transactions(let name):
+            return "/users/\(name)/accounts"
+        }
+    }
 }

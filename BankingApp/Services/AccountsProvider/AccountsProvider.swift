@@ -19,8 +19,12 @@ struct AccountsProvider: ProvidesAccounts {
         completion: @escaping (Result<[Account], Error>) -> Void
     ) {
         var accounts = [Account]()
-        let accountsReference = Firestore.firestore().collection("/users/Jake Smith/accounts")
-        accountsReference.getDocuments { snapshot, _ in
+        let accountsReference = Firestore.firestore().collection(FirebaseCollectionKeys.transactions(name: name).key)
+        accountsReference.getDocuments { snapshot, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
             guard let snapshot = snapshot else {
                 completion(.failure(AccountsProviderError.snapshotNotCreated))
                 return
