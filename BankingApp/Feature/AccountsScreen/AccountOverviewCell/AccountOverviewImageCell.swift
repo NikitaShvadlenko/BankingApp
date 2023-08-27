@@ -22,13 +22,13 @@ final class AccountOverviewImageCell: UITableViewCell, AccountOverviewCellProtoc
         return containerView
     }()
 
-    private lazy var accountImageView: UIImageView = {
+     lazy var accountImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .redraw
         return imageView
     }()
 
-    private lazy var accountNameLabel: UILabel = {
+     lazy var accountNameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.textAlignment = .center
@@ -36,7 +36,7 @@ final class AccountOverviewImageCell: UITableViewCell, AccountOverviewCellProtoc
         return label
     }()
 
-    private lazy var amountLabel: UILabel = {
+     lazy var amountLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 22)
         label.textAlignment = .center
@@ -44,7 +44,7 @@ final class AccountOverviewImageCell: UITableViewCell, AccountOverviewCellProtoc
         return label
     }()
 
-    private lazy var availibleLabel: UILabel = {
+     lazy var availibleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 12)
@@ -60,25 +60,6 @@ final class AccountOverviewImageCell: UITableViewCell, AccountOverviewCellProtoc
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("not implemented")
-    }
-}
-
-// MARK: - Public Methods
-extension AccountOverviewImageCell {
-    func configure(
-        style: AccountDisplayStyle,
-        imageData: Data,
-        accountName: String,
-        amount: Double,
-        availible: Double
-    ) {
-        let image = UIImage(data: imageData)
-        let formattedAmount = String(format: "%.2f", amount)
-        let formattedAvalible = String(format: "%.2f", availible)
-        accountImageView.image = image
-        accountNameLabel.text = accountName
-        amountLabel.text = L10n.amountInDolars(formattedAmount)
-        availibleLabel.text = L10n.amountInDolarsAvailible(formattedAvalible)
     }
 }
 
