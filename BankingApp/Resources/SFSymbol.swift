@@ -8,4 +8,5 @@ public enum SFSymbol: String, SFSymbolRepresentable {
     case transfer = "dollarsign.arrow.circlepath"
     case list = "list.bullet"
     case rectangleOnRectangle = "rectangle.on.rectangle"
+    case forward = "chevron.forward"
 }

@@ -10,6 +10,15 @@ import UIKit
 
 final class AccountOverviewTextCell: UITableViewCell, AccountOverviewCellProtocol {
 
+    private lazy var accessoryImageView: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(sfSymbol: SFSymbol.forward)
+        imageView.image = image
+        imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = Asset.Colors.secondaryLabel.color
+        return imageView
+    }()
+
     private lazy var accountImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
@@ -83,7 +92,8 @@ extension AccountOverviewTextCell {
             accountImageView,
             accountNameLabel,
             amountLabel,
-            availibleLabel
+            availibleLabel,
+            accessoryImageView
         ].forEach(contentView.addSubview)
 
         accountImageView.snp.makeConstraints { make in
@@ -94,11 +104,12 @@ extension AccountOverviewTextCell {
         accountNameLabel.snp.makeConstraints { make in
             make.leading.equalTo(accountImageView.snp.trailing).offset(14)
             make.top.equalTo(accountImageView.snp.top)
-            make.trailing.equalToSuperview()
+            make.trailing.equalTo(accessoryImageView.snp.leading)
         }
 
         amountLabel.snp.makeConstraints { make in
             make.centerY.equalTo(accountImageView.snp.centerY)
+            make.trailing.equalTo(accessoryImageView.snp.leading)
             make.leading.equalTo(accountImageView.snp.trailing).offset(11)
         }
 
@@ -106,6 +117,14 @@ extension AccountOverviewTextCell {
             make.leading.equalTo(accountImageView.snp.trailing).offset(14)
             make.bottom.equalTo(accountImageView.snp.bottom)
             make.top.equalTo(amountLabel.snp.bottom)
+            make.trailing.equalTo(accessoryImageView.snp.leading)
+        }
+
+        accessoryImageView.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(14)
+            make.centerY.equalToSuperview()
+            make.width.equalTo(15)
+            make.height.equalTo(15)
         }
     }
 }

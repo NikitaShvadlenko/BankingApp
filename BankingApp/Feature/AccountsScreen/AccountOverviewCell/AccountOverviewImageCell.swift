@@ -47,7 +47,7 @@ final class AccountOverviewImageCell: UITableViewCell, AccountOverviewCellProtoc
     private lazy var availibleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = Asset.Colors.secondaryLabel.color
         return label
     }()
