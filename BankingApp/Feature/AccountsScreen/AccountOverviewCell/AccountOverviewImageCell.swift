@@ -24,7 +24,7 @@ final class AccountOverviewImageCell: UITableViewCell, AccountOverviewCellProtoc
 
     private lazy var accountImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .redraw
         return imageView
     }()
 
@@ -73,10 +73,12 @@ extension AccountOverviewImageCell {
         availible: Double
     ) {
         let image = UIImage(data: imageData)
+        let formattedAmount = String(format: "%.2f", amount)
+        let formattedAvalible = String(format: "%.2f", availible)
         accountImageView.image = image
         accountNameLabel.text = accountName
-        amountLabel.text = L10n.amountInDolars(amount)
-        availibleLabel.text = L10n.amountInDolarsAvailible(availible)
+        amountLabel.text = L10n.amountInDolars(formattedAmount)
+        availibleLabel.text = L10n.amountInDolarsAvailible(formattedAvalible)
     }
 }
 

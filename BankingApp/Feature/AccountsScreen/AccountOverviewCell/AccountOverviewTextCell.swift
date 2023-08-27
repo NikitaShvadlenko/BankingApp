@@ -12,6 +12,8 @@ final class AccountOverviewTextCell: UITableViewCell, AccountOverviewCellProtoco
 
     private lazy var accountImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
 
@@ -44,6 +46,11 @@ final class AccountOverviewTextCell: UITableViewCell, AccountOverviewCellProtoco
         setupView()
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        accountImageView.layer.cornerRadius = accountImageView.bounds.width / 2
+    }
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("not implemented")
@@ -60,10 +67,12 @@ extension AccountOverviewTextCell {
         availible: Double
     ) {
         let image = UIImage(data: imageData)
+        let formattedAmount = String(format: "%.2f", amount)
+        let formattedAvalible = String(format: "%.2f", availible)
         accountImageView.image = image
         accountNameLabel.text = accountName
-        amountLabel.text = L10n.amountInDolars(amount)
-        availibleLabel.text = L10n.amountInDolarsAvailible(availible)
+        amountLabel.text = L10n.amountInDolars(formattedAmount)
+        availibleLabel.text = L10n.amountInDolarsAvailible(formattedAvalible)
     }
 }
 

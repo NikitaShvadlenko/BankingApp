@@ -14,7 +14,6 @@ struct AccountsProvider: ProvidesAccounts {
         else {
             return []
         }
-
         return [
             Account(amount: 11350, availible: 12200, name: "Savings", image: data),
             Account(amount: 3500, availible: 2000, name: "Daily", image: data),

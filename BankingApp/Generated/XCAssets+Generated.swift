@@ -34,7 +34,7 @@ internal enum Asset {
     internal static let logo = ImageAsset(name: "logo")
     internal static let whiteLogo = ImageAsset(name: "white logo")
   }
-  internal static let placeholder = ImageAsset(name: "placeholder")
+  internal static let newProject = ImageAsset(name: "New Project")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

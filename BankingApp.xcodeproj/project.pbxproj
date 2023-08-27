@@ -356,28 +356,28 @@
 			path = AccountOverviewCell;
 			sourceTree = "<group>";
 		};
-		"TEMP_4D8F8B40-012C-4BAD-9E7F-D84F87F9E44E" /* Sources */ = {
+		"TEMP_44EECAEF-BFA5-41C0-9DE4-C1866AD3AC3A" /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		"TEMP_B1596DF6-F5C7-433B-AEAB-6E2BE016167D" /* SharedResources */ = {
+		"TEMP_9F174037-FB80-4F8F-AB5F-DA888AF057EF" /* SharedResources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = SharedResources;
 			sourceTree = "<group>";
 		};
-		"TEMP_BBEF8202-F4AF-4854-A507-19807A704F7B" /* Packages */ = {
+		"TEMP_DE8179FB-78D9-4244-A6D3-62F8F528A8B9" /* Packages */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Packages;
 			sourceTree = "<group>";
 		};
-		"TEMP_D3230C72-9BA9-48D4-8EF5-2D880CB24E1C" /* SharedResources */ = {
+		"TEMP_F53395B8-7A6C-452E-978C-37E11CE3FAF3" /* SharedResources */ = {
 			isa = PBXGroup;
 			children = (
 			);
