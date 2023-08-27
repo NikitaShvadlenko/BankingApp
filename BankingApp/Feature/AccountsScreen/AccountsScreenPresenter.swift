@@ -24,8 +24,8 @@ extension AccountsScreenPresenter: AccountsScreenViewOutput {
 
     func viewDidLoad(_ view: AccountsScreenViewInput) {
         view.configureViews()
-        let data = AccountsProvider.provideAccounts()
-        accountsManager?.setAccounts(data)
+     //   let data = AccountsProvider.provideAccounts()
+       // accountsManager?.setAccounts(data)
     }
 }
 

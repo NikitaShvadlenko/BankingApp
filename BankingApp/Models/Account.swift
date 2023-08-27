@@ -8,9 +8,31 @@
 
 import Foundation
 
-struct Account {
+struct Account: Codable {
     let amount: Double
     let availible: Double
     let name: String
-    let image: Data
+    let image: URL
+    let transactions: [Transaction]
+}
+
+struct Transaction: Codable {
+    let sentToAccount: String
+    let amount: Double
+    let dateSent: Date
+    let dateProcessed: Date
+    let transactionType: TransactionType
+    let transactionDetails: TransactionDetails
+}
+
+struct TransactionDetails: Codable {
+    let balanceAfterTransaction: Double
+    let detail: String
+}
+
+enum TransactionType: String, Codable {
+    case transfer = "Transfer"
+    case withdrawal = "Withdrawal"
+    case credit = "Credit"
+    case visaPurchase = "Visa Purchase"
 }

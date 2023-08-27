@@ -67,13 +67,14 @@ extension AccountsScreenTableManager: UITableViewDataSource {
         }
 
         let account = accounts[indexPath.row]
-        accountCell.configure(
-            style: style,
-            imageData: account.image,
-            accountName: account.name,
-            amount: account.amount,
-            availible: account.availible
-        )
+
+//        accountCell.configure(
+//            style: style,
+//            imageData: ,
+//            accountName: account.name,
+//            amount: account.amount,
+//            availible: account.availible
+//        )
         return accountCell
     }
 }
