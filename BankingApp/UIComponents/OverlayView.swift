@@ -10,6 +10,14 @@ import UIKit
 import SnapKit
 
 final class OverlayView: UIView {
+
+    private lazy var logoView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        let image = UIImage(asset: Asset.LaunchScreen.logo)
+        imageView.image = image
+        return imageView
+    }()
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 40)
@@ -54,7 +62,8 @@ extension OverlayView {
         [
             activityIndicator,
             titleLabel,
-            subtitleLabel
+            subtitleLabel,
+            logoView
         ].forEach(addSubview(_:))
 
         activityIndicator.snp.makeConstraints { make in
@@ -69,6 +78,11 @@ extension OverlayView {
         subtitleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(activityIndicator.snp.bottom).inset(-20)
+        }
+
+        logoView.snp.makeConstraints { make in
+            make.bottom.leading.trailing.equalToSuperview()
+            make.height.equalTo(137)
         }
     }
 }

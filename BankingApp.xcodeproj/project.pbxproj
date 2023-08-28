@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -438,34 +438,6 @@
 				E994250F1D53ABA25459E181 /* AccountOverviewTextCell.swift */,
 			);
 			path = AccountOverviewCell;
-			sourceTree = "<group>";
-		};
-		"TEMP_5C53D021-FFF4-44D0-9A99-81E1A42E50A9" /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		"TEMP_5F7F89C8-BF5A-46C6-9F65-661403D31F73" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_E749132B-83C1-4236-9D42-4B8599013112" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_FF309301-60E3-4EE0-85D4-E02A2D46107A" /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
