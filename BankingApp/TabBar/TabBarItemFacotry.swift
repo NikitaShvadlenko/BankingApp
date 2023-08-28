@@ -9,7 +9,7 @@
 import UIKit
 
 struct TabBarItemFactory {
-
+    static let configuration = UIImage.SymbolConfiguration(pointSize: 14, weight: .light, scale: .large)
     static func viewController(for tabBarItemType: TabBarItemType) -> UIViewController {
         switch tabBarItemType {
         case .accounts:
@@ -36,8 +36,8 @@ extension TabBarItemFactory {
 
         accountsScreenNavigationController.tabBarItem = UITabBarItem(
             title: L10n.TabBar.accounts,
-            image: UIImage(sfSymbol: SFSymbol.home),
-            selectedImage: UIImage(sfSymbol: SFSymbol.home)
+            image: UIImage(sfSymbol: SFSymbol.home, withConfiguration: configuration),
+            selectedImage: UIImage(sfSymbol: SFSymbol.home, withConfiguration: configuration)
         )
 
         return accountsScreenNavigationController
@@ -47,8 +47,8 @@ extension TabBarItemFactory {
         let paymentsViewController = PaymentsScreenAssembly.assemble().viewController
         paymentsViewController.tabBarItem = UITabBarItem(
             title: L10n.TabBar.payments,
-            image: UIImage(sfSymbol: SFSymbol.dollarSign),
-            selectedImage: UIImage(sfSymbol: SFSymbol.dollarSign)
+            image: UIImage(sfSymbol: SFSymbol.dollarSign, withConfiguration: configuration),
+            selectedImage: UIImage(sfSymbol: SFSymbol.dollarSign, withConfiguration: configuration)
         )
         return paymentsViewController
     }
@@ -57,8 +57,8 @@ extension TabBarItemFactory {
         let transferViewController = TransferScreenAssembly.assemble().viewController
         transferViewController.tabBarItem = UITabBarItem(
             title: L10n.TabBar.transfer,
-            image: UIImage(sfSymbol: SFSymbol.transfer),
-            selectedImage: UIImage(sfSymbol: SFSymbol.transfer)
+            image: UIImage(sfSymbol: SFSymbol.transfer, withConfiguration: configuration),
+            selectedImage: UIImage(sfSymbol: SFSymbol.transfer, withConfiguration: configuration)
         )
         return transferViewController
     }
@@ -67,8 +67,8 @@ extension TabBarItemFactory {
         let servicesViewController = ServicesScreenAssembly.assemble().viewController
         servicesViewController.tabBarItem = UITabBarItem(
             title: L10n.TabBar.services,
-            image: UIImage(sfSymbol: SFSymbol.services),
-            selectedImage: UIImage(sfSymbol: SFSymbol.services)
+            image: UIImage(sfSymbol: SFSymbol.services, withConfiguration: configuration),
+            selectedImage: UIImage(sfSymbol: SFSymbol.services, withConfiguration: configuration)
         )
         return servicesViewController
     }
@@ -77,8 +77,8 @@ extension TabBarItemFactory {
         let settingsViewController = SettingsScreenAssembly.assemble().viewController
         settingsViewController.tabBarItem = UITabBarItem(
             title: L10n.TabBar.settings,
-            image: UIImage(sfSymbol: SFSymbol.settings),
-            selectedImage: UIImage(sfSymbol: SFSymbol.settings)
+            image: UIImage(sfSymbol: SFSymbol.settings, withConfiguration: configuration),
+            selectedImage: UIImage(sfSymbol: SFSymbol.settings, withConfiguration: configuration)
         )
         return settingsViewController
     }

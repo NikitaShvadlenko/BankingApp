@@ -26,7 +26,6 @@ extension AccountDetailScreenViewController: AccountDetailScreenViewInput {
         title = newTitle
     }
 
-
     func setAccountView(with model: AccountViewModel) {
         accountDetailScreenView.accountDetailView.configureView(
             accountNumber: model.accountNumber,
@@ -38,6 +37,7 @@ extension AccountDetailScreenViewController: AccountDetailScreenViewInput {
 
     func configureViews() {
         setTitleAppearance()
+        setRightButtonItems()
     }
 }
 
@@ -56,5 +56,35 @@ extension AccountDetailScreenViewController {
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .medium)
         ]
         navigationController?.navigationBar.standardAppearance = navigaitonBarAppearence
+    }
+
+    private func setRightButtonItems() {
+        let menuImage = UIImage(sfSymbol: SFSymbol.menu)
+        let searchImage = UIImage(sfSymbol: SFSymbol.search)
+
+        let menuButton = UIBarButtonItem(
+            image: menuImage,
+            style: .plain,
+            target: self,
+            action: #selector(menuButtonPressed)
+        )
+        let searchButton = UIBarButtonItem(
+            image: searchImage,
+            style: .plain,
+            target: self,
+            action: #selector(searchButtonPressed)
+        )
+
+        navigationItem.rightBarButtonItems = [menuButton, searchButton]
+    }
+
+    @objc
+    private func searchButtonPressed() {
+        print("Search button tapped")
+    }
+
+    @objc
+    private func menuButtonPressed() {
+        print("Menu button tapped")
     }
 }

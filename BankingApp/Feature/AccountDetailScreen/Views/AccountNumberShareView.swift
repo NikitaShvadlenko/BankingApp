@@ -17,6 +17,7 @@ final class AccountNumberShareView: UIView {
     weak var delegate: AccountNumberShareViewDelegate?
 
     private let containerView = UIView()
+    private let bottomBorderView = UIView()
 
     private lazy var accountNumberLabel: UILabel = {
         let label = UILabel()
@@ -59,8 +60,9 @@ extension AccountNumberShareView {
 // MARK: - Private Methods
 extension AccountNumberShareView {
     private func setupView() {
-
+        addSubview(bottomBorderView)
         addSubview(containerView)
+        bottomBorderView.backgroundColor = Asset.Colors.secondaryLabel.color.withAlphaComponent(0.4)
 
         [
             accountNumberLabel,
@@ -75,6 +77,11 @@ extension AccountNumberShareView {
         containerView.snp.makeConstraints { make in
             make.bottom.equalTo(accountNumberLabel.snp.bottom)
             make.center.equalToSuperview()
+        }
+
+        bottomBorderView.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalTo(1.0)
         }
 
         shareImageView.snp.makeConstraints { make in

@@ -3,8 +3,7 @@ import UIKit
 extension UIImage {
     public convenience init?(
         sfSymbol: SFSymbolRepresentable,
-        withConfiguration configuration: SymbolConfiguration =
-        UIImage.SymbolConfiguration(pointSize: 14, weight: .light, scale: .large)
+        withConfiguration configuration: SymbolConfiguration? = nil
     ) {
         self.init(systemName: sfSymbol.systemName, withConfiguration: configuration)
     }

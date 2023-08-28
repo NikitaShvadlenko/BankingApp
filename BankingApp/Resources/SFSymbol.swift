@@ -11,4 +11,6 @@ public enum SFSymbol: String, SFSymbolRepresentable {
     case forward = "chevron.forward"
     case share = "square.and.arrow.up"
     case back = "chevron.backward"
+    case menu = "ellipsis"
+    case search = "magnifyingglass"
 }

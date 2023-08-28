@@ -87,11 +87,18 @@ extension AccountsScreenViewController {
     }
 
     private func setAccountDisplayIcon(newStyle: AccountDisplayStyle) {
+        let configuration = UIImage.SymbolConfiguration(pointSize: 15, weight: .light, scale: .large)
         switch newStyle {
         case .list:
-            navigationItem.leftBarButtonItem?.image = UIImage(sfSymbol: SFSymbol.list)
+            navigationItem.leftBarButtonItem?.image = UIImage(
+                sfSymbol: SFSymbol.list,
+                withConfiguration: configuration
+            )
         case .image:
-            navigationItem.leftBarButtonItem?.image = UIImage(sfSymbol: SFSymbol.rectangleOnRectangle)
+            navigationItem.leftBarButtonItem?.image = UIImage(
+                sfSymbol: SFSymbol.rectangleOnRectangle,
+                withConfiguration: configuration
+            )
         }
     }
 
