@@ -13,6 +13,7 @@ final class AccountsScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backButtonTitle = ""
         presenter?.viewDidLoad(self)
         OverlayManager.shared.presentOverlayView(overlayView)
     }

@@ -30,11 +30,12 @@ extension AccountOverviewCellProtocol {
         amount: Double,
         availible: Double
     ) {
-        let formattedAmount = String(format: "%.2f", amount)
-        let formattedAvalible = String(format: "%.2f", availible)
+        let numberFormatter = NumberFormatter()
+        let formattedAmount = numberFormatter.dollarsFromAmount(amount)
+        let formattedAvalible = numberFormatter.dollarsFromAmount(availible)
         accountNameLabel.text = accountName
-        amountLabel.text = L10n.amountInDolars(formattedAmount)
-        availibleLabel.text = L10n.amountInDolarsAvailible(formattedAvalible)
+        amountLabel.text = formattedAmount
+        availibleLabel.text = L10n.amountAvailible(formattedAvalible)
     }
 
     func configureImage(_ imageData: Data) {

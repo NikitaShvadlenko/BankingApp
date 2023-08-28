@@ -14,10 +14,19 @@ final class AccountDetailScreenViewController: UIViewController {
         super.viewDidLoad()
         presenter?.viewDidLoad(self)
     }
+
+    func setAccountsViewDelegate() {
+        accountDetailScreenView.accountDetailView.setDelegate(delegate: self)
+    }
 }
 
 // MARK: - AccountDetailScreenViewInput
 extension AccountDetailScreenViewController: AccountDetailScreenViewInput {
+    func setNavigationBarTitle(newTitle: String) {
+        title = newTitle
+    }
+
+
     func setAccountView(with model: AccountViewModel) {
         accountDetailScreenView.accountDetailView.configureView(
             accountNumber: model.accountNumber,
@@ -28,7 +37,7 @@ extension AccountDetailScreenViewController: AccountDetailScreenViewInput {
     }
 
     func configureViews() {
-        accountDetailScreenView.accountDetailView.setDelegate(delegate: self)
+        setTitleAppearance()
     }
 }
 
@@ -40,4 +49,12 @@ extension AccountDetailScreenViewController: AccountNumberShareViewDelegate {
 }
 // MARK: - Private methods
 extension AccountDetailScreenViewController {
+    private func setTitleAppearance() {
+        let navigaitonBarAppearence = UINavigationBarAppearance()
+        navigaitonBarAppearence.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: Asset.Colors.viewTitle.color,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .medium)
+        ]
+        navigationController?.navigationBar.standardAppearance = navigaitonBarAppearence
+    }
 }

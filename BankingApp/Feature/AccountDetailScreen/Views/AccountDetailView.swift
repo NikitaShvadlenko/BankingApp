@@ -19,12 +19,14 @@ final class AccountDetailView: UIView {
             amountLabel,
             availibleLabel
         ].forEach(containerView.addSubview(_:))
+        containerView.isUserInteractionEnabled = true
         return containerView
     }()
 
     private lazy var accountImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .redraw
+        imageView.isUserInteractionEnabled = true
         return imageView
     }()
 
@@ -35,7 +37,7 @@ final class AccountDetailView: UIView {
 
     private lazy var amountLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 22)
+        label.font = UIFont.systemFont(ofSize: 26)
         label.textAlignment = .center
         label.textColor = Asset.Colors.primaryLabel.color
         return label
@@ -44,7 +46,7 @@ final class AccountDetailView: UIView {
    private lazy var availibleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = UIFont.systemFont(ofSize: 18)
         label.textColor = Asset.Colors.secondaryLabel.color
         return label
     }()
@@ -73,10 +75,11 @@ extension AccountDetailView {
         availible: Double,
         imageData: Data
     ) {
-        let formattedAmount = String(format: "%.2f", amount)
-        let formattedAvalible = String(format: "%.2f", availible)
-        availibleLabel.text = L10n.amountInDolarsAvailible(formattedAvalible)
-        amountLabel.text = L10n.amountInDolars(formattedAmount)
+        let numberFormatter = NumberFormatter()
+        let formattedAmount = numberFormatter.dollarsFromAmount(amount)
+        let formattedAvalible = numberFormatter.dollarsFromAmount(availible)
+        availibleLabel.text = L10n.amountAvailible(formattedAvalible)
+        amountLabel.text = formattedAmount
         accountImageView.image = UIImage(data: imageData)
         accountNumberView.configure(accountNumber: accountNumber)
     }
@@ -105,7 +108,7 @@ extension AccountDetailView {
         accountNumberView.snp.makeConstraints { make in
             make.top.equalTo(containerView.snp.top)
             make.leading.trailing.equalTo(containerView)
-            make.bottom.equalTo(amountLabel.snp.top)
+            make.height.equalTo(25)
         }
 
         availibleLabel.snp.makeConstraints { make in

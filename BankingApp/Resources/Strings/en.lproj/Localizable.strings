@@ -12,8 +12,7 @@
 "AccountsScreen.retry" = "Retry";
 "AccountsScreen.cancel" = "Cancel";
 
-"AmountInDolars" = "$%@";
-"AmountInDolarsAvailible" = "$%@ Availible";
+"AmountAvailible" = "%@ Availible";
 
 "OverlayScreen.appName" = "ANZgoMoney.";
 "OverlayScreen.connecting" = "Loading your details\nfrom ANZ...";

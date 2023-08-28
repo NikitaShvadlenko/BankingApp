@@ -8,7 +8,7 @@ enum AccountDetailScreenAssembly {
         let router = AccountDetailScreenRouter()
 
         viewController.presenter = presenter
-
+        viewController.setAccountsViewDelegate()
         presenter.accountImage = imageData
         presenter.account = account
         presenter.view = viewController

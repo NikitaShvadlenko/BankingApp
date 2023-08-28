@@ -13,6 +13,9 @@ final class AccountDetailScreenPresenter {
 extension AccountDetailScreenPresenter: AccountDetailScreenViewOutput {
     func viewDidLoad(_ view: AccountDetailScreenViewInput) {
         view.configureViews()
+        if let account = account {
+            view.setNavigationBarTitle(newTitle: account.name)
+        }
         setAccount()
     }
 }

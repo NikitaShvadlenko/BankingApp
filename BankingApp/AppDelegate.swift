@@ -17,6 +17,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window.rootViewController = tabBarController
         FirebaseApp.configure()
         _ = Firestore.firestore()
+        setBackButtonAppearance()
         self.window = window
         window.makeKeyAndVisible()
         return true
@@ -37,5 +38,10 @@ extension AppDelegate {
         tabBarController.setViewControllers(viewControllers, animated: false)
 
         return tabBarController
+    }
+
+    private func setBackButtonAppearance() {
+        UINavigationBar.appearance().backIndicatorImage = UIImage(sfSymbol: SFSymbol.back)
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(sfSymbol: SFSymbol.back)
     }
 }

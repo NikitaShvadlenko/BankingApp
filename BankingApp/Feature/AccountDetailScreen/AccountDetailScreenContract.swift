@@ -3,6 +3,7 @@ import Foundation
 protocol AccountDetailScreenViewInput: AnyObject {
     func configureViews()
     func setAccountView(with model: AccountViewModel)
+    func setNavigationBarTitle(newTitle: String)
 }
 
 protocol AccountDetailScreenViewOutput {

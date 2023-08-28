@@ -16,9 +16,11 @@ final class AccountNumberShareView: UIView {
 
     weak var delegate: AccountNumberShareViewDelegate?
 
+    private let containerView = UIView()
+
     private lazy var accountNumberLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Asset.Colors.shareLink.color
+        label.textColor = .systemBlue
         label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
@@ -26,8 +28,8 @@ final class AccountNumberShareView: UIView {
     private lazy var shareImageView: UIImageView = {
         let view = UIImageView()
        let configuration = UIImage.SymbolConfiguration(
-        pointSize: 12,
-        weight: .medium,
+        pointSize: 16,
+        weight: .light,
         scale: .medium
        )
         view.image = UIImage(sfSymbol: SFSymbol.share, withConfiguration: configuration)
@@ -47,14 +49,14 @@ final class AccountNumberShareView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        addBottomLine()
+        addBottomLine(to: containerView)
     }
 }
 
 // MARK: - Public Methods
 extension AccountNumberShareView {
     public func configure(accountNumber: String) {
-        let formattedNumber = formatString(accountNumber)
+        let formattedNumber = accountNumber.formattedAsAcount()
         accountNumberLabel.text = formattedNumber
     }
 
@@ -62,52 +64,40 @@ extension AccountNumberShareView {
 // MARK: - Private Methods
 extension AccountNumberShareView {
     private func setupView() {
+
+        addSubview(containerView)
+        containerView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
         [
             accountNumberLabel,
             shareImageView
-        ].forEach(addSubview)
+        ].forEach(containerView.addSubview)
 
         accountNumberLabel.snp.makeConstraints { make in
-            make.centerX.centerY.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.centerY.equalTo(containerView.snp.centerY)
+        }
+
+        containerView.snp.makeConstraints { make in
+            make.bottom.equalTo(accountNumberLabel.snp.bottom)
         }
 
         shareImageView.snp.makeConstraints { make in
-            make.leading.equalTo(accountNumberLabel.snp.trailing)
-            make.top.bottom.equalToSuperview()
-            make.width.equalTo(shareImageView.snp.height)
+            make.leading.equalTo(accountNumberLabel.snp.trailing).offset(2)
+            make.centerY.equalTo(accountNumberLabel.snp.centerY)
         }
     }
 
-    private func addBottomLine() {
+    private func addBottomLine(to view: UIView) {
         let layer = CALayer()
-        layer.frame = CGRect(x: 0, y: accountNumberLabel.frame.height - 1, width: accountNumberLabel.frame.width, height: 1)
+        layer.frame = CGRect(
+            x: 0, y: view.frame.height - 0.5,
+            width: view.frame.width, height: -0.5
+        )
         layer.backgroundColor = Asset.Colors.secondaryLabel.color.cgColor
-        accountNumberLabel.layer.addSublayer(layer)
-    }
-
-    private func formatString(_ accountNumber: String) -> String {
-        var result = ""
-
-        let chunkLengths = [2, 4, 7, 2]
-        var currentIndex = 0
-
-        for chunkLength in chunkLengths {
-
-            let start = accountNumber.index(accountNumber.startIndex, offsetBy: currentIndex)
-            let end = accountNumber.index(
-                start, offsetBy: chunkLength,
-                limitedBy: accountNumber.endIndex
-            ) ?? accountNumber.endIndex
-            let chunk = String(accountNumber[start..<end])
-
-            result += chunk
-
-            if end != accountNumber.endIndex {
-                result += "-"
-            }
-            currentIndex += chunkLength
-        }
-        return result
+        view.layer.addSublayer(layer)
     }
 
     @objc
