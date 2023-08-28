@@ -17,3 +17,5 @@
 
 "OverlayScreen.appName" = "ANZgoMoney.";
 "OverlayScreen.connecting" = "Loading your details\nfrom ANZ...";
+
+"AccountDetail.searchTransactions" = "Search transactions";

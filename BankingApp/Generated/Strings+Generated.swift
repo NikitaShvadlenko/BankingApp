@@ -18,6 +18,10 @@ internal enum L10n {
   internal static func amountInDolarsAvailible(_ p1: Any) -> String {
     return L10n.tr("Localizable", "AmountInDolarsAvailible", String(describing: p1), fallback: "$%@ Availible")
   }
+  internal enum AccountDetail {
+    /// Search transactions
+    internal static let searchTransactions = L10n.tr("Localizable", "AccountDetail.searchTransactions", fallback: "Search transactions")
+  }
   internal enum AccountsScreen {
     /// Cancel
     internal static let cancel = L10n.tr("Localizable", "AccountsScreen.cancel", fallback: "Cancel")

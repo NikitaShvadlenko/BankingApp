@@ -9,4 +9,5 @@ public enum SFSymbol: String, SFSymbolRepresentable {
     case list = "list.bullet"
     case rectangleOnRectangle = "rectangle.on.rectangle"
     case forward = "chevron.forward"
+    case share = "square.and.arrow.up"
 }

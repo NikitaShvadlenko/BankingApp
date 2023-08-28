@@ -13,6 +13,7 @@ struct Account: Codable {
     let availible: Double
     let name: String
     let image: URL
+    let number: String
     let transactions: [Transaction]
 }
 

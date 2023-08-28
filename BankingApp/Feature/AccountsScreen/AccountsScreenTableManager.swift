@@ -13,6 +13,7 @@ protocol ManagesAccountsScreenTable: UITableViewDataSource, UITableViewDelegate 
     var tableView: UITableView? { get set }
     func setAccountDisplayStyle(_ style: AccountDisplayStyle)
     func setAccounts(_ accounts: [Account])
+    func imageForIndexPath(_ indexPath: IndexPath) -> Data?
 }
 
 protocol AccountsScreenTableManagerDelegate: AnyObject {
@@ -47,6 +48,16 @@ final class AccountsScreenTableManager: NSObject {
 }
 
 extension AccountsScreenTableManager: ManagesAccountsScreenTable {
+    func imageForIndexPath(_ indexPath: IndexPath) -> Data? {
+        guard
+            let cell = tableView?.cellForRow(at: indexPath) as? AccountOverviewCellProtocol,
+            let imageData = cell.accountImageView.image?.pngData()
+        else {
+            return nil
+        }
+        return imageData
+    }
+
     func setAccountDisplayStyle(_ style: AccountDisplayStyle) {
         self.style = style
     }
@@ -110,5 +121,12 @@ extension AccountsScreenTableManager: UITableViewDataSource {
 }
 
 extension AccountsScreenTableManager: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let cell = tableView.cellForRow(at: indexPath) as? AccountOverviewCellProtocol else {
+            return
+        }
+        let image = cell.accountImageView.image
+        delegate?.accountsScreenTableManager(self, didSelectItemAt: indexPath)
+    }
 }

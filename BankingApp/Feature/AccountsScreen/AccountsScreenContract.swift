@@ -43,6 +43,7 @@ protocol AccountsScreenInteractorOutput: AnyObject {
 
 // sourcery: AutoMockable
 protocol AccountsScreenRouterInput {
+    func routeToAccontDetailScreen(for account: Account, imageData: Data?)
 }
 
 protocol AccountsScreenRouterOutput: AnyObject {

@@ -88,14 +88,15 @@ extension AccountsScreenPresenter: AccountsScreenTableManagerDelegate {
         _ accountsScreenTableManager: ManagesAccountsScreenTable,
         didSelectItemAt indexPath: IndexPath
     ) {
-        print("Route to account")
+        let account = accountsScreenTableManager.accounts[indexPath.row]
+        let imageData = accountsScreenTableManager.imageForIndexPath(indexPath)
+        router?.routeToAccontDetailScreen(for: account, imageData: imageData)
     }
 
     func accountsScreenTableManager(
         _ accountsScreenTableManager: ManagesAccountsScreenTable,
         needsImageFor indexPath: IndexPath,
         completion: @escaping (Data) -> Void) {
-            guard let accountsManager else { return }
             let url = accountsScreenTableManager.accounts[indexPath.row].image
             loadImageCompletions[url] = completion
             interactor?.fetchImage(url: url)

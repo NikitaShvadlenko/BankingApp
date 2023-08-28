@@ -28,6 +28,7 @@ internal enum Asset {
     internal static let primaryBackground = ColorAsset(name: "primaryBackground")
     internal static let primaryLabel = ColorAsset(name: "primaryLabel")
     internal static let secondaryLabel = ColorAsset(name: "secondaryLabel")
+    internal static let shareLink = ColorAsset(name: "shareLink")
     internal static let viewTitle = ColorAsset(name: "viewTitle")
   }
   internal enum LaunchScreen {
