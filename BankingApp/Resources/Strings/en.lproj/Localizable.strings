@@ -15,5 +15,5 @@
 "AmountInDolars" = "$%@";
 "AmountInDolarsAvailible" = "$%@ Availible";
 
-"OverlayScreen.pleaseWait" = "Please wait...";
-"OverlayScreen.connecting" = "Connecting";
+"OverlayScreen.appName" = "ANZgoMoney.";
+"OverlayScreen.connecting" = "Loading your details\nfrom ANZ...";

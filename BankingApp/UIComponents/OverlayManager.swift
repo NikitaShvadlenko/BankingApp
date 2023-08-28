@@ -10,7 +10,7 @@ import UIKit
 
 protocol ManagesOverlay {
     func presentOverlayView(_ view: UIView)
-    func removeOverlayView(_ view: UIView)
+    func removeOverlayView()
 }
 
 final class OverlayManager: ManagesOverlay {
@@ -40,7 +40,16 @@ final class OverlayManager: ManagesOverlay {
         window.bringSubviewToFront(view)
     }
 
-    func removeOverlayView(_ view: UIView) {
-        overlayView?.removeFromSuperview()
+    func removeOverlayView() {
+        guard let overlayView = overlayView else {
+            return
+        }
+
+        UIView.animate(withDuration: 0.2) {
+            overlayView.alpha = 0
+        } completion: { _ in
+            overlayView.removeFromSuperview()
+            self.overlayView = nil
+        }
     }
 }

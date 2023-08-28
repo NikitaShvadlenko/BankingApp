@@ -440,32 +440,32 @@
 			path = AccountOverviewCell;
 			sourceTree = "<group>";
 		};
-		"TEMP_04991111-6104-4DA8-BC8F-EFD8D50736A8" /* Sources */ = {
+		"TEMP_5C53D021-FFF4-44D0-9A99-81E1A42E50A9" /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		"TEMP_0EB6198C-04F5-471E-B74D-B7BAB819291D" /* SharedResources */ = {
+		"TEMP_5F7F89C8-BF5A-46C6-9F65-661403D31F73" /* SharedResources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = SharedResources;
 			sourceTree = "<group>";
 		};
-		"TEMP_6E22096A-C75B-483D-8982-EF7295211E1C" /* Packages */ = {
+		"TEMP_E749132B-83C1-4236-9D42-4B8599013112" /* SharedResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedResources;
+			sourceTree = "<group>";
+		};
+		"TEMP_FF309301-60E3-4EE0-85D4-E02A2D46107A" /* Packages */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Packages;
-			sourceTree = "<group>";
-		};
-		"TEMP_D37837FA-222E-43FB-8098-1B939F3EE833" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

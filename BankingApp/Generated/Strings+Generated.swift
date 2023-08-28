@@ -35,10 +35,11 @@ internal enum L10n {
     internal static let loguot = L10n.tr("Localizable", "NavigationBar.loguot", fallback: "Log out")
   }
   internal enum OverlayScreen {
-    /// Connecting
-    internal static let connecting = L10n.tr("Localizable", "OverlayScreen.connecting", fallback: "Connecting")
-    /// Please wait...
-    internal static let pleaseWait = L10n.tr("Localizable", "OverlayScreen.pleaseWait", fallback: "Please wait...")
+    /// ANZgoMoney.
+    internal static let appName = L10n.tr("Localizable", "OverlayScreen.appName", fallback: "ANZgoMoney.")
+    /// Loading your details
+    /// from ANZ...
+    internal static let connecting = L10n.tr("Localizable", "OverlayScreen.connecting", fallback: "Loading your details\nfrom ANZ...")
   }
   internal enum TabBar {
     /// Accounts

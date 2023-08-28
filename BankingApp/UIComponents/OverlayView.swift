@@ -12,9 +12,8 @@ import SnapKit
 final class OverlayView: UIView {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 40)
         label.textAlignment = .center
-        label.backgroundColor = .blue
         label.textColor = .white
         return label
     }()
@@ -23,28 +22,16 @@ final class OverlayView: UIView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.textAlignment = .center
-        label.textColor = Asset.Colors.secondaryLabel.color
+        label.textColor = .white
+        label.numberOfLines = 0
         return label
     }()
 
     private lazy var activityIndicator: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView()
         view.startAnimating()
-        view.style = .large
-        return view
-    }()
-
-    private lazy var containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = Asset.Colors.primaryBackground.color
-        view.layer.cornerRadius = 10
-        [
-            titleLabel,
-            activityIndicator,
-            subtitleLabel
-        ].forEach(view.addSubview)
-        view.layer.borderWidth = 1.5
-        view.layer.borderColor = Asset.Colors.primaryLabel.color.cgColor
+        view.style = .medium
+        view.color = .white
         return view
     }()
 
@@ -64,25 +51,24 @@ final class OverlayView: UIView {
 extension OverlayView {
     private func setupView() {
         backgroundColor = Asset.LaunchScreen.launchScreenBackground.color
-        addSubview(containerView)
-        containerView.snp.makeConstraints { make in
-            make.centerX.centerY.equalToSuperview()
-            make.width.equalToSuperview().multipliedBy(0.7)
-            make.height.equalToSuperview().multipliedBy(0.2)
-        }
+        [
+            activityIndicator,
+            titleLabel,
+            subtitleLabel
+        ].forEach(addSubview(_:))
 
         activityIndicator.snp.makeConstraints { make in
-            make.centerX.centerY.equalTo(containerView)
+            make.centerX.centerY.equalToSuperview()
         }
 
         titleLabel.snp.makeConstraints { make in
-            make.centerX.equalTo(containerView)
-            make.top.equalTo(containerView).offset(14)
+            make.centerX.equalToSuperview()
+            make.bottom.equalTo(activityIndicator.snp.top).offset(-20)
         }
 
         subtitleLabel.snp.makeConstraints { make in
-            make.centerX.equalTo(containerView)
-            make.bottom.equalTo(containerView).inset(14)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(activityIndicator.snp.bottom).inset(-20)
         }
     }
 }

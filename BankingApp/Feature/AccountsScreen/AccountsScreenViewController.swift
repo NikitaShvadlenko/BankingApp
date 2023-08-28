@@ -3,7 +3,7 @@ import UIKit
 final class AccountsScreenViewController: UIViewController {
 
     private let accountsScreenView = AccountsScreenView()
-    private let overlayView = OverlayView(title: L10n.OverlayScreen.connecting, subtitle: L10n.OverlayScreen.pleaseWait)
+    private let overlayView = OverlayView(title: L10n.OverlayScreen.appName, subtitle: L10n.OverlayScreen.connecting)
 
     var presenter: AccountsScreenViewOutput?
 
@@ -26,6 +26,10 @@ final class AccountsScreenViewController: UIViewController {
 
 // MARK: - AccountsScreenViewInput
 extension AccountsScreenViewController: AccountsScreenViewInput {
+    func displayAccounts() {
+        OverlayManager.shared.removeOverlayView()
+    }
+
     func setAccounts() {
         accountsScreenView.tableView.reloadData()
     }

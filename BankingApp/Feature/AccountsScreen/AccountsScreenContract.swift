@@ -5,6 +5,7 @@ protocol AccountsScreenViewInput: AnyObject {
     func setAccountDisplayStyle(_ selectedStyle: AccountDisplayStyle)
     func displayFailedToFetchUsersAlert()
     func setAccounts()
+    func displayAccounts()
 }
 
 protocol AccountsScreenViewOutput {

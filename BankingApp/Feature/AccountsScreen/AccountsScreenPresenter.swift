@@ -44,6 +44,9 @@ extension AccountsScreenPresenter: AccountsScreenInteractorOutput {
         let completion = loadImageCompletions[url]
         loadImageCompletions.removeValue(forKey: url)
         completion?(data)
+        if loadImageCompletions.isEmpty {
+            view?.displayAccounts()
+        }
     }
 
     func interactorDidRetrieveAccountDetails(
