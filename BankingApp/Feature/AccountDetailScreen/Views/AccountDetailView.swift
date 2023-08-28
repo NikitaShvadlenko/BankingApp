@@ -87,7 +87,7 @@ extension AccountDetailView {
 
 // MARK: - Private Methods
 extension AccountDetailView {
-    func setupView() {
+   private func setupView() {
         addSubview(accountImageView)
         accountImageView.addSubview(containerView)
 

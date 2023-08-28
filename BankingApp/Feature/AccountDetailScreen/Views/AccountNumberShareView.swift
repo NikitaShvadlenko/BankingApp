@@ -46,11 +46,6 @@ final class AccountNumberShareView: UIView {
     required init?(coder: NSCoder) {
         fatalError("Not implemented")
     }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        addBottomLine(to: containerView)
-    }
 }
 
 // MARK: - Public Methods
@@ -66,9 +61,6 @@ extension AccountNumberShareView {
     private func setupView() {
 
         addSubview(containerView)
-        containerView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
 
         [
             accountNumberLabel,
@@ -76,28 +68,20 @@ extension AccountNumberShareView {
         ].forEach(containerView.addSubview)
 
         accountNumberLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
+            make.leading.equalToSuperview()
             make.centerY.equalTo(containerView.snp.centerY)
         }
 
         containerView.snp.makeConstraints { make in
             make.bottom.equalTo(accountNumberLabel.snp.bottom)
+            make.center.equalToSuperview()
         }
 
         shareImageView.snp.makeConstraints { make in
             make.leading.equalTo(accountNumberLabel.snp.trailing).offset(2)
+            make.trailing.equalToSuperview()
             make.centerY.equalTo(accountNumberLabel.snp.centerY)
         }
-    }
-
-    private func addBottomLine(to view: UIView) {
-        let layer = CALayer()
-        layer.frame = CGRect(
-            x: 0, y: view.frame.height - 0.5,
-            width: view.frame.width, height: -0.5
-        )
-        layer.backgroundColor = Asset.Colors.secondaryLabel.color.cgColor
-        view.layer.addSublayer(layer)
     }
 
     @objc
