@@ -3,6 +3,7 @@ import UIKit
 final class AccountsScreenViewController: UIViewController {
 
     private let accountsScreenView = AccountsScreenView()
+    private let overlayView = OverlayView(title: L10n.OverlayScreen.connecting, subtitle: L10n.OverlayScreen.pleaseWait)
 
     var presenter: AccountsScreenViewOutput?
 
@@ -13,6 +14,7 @@ final class AccountsScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad(self)
+        OverlayManager.shared.presentOverlayView(overlayView)
     }
 
     func setTableViewManager(_ manager: ManagesAccountsScreenTable) {

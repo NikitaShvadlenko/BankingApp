@@ -15,3 +15,5 @@
 "AmountInDolars" = "$%@";
 "AmountInDolarsAvailible" = "$%@ Availible";
 
+"OverlayScreen.pleaseWait" = "Please wait...";
+"OverlayScreen.connecting" = "Connecting";

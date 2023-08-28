@@ -22,7 +22,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-
 // MARK: - Private Methods
 extension AppDelegate {
     private func createTabBarController() -> UITabBarController {
