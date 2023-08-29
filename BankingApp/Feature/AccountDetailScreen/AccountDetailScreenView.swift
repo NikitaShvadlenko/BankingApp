@@ -13,6 +13,14 @@ final class AccountDetailScreenView: UIView {
 
     let accountDetailView = AccountDetailView()
 
+    private lazy var segmentedControl: SegmentedControl = {
+        let segmentedControl = SegmentedControl(frame: .zero, selected: .red, normal: .blue, height: 30)
+        segmentedControl.insertSegment(withTitle: "Title1", at: 0, animated: false)
+        segmentedControl.insertSegment(withTitle: "Title2", at: 1, animated: false)
+        segmentedControl.insertSegment(withTitle: "Title3", at: 2, animated: false)
+        return segmentedControl
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureViews()
@@ -30,6 +38,7 @@ extension AccountDetailScreenView {
         backgroundColor = .white
         addSubview(searchBar)
         addSubview(accountDetailView)
+        addSubview(segmentedControl)
         searchBar.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top)
             make.leading.trailing.equalToSuperview().inset(14)
@@ -39,6 +48,11 @@ extension AccountDetailScreenView {
             make.top.equalTo(searchBar.snp.bottom)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(140)
+        }
+
+        segmentedControl.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(accountDetailView.snp.bottom)
         }
     }
 }
