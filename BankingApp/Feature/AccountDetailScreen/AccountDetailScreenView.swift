@@ -20,10 +20,16 @@ final class AccountDetailScreenView: UIView {
     }()
 
     lazy var tableView: UITableView = {
-        let tableVeiew = UITableView()
-        tableVeiew.register(TransactionTableViewCell.self, forCellReuseIdentifier: "\(TransactionTableViewCell.self)")
-        tableVeiew.rowHeight = 44
-        return tableVeiew
+        let tableView = UITableView()
+        tableView.register(TransactionTableViewCell.self, forCellReuseIdentifier: "\(TransactionTableViewCell.self)")
+        tableView.rowHeight = 40
+        tableView.register(
+            TransactionsTableHeader.self,
+            forHeaderFooterViewReuseIdentifier: "\(TransactionsTableHeader.self)"
+        )
+        tableView.sectionHeaderTopPadding = 10
+        tableView.sectionHeaderHeight = 30
+        return tableView
     }()
 
     lazy var scrollView: UIScrollView = {

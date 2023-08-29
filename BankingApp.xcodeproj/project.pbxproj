@@ -66,6 +66,8 @@
 		AB488A7E6858EB222FE0E113 /* AccountOverviewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4B1110FD2367FF86E3410 /* AccountOverviewImageCell.swift */; };
 		AB54D0ECFC20003C63EAA6C7 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76A18E45A995308D783A3E /* OverlayManager.swift */; };
 		AED2FADD55B1126EF53A46D3 /* AccountDetailScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F968F4EB9DC54088EA515E /* AccountDetailScreenRouter.swift */; };
+		B4FDD7D92A9DE49D00B23FD4 /* TransactionsTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FDD7D82A9DE49D00B23FD4 /* TransactionsTableHeader.swift */; };
+		B4FDD7DB2A9EA1DC00B23FD4 /* ScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FDD7DA2A9EA1DC00B23FD4 /* ScrollView+Extensions.swift */; };
 		B738C6C7EDCBA20EEFB0AF35 /* AccountsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72929E57AD96BBF353839695 /* AccountsScreenAssembly.swift */; };
 		BCA0DE30566EE01DBBF4DE05 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 66C22F3E9757749DB326E22E /* FirebaseAuth */; };
 		BD2872B19494900FD19ABCDA /* ServicesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D8D8BF3970E6CD6DB3B05 /* ServicesScreenViewController.swift */; };
@@ -172,6 +174,8 @@
 		B1EAC12B5E3F58889D236559 /* AccountDetailScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailScreenView.swift; sourceTree = "<group>"; };
 		B27E82CEF87579C01E6E0881 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		B4FDD7D82A9DE49D00B23FD4 /* TransactionsTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableHeader.swift; sourceTree = "<group>"; };
+		B4FDD7DA2A9EA1DC00B23FD4 /* ScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView+Extensions.swift"; sourceTree = "<group>"; };
 		B74ED66C588F5C2944D8324A /* ImageDownloaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderProtocol.swift; sourceTree = "<group>"; };
 		B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		BC33D056B6D641A70321DB20 /* AccountOverviewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewCellProtocol.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 			children = (
 				61AE365270250DC2BAEFF61E /* AccountDetailView.swift */,
 				9ABC361D9DE3EC6C32AF0C85 /* TransactionTableViewCell.swift */,
+				B4FDD7D82A9DE49D00B23FD4 /* TransactionsTableHeader.swift */,
 				6421A21545506204C54B593B /* AccountNumberShareView.swift */,
 			);
 			path = Views;
@@ -455,6 +460,7 @@
 			children = (
 				8B76A18E45A995308D783A3E /* OverlayManager.swift */,
 				205D9819735CBDFE21675A3A /* OverlayView.swift */,
+				B4FDD7DA2A9EA1DC00B23FD4 /* ScrollView+Extensions.swift */,
 				9F73D99439DF9BA6881C833E /* SegmentedControl.swift */,
 			);
 			path = UIComponents;
@@ -616,6 +622,7 @@
 				49FDF023F7E7C85D085E1473 /* AccountDetailScreenViewController.swift in Sources */,
 				0B5A72B091EA318623FC462F /* AccountDetailView.swift in Sources */,
 				EEDF3FE55D05AAABE3D5C97C /* AccountDisplayStyle.swift in Sources */,
+				B4FDD7D92A9DE49D00B23FD4 /* TransactionsTableHeader.swift in Sources */,
 				8B729CE6A570ECABA49CB858 /* AccountNumberShareView.swift in Sources */,
 				3315CF6AFFBA61B6FEC6F3A5 /* AccountOverviewCellFactory.swift in Sources */,
 				D2FD7151715D4406A509B199 /* AccountOverviewCellProtocol.swift in Sources */,
@@ -641,6 +648,7 @@
 				9D2ACD211974BACED99C40DA /* ImageDownloaderProtocol.swift in Sources */,
 				E4579FC3516BC30386862969 /* ManagesUserSettings.swift in Sources */,
 				2124205933BC63FAEF1BF5F9 /* Mapper.swift in Sources */,
+				B4FDD7DB2A9EA1DC00B23FD4 /* ScrollView+Extensions.swift in Sources */,
 				C7F6F6A7570A1C63C11D1AAC /* NumberFormatter+Extensions.swift in Sources */,
 				AB54D0ECFC20003C63EAA6C7 /* OverlayManager.swift in Sources */,
 				1D45A70C65D7647E1EF371CE /* OverlayView.swift in Sources */,

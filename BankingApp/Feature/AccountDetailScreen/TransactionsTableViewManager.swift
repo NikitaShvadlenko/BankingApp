@@ -23,6 +23,7 @@ protocol TransactionsTableViewManagerDelegate: AnyObject {
 }
 
 final class TransactionsTableViewManager: NSObject {
+    var sortedDates: [Date] = []
     weak var delegate: TransactionsTableViewManagerDelegate?
     weak var tableView: UITableView?
     var transactions: [Transaction] = [] {
@@ -62,6 +63,16 @@ extension TransactionsTableViewManager: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.transactionsTableViewManager(self, didSelectItemAt: indexPath)
     }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(
+            withIdentifier: "\(TransactionsTableHeader.self)"
+        ) as? TransactionsTableHeader else {
+            fatalError("Failed to dequeue header")
+        }
+        header.configure(date: sortedDates[section])
+        return header
+    }
 }
 
 // MARK: - Private Methods
@@ -73,7 +84,7 @@ extension TransactionsTableViewManager {
             by: { Calendar.current.startOfDay(for: $0.dateProcessed) }
         )
         let sortedDates = groupedItems.keys.sorted()
-
+        self.sortedDates.append(contentsOf: sortedDates)
         for date in sortedDates {
             if let itemsForDate = groupedItems[date] {
                 snapshot.appendSections([date])

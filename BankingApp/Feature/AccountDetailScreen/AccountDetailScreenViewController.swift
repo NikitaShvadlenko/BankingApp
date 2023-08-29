@@ -59,13 +59,7 @@ extension AccountDetailScreenViewController: AccountNumberShareViewDelegate {
 extension AccountDetailScreenViewController: SegmentedControlDelegate {
     func segmentedControlDidChangeValue(_ segmentedControl: SegmentedControl) {
         let index = segmentedControl.selectedSegmentIndex
-        let item = segmentedControl.items[index]
-        switch item {
-        case .transactionsTab:
-          print("Should select transactions")
-        case .accountDetailsTab:
-            print("Should select account details")
-        }
+        accountDetailScreenView.scrollView.scrollToPage(pageNumber: index)
     }
 }
 // MARK: - Private methods
