@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		01244B02B983FCA3794B880B /* PlaceholderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071E4FF459DC839E7F6CD5F /* PlaceholderStore.swift */; };
 		0678B254EBD7D96BC8672D9B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C191D9F183B7CDDE19B8A96 /* Localizable.strings */; };
-		095C909A43A710182C07E820 /* SegmentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B0D9CEDE0BD341FB92283 /* SegmentedView.swift */; };
+		095C909A43A710182C07E820 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B0D9CEDE0BD341FB92283 /* SegmentedControl.swift */; };
 		0B5A72B091EA318623FC462F /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AE365270250DC2BAEFF61E /* AccountDetailView.swift */; };
 		0C0502E2CA4BFEFE79574F84 /* SettingsScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5716BB70094C19D0B1ACA644 /* SettingsScreenContract.swift */; };
 		1134C238897F008DAF8381ED /* PaymentsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18034036EE0AD4B432F631D8 /* PaymentsScreenViewController.swift */; };
@@ -169,7 +169,7 @@
 		B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B74ED66C588F5C2944D8324A /* ImageDownloaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderProtocol.swift; sourceTree = "<group>"; };
 		B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
-		BC1B0D9CEDE0BD341FB92283 /* SegmentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedView.swift; sourceTree = "<group>"; };
+		BC1B0D9CEDE0BD341FB92283 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		BC33D056B6D641A70321DB20 /* AccountOverviewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewCellProtocol.swift; sourceTree = "<group>"; };
 		C3FC342E37276002153F9CC8 /* TransferScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenContract.swift; sourceTree = "<group>"; };
 		C48CA06C96CD02B77DB5AAC9 /* ServicesScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenRouter.swift; sourceTree = "<group>"; };
@@ -449,7 +449,7 @@
 			children = (
 				8B76A18E45A995308D783A3E /* OverlayManager.swift */,
 				205D9819735CBDFE21675A3A /* OverlayView.swift */,
-				BC1B0D9CEDE0BD341FB92283 /* SegmentedView.swift */,
+				BC1B0D9CEDE0BD341FB92283 /* SegmentedControl.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -496,34 +496,6 @@
 				E994250F1D53ABA25459E181 /* AccountOverviewTextCell.swift */,
 			);
 			path = AccountOverviewCell;
-			sourceTree = "<group>";
-		};
-		"TEMP_4ADC26B4-DEF9-4C3A-AD6C-01ADF03353D2" /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		"TEMP_8612804D-E198-437A-ABFD-DFC115D29A11" /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Packages;
-			sourceTree = "<group>";
-		};
-		"TEMP_885C34AF-EA18-4981-9504-D3CB95E101FC" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_EC846037-7707-43E5-AD4E-7B22AE716739" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -677,7 +649,7 @@
 				2449D333861F701AAA253F12 /* ProvidesAccounts.swift in Sources */,
 				E3BA39DFEDFBC07683B41E32 /* Request.swift in Sources */,
 				997F8C812A9F3EFABAD94DB0 /* SFSymbol.swift in Sources */,
-				095C909A43A710182C07E820 /* SegmentedView.swift in Sources */,
+				095C909A43A710182C07E820 /* SegmentedControl.swift in Sources */,
 				9D9BE43890557C08719B4A7F /* ServicesScreenAssembly.swift in Sources */,
 				505240510EDD907305A44797 /* ServicesScreenContract.swift in Sources */,
 				DD683AA83823CF68A1ED0FC0 /* ServicesScreenInteractor.swift in Sources */,

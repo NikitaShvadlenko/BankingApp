@@ -52,7 +52,8 @@ extension AccountDetailScreenViewController: AccountNumberShareViewDelegate {
 // MARK: - SegmentedControlDelegate
 extension AccountDetailScreenViewController: SegmentedControlDelegate {
     func segmentedControlDidChangeValue(_ segmentedControl: SegmentedControl) {
-        
+        let index = segmentedControl.selectedSegmentIndex
+        print(segmentedControl.items[index].title)
     }
 }
 // MARK: - Private methods

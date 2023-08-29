@@ -20,8 +20,8 @@ final class AccountDetailScreenView: UIView {
             height: 35,
             font: UIFont.systemFont(ofSize: 16)
         )
-        segmentedControl.insertSegment(withTitle: L10n.AccountDetail.transactions, at: 0, animated: false)
-        segmentedControl.insertSegment(withTitle: L10n.AccountDetail.accountDetails, at: 1, animated: false)
+        segmentedControl.insertSegmentItem(.transactionsTab)
+        segmentedControl.insertSegmentItem(.accountDetailsTab)
         return segmentedControl
     }()
 

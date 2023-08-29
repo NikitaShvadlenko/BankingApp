@@ -15,7 +15,13 @@ public protocol SegmentedControlDelegate: AnyObject {
 public class SegmentedControl: UISegmentedControl {
 
     private let buttonBar = UIView()
-    public weak var delegate: SegmentedControlDelegate?
+    public weak var delegate: SegmentedControlDelegate? {
+        didSet {
+            itemSelected()
+        }
+    }
+
+    public var items: [SegmentedControlItem] = []
 
     public init(frame: CGRect, selected: UIColor, normal: UIColor, height: CGFloat, font: UIFont) {
 
@@ -47,6 +53,16 @@ public class SegmentedControl: UISegmentedControl {
         super.insertSegment(withTitle: title, at: segment, animated: animated)
         selectedSegmentIndex = 0
         remakeButtonBarConstraints()
+    }
+
+    public override func removeSegment(at segment: Int, animated: Bool) {
+        super.removeSegment(at: segment, animated: animated)
+        items.remove(at: segment)
+    }
+
+    public func insertSegmentItem(_ item: SegmentedControlItem) {
+        items.append(item)
+        insertSegment(withTitle: item.title, at: items.count - 1, animated: false)
     }
 }
 
@@ -115,7 +131,7 @@ extension SegmentedControl {
 }
 
 extension SegmentedControl {
-    enum SegmentedControlItem {
+   public enum SegmentedControlItem {
         case transactionsTab
         case accountDetailsTab
 
