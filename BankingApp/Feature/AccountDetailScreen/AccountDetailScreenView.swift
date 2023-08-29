@@ -1,10 +1,21 @@
 import UIKit
 import SnapKit
 
+enum ScrollViewDirection {
+    case forward
+    case backward
+}
+
+protocol SegmentedSelectionScrollDelegate: AnyObject {
+    func scrollViewDidChangePage(direction: ScrollViewDirection)
+}
+
 final class AccountDetailScreenView: UIView {
 
+    var lastContentOffset: CGFloat = 0
     let accountDetailPageView = UIView()
     let accountDetailView = AccountDetailView()
+    weak var segmentedSelectionScrollDelegate: SegmentedSelectionScrollDelegate?
 
     lazy var segmentedControl: SegmentedControl = {
         let segmentedControl = SegmentedControl(
@@ -38,6 +49,7 @@ final class AccountDetailScreenView: UIView {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.addSubview(scrollViewContentView)
+        scrollView.delegate = self
         return scrollView
     }()
 
@@ -64,6 +76,25 @@ final class AccountDetailScreenView: UIView {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+extension AccountDetailScreenView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.x
+
+        if offset > lastContentOffset + scrollView.bounds.width - 50 {
+            lastContentOffset = scrollView.contentOffset.x
+            segmentedSelectionScrollDelegate?.scrollViewDidChangePage(direction: .forward)
+            return
+        }
+
+        if offset < lastContentOffset - scrollView.bounds.width + 50 {
+            lastContentOffset = scrollView.contentOffset.x
+            segmentedSelectionScrollDelegate?.scrollViewDidChangePage(direction: .backward)
+            return
+        }
     }
 }
 
