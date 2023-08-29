@@ -14,16 +14,18 @@ public protocol SegmentedControlDelegate: AnyObject {
 
 public class SegmentedControl: UISegmentedControl {
 
+    private let segmentsNumber: Int
     private let buttonBar = UIView()
-
     public weak var delegate: SegmentedControlDelegate?
 
-    public init(frame: CGRect, selected: UIColor, normal: UIColor, height: CGFloat) {
+    public init(frame: CGRect, selected: UIColor, normal: UIColor, height: CGFloat, numberOfSegments: Int) {
+        self.segmentsNumber = numberOfSegments
         super.init(frame: frame)
         setTitleAttributes(selected: selected, normal: normal)
         setBackground(height: height)
         setButtonBar(color: selected)
         addTarget(self, action: #selector(itemSelected), for: .valueChanged)
+        layer.cornerRadius = 0
     }
 
     required init?(coder: NSCoder) {
@@ -44,14 +46,13 @@ extension SegmentedControl {
 
     private func setButtonBar(color: UIColor) {
         addSubview(buttonBar)
+        let numberOfSegments = segmentsNumber
         buttonBar.backgroundColor = color
-        buttonBar.snp.makeConstraints { make in
-            make.bottom.leading.equalToSuperview()
-            make.height.equalTo(5)
-            make.width.equalTo(100)
-            if numberOfSegments > 0 {
-                make.width.equalToSuperview().multipliedBy(1/numberOfSegments)
-            }
+        buttonBar.snp.remakeConstraints { make in
+            make.bottom.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.height.equalTo(2)
+            make.width.equalToSuperview().dividedBy(numberOfSegments)
         }
     }
 
@@ -62,42 +63,15 @@ extension SegmentedControl {
         setDividerImage(dividerImage, forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
     }
 
-    func createWhiteImage(width: CGFloat) -> UIImage? {
-        let size = CGSize(width: width, height: 20)
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
-        defer { UIGraphicsEndImageContext() }
-
-        let context = UIGraphicsGetCurrentContext()
-        context?.setFillColor(UIColor.white.cgColor)
-        context?.fill(CGRect(origin: .zero, size: size))
-
-        if let image = UIGraphicsGetImageFromCurrentImageContext() {
-            return image
-        }
-        return nil
-    }
-
     @objc
     private func itemSelected() {
-        guard numberOfSegments > 0 else { return }
         UIView.animate(withDuration: 0.3) { [weak self] in
-            guard let self else { return }
-            self.buttonBar.frame.origin.x =
-            (self.frame.width / CGFloat(self.numberOfSegments)) * CGFloat(self.selectedSegmentIndex)
+            guard let self = self else { return }
+            let targetX = (self.frame.width / CGFloat(self.segmentsNumber)) * CGFloat(self.selectedSegmentIndex)
+            let translationX = targetX - self.buttonBar.frame.origin.x
+            self.buttonBar.transform = self.buttonBar.transform.translatedBy(x: translationX, y: 0)
         }
-        delegate?.segmentedControlDidChangeValue(self)
-    }
-}
 
-extension UIImage {
-    convenience init(color: UIColor, height: CGFloat, width: CGFloat) {
-        let rect = CGRect(x: 0, y: 0, width: width, height: height)
-        UIGraphicsBeginImageContext(rect.size)
-        let context = UIGraphicsGetCurrentContext()
-        context?.setFillColor(color.cgColor)
-        context?.fill(rect)
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        self.init(cgImage: (image?.cgImage)!)
+        delegate?.segmentedControlDidChangeValue(self)
     }
 }

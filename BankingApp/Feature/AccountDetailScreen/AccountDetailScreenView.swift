@@ -14,10 +14,16 @@ final class AccountDetailScreenView: UIView {
     let accountDetailView = AccountDetailView()
 
     private lazy var segmentedControl: SegmentedControl = {
-        let segmentedControl = SegmentedControl(frame: .zero, selected: .red, normal: .blue, height: 30)
+        let segmentedControl = SegmentedControl(
+            frame: .zero,
+            selected: .red,
+            normal: .blue,
+            height: 30,
+            numberOfSegments: 2
+        )
         segmentedControl.insertSegment(withTitle: "Title1", at: 0, animated: false)
         segmentedControl.insertSegment(withTitle: "Title2", at: 1, animated: false)
-        segmentedControl.insertSegment(withTitle: "Title3", at: 2, animated: false)
+
         return segmentedControl
     }()
 
