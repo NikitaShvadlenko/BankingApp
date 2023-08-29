@@ -123,10 +123,6 @@ extension AccountsScreenTableManager: UITableViewDataSource {
 extension AccountsScreenTableManager: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let cell = tableView.cellForRow(at: indexPath) as? AccountOverviewCellProtocol else {
-            return
-        }
-        let image = cell.accountImageView.image
         delegate?.accountsScreenTableManager(self, didSelectItemAt: indexPath)
     }
 }

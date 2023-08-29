@@ -17,6 +17,8 @@ internal enum L10n {
   internal enum AccountDetail {
     /// Account details
     internal static let accountDetails = L10n.tr("Localizable", "AccountDetail.accountDetails", fallback: "Account details")
+    /// Anonymous sender
+    internal static let anonymous = L10n.tr("Localizable", "AccountDetail.anonymous", fallback: "Anonymous sender")
     /// Search transactions
     internal static let searchTransactions = L10n.tr("Localizable", "AccountDetail.searchTransactions", fallback: "Search transactions")
     /// Transactions

@@ -17,13 +17,23 @@ struct Account: Codable {
     let transactions: [Transaction]
 }
 
-struct Transaction: Codable {
+struct Transaction: Codable, Hashable {
+    let identifier = UUID()
     let sentToAccount: String
     let amount: Double
     let dateSent: Date
     let dateProcessed: Date
     let transactionType: TransactionType
     let transactionDetails: TransactionDetails
+
+    static func == (lhs: Transaction, rhs: Transaction) -> Bool {
+        lhs.identifier == rhs.identifier
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
+
 }
 
 struct TransactionDetails: Codable {

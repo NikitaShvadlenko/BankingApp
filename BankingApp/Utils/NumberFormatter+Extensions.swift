@@ -13,13 +13,13 @@ extension NumberFormatter {
         var result = ""
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+
         guard let formattedAmount = formatter.string(from: NSNumber(value: amount)) else {
             return ""
         }
         result = String("$" + formattedAmount)
-        if amount.truncatingRemainder(dividingBy: 100) == 0 {
-            result.append(".00")
-        }
         return result
     }
 }

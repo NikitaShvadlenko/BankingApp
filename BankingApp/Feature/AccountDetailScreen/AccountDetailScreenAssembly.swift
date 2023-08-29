@@ -6,14 +6,17 @@ enum AccountDetailScreenAssembly {
         let presenter = AccountDetailScreenPresenter()
         let interactor = AccountDetailScreenInteractor()
         let router = AccountDetailScreenRouter()
+        let transactionsTableManager = TransactionsTableViewManager()
 
         viewController.presenter = presenter
         viewController.setAccountsViewDelegate()
+        viewController.setTableViewManager(transactionsTableManager)
         presenter.accountImage = imageData
         presenter.account = account
         presenter.view = viewController
         presenter.interactor = interactor
         presenter.router = router
+        presenter.tableViewManager = transactionsTableManager
 
         interactor.presenter = presenter
 

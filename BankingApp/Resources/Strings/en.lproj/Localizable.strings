@@ -20,3 +20,4 @@
 "AccountDetail.searchTransactions" = "Search transactions";
 "AccountDetail.transactions" = "Transactions";
 "AccountDetail.accountDetails" = "Account details";
+"AccountDetail.anonymous" = "Anonymous sender";

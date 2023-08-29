@@ -19,6 +19,12 @@ final class AccountDetailScreenViewController: UIViewController {
         accountDetailScreenView.accountDetailView.setDelegate(delegate: self)
         accountDetailScreenView.segmentedControl.delegate = self
     }
+
+    func setTableViewManager(_ tableViewManager: ManagesTransactionsTableView) {
+        accountDetailScreenView.tableView.delegate = tableViewManager
+        tableViewManager.setTableView(accountDetailScreenView.tableView)
+        accountDetailScreenView.tableView.dataSource = tableViewManager.dataSource
+    }
 }
 
 // MARK: - AccountDetailScreenViewInput
@@ -53,7 +59,13 @@ extension AccountDetailScreenViewController: AccountNumberShareViewDelegate {
 extension AccountDetailScreenViewController: SegmentedControlDelegate {
     func segmentedControlDidChangeValue(_ segmentedControl: SegmentedControl) {
         let index = segmentedControl.selectedSegmentIndex
-        print(segmentedControl.items[index].title)
+        let item = segmentedControl.items[index]
+        switch item {
+        case .transactionsTab:
+          print("Should select transactions")
+        case .accountDetailsTab:
+            print("Should select account details")
+        }
     }
 }
 // MARK: - Private methods

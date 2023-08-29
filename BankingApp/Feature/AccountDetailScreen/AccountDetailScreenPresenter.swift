@@ -7,6 +7,7 @@ final class AccountDetailScreenPresenter {
     var router: AccountDetailScreenRouterInput?
     var account: Account?
     var accountImage: Data?
+    var tableViewManager: ManagesTransactionsTableView?
 }
 
 // MARK: - AccountDetailScreenViewOutput
@@ -17,6 +18,17 @@ extension AccountDetailScreenPresenter: AccountDetailScreenViewOutput {
             view.setNavigationBarTitle(newTitle: account.name)
         }
         setAccount()
+        setTransactions()
+    }
+}
+
+// MARK: - TransactionsTableViewManagerDelegate
+extension AccountDetailScreenPresenter: TransactionsTableViewManagerDelegate {
+    func transactionsTableViewManager(
+        _ transactionsTableViewManager: ManagesTransactionsTableView,
+        didSelectItemAt indexPath: IndexPath
+    ) {
+        print("Route to the Detail Transaction View")
     }
 }
 
@@ -52,5 +64,10 @@ extension AccountDetailScreenPresenter {
         else { return }
         let viewModel = accountViewModel(from: account, image: accountImage)
         view?.setAccountView(with: viewModel)
+    }
+
+    private func setTransactions() {
+        guard let account else { return }
+        tableViewManager?.setTransacrtions(account.transactions)
     }
 }
