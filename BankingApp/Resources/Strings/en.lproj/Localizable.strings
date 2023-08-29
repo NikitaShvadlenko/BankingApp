@@ -18,3 +18,5 @@
 "OverlayScreen.connecting" = "Loading your details\nfrom ANZ...";
 
 "AccountDetail.searchTransactions" = "Search transactions";
+"AccountDetail.transactions" = "Transactions";
+"AccountDetail.accountDetails" = "Account details";

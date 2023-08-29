@@ -15,8 +15,12 @@ internal enum L10n {
     return L10n.tr("Localizable", "AmountAvailible", String(describing: p1), fallback: "%@ Availible")
   }
   internal enum AccountDetail {
+    /// Account details
+    internal static let accountDetails = L10n.tr("Localizable", "AccountDetail.accountDetails", fallback: "Account details")
     /// Search transactions
     internal static let searchTransactions = L10n.tr("Localizable", "AccountDetail.searchTransactions", fallback: "Search transactions")
+    /// Transactions
+    internal static let transactions = L10n.tr("Localizable", "AccountDetail.transactions", fallback: "Transactions")
   }
   internal enum AccountsScreen {
     /// Cancel

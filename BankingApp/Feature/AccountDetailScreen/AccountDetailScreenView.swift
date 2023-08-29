@@ -2,7 +2,6 @@ import UIKit
 import SnapKit
 
 final class AccountDetailScreenView: UIView {
-
     private lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = L10n.AccountDetail.searchTransactions
@@ -13,17 +12,16 @@ final class AccountDetailScreenView: UIView {
 
     let accountDetailView = AccountDetailView()
 
-    private lazy var segmentedControl: SegmentedControl = {
+    lazy var segmentedControl: SegmentedControl = {
         let segmentedControl = SegmentedControl(
             frame: .zero,
-            selected: .red,
-            normal: .blue,
-            height: 30,
-            numberOfSegments: 2
+            selected: Asset.Colors.segmentedControlSelector.color,
+            normal: Asset.Colors.secondaryLabel.color,
+            height: 35,
+            font: UIFont.systemFont(ofSize: 16)
         )
-        segmentedControl.insertSegment(withTitle: "Title1", at: 0, animated: false)
-        segmentedControl.insertSegment(withTitle: "Title2", at: 1, animated: false)
-
+        segmentedControl.insertSegment(withTitle: L10n.AccountDetail.transactions, at: 0, animated: false)
+        segmentedControl.insertSegment(withTitle: L10n.AccountDetail.accountDetails, at: 1, animated: false)
         return segmentedControl
     }()
 

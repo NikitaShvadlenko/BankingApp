@@ -17,6 +17,7 @@ final class AccountDetailScreenViewController: UIViewController {
 
     func setAccountsViewDelegate() {
         accountDetailScreenView.accountDetailView.setDelegate(delegate: self)
+        accountDetailScreenView.segmentedControl.delegate = self
     }
 }
 
@@ -45,6 +46,13 @@ extension AccountDetailScreenViewController: AccountDetailScreenViewInput {
 extension AccountDetailScreenViewController: AccountNumberShareViewDelegate {
     func accountNumberTapped() {
         print("AccountNumberTapped")
+    }
+}
+
+// MARK: - SegmentedControlDelegate
+extension AccountDetailScreenViewController: SegmentedControlDelegate {
+    func segmentedControlDidChangeValue(_ segmentedControl: SegmentedControl) {
+        
     }
 }
 // MARK: - Private methods
