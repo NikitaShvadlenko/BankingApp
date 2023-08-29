@@ -3,6 +3,7 @@ import SnapKit
 
 final class AccountDetailScreenView: UIView {
 
+    let accountDetailPageView = UIView()
     let accountDetailView = AccountDetailView()
 
     lazy var segmentedControl: SegmentedControl = {
@@ -23,6 +24,16 @@ final class AccountDetailScreenView: UIView {
         tableVeiew.register(TransactionTableViewCell.self, forCellReuseIdentifier: "\(TransactionTableViewCell.self)")
         tableVeiew.rowHeight = 44
         return tableVeiew
+    }()
+
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.isPagingEnabled = true
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.addSubview(tableView)
+        scrollView.addSubview(accountDetailPageView)
+        return scrollView
     }()
 
     private lazy var searchBar: UISearchBar = {
@@ -51,7 +62,7 @@ extension AccountDetailScreenView {
         addSubview(searchBar)
         addSubview(accountDetailView)
         addSubview(segmentedControl)
-        addSubview(tableView)
+        addSubview(scrollView)
 
         searchBar.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top)
@@ -69,10 +80,27 @@ extension AccountDetailScreenView {
             make.top.equalTo(accountDetailView.snp.bottom)
         }
 
-        tableView.snp.makeConstraints { make in
+        accountDetailPageView.backgroundColor = .red
+
+        scrollView.snp.makeConstraints { make in
             make.top.equalTo(segmentedControl.snp.bottom)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
+            make.width.equalToSuperview()
         }
+
+        tableView.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView)
+            make.width.equalToSuperview()
+        }
+
+        accountDetailPageView.snp.makeConstraints { make in
+            make.leading.equalTo(tableView.snp.trailing)
+            make.top.bottom.equalTo(scrollView)
+            make.trailing.equalTo(scrollView)
+        }
+
+        let totalContentWidth = UIScreen.main.bounds.width + tableView.frame.width
+        scrollView.contentSize = CGSize(width: totalContentWidth, height: scrollView.contentSize.height)
     }
 }
