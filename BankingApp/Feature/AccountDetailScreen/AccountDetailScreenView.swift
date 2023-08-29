@@ -99,13 +99,13 @@ extension AccountDetailScreenView {
             make.top.equalTo(scrollView)
             make.bottom.equalTo(scrollView)
             make.leading.equalTo(scrollView)
-            make.width.equalToSuperview()
+            make.width.equalTo(UIScreen.main.bounds.width)
         }
 
         scrollViewContentView.snp.makeConstraints { make in
             make.edges.equalTo(scrollView)
             make.height.equalTo(scrollView)
-            make.width.equalTo(scrollView).priority(.low)
+            make.width.equalTo(scrollView).multipliedBy(2)
         }
 
         accountDetailPageView.snp.makeConstraints { make in
