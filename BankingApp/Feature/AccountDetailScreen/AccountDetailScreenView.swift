@@ -31,9 +31,15 @@ final class AccountDetailScreenView: UIView {
         scrollView.isPagingEnabled = true
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
-        scrollView.addSubview(tableView)
-        scrollView.addSubview(accountDetailPageView)
+        scrollView.addSubview(scrollViewContentView)
         return scrollView
+    }()
+
+    private lazy var scrollViewContentView: UIView = {
+        let contentView = UIView()
+        contentView.addSubview(tableView)
+        contentView.addSubview(accountDetailPageView)
+        return contentView
     }()
 
     private lazy var searchBar: UISearchBar = {
@@ -90,17 +96,22 @@ extension AccountDetailScreenView {
         }
 
         tableView.snp.makeConstraints { make in
-            make.edges.equalTo(scrollView)
+            make.top.equalTo(scrollView)
+            make.bottom.equalTo(scrollView)
+            make.leading.equalTo(scrollView)
             make.width.equalToSuperview()
+        }
+
+        scrollViewContentView.snp.makeConstraints { make in
+            make.edges.equalTo(scrollView)
+            make.height.equalTo(scrollView)
+            make.width.equalTo(scrollView).priority(.low)
         }
 
         accountDetailPageView.snp.makeConstraints { make in
             make.leading.equalTo(tableView.snp.trailing)
             make.top.bottom.equalTo(scrollView)
-            make.trailing.equalTo(scrollView)
+            make.width.equalTo(tableView)
         }
-
-        let totalContentWidth = UIScreen.main.bounds.width + tableView.frame.width
-        scrollView.contentSize = CGSize(width: totalContentWidth, height: scrollView.contentSize.height)
     }
 }
