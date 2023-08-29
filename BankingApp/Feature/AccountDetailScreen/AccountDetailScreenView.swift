@@ -1,18 +1,13 @@
 import UIKit
 import SnapKit
 
-enum ScrollViewDirection {
-    case forward
-    case backward
-}
-
 protocol SegmentedSelectionScrollDelegate: AnyObject {
-    func scrollViewDidChangePage(direction: ScrollViewDirection)
+    func scrollViewDidChangePage(pageNumber: Int)
 }
 
 final class AccountDetailScreenView: UIView {
 
-    var lastContentOffset: CGFloat = 0
+    var lastPageNumber: Int = 0
     let accountDetailPageView = UIView()
     let accountDetailView = AccountDetailView()
     weak var segmentedSelectionScrollDelegate: SegmentedSelectionScrollDelegate?
@@ -82,18 +77,22 @@ final class AccountDetailScreenView: UIView {
 // MARK: - UIScrollViewDelegate
 extension AccountDetailScreenView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let fullWidth = scrollView.contentSize.width
+        let contentOffset = scrollView.contentOffset.x
+        let scrollPercentage = (contentOffset / (fullWidth - scrollView.bounds.width)) * 100
+        print("Full Width: \(fullWidth)")
+        print("Content Offset: \(contentOffset)")
+        print("Scroll Percentage: \(scrollPercentage)%")
+    }
+
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset.x
+        let pageNumber = Int(offset / scrollView.bounds.width)
 
-        if offset > lastContentOffset + scrollView.bounds.width - 50 {
-            lastContentOffset = scrollView.contentOffset.x
-            segmentedSelectionScrollDelegate?.scrollViewDidChangePage(direction: .forward)
-            return
-        }
-
-        if offset < lastContentOffset - scrollView.bounds.width + 50 {
-            lastContentOffset = scrollView.contentOffset.x
-            segmentedSelectionScrollDelegate?.scrollViewDidChangePage(direction: .backward)
-            return
+        if pageNumber != lastPageNumber {
+            segmentedSelectionScrollDelegate?.scrollViewDidChangePage(pageNumber: pageNumber)
+            lastPageNumber = pageNumber
         }
     }
 }

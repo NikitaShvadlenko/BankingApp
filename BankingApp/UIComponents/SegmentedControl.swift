@@ -15,6 +15,7 @@ public protocol SegmentedControlDelegate: AnyObject {
 public class SegmentedControl: UISegmentedControl {
 
     private let buttonBar = UIView()
+
     public weak var delegate: SegmentedControlDelegate? {
         didSet {
             itemSelected()
@@ -64,6 +65,11 @@ public class SegmentedControl: UISegmentedControl {
         items.append(item)
         insertSegment(withTitle: item.title, at: items.count - 1, animated: false)
     }
+
+    public func selectItem(at index: Int) {
+        selectedSegmentIndex = index
+        itemSelected()
+    }
 }
 
 extension SegmentedControl {
@@ -112,7 +118,6 @@ extension SegmentedControl {
             let translationX = targetX - self.buttonBar.frame.origin.x
             self.buttonBar.transform = self.buttonBar.transform.translatedBy(x: translationX, y: 0)
         }
-
         delegate?.segmentedControlDidChangeValue(self)
     }
 

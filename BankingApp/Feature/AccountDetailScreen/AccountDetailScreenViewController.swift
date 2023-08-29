@@ -18,6 +18,7 @@ final class AccountDetailScreenViewController: UIViewController {
     func setAccountsViewDelegate() {
         accountDetailScreenView.accountDetailView.setDelegate(delegate: self)
         accountDetailScreenView.segmentedControl.delegate = self
+        accountDetailScreenView.segmentedSelectionScrollDelegate = self
     }
 
     func setTableViewManager(_ tableViewManager: ManagesTransactionsTableView) {
@@ -52,6 +53,12 @@ extension AccountDetailScreenViewController: AccountDetailScreenViewInput {
 extension AccountDetailScreenViewController: AccountNumberShareViewDelegate {
     func accountNumberTapped() {
         print("AccountNumberTapped")
+    }
+}
+// MARK: - SegmentedSelectionScrollDelegate
+extension AccountDetailScreenViewController: SegmentedSelectionScrollDelegate {
+    func scrollViewDidChangePage(pageNumber: Int) {
+        accountDetailScreenView.segmentedControl.selectItem(at: pageNumber)
     }
 }
 
