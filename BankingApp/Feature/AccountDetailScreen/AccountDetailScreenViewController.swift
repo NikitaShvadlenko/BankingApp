@@ -57,8 +57,12 @@ extension AccountDetailScreenViewController: AccountNumberShareViewDelegate {
 }
 // MARK: - SegmentedSelectionScrollDelegate
 extension AccountDetailScreenViewController: SegmentedSelectionScrollDelegate {
+    func scrollViewDidScroll(percentage: Double) {
+        accountDetailScreenView.segmentedControl.changeSelectionBarPosition(offsetPercentage: percentage)
+    }
+
     func scrollViewDidChangePage(pageNumber: Int) {
-        accountDetailScreenView.segmentedControl.selectItem(at: pageNumber)
+       accountDetailScreenView.segmentedControl.selectedSegmentIndex = pageNumber
     }
 }
 

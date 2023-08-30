@@ -22,6 +22,15 @@ public class SegmentedControl: UISegmentedControl {
         }
     }
 
+    public override var selectedSegmentIndex: Int {
+        didSet {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                let width = self.frame.size.width / CGFloat(self.numberOfSegments)
+                self.buttonBar.frame.origin.x = width * CGFloat(self.selectedSegmentIndex)
+            }
+        }
+    }
+
     public var items: [SegmentedControlItem] = []
 
     public init(frame: CGRect, selected: UIColor, normal: UIColor, height: CGFloat, font: UIFont) {
@@ -66,9 +75,13 @@ public class SegmentedControl: UISegmentedControl {
         insertSegment(withTitle: item.title, at: items.count - 1, animated: false)
     }
 
-    public func selectItem(at index: Int) {
-        selectedSegmentIndex = index
-        itemSelected()
+    public func changeSelectionBarPosition(offsetPercentage: Double) {
+        let width = frame.size.width / CGFloat(numberOfSegments)
+        let offsetToApply = width * offsetPercentage / 100
+
+        let newXPosition = CGFloat(offsetToApply)
+        buttonBar.frame.origin.x = newXPosition
+        print("NEW X POSITION IS: ", newXPosition)
     }
 }
 
@@ -112,12 +125,6 @@ extension SegmentedControl {
 
     @objc
     private func itemSelected() {
-        UIView.animate(withDuration: 0.3) { [weak self] in
-            guard let self = self else { return }
-            let targetX = (self.frame.width / CGFloat(self.numberOfSegments)) * CGFloat(self.selectedSegmentIndex)
-            let translationX = targetX - self.buttonBar.frame.origin.x
-            self.buttonBar.transform = self.buttonBar.transform.translatedBy(x: translationX, y: 0)
-        }
         delegate?.segmentedControlDidChangeValue(self)
     }
 

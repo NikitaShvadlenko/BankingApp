@@ -3,6 +3,7 @@ import SnapKit
 
 protocol SegmentedSelectionScrollDelegate: AnyObject {
     func scrollViewDidChangePage(pageNumber: Int)
+    func scrollViewDidScroll(percentage: Double)
 }
 
 final class AccountDetailScreenView: UIView {
@@ -80,11 +81,10 @@ extension AccountDetailScreenView: UIScrollViewDelegate {
         let fullWidth = scrollView.contentSize.width
         let contentOffset = scrollView.contentOffset.x
         let scrollPercentage = (contentOffset / (fullWidth - scrollView.bounds.width)) * 100
-        print("Full Width: \(fullWidth)")
         print("Content Offset: \(contentOffset)")
         print("Scroll Percentage: \(scrollPercentage)%")
+        segmentedSelectionScrollDelegate?.scrollViewDidScroll(percentage: scrollPercentage)
     }
-
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset.x
