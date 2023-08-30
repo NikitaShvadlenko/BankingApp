@@ -81,8 +81,6 @@ extension AccountDetailScreenView: UIScrollViewDelegate {
         let fullWidth = scrollView.contentSize.width
         let contentOffset = scrollView.contentOffset.x
         let scrollPercentage = (contentOffset / (fullWidth - scrollView.bounds.width)) * 100
-        print("Content Offset: \(contentOffset)")
-        print("Scroll Percentage: \(scrollPercentage)%")
         segmentedSelectionScrollDelegate?.scrollViewDidScroll(percentage: scrollPercentage)
     }
 

@@ -14,20 +14,12 @@ public protocol SegmentedControlDelegate: AnyObject {
 
 public class SegmentedControl: UISegmentedControl {
 
+    private var barPosition: CGFloat?
     private let buttonBar = UIView()
 
     public weak var delegate: SegmentedControlDelegate? {
         didSet {
             itemSelected()
-        }
-    }
-
-    public override var selectedSegmentIndex: Int {
-        didSet {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-                let width = self.frame.size.width / CGFloat(self.numberOfSegments)
-                self.buttonBar.frame.origin.x = width * CGFloat(self.selectedSegmentIndex)
-            }
         }
     }
 
@@ -81,7 +73,13 @@ public class SegmentedControl: UISegmentedControl {
 
         let newXPosition = CGFloat(offsetToApply)
         buttonBar.frame.origin.x = newXPosition
-        print("NEW X POSITION IS: ", newXPosition)
+        barPosition = newXPosition
+    }
+
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        guard let barPosition else { return }
+        buttonBar.frame.origin.x = barPosition
     }
 }
 
@@ -104,7 +102,7 @@ extension SegmentedControl {
         addSubview(buttonBar)
         let numberOfSegments = numberOfSegments
         buttonBar.backgroundColor = color
-        buttonBar.snp.remakeConstraints { make in
+        buttonBar.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
             make.leading.equalToSuperview()
             make.height.equalTo(2)
