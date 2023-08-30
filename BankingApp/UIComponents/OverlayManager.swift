@@ -15,15 +15,9 @@ protocol ManagesOverlay {
 
 final class OverlayManager: ManagesOverlay {
 
-    private static var sharedManager: OverlayManager = {
-        return OverlayManager()
-    }()
-
     private var overlayView: UIView?
 
-    static var shared: OverlayManager {
-        return sharedManager
-    }
+    static let shared = OverlayManager()
 
     private init() {}
 
