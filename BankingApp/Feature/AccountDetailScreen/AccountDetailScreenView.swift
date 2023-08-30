@@ -17,8 +17,8 @@ final class AccountDetailScreenView: UIView {
 
     lazy var accountImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
-        imageView.isUserInteractionEnabled = true
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
 
@@ -83,14 +83,6 @@ final class AccountDetailScreenView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        accountDetailView.layer.zPosition = -1
-        segmentedControl.layer.zPosition = 1000
-        tableView.layer.zPosition = 1000
-        searchBar.layer.zPosition = 1000
-        accountImageView.layer.zPosition = -2
-    }
 }
 
 // MARK: - UIScrollViewDelegate
@@ -126,13 +118,14 @@ extension AccountDetailScreenView {
         searchBar.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top)
             make.leading.trailing.equalToSuperview().inset(14)
-            make.height.equalTo(1)
         }
 
-        accountImageView.translatesAutoresizingMaskIntoConstraints = false
+        searchBarHeight = searchBar.heightAnchor.constraint(equalToConstant: 40)
+        searchBarHeight?.isActive = true
 
         imageHeight = accountImageView.heightAnchor.constraint(equalToConstant: 140)
         imageHeight?.isActive = true
+
         accountImageView.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom).priority(.low)
             make.leading.trailing.equalToSuperview()
@@ -176,5 +169,7 @@ extension AccountDetailScreenView {
             make.top.bottom.equalTo(scrollView)
             make.width.equalTo(tableView)
         }
+        accountDetailView.layer.zPosition = -1
+        accountImageView.layer.zPosition = -2
     }
 }

@@ -56,13 +56,28 @@ extension AccountDetailScreenViewController: TransactionsTableViewManagerScrollD
     func transactionsTableScrollView(_ transactionsTableScrollView: UIScrollView, didScrollTo offsetY: CGFloat) {
         print("scrolled to", offsetY)
         guard let heightConstraint = accountDetailScreenView.imageHeight else { return }
-
-        if heightConstraint.constant - offsetY < 0 {
-            heightConstraint.constant = 0
-            return
+        guard let searchBarHeight = accountDetailScreenView.searchBarHeight else { return }
+// if making image smaller
+        if offsetY > 0 {
+            if heightConstraint.constant - offsetY < 0 {
+                heightConstraint.constant = 0
+                return
+            }
+            if searchBarHeight.constant - offsetY < 0 {
+                searchBarHeight.constant = 0
+                return
+            }
         }
-        accountDetailScreenView.accountImageView.layer.position.y -= offsetY
-        heightConstraint.constant -= offsetY
+
+// if making image bigger
+        if offsetY < 0 {
+            if heightNeedsToChange(constraint: heightConstraint, maxHeight: 220, offsetY: offsetY) {
+                self.accountDetailScreenView.accountImageView.layer.position.y -= offsetY
+                heightConstraint.constant -= offsetY
+            } else if heightNeedsToChange(constraint: searchBarHeight, maxHeight: 40, offsetY: offsetY) {
+                searchBarHeight.constant -= offsetY
+            }
+        }
     }
 }
 // MARK: - AccountNumberShareViewDelegate
@@ -78,7 +93,7 @@ extension AccountDetailScreenViewController: SegmentedSelectionScrollDelegate {
     }
 
     func scrollViewDidChangePage(pageNumber: Int) {
-       accountDetailScreenView.segmentedControl.selectedSegmentIndex = pageNumber
+        accountDetailScreenView.segmentedControl.selectedSegmentIndex = pageNumber
     }
 }
 
@@ -91,6 +106,18 @@ extension AccountDetailScreenViewController: SegmentedControlDelegate {
 }
 // MARK: - Private methods
 extension AccountDetailScreenViewController {
+
+    private func heightNeedsToChange(
+        constraint: NSLayoutConstraint,
+        maxHeight: CGFloat,
+        offsetY: CGFloat
+    ) -> Bool {
+        if constraint.constant > maxHeight && offsetY < 0 {
+            return false
+        }
+        return true
+    }
+
     private func setTitleAppearance() {
         let navigaitonBarAppearence = UINavigationBarAppearance()
         navigaitonBarAppearence.titleTextAttributes = [
