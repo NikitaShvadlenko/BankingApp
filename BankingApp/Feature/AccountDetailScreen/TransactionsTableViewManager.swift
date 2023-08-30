@@ -11,6 +11,7 @@ import UIKit
 protocol ManagesTransactionsTableView: UITableViewDelegate {
     var dataSource: UITableViewDiffableDataSource<Date, Transaction> { get }
     var transactions: [Transaction] { get }
+    func setScrollDelegate(_ scrollDelegate: TransactionsTableViewManagerScrollDelegate)
     func setTransacrtions(_ transactions: [Transaction])
     func setTableView(_ tableView: UITableView)
 }
@@ -22,10 +23,18 @@ protocol TransactionsTableViewManagerDelegate: AnyObject {
     )
 }
 
+protocol TransactionsTableViewManagerScrollDelegate: AnyObject {
+    func transactionsTableScrollView(
+        _ transactionsTableScrollView: UIScrollView,
+        didScrollTo offsetY: CGFloat
+    )
+}
+
 final class TransactionsTableViewManager: NSObject {
     var sortedDates: [Date] = []
     weak var delegate: TransactionsTableViewManagerDelegate?
     weak var tableView: UITableView?
+    weak var scrollDelegate: TransactionsTableViewManagerScrollDelegate?
     var transactions: [Transaction] = [] {
         didSet {
             configureSnapshot()
@@ -49,6 +58,10 @@ final class TransactionsTableViewManager: NSObject {
 }
 
 extension TransactionsTableViewManager: ManagesTransactionsTableView {
+    func setScrollDelegate(_ scrollDelegate: TransactionsTableViewManagerScrollDelegate) {
+        self.scrollDelegate = scrollDelegate
+    }
+
     func setTableView(_ tableView: UITableView) {
         self.tableView = tableView
     }
@@ -72,6 +85,10 @@ extension TransactionsTableViewManager: UITableViewDelegate {
         }
         header.configure(date: sortedDates[section])
         return header
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollDelegate?.transactionsTableScrollView(scrollView, didScrollTo: scrollView.contentOffset.y)
     }
 }
 

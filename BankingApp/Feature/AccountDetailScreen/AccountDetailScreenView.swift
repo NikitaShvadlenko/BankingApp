@@ -11,7 +11,16 @@ final class AccountDetailScreenView: UIView {
     var lastPageNumber: Int = 0
     let accountDetailPageView = UIView()
     let accountDetailView = AccountDetailView()
+    var imageHeight: NSLayoutConstraint?
+    var searchBarHeight: NSLayoutConstraint?
     weak var segmentedSelectionScrollDelegate: SegmentedSelectionScrollDelegate?
+
+    lazy var accountImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleToFill
+        imageView.isUserInteractionEnabled = true
+        return imageView
+    }()
 
     lazy var segmentedControl: SegmentedControl = {
         let segmentedControl = SegmentedControl(
@@ -21,6 +30,7 @@ final class AccountDetailScreenView: UIView {
             height: 35,
             font: UIFont.systemFont(ofSize: 16)
         )
+        segmentedControl.backgroundColor = UIColor(asset: Asset.Colors.primaryBackground)
         segmentedControl.insertSegmentItem(.transactionsTab)
         segmentedControl.insertSegmentItem(.accountDetailsTab)
         return segmentedControl
@@ -73,6 +83,14 @@ final class AccountDetailScreenView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        accountDetailView.layer.zPosition = -1
+        segmentedControl.layer.zPosition = 1000
+        tableView.layer.zPosition = 1000
+        searchBar.layer.zPosition = 1000
+        accountImageView.layer.zPosition = -2
+    }
 }
 
 // MARK: - UIScrollViewDelegate
@@ -99,27 +117,38 @@ extension AccountDetailScreenView: UIScrollViewDelegate {
 extension AccountDetailScreenView {
     private func configureViews() {
         backgroundColor = .white
-        addSubview(searchBar)
         addSubview(accountDetailView)
+        addSubview(searchBar)
         addSubview(segmentedControl)
         addSubview(scrollView)
+        addSubview(accountImageView)
 
         searchBar.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top)
             make.leading.trailing.equalToSuperview().inset(14)
+            make.height.equalTo(1)
+        }
+
+        accountImageView.translatesAutoresizingMaskIntoConstraints = false
+
+        imageHeight = accountImageView.heightAnchor.constraint(equalToConstant: 140)
+        imageHeight?.isActive = true
+        accountImageView.snp.makeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom).priority(.low)
+            make.leading.trailing.equalToSuperview()
         }
 
         accountDetailView.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(140)
+            make.center.equalTo(accountImageView).priority(.low)
+            make.top.greaterThanOrEqualTo(safeAreaLayoutGuide.snp.topMargin)
+            make.width.equalTo(200).priority(.high)
+            make.height.equalTo(120).priority(.high)
         }
 
         segmentedControl.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.top.equalTo(accountDetailView.snp.bottom)
+            make.top.equalTo(accountImageView.snp.bottom)
         }
-
         accountDetailPageView.backgroundColor = .red
 
         scrollView.snp.makeConstraints { make in

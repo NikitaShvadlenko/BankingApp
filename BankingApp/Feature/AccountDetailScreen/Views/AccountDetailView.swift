@@ -23,13 +23,6 @@ final class AccountDetailView: UIView {
         return containerView
     }()
 
-    private lazy var accountImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .redraw
-        imageView.isUserInteractionEnabled = true
-        return imageView
-    }()
-
     private lazy var accountNumberView: AccountNumberShareView = {
         let view = AccountNumberShareView()
         return view
@@ -72,15 +65,13 @@ extension AccountDetailView {
     public func configureView(
         accountNumber: String,
         amount: Double,
-        availible: Double,
-        imageData: Data
+        availible: Double
     ) {
         let numberFormatter = NumberFormatter()
         let formattedAmount = numberFormatter.dollarsFromAmount(amount)
         let formattedAvalible = numberFormatter.dollarsFromAmount(availible)
         availibleLabel.text = L10n.amountAvailible(formattedAvalible)
         amountLabel.text = formattedAmount
-        accountImageView.image = UIImage(data: imageData)
         accountNumberView.configure(accountNumber: accountNumber)
     }
 }
@@ -88,17 +79,10 @@ extension AccountDetailView {
 // MARK: - Private Methods
 extension AccountDetailView {
    private func setupView() {
-        addSubview(accountImageView)
-        accountImageView.addSubview(containerView)
-
+       addSubview(containerView)
         containerView.snp.makeConstraints { make in
-            make.centerX.centerY.equalTo(accountImageView)
-            make.top.equalTo(accountImageView).inset(14)
-            make.width.equalTo(accountImageView.snp.height).multipliedBy(1.5)
-        }
-
-        accountImageView.snp.makeConstraints { make in
-            make.leading.trailing.top.bottom.equalToSuperview()
+            make.centerX.centerY.equalToSuperview()
+            make.edges.equalToSuperview().inset(2)
         }
 
         amountLabel.snp.makeConstraints { make in
@@ -112,9 +96,9 @@ extension AccountDetailView {
         }
 
         availibleLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(containerView.snp.bottom)
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(amountLabel.snp.bottom)
+            make.bottom.equalToSuperview()
         }
     }
 }

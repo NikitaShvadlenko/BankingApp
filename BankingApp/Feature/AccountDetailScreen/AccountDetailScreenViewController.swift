@@ -8,6 +8,7 @@ final class AccountDetailScreenViewController: UIViewController {
 
     override func loadView() {
         view = accountDetailScreenView
+        navigationController?.navigationBar.layer.zPosition = 1000
     }
 
     override func viewDidLoad() {
@@ -22,6 +23,7 @@ final class AccountDetailScreenViewController: UIViewController {
     }
 
     func setTableViewManager(_ tableViewManager: ManagesTransactionsTableView) {
+        tableViewManager.setScrollDelegate(self)
         accountDetailScreenView.tableView.delegate = tableViewManager
         tableViewManager.setTableView(accountDetailScreenView.tableView)
         accountDetailScreenView.tableView.dataSource = tableViewManager.dataSource
@@ -38,9 +40,9 @@ extension AccountDetailScreenViewController: AccountDetailScreenViewInput {
         accountDetailScreenView.accountDetailView.configureView(
             accountNumber: model.accountNumber,
             amount: model.amount,
-            availible: model.availible,
-            imageData: model.image
+            availible: model.availible
         )
+        accountDetailScreenView.accountImageView.image = UIImage(data: model.image)
     }
 
     func configureViews() {
@@ -49,6 +51,20 @@ extension AccountDetailScreenViewController: AccountDetailScreenViewInput {
     }
 }
 
+// MARK: - TransactionsTableViewManagerScrollDelegate
+extension AccountDetailScreenViewController: TransactionsTableViewManagerScrollDelegate {
+    func transactionsTableScrollView(_ transactionsTableScrollView: UIScrollView, didScrollTo offsetY: CGFloat) {
+        print("scrolled to", offsetY)
+        guard let heightConstraint = accountDetailScreenView.imageHeight else { return }
+
+        if heightConstraint.constant - offsetY < 0 {
+            heightConstraint.constant = 0
+            return
+        }
+        accountDetailScreenView.accountImageView.layer.position.y -= offsetY
+        heightConstraint.constant -= offsetY
+    }
+}
 // MARK: - AccountNumberShareViewDelegate
 extension AccountDetailScreenViewController: AccountNumberShareViewDelegate {
     func accountNumberTapped() {
