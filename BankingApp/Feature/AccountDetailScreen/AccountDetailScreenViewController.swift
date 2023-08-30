@@ -54,24 +54,24 @@ extension AccountDetailScreenViewController: AccountDetailScreenViewInput {
 // MARK: - TransactionsTableViewManagerScrollDelegate
 extension AccountDetailScreenViewController: TransactionsTableViewManagerScrollDelegate {
     func transactionsTableScrollView(_ transactionsTableScrollView: UIScrollView, didScrollTo offsetY: CGFloat) {
-        print("scrolled to", offsetY)
         guard let heightConstraint = accountDetailScreenView.imageHeight else { return }
         guard let searchBarHeight = accountDetailScreenView.searchBarHeight else { return }
 // if making image smaller
         if offsetY > 0 {
-            if heightConstraint.constant - offsetY < 0 {
-                heightConstraint.constant = 0
-                return
-            }
-            if searchBarHeight.constant - offsetY < 0 {
-                searchBarHeight.constant = 0
-                return
+            let maxImageHeightReduction = min(heightConstraint.constant, offsetY)
+            let maxSearchBarHeightReduction = min(searchBarHeight.constant, offsetY)
+
+            print(maxImageHeightReduction)
+            searchBarHeight.constant -= maxSearchBarHeightReduction / 2
+            print(searchBarHeight.constant)
+            if searchBarHeight.constant <= 5 {
+                heightConstraint.constant -= maxImageHeightReduction / 2
             }
         }
-
 // if making image bigger
+        print(offsetY)
         if offsetY < 0 {
-            if heightNeedsToChange(constraint: heightConstraint, maxHeight: 220, offsetY: offsetY) {
+            if heightNeedsToChange(constraint: heightConstraint, maxHeight: 155, offsetY: offsetY) {
                 self.accountDetailScreenView.accountImageView.layer.position.y -= offsetY
                 heightConstraint.constant -= offsetY
             } else if heightNeedsToChange(constraint: searchBarHeight, maxHeight: 40, offsetY: offsetY) {

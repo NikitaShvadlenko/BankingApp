@@ -123,7 +123,7 @@ extension AccountDetailScreenView {
         searchBarHeight = searchBar.heightAnchor.constraint(equalToConstant: 40)
         searchBarHeight?.isActive = true
 
-        imageHeight = accountImageView.heightAnchor.constraint(equalToConstant: 140)
+        imageHeight = accountImageView.heightAnchor.constraint(equalToConstant: 155)
         imageHeight?.isActive = true
 
         accountImageView.snp.makeConstraints { make in
