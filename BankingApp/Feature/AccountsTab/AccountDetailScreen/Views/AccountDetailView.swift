@@ -10,6 +10,7 @@ import UIKit
 
 final class AccountDetailView: UIView {
 
+    private let bottomBorderView = UIView()
     private lazy var containerView: UIView = {
         let containerView = UIView()
         containerView.backgroundColor = .white
@@ -23,8 +24,8 @@ final class AccountDetailView: UIView {
         return containerView
     }()
 
-    private lazy var accountNumberView: AccountNumberShareView = {
-        let view = AccountNumberShareView()
+    private lazy var accountNumberView: ShareLabel = {
+        let view = ShareLabel(style: .labelFirst)
         return view
     }()
 
@@ -58,7 +59,7 @@ final class AccountDetailView: UIView {
 // MARK: - Public Methods
 extension AccountDetailView {
 
-    public func setDelegate(delegate: AccountNumberShareViewDelegate) {
+    public func setDelegate(delegate: ShareLabelDelegate) {
         accountNumberView.delegate = delegate
     }
 
@@ -70,9 +71,10 @@ extension AccountDetailView {
         let numberFormatter = NumberFormatter()
         let formattedAmount = numberFormatter.dollarsFromAmount(amount)
         let formattedAvalible = numberFormatter.dollarsFromAmount(availible)
+        let formattedAccountNumber = accountNumber.formattedAsAcount()
         availibleLabel.text = L10n.amountAvailible(formattedAvalible)
         amountLabel.text = formattedAmount
-        accountNumberView.configure(accountNumber: accountNumber)
+        accountNumberView.configure(title: formattedAccountNumber)
     }
 }
 
@@ -80,7 +82,11 @@ extension AccountDetailView {
 extension AccountDetailView {
    private func setupView() {
        addSubview(containerView)
-        containerView.snp.makeConstraints { make in
+       accountNumberView.addSubview(bottomBorderView)
+
+       bottomBorderView.backgroundColor = Asset.Colors.secondaryLabel.color.withAlphaComponent(0.4)
+
+       containerView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()
             make.edges.equalToSuperview().inset(2)
         }
@@ -100,5 +106,11 @@ extension AccountDetailView {
             make.top.equalTo(amountLabel.snp.bottom)
             make.bottom.equalToSuperview()
         }
+
+       bottomBorderView.snp.makeConstraints { make in
+           make.leading.trailing.equalToSuperview()
+           make.height.equalTo(1.0)
+           make.bottom.equalTo(accountNumberView.snp.bottom)
+       }
     }
 }

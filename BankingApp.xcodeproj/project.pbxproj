@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -60,7 +60,7 @@
 		932A0B787FCB84070CA6B2A5 /* TransferScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D719B98BF697191FF2E7A53B /* TransferScreenView.swift */; };
 		96D9F99CD5A363F491B755ED /* AccountsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2784E307A13A8C48436C19D /* AccountsScreenInteractor.swift */; };
 		972BEDF7B4C8CD352AB6BC14 /* TransactionDetailScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ECA6D9BE889A582C8AC3E8 /* TransactionDetailScreenContract.swift */; };
-		979B383DADBAF77F3D90217D /* AccountNumberShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5C575843FA6ADE61D95FF4 /* AccountNumberShareView.swift */; };
+		979B383DADBAF77F3D90217D /* ShareLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5C575843FA6ADE61D95FF4 /* ShareLabel.swift */; };
 		997F8C812A9F3EFABAD94DB0 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161F44FA0DA28412EF979F1E /* SFSymbol.swift */; };
 		999B63D93B1331D08B853314 /* TransferScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF421FDAC6C4D5E319AE5E28 /* TransferScreenAssembly.swift */; };
 		99C829495DF01EBCAFFB4109 /* SettingsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839A4C0F15692927DF3E1D54 /* SettingsScreenRouter.swift */; };
@@ -74,6 +74,11 @@
 		AB54D0ECFC20003C63EAA6C7 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76A18E45A995308D783A3E /* OverlayManager.swift */; };
 		AEEE51CC00DECEB45728E1CE /* TransactionDetailScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EF9DA026BE903282DD2FB /* TransactionDetailScreenPresenter.swift */; };
 		B2542C12A794DEBE9BDA5874 /* AccountOverviewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DBDEA678FB2A5D33CED35 /* AccountOverviewImageCell.swift */; };
+		B408B0D72AA1544D00708E28 /* TransactionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408B0D62AA1544D00708E28 /* TransactionCollectionViewCell.swift */; };
+		B408B0D92AA1596100708E28 /* ShareLabelConstraintStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408B0D82AA1596100708E28 /* ShareLabelConstraintStrategy.swift */; };
+		B408B0DB2AA15A9E00708E28 /* LabelFirstConstraintStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408B0DA2AA15A9E00708E28 /* LabelFirstConstraintStrategy.swift */; };
+		B408B0DE2AA15C8500708E28 /* ImageFirstConstraintStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408B0DD2AA15C8500708E28 /* ImageFirstConstraintStrategy.swift */; };
+		B408B0E02AA15CDE00708E28 /* ShareLabelConstraintStrategyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408B0DF2AA15CDE00708E28 /* ShareLabelConstraintStrategyFactory.swift */; };
 		B8A6494D87F24B3A31526EF9 /* AccountsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC96BFCA2DACD0702FEC5F3 /* AccountsScreenViewController.swift */; };
 		B939469ACF4BF846DCA30102 /* AccountOverviewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8CCCCCD3085AC6E57DCAF /* AccountOverviewCellProtocol.swift */; };
 		BC5E8D661AAE1A743BB160CF /* AccountDetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09A51439A80ED394D36C215 /* AccountDetailScreenView.swift */; };
@@ -186,6 +191,11 @@
 		B09A51439A80ED394D36C215 /* AccountDetailScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailScreenView.swift; sourceTree = "<group>"; };
 		B153799168FF3C4F5F2E8276 /* FirebaseCollectionKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionKeys.swift; sourceTree = "<group>"; };
 		B27E82CEF87579C01E6E0881 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		B408B0D62AA1544D00708E28 /* TransactionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCollectionViewCell.swift; sourceTree = "<group>"; };
+		B408B0D82AA1596100708E28 /* ShareLabelConstraintStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLabelConstraintStrategy.swift; sourceTree = "<group>"; };
+		B408B0DA2AA15A9E00708E28 /* LabelFirstConstraintStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFirstConstraintStrategy.swift; sourceTree = "<group>"; };
+		B408B0DD2AA15C8500708E28 /* ImageFirstConstraintStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFirstConstraintStrategy.swift; sourceTree = "<group>"; };
+		B408B0DF2AA15CDE00708E28 /* ShareLabelConstraintStrategyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLabelConstraintStrategyFactory.swift; sourceTree = "<group>"; };
 		B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B74ED66C588F5C2944D8324A /* ImageDownloaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderProtocol.swift; sourceTree = "<group>"; };
 		B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
@@ -198,7 +208,7 @@
 		CB32801D13EF28D459296F46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB896695F1F384A2AD302A1F /* TransactionDetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailScreenViewController.swift; sourceTree = "<group>"; };
 		CC90BE13D4894F528D63A552 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		CD5C575843FA6ADE61D95FF4 /* AccountNumberShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountNumberShareView.swift; sourceTree = "<group>"; };
+		CD5C575843FA6ADE61D95FF4 /* ShareLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLabel.swift; sourceTree = "<group>"; };
 		D1551D8F5AFF685C82EF0F5A /* PaymentsScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenAssembly.swift; sourceTree = "<group>"; };
 		D35EF9DA026BE903282DD2FB /* TransactionDetailScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailScreenPresenter.swift; sourceTree = "<group>"; };
 		D719B98BF697191FF2E7A53B /* TransferScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenView.swift; sourceTree = "<group>"; };
@@ -261,7 +271,7 @@
 				735261420467B18928E903B9 /* TransactionDetailScreenRouter.swift */,
 				186BEAF645AC9B7B07A80587 /* TransactionDetailScreenView.swift */,
 				CB896695F1F384A2AD302A1F /* TransactionDetailScreenViewController.swift */,
-				F28D1221F78BEC5E6BE15F16 /* TransactionPagingView.swift */,
+				B408B0D52AA1543800708E28 /* Views */,
 			);
 			path = TransactionDetailScreen;
 			sourceTree = "<group>";
@@ -335,7 +345,6 @@
 				5D3AB887B13E4A8AE2B788BA /* AccountDetailPageView.swift */,
 				09EAD97375D0479BA2B3D5DF /* AccountDetailStackView.swift */,
 				5ADC715307BAF096312127ED /* AccountDetailView.swift */,
-				CD5C575843FA6ADE61D95FF4 /* AccountNumberShareView.swift */,
 				626401C2A409421AA79C8409 /* TransactionsTableHeader.swift */,
 				4166BD1B0EEE642FE2E28EED /* TransactionTableViewCell.swift */,
 			);
@@ -488,6 +497,27 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		B408B0D52AA1543800708E28 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F28D1221F78BEC5E6BE15F16 /* TransactionPagingView.swift */,
+				B408B0D62AA1544D00708E28 /* TransactionCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B408B0DC2AA15C6A00708E28 /* ShareLabel */ = {
+			isa = PBXGroup;
+			children = (
+				B408B0D82AA1596100708E28 /* ShareLabelConstraintStrategy.swift */,
+				B408B0DF2AA15CDE00708E28 /* ShareLabelConstraintStrategyFactory.swift */,
+				B408B0DA2AA15A9E00708E28 /* LabelFirstConstraintStrategy.swift */,
+				B408B0DD2AA15C8500708E28 /* ImageFirstConstraintStrategy.swift */,
+				CD5C575843FA6ADE61D95FF4 /* ShareLabel.swift */,
+			);
+			path = ShareLabel;
+			sourceTree = "<group>";
+		};
 		BC6D02584F8B0EF5CD254F73 /* UserDefaultsStorage */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,6 +546,7 @@
 		D0E4F86FB6D8172161EF84BA /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				B408B0DC2AA15C6A00708E28 /* ShareLabel */,
 				8B76A18E45A995308D783A3E /* OverlayManager.swift */,
 				205D9819735CBDFE21675A3A /* OverlayView.swift */,
 				52ECC6E166ABFEDF94D70920 /* ScrollView+Extensions.swift */,
@@ -554,34 +585,6 @@
 				547984CC8761D602DD3002DB /* User.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		"TEMP_6E375793-BA98-4EE3-A296-21B42CCF4784" /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		"TEMP_B5974602-BDDD-4524-93D7-3CF0FF2D7577" /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Packages;
-			sourceTree = "<group>";
-		};
-		"TEMP_F5AF5C37-4237-401C-919D-34A6782E889A" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_FC56260C-B39F-44CA-AB1D-2F436DDE2815" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -695,10 +698,11 @@
 				7D2C0F5D0BE31ADB2CC9EBB6 /* AccountDetailScreenRouter.swift in Sources */,
 				BC5E8D661AAE1A743BB160CF /* AccountDetailScreenView.swift in Sources */,
 				49CE9726AD1D814A1A28E44F /* AccountDetailScreenViewController.swift in Sources */,
+				B408B0DB2AA15A9E00708E28 /* LabelFirstConstraintStrategy.swift in Sources */,
 				3F92ED36BBC56AEC3EB5A676 /* AccountDetailStackView.swift in Sources */,
 				796C9D92FB71B2A5A28FF8C8 /* AccountDetailView.swift in Sources */,
 				EDF326671A52F9C8265D071B /* AccountDisplayStyle.swift in Sources */,
-				979B383DADBAF77F3D90217D /* AccountNumberShareView.swift in Sources */,
+				979B383DADBAF77F3D90217D /* ShareLabel.swift in Sources */,
 				6DAEAC37EB23266390D7B303 /* AccountOverviewCellFactory.swift in Sources */,
 				B939469ACF4BF846DCA30102 /* AccountOverviewCellProtocol.swift in Sources */,
 				B2542C12A794DEBE9BDA5874 /* AccountOverviewImageCell.swift in Sources */,
@@ -740,6 +744,7 @@
 				6466BF0E8DC009F92B9B89E6 /* ScrollView+Extensions.swift in Sources */,
 				CC274B9B0B9B4EAAE78752C0 /* SegmentedControl.swift in Sources */,
 				9D9BE43890557C08719B4A7F /* ServicesScreenAssembly.swift in Sources */,
+				B408B0E02AA15CDE00708E28 /* ShareLabelConstraintStrategyFactory.swift in Sources */,
 				505240510EDD907305A44797 /* ServicesScreenContract.swift in Sources */,
 				DD683AA83823CF68A1ED0FC0 /* ServicesScreenInteractor.swift in Sources */,
 				EC9F917F92A80CD80EA42D7B /* ServicesScreenPresenter.swift in Sources */,
@@ -749,6 +754,7 @@
 				30F618F8ECEB1396BD13AD50 /* Session.swift in Sources */,
 				2B6AF2B68E7113C55382E2FE /* SessionProtocol.swift in Sources */,
 				32FDF3B3CB8B233BE679EF16 /* SettingsScreenAssembly.swift in Sources */,
+				B408B0D72AA1544D00708E28 /* TransactionCollectionViewCell.swift in Sources */,
 				0C0502E2CA4BFEFE79574F84 /* SettingsScreenContract.swift in Sources */,
 				62D6936920D2FC31FA5E5AB8 /* SettingsScreenInteractor.swift in Sources */,
 				A6E9DD4437B3E8AC832F3307 /* SettingsScreenPresenter.swift in Sources */,
@@ -758,6 +764,7 @@
 				F9BEFE42C3CE20DE290FE2B1 /* StoresPlaceholders.swift in Sources */,
 				18063137EECBAB026F8AB813 /* String+Extensions.swift in Sources */,
 				5E885AA7A7E36AD402520AA1 /* Strings+Generated.swift in Sources */,
+				B408B0D92AA1596100708E28 /* ShareLabelConstraintStrategy.swift in Sources */,
 				EAFBEF9EC326EB07490F554C /* TabBarItemFacotry.swift in Sources */,
 				68D39199D4A56D72E877FFC1 /* TabBarItemType.swift in Sources */,
 				D67CBF97D2E8425F7FC3D644 /* TransactionDetailScreenAssembly.swift in Sources */,
@@ -771,6 +778,7 @@
 				7B6793D8B3DAAB89BA9192F8 /* TransactionTableViewCell.swift in Sources */,
 				C22381DC6BDE6A8B5A6374D1 /* TransactionsTableHeader.swift in Sources */,
 				70AB18C426E6490BB414E3DC /* TransactionsTableViewManager.swift in Sources */,
+				B408B0DE2AA15C8500708E28 /* ImageFirstConstraintStrategy.swift in Sources */,
 				999B63D93B1331D08B853314 /* TransferScreenAssembly.swift in Sources */,
 				336B1962911237385FAFA0DC /* TransferScreenContract.swift in Sources */,
 				4F249CD535E792B1CA61F464 /* TransferScreenInteractor.swift in Sources */,
