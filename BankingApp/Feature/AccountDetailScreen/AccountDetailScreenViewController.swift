@@ -127,6 +127,7 @@ extension AccountDetailScreenViewController: SegmentedSelectionScrollDelegate {
 extension AccountDetailScreenViewController: SegmentedControlDelegate {
     func segmentedControlDidChangeValue(_ segmentedControl: SegmentedControl) {
         let index = segmentedControl.selectedSegmentIndex
+        accountDetailScreenView.lastPageNumber = index
         accountDetailScreenView.scrollView.scrollToPage(pageNumber: index)
     }
 }
