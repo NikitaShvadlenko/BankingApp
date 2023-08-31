@@ -20,6 +20,7 @@ final class AccountDetailScreenViewController: UIViewController {
         accountDetailScreenView.accountDetailView.setDelegate(delegate: self)
         accountDetailScreenView.segmentedControl.delegate = self
         accountDetailScreenView.segmentedSelectionScrollDelegate = self
+        accountDetailScreenView.searchBar.delegate = self
     }
 
     func setTableViewManager(_ tableViewManager: ManagesTransactionsTableView) {
@@ -46,9 +47,13 @@ extension AccountDetailScreenViewController: AccountDetailScreenViewInput {
     }
 
     func configureViews() {
-        setTitleAppearance()
         setRightButtonItems()
     }
+}
+
+// MARK: - SearchBarDelegate
+extension AccountDetailScreenViewController: UISearchBarDelegate {
+
 }
 
 // MARK: - TransactionsTableViewManagerScrollDelegate
@@ -115,15 +120,6 @@ extension AccountDetailScreenViewController {
             return false
         }
         return true
-    }
-
-    private func setTitleAppearance() {
-        let navigaitonBarAppearence = UINavigationBarAppearance()
-        navigaitonBarAppearence.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: Asset.Colors.viewTitle.color,
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .medium)
-        ]
-        navigationController?.navigationBar.standardAppearance = navigaitonBarAppearence
     }
 
     private func setRightButtonItems() {

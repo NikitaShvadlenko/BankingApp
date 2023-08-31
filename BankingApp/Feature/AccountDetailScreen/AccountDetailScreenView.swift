@@ -66,7 +66,7 @@ final class AccountDetailScreenView: UIView {
         return contentView
     }()
 
-    private lazy var searchBar: UISearchBar = {
+    lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = L10n.AccountDetail.searchTransactions
         searchBar.autocorrectionType = .no
@@ -115,16 +115,16 @@ extension AccountDetailScreenView {
         addSubview(scrollView)
         addSubview(accountImageView)
 
-        searchBar.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
-            make.leading.trailing.equalToSuperview().inset(14)
-        }
-
         searchBarHeight = searchBar.heightAnchor.constraint(equalToConstant: 40)
         searchBarHeight?.isActive = true
 
         imageHeight = accountImageView.heightAnchor.constraint(equalToConstant: 155)
         imageHeight?.isActive = true
+
+        searchBar.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.leading.trailing.equalToSuperview().inset(14)
+        }
 
         accountImageView.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom).priority(.low)
@@ -142,7 +142,6 @@ extension AccountDetailScreenView {
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(accountImageView.snp.bottom)
         }
-        accountDetailPageView.backgroundColor = .red
 
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(segmentedControl.snp.bottom)

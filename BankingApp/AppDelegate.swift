@@ -43,5 +43,9 @@ extension AppDelegate {
     private func setBackButtonAppearance() {
         UINavigationBar.appearance().backIndicatorImage = UIImage(sfSymbol: SFSymbol.back)
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(sfSymbol: SFSymbol.back)
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: Asset.Colors.viewTitle.color,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .medium)
+        ]
     }
 }

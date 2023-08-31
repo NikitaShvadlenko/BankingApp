@@ -60,12 +60,6 @@ extension AccountsScreenViewController {
 
     private func setNavigationBarTitle() {
         title = L10n.AccountsScreen.title
-        let navigaitonBarAppearence = UINavigationBarAppearance()
-        navigaitonBarAppearence.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: Asset.Colors.viewTitle.color,
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18, weight: .medium)
-        ]
-        navigationController?.navigationBar.standardAppearance = navigaitonBarAppearence
     }
 
     private func setLeftNavigationItem() {
