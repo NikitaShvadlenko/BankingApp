@@ -17,6 +17,7 @@ enum AccountDetailScreenAssembly {
         presenter.interactor = interactor
         presenter.router = router
         presenter.tableViewManager = transactionsTableManager
+        transactionsTableManager.delegate = presenter
 
         interactor.presenter = presenter
 

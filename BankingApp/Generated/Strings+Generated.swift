@@ -65,6 +65,12 @@ internal enum L10n {
     /// Transfer
     internal static let transfer = L10n.tr("Localizable", "TabBar.transfer", fallback: "Transfer")
   }
+  internal enum TransactionDetailPage {
+    /// %@ of %@
+    internal static func pageNumber(_ p1: Any, _ p2: Any) -> String {
+      return L10n.tr("Localizable", "TransactionDetailPage.pageNumber", String(describing: p1), String(describing: p2), fallback: "%@ of %@")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

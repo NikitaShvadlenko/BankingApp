@@ -8,14 +8,23 @@
 
 import UIKit
 
+protocol TransactoinPagingViewDelegate: AnyObject {
+    func transacitonPagingViewDidTapForwardButton(_ transactionPagingView: TransactionPagingView)
+    func transacitonPagingViewDidTapBackButton(_ transactionPagingView: TransactionPagingView)
+}
+
 final class TransactionPagingView: UIView {
+
+    weak var delegate: TransactoinPagingViewDelegate?
 
     private lazy var forwardButton: UIButton = {
         let button = UIButton()
         let image = UIImage(sfSymbol: SFSymbol.forward)
         button.setImage(image, for: .normal)
         button.contentMode = .scaleAspectFit
-        
+        button.alpha = 0
+        button.tintColor = Asset.Colors.segmentedControlSelector.color
+        button.addTarget(self, action: #selector(forwardButtonTapped), for: .touchUpInside)
         return button
     }()
 
@@ -23,7 +32,10 @@ final class TransactionPagingView: UIView {
         let button = UIButton()
         let image = UIImage(sfSymbol: SFSymbol.back)
         button.setImage(image, for: .normal)
+        button.alpha = 0
         button.contentMode = .scaleAspectFit
+        button.tintColor = Asset.Colors.segmentedControlSelector.color
+        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         return button
     }()
 
@@ -48,7 +60,19 @@ final class TransactionPagingView: UIView {
 // MARK: - Public Methods
 extension TransactionPagingView {
     public func configureView(totalPages: Int, currentPage: Int) {
+        UIView.animate(withDuration: 0.2) {
+            self.pageLabel.text = L10n.TransactionDetailPage.pageNumber(currentPage, totalPages)
+        }
 
+        forwardButton.alpha = 1
+        backwardButton.alpha = 1
+
+        if currentPage == 1 {
+            backwardButton.alpha = 0
+        }
+        if currentPage == totalPages {
+            forwardButton.alpha = 0
+        }
     }
 }
 
@@ -77,5 +101,15 @@ extension TransactionPagingView {
             make.centerY.equalTo(pageLabel)
             make.width.equalTo(backwardButton.snp.height)
         }
+    }
+
+    @objc
+    private func backButtonTapped() {
+        delegate?.transacitonPagingViewDidTapBackButton(self)
+    }
+
+    @objc
+    private func forwardButtonTapped() {
+        delegate?.transacitonPagingViewDidTapForwardButton(self)
     }
 }

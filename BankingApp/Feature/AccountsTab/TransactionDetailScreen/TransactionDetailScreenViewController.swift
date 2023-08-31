@@ -14,6 +14,21 @@ final class TransactionDetailScreenViewController: UIViewController {
         super.viewDidLoad()
         presenter?.viewDidLoad(self)
     }
+
+    func setPageVeiwDelegate(_ delegate: TransactoinPagingViewDelegate) {
+        transactionDetailScreenView.pageView.delegate = delegate
+    }
+}
+
+// MARK: - TransactoinPagingViewDelegate
+extension TransactionDetailScreenViewController: TransactoinPagingViewDelegate {
+    func transacitonPagingViewDidTapForwardButton(_ transactionPagingView: TransactionPagingView) {
+        print("Forward Tapped")
+    }
+
+    func transacitonPagingViewDidTapBackButton(_ transactionPagingView: TransactionPagingView) {
+        print("Back Tapped")
+    }
 }
 
 // MARK: - TransactionDetailScreenViewInput

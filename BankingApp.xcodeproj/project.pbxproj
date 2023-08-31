@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		2449D333861F701AAA253F12 /* ProvidesAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108AB9052D41DAECCD6D660E /* ProvidesAccounts.swift */; };
 		2B6AF2B68E7113C55382E2FE /* SessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790E62D005C609F5EB34217A /* SessionProtocol.swift */; };
 		2E58F306F901F9AE7DA4B70D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B26FAE525F40468CAE7C2C4 /* Assets.xcassets */; };
+		2E6DD89BA0CF3308E8310905 /* TransactionPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28D1221F78BEC5E6BE15F16 /* TransactionPagingView.swift */; };
 		30F618F8ECEB1396BD13AD50 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F905D3DB74C16FAD4BF5B0B8 /* Session.swift */; };
 		32FDF3B3CB8B233BE679EF16 /* SettingsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F3EBBE5C9768B61445D95B /* SettingsScreenAssembly.swift */; };
 		336B1962911237385FAFA0DC /* TransferScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FC342E37276002153F9CC8 /* TransferScreenContract.swift */; };
@@ -73,7 +74,6 @@
 		AB54D0ECFC20003C63EAA6C7 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76A18E45A995308D783A3E /* OverlayManager.swift */; };
 		AEEE51CC00DECEB45728E1CE /* TransactionDetailScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EF9DA026BE903282DD2FB /* TransactionDetailScreenPresenter.swift */; };
 		B2542C12A794DEBE9BDA5874 /* AccountOverviewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DBDEA678FB2A5D33CED35 /* AccountOverviewImageCell.swift */; };
-		B408B0D42AA066C600708E28 /* TransactionPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408B0D32AA066C600708E28 /* TransactionPagingView.swift */; };
 		B8A6494D87F24B3A31526EF9 /* AccountsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC96BFCA2DACD0702FEC5F3 /* AccountsScreenViewController.swift */; };
 		B939469ACF4BF846DCA30102 /* AccountOverviewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8CCCCCD3085AC6E57DCAF /* AccountOverviewCellProtocol.swift */; };
 		BC5E8D661AAE1A743BB160CF /* AccountDetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09A51439A80ED394D36C215 /* AccountDetailScreenView.swift */; };
@@ -186,7 +186,6 @@
 		B09A51439A80ED394D36C215 /* AccountDetailScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailScreenView.swift; sourceTree = "<group>"; };
 		B153799168FF3C4F5F2E8276 /* FirebaseCollectionKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionKeys.swift; sourceTree = "<group>"; };
 		B27E82CEF87579C01E6E0881 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
-		B408B0D32AA066C600708E28 /* TransactionPagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPagingView.swift; sourceTree = "<group>"; };
 		B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B74ED66C588F5C2944D8324A /* ImageDownloaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderProtocol.swift; sourceTree = "<group>"; };
 		B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
@@ -210,7 +209,8 @@
 		E559A1C3F1CD95E425020035 /* AccountDetailScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailScreenContract.swift; sourceTree = "<group>"; };
 		E7ECA6D9BE889A582C8AC3E8 /* TransactionDetailScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailScreenContract.swift; sourceTree = "<group>"; };
 		EC42511BA3C11176F242A24F /* TransactionsTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewManager.swift; sourceTree = "<group>"; };
-		F2DBD12A69C9059B0A92A05E /* BankingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F28D1221F78BEC5E6BE15F16 /* TransactionPagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPagingView.swift; sourceTree = "<group>"; };
+		F2DBD12A69C9059B0A92A05E /* BankingApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BankingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4657469F44B79A30A5C78B1 /* TransactionDetailScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailScreenInteractor.swift; sourceTree = "<group>"; };
 		F5A2B51B4E8EF40DE5E7C48E /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		F7120B30142B7CE6D0F1ACE3 /* PaymentsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenInteractor.swift; sourceTree = "<group>"; };
@@ -261,7 +261,7 @@
 				735261420467B18928E903B9 /* TransactionDetailScreenRouter.swift */,
 				186BEAF645AC9B7B07A80587 /* TransactionDetailScreenView.swift */,
 				CB896695F1F384A2AD302A1F /* TransactionDetailScreenViewController.swift */,
-				B408B0D32AA066C600708E28 /* TransactionPagingView.swift */,
+				F28D1221F78BEC5E6BE15F16 /* TransactionPagingView.swift */,
 			);
 			path = TransactionDetailScreen;
 			sourceTree = "<group>";
@@ -556,6 +556,34 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		"TEMP_6E375793-BA98-4EE3-A296-21B42CCF4784" /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		"TEMP_B5974602-BDDD-4524-93D7-3CF0FF2D7577" /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		"TEMP_F5AF5C37-4237-401C-919D-34A6782E889A" /* SharedResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedResources;
+			sourceTree = "<group>";
+		};
+		"TEMP_FC56260C-B39F-44CA-AB1D-2F436DDE2815" /* SharedResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedResources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -590,6 +618,12 @@
 			attributes = {
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Nikita Shvadlenko";
+				TargetAttributes = {
+					797DB3E721033053FFD57286 = {
+						DevelopmentTeam = BankingApp;
+						ProvisioningStyle = Manual;
+					};
+				};
 			};
 			buildConfigurationList = 2E9B57FF88755D8518D0014A /* Build configuration list for PBXProject "BankingApp" */;
 			compatibilityVersion = "Xcode 11.0";
@@ -662,7 +696,6 @@
 				BC5E8D661AAE1A743BB160CF /* AccountDetailScreenView.swift in Sources */,
 				49CE9726AD1D814A1A28E44F /* AccountDetailScreenViewController.swift in Sources */,
 				3F92ED36BBC56AEC3EB5A676 /* AccountDetailStackView.swift in Sources */,
-				B408B0D42AA066C600708E28 /* TransactionPagingView.swift in Sources */,
 				796C9D92FB71B2A5A28FF8C8 /* AccountDetailView.swift in Sources */,
 				EDF326671A52F9C8265D071B /* AccountDisplayStyle.swift in Sources */,
 				979B383DADBAF77F3D90217D /* AccountNumberShareView.swift in Sources */,
@@ -734,6 +767,7 @@
 				E720BFF51856504B69C80EA8 /* TransactionDetailScreenRouter.swift in Sources */,
 				21BE8E86BC9DCE1469A44321 /* TransactionDetailScreenView.swift in Sources */,
 				D0536F526FBF9558E178E83F /* TransactionDetailScreenViewController.swift in Sources */,
+				2E6DD89BA0CF3308E8310905 /* TransactionPagingView.swift in Sources */,
 				7B6793D8B3DAAB89BA9192F8 /* TransactionTableViewCell.swift in Sources */,
 				C22381DC6BDE6A8B5A6374D1 /* TransactionsTableHeader.swift in Sources */,
 				70AB18C426E6490BB414E3DC /* TransactionsTableViewManager.swift in Sources */,
@@ -781,8 +815,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SZ5CPZCXJA;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = BankingApp;
 				DISPLAY_NAME = BankingApp;
 				INFOPLIST_FILE = BankingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -790,7 +824,6 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikitaShvad.bankingApp;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -923,9 +956,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SZ5CPZCXJA;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = BankingApp;
 				DISPLAY_NAME = BankingApp;
 				INFOPLIST_FILE = BankingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -933,7 +966,6 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikitaShvad.bankingApp;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

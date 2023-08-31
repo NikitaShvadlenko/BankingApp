@@ -8,6 +8,7 @@ enum TransactionDetailScreenAssembly {
         let router = TransactionDetailScreenRouter()
 
         viewController.presenter = presenter
+        viewController.setPageVeiwDelegate(viewController)
 
         presenter.view = viewController
         presenter.interactor = interactor

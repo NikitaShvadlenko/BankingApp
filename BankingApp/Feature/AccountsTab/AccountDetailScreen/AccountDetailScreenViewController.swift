@@ -14,6 +14,7 @@ final class AccountDetailScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad(self)
+        navigationItem.backButtonTitle = ""
     }
 
     func setAccountsViewDelegate() {

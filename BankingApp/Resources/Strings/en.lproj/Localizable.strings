@@ -23,3 +23,5 @@
 "AccountDetail.anonymous" = "Anonymous sender";
 "AccountDetailPage.accountName" = "Account name:";
 "AccountDetailPage.accountType" = "Account type:";
+
+"TransactionDetailPage.pageNumber" = "%@ of %@";
