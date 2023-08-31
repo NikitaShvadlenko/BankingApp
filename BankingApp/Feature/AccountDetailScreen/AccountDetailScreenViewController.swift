@@ -56,26 +56,24 @@ extension AccountDetailScreenViewController: TransactionsTableViewManagerScrollD
     func transactionsTableScrollView(_ transactionsTableScrollView: UIScrollView, didScrollTo offsetY: CGFloat) {
         guard let heightConstraint = accountDetailScreenView.imageHeight else { return }
         guard let searchBarHeight = accountDetailScreenView.searchBarHeight else { return }
-// if making image smaller
-        if offsetY > 0 {
-            let maxImageHeightReduction = min(heightConstraint.constant, offsetY)
-            let maxSearchBarHeightReduction = min(searchBarHeight.constant, offsetY)
 
-            print(maxImageHeightReduction)
-            searchBarHeight.constant -= maxSearchBarHeightReduction / 2
-            print(searchBarHeight.constant)
-            if searchBarHeight.constant <= 5 {
-                heightConstraint.constant -= maxImageHeightReduction / 2
+        if offsetY > 0 {
+            let maxImageHeightReduction = min(heightConstraint.constant, offsetY * 0.1)
+            let maxSearchBarHeightReduction = min(searchBarHeight.constant, offsetY)
+            searchBarHeight.constant -= maxSearchBarHeightReduction
+            if searchBarHeight.constant <= 1.1 {
+                heightConstraint.constant -= maxImageHeightReduction
             }
         }
-// if making image bigger
-        print(offsetY)
-        if offsetY < 0 {
-            if heightNeedsToChange(constraint: heightConstraint, maxHeight: 155, offsetY: offsetY) {
-                self.accountDetailScreenView.accountImageView.layer.position.y -= offsetY
-                heightConstraint.constant -= offsetY
-            } else if heightNeedsToChange(constraint: searchBarHeight, maxHeight: 40, offsetY: offsetY) {
-                searchBarHeight.constant -= offsetY
+
+        UIView.animate(withDuration: 0.05) {
+            if offsetY < 0 {
+                if self.heightNeedsToChange(constraint: heightConstraint, maxHeight: 155, offsetY: offsetY) {
+                    heightConstraint.constant -= offsetY * 1
+                } else if self.heightNeedsToChange(constraint: searchBarHeight, maxHeight: 40, offsetY: offsetY) {
+                    searchBarHeight.constant -= offsetY * 1
+                }
+                self.view.layoutIfNeeded()
             }
         }
     }
@@ -112,6 +110,7 @@ extension AccountDetailScreenViewController {
         maxHeight: CGFloat,
         offsetY: CGFloat
     ) -> Bool {
+
         if constraint.constant > maxHeight && offsetY < 0 {
             return false
         }
