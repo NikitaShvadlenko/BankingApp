@@ -30,7 +30,7 @@ final class AccountDetailView: UIView {
 
     private lazy var amountLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 28)
+        label.font = UIFont.systemFont(ofSize: 23)
         label.textAlignment = .center
         label.textColor = Asset.Colors.primaryLabel.color
         return label
@@ -39,7 +39,7 @@ final class AccountDetailView: UIView {
    private lazy var availibleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = Asset.Colors.secondaryLabel.color
         return label
     }()

@@ -48,7 +48,7 @@ final class AccountDetailPageView: UIView {
 
     private lazy var separatorView: UIView = {
         let view = UIView()
-        view.backgroundColor = Asset.Colors.secondaryLabel.color
+        view.backgroundColor = Asset.Colors.secondaryLabel.color.withAlphaComponent(0.5)
         return view
     }()
 
@@ -57,6 +57,7 @@ final class AccountDetailPageView: UIView {
         setupView()
     }
 
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -106,8 +107,8 @@ extension AccountDetailPageView {
         }
 
         separatorView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
-            make.top.equalTo(accountNameStackView.snp.bottom)
+            make.leading.trailing.equalToSuperview().inset(14)
+            make.top.equalTo(accountDetailsStackView.snp.bottom).offset(14)
             make.height.equalTo(1)
         }
 

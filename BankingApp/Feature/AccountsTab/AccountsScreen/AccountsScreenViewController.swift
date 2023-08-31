@@ -40,7 +40,10 @@ extension AccountsScreenViewController: AccountsScreenViewInput {
     }
 
     func setAccountDisplayStyle(_ selectedStyle: AccountDisplayStyle) {
-        accountsScreenView.tableView.reloadData()
+        // wrapping in animate block to increase speed of fade animation
+        UIView.animate(withDuration: 0.2) {
+            self.accountsScreenView.tableView.reloadSections(IndexSet(integer: 0), with: .fade)
+        }
         setAccountDisplayIcon(newStyle: selectedStyle)
     }
 
