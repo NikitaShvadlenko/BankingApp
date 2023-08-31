@@ -34,7 +34,7 @@ final class AccountDetailPageView: UIView {
     private lazy var accountDetailsStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [accountNameStackView, accountTypeStackView])
         stackView.axis = .vertical
-        stackView.spacing = 10
+        stackView.spacing = 30
         stackView.distribution = .equalCentering
         stackView.alignment = .leading
         return stackView
@@ -43,6 +43,12 @@ final class AccountDetailPageView: UIView {
     private lazy var scrollContentView: UIView = {
         let view = UIView()
         view.addSubview(accountDetailsStackView)
+        return view
+    }()
+
+    private lazy var separatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = Asset.Colors.secondaryLabel.color
         return view
     }()
 
@@ -83,6 +89,8 @@ extension AccountDetailPageView {
         addSubview(scrollView)
         backgroundColor = Asset.Colors.primaryBackground.color
 
+        scrollContentView.addSubview(separatorView)
+
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -93,9 +101,16 @@ extension AccountDetailPageView {
             make.height.equalToSuperview().priority(.low)
         }
         accountDetailsStackView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(14)
-            make.top.equalToSuperview().inset(14)
+            make.leading.trailing.equalToSuperview().inset(20)
+            make.top.equalToSuperview().inset(20)
         }
+
+        separatorView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(accountNameStackView.snp.bottom)
+            make.height.equalTo(1)
+        }
+
         scrollView.contentSize = scrollContentView.bounds.size
     }
 }
