@@ -8,6 +8,7 @@ protocol AccountDetailScreenViewInput: AnyObject {
 
 protocol AccountDetailScreenViewOutput {
     func viewDidLoad(_ view: AccountDetailScreenViewInput)
+    func viewDidSearch(_ view: AccountDetailScreenViewInput, text: String)
 }
 
 // sourcery: AutoMockable

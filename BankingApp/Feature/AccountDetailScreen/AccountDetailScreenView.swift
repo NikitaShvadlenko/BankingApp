@@ -13,6 +13,7 @@ final class AccountDetailScreenView: UIView {
     let accountDetailView = AccountDetailView()
     var imageHeight: NSLayoutConstraint?
     var searchBarHeight: NSLayoutConstraint?
+    var segmentedControlHeight: NSLayoutConstraint?
     weak var segmentedSelectionScrollDelegate: SegmentedSelectionScrollDelegate?
 
     lazy var accountImageView: UIImageView = {
@@ -46,6 +47,7 @@ final class AccountDetailScreenView: UIView {
         )
         tableView.sectionHeaderTopPadding = 10
         tableView.sectionHeaderHeight = 30
+        tableView.keyboardDismissMode = .onDrag
         return tableView
     }()
 
@@ -77,6 +79,16 @@ final class AccountDetailScreenView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureViews()
+
+        segmentedControlHeight = segmentedControl.heightAnchor.constraint(equalToConstant: 40)
+        segmentedControlHeight?.isActive = true
+        
+        searchBarHeight = searchBar.heightAnchor.constraint(equalToConstant: 0)
+        searchBarHeight?.isActive = true
+
+        imageHeight = accountImageView.heightAnchor.constraint(equalToConstant: 155)
+        imageHeight?.isActive = true
+
     }
 
     @available(*, unavailable)
@@ -108,18 +120,12 @@ extension AccountDetailScreenView: UIScrollViewDelegate {
 // MARK: - Private methods
 extension AccountDetailScreenView {
     private func configureViews() {
-        backgroundColor = .white
+        backgroundColor = Asset.Colors.primaryBackground.color
         addSubview(accountDetailView)
         addSubview(searchBar)
         addSubview(segmentedControl)
         addSubview(scrollView)
         addSubview(accountImageView)
-
-        searchBarHeight = searchBar.heightAnchor.constraint(equalToConstant: 40)
-        searchBarHeight?.isActive = true
-
-        imageHeight = accountImageView.heightAnchor.constraint(equalToConstant: 155)
-        imageHeight?.isActive = true
 
         searchBar.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top)
@@ -142,6 +148,7 @@ extension AccountDetailScreenView {
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(accountImageView.snp.bottom)
         }
+
 
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(segmentedControl.snp.bottom)

@@ -5,10 +5,10 @@ final class AccountDetailScreenViewController: UIViewController {
     private let accountDetailScreenView = AccountDetailScreenView()
 
     var presenter: AccountDetailScreenViewOutput?
+    private var isSearching: Bool = false
 
     override func loadView() {
         view = accountDetailScreenView
-        navigationController?.navigationBar.layer.zPosition = 1000
     }
 
     override func viewDidLoad() {
@@ -47,38 +47,61 @@ extension AccountDetailScreenViewController: AccountDetailScreenViewInput {
     }
 
     func configureViews() {
-        setRightButtonItems()
+        setRightButtonItems(includingSearchButton: true)
     }
 }
 
 // MARK: - SearchBarDelegate
 extension AccountDetailScreenViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter?.viewDidSearch(self, text: searchText)
+    }
 
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = false
+        accountDetailScreenView.searchBar.endEditing(true)
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        accountDetailScreenView.searchBar.text = ""
+        presenter?.viewDidSearch(self, text: "")
+        isSearching = false
+        accountDetailScreenView.searchBar.endEditing(true)
+    }
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        triggerSearchLayout()
+    }
+
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        guard !self.isSearching else { return }
+        triggerDefaultLayout()
+    }
 }
-
 // MARK: - TransactionsTableViewManagerScrollDelegate
 extension AccountDetailScreenViewController: TransactionsTableViewManagerScrollDelegate {
     func transactionsTableScrollView(_ transactionsTableScrollView: UIScrollView, didScrollTo offsetY: CGFloat) {
         guard let heightConstraint = accountDetailScreenView.imageHeight else { return }
         guard let searchBarHeight = accountDetailScreenView.searchBarHeight else { return }
-
-        if offsetY > 0 {
-            let maxImageHeightReduction = min(heightConstraint.constant, offsetY * 0.1)
-            let maxSearchBarHeightReduction = min(searchBarHeight.constant, offsetY)
-            searchBarHeight.constant -= maxSearchBarHeightReduction
-            if searchBarHeight.constant <= 1.1 {
-                heightConstraint.constant -= maxImageHeightReduction
-            }
-        }
-
-        UIView.animate(withDuration: 0.05) {
-            if offsetY < 0 {
-                if self.heightNeedsToChange(constraint: heightConstraint, maxHeight: 155, offsetY: offsetY) {
-                    heightConstraint.constant -= offsetY * 1
-                } else if self.heightNeedsToChange(constraint: searchBarHeight, maxHeight: 40, offsetY: offsetY) {
-                    searchBarHeight.constant -= offsetY * 1
+        if !isSearching {
+            if offsetY > 0 {
+                let maxImageHeightReduction = min(heightConstraint.constant, offsetY * 0.1)
+                let maxSearchBarHeightReduction = min(searchBarHeight.constant, offsetY)
+                searchBarHeight.constant -= maxSearchBarHeightReduction
+                if searchBarHeight.constant <= 1.1 {
+                    heightConstraint.constant -= maxImageHeightReduction
                 }
-                self.view.layoutIfNeeded()
+            }
+
+            UIView.animate(withDuration: 0.05) {
+                if offsetY < 0 {
+                    if self.heightNeedsToChange(constraint: heightConstraint, maxHeight: 155, offsetY: offsetY) {
+                        heightConstraint.constant -= offsetY
+                    } else if self.heightNeedsToChange(constraint: searchBarHeight, maxHeight: 40, offsetY: offsetY) {
+                        searchBarHeight.constant -= offsetY
+                    }
+                    self.view.layoutIfNeeded()
+                }
             }
         }
     }
@@ -122,9 +145,51 @@ extension AccountDetailScreenViewController {
         return true
     }
 
-    private func setRightButtonItems() {
+    private func triggerSearchLayout() {
+        isSearching = true
+        self.scrollToTransactionsView()
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut) {
+            self.accountDetailScreenView.searchBarHeight?.constant = 40
+            self.accountDetailScreenView.imageHeight?.constant = 0
+            self.accountDetailScreenView.searchBar.showsCancelButton = true
+            self.accountDetailScreenView.accountDetailView.alpha = 0
+            self.accountDetailScreenView.segmentedControlHeight?.constant = 0
+            self.setRightButtonItems(includingSearchButton: false)
+            self.accountDetailScreenView.scrollView.isScrollEnabled = false
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    private func scrollToTransactionsView() {
+        guard
+            let item = accountDetailScreenView.segmentedControl.selectedItem(),
+                item != .transactionsTab,
+            let transactionsIndex = accountDetailScreenView.segmentedControl.indexForItem(item: .transactionsTab)
+        else {
+            return
+        }
+        accountDetailScreenView.segmentedControl.selectedSegmentIndex = transactionsIndex
+        accountDetailScreenView.lastPageNumber = transactionsIndex
+        accountDetailScreenView.scrollView.scrollToPage(pageNumber: transactionsIndex)
+    }
+
+    private func triggerDefaultLayout() {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut) {
+            self.accountDetailScreenView.imageHeight?.constant = 140
+            self.accountDetailScreenView.segmentedControlHeight?.constant = 40
+            self.accountDetailScreenView.searchBar.showsCancelButton = false
+            self.accountDetailScreenView.searchBarHeight?.constant = 0
+            self.accountDetailScreenView.accountDetailView.alpha = 1
+            self.setRightButtonItems(includingSearchButton: true)
+            self.accountDetailScreenView.scrollView.isScrollEnabled = true
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    private func setRightButtonItems(includingSearchButton: Bool) {
         let menuImage = UIImage(sfSymbol: SFSymbol.menu)
         let searchImage = UIImage(sfSymbol: SFSymbol.search)
+        var result: [UIBarButtonItem]
 
         let menuButton = UIBarButtonItem(
             image: menuImage,
@@ -132,19 +197,25 @@ extension AccountDetailScreenViewController {
             target: self,
             action: #selector(menuButtonPressed)
         )
-        let searchButton = UIBarButtonItem(
-            image: searchImage,
-            style: .plain,
-            target: self,
-            action: #selector(searchButtonPressed)
-        )
 
-        navigationItem.rightBarButtonItems = [menuButton, searchButton]
+        if includingSearchButton {
+            let searchButton = UIBarButtonItem(
+                image: searchImage,
+                style: .plain,
+                target: self,
+                action: #selector(searchButtonPressed)
+            )
+            result = [menuButton, searchButton]
+        } else {
+            result = [menuButton]
+        }
+
+        navigationItem.rightBarButtonItems = result
     }
 
     @objc
     private func searchButtonPressed() {
-        print("Search button tapped")
+        triggerSearchLayout()
     }
 
     @objc

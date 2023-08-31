@@ -12,6 +12,16 @@ final class AccountDetailScreenPresenter {
 
 // MARK: - AccountDetailScreenViewOutput
 extension AccountDetailScreenPresenter: AccountDetailScreenViewOutput {
+    func viewDidSearch(_ view: AccountDetailScreenViewInput, text: String) {
+        guard let account else { return }
+        guard !text.isEmpty else {
+            tableViewManager?.setTransacrtions(account.transactions)
+            return
+        }
+        let transactions = filteredTransactions(with: text, for: account)
+        tableViewManager?.setTransacrtions(transactions)
+    }
+
     func viewDidLoad(_ view: AccountDetailScreenViewInput) {
         view.configureViews()
         if let account = account {
@@ -56,6 +66,11 @@ extension AccountDetailScreenPresenter {
             availible: account.availible,
             accountNumber: account.number
         )
+    }
+
+    private func filteredTransactions(with filter: String = "", for account: Account) -> [Transaction] {
+        let filteredTransactions = account.transactions.filter { $0.sentToAccount.contains(filter) }
+        return filteredTransactions
     }
 
     private func setAccount() {

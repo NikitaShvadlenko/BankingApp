@@ -95,6 +95,7 @@ extension TransactionsTableViewManager: UITableViewDelegate {
 // MARK: - Private Methods
 extension TransactionsTableViewManager {
     private func configureSnapshot() {
+        self.sortedDates.removeAll()
         var snapshot = NSDiffableDataSourceSnapshot<Date, Transaction>()
         let groupedItems = Dictionary(
             grouping: transactions,

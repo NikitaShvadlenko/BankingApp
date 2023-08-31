@@ -76,6 +76,18 @@ public class SegmentedControl: UISegmentedControl {
         barPosition = newXPosition
     }
 
+    public func selectedItem() -> SegmentedControlItem? {
+        if items.count >= selectedSegmentIndex {
+            return items[selectedSegmentIndex]
+        } else {
+            return nil
+        }
+    }
+
+    public func indexForItem(item: SegmentedControlItem) -> Int? {
+        return items.firstIndex(where: { $0 == item })
+    }
+
     override public func layoutSubviews() {
         super.layoutSubviews()
         guard let barPosition else { return }
