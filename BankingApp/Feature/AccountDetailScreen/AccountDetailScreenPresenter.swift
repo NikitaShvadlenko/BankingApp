@@ -64,7 +64,9 @@ extension AccountDetailScreenPresenter {
             image: image,
             amount: account.amount,
             availible: account.availible,
-            accountNumber: account.number
+            accountNumber: account.number,
+            accountType: account.type.rawValue,
+            accountName: account.accountName
         )
     }
 

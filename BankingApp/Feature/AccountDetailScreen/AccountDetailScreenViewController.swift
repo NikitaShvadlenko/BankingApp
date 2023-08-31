@@ -21,6 +21,7 @@ final class AccountDetailScreenViewController: UIViewController {
         accountDetailScreenView.segmentedControl.delegate = self
         accountDetailScreenView.segmentedSelectionScrollDelegate = self
         accountDetailScreenView.searchBar.delegate = self
+        accountDetailScreenView.accountDetailPageView.delegate = self
     }
 
     func setTableViewManager(_ tableViewManager: ManagesTransactionsTableView) {
@@ -28,6 +29,13 @@ final class AccountDetailScreenViewController: UIViewController {
         accountDetailScreenView.tableView.delegate = tableViewManager
         tableViewManager.setTableView(accountDetailScreenView.tableView)
         accountDetailScreenView.tableView.dataSource = tableViewManager.dataSource
+    }
+}
+
+// MARK: - AccountDetailPageViewDelegate
+extension AccountDetailScreenViewController: AccountDetailPageViewDelegate {
+    func accountDetailPagescrollView(_ transactionsTableScrollView: UIScrollView, offset offsetY: CGFloat) {
+        handleVerticalScroll(offsetY: offsetY)
     }
 }
 
@@ -43,6 +51,7 @@ extension AccountDetailScreenViewController: AccountDetailScreenViewInput {
             amount: model.amount,
             availible: model.availible
         )
+        accountDetailScreenView.accountDetailPageView.configureView(name: model.accountName, type: model.accountType)
         accountDetailScreenView.accountImageView.image = UIImage(data: model.image)
     }
 
@@ -81,29 +90,7 @@ extension AccountDetailScreenViewController: UISearchBarDelegate {
 // MARK: - TransactionsTableViewManagerScrollDelegate
 extension AccountDetailScreenViewController: TransactionsTableViewManagerScrollDelegate {
     func transactionsTableScrollView(_ transactionsTableScrollView: UIScrollView, didScrollTo offsetY: CGFloat) {
-        guard let heightConstraint = accountDetailScreenView.imageHeight else { return }
-        guard let searchBarHeight = accountDetailScreenView.searchBarHeight else { return }
-        if !isSearching {
-            if offsetY > 0 {
-                let maxImageHeightReduction = min(heightConstraint.constant, offsetY * 0.1)
-                let maxSearchBarHeightReduction = min(searchBarHeight.constant, offsetY)
-                searchBarHeight.constant -= maxSearchBarHeightReduction
-                if searchBarHeight.constant <= 1.1 {
-                    heightConstraint.constant -= maxImageHeightReduction
-                }
-            }
-
-            UIView.animate(withDuration: 0.05) {
-                if offsetY < 0 {
-                    if self.heightNeedsToChange(constraint: heightConstraint, maxHeight: 155, offsetY: offsetY) {
-                        heightConstraint.constant -= offsetY
-                    } else if self.heightNeedsToChange(constraint: searchBarHeight, maxHeight: 40, offsetY: offsetY) {
-                        searchBarHeight.constant -= offsetY
-                    }
-                    self.view.layoutIfNeeded()
-                }
-            }
-        }
+        handleVerticalScroll(offsetY: offsetY)
     }
 }
 // MARK: - AccountNumberShareViewDelegate
@@ -184,6 +171,32 @@ extension AccountDetailScreenViewController {
             self.setRightButtonItems(includingSearchButton: true)
             self.accountDetailScreenView.scrollView.isScrollEnabled = true
             self.view.layoutIfNeeded()
+        }
+    }
+
+    private func handleVerticalScroll(offsetY: CGFloat) {
+        guard let heightConstraint = accountDetailScreenView.imageHeight else { return }
+        guard let searchBarHeight = accountDetailScreenView.searchBarHeight else { return }
+        if !isSearching {
+            if offsetY > 0 {
+                let maxImageHeightReduction = min(heightConstraint.constant, offsetY * 0.1)
+                let maxSearchBarHeightReduction = min(searchBarHeight.constant, offsetY)
+                searchBarHeight.constant -= maxSearchBarHeightReduction
+                if searchBarHeight.constant <= 1.1 {
+                    heightConstraint.constant -= maxImageHeightReduction
+                }
+            }
+
+            UIView.animate(withDuration: 0.05) {
+                if offsetY < 0 {
+                    if self.heightNeedsToChange(constraint: heightConstraint, maxHeight: 155, offsetY: offsetY) {
+                        heightConstraint.constant -= offsetY
+                    } else if self.heightNeedsToChange(constraint: searchBarHeight, maxHeight: 40, offsetY: offsetY) {
+                        searchBarHeight.constant -= offsetY
+                    }
+                    self.view.layoutIfNeeded()
+                }
+            }
         }
     }
 

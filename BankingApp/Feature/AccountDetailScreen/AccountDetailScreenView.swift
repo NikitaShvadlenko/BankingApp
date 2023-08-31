@@ -9,7 +9,7 @@ protocol SegmentedSelectionScrollDelegate: AnyObject {
 final class AccountDetailScreenView: UIView {
 
     var lastPageNumber: Int = 0
-    let accountDetailPageView = UIView()
+    let accountDetailPageView = AccountDetailPageView()
     let accountDetailView = AccountDetailView()
     var imageHeight: NSLayoutConstraint?
     var searchBarHeight: NSLayoutConstraint?
@@ -82,7 +82,7 @@ final class AccountDetailScreenView: UIView {
 
         segmentedControlHeight = segmentedControl.heightAnchor.constraint(equalToConstant: 40)
         segmentedControlHeight?.isActive = true
-        
+
         searchBarHeight = searchBar.heightAnchor.constraint(equalToConstant: 0)
         searchBarHeight?.isActive = true
 
@@ -148,7 +148,6 @@ extension AccountDetailScreenView {
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(accountImageView.snp.bottom)
         }
-
 
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(segmentedControl.snp.bottom)

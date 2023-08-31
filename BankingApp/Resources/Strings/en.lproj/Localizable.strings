@@ -21,3 +21,5 @@
 "AccountDetail.transactions" = "Transactions";
 "AccountDetail.accountDetails" = "Account details";
 "AccountDetail.anonymous" = "Anonymous sender";
+"AccountDetailPage.accountName" = "Account name:";
+"AccountDetailPage.accountType" = "Account type:";

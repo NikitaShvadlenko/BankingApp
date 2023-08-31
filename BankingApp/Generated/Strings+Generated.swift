@@ -24,6 +24,12 @@ internal enum L10n {
     /// Transactions
     internal static let transactions = L10n.tr("Localizable", "AccountDetail.transactions", fallback: "Transactions")
   }
+  internal enum AccountDetailPage {
+    /// Account name:
+    internal static let accountName = L10n.tr("Localizable", "AccountDetailPage.accountName", fallback: "Account name:")
+    /// Account type:
+    internal static let accountType = L10n.tr("Localizable", "AccountDetailPage.accountType", fallback: "Account type:")
+  }
   internal enum AccountsScreen {
     /// Cancel
     internal static let cancel = L10n.tr("Localizable", "AccountsScreen.cancel", fallback: "Cancel")

@@ -13,4 +13,6 @@ struct AccountViewModel {
     let amount: Double
     let availible: Double
     let accountNumber: String
+    let accountType: String
+    let accountName: String
 }

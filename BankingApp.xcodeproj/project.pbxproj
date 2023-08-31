@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,9 +12,11 @@
 		0B5A72B091EA318623FC462F /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AE365270250DC2BAEFF61E /* AccountDetailView.swift */; };
 		0C0502E2CA4BFEFE79574F84 /* SettingsScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5716BB70094C19D0B1ACA644 /* SettingsScreenContract.swift */; };
 		1134C238897F008DAF8381ED /* PaymentsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18034036EE0AD4B432F631D8 /* PaymentsScreenViewController.swift */; };
+		130CF71E57442EC2EDFD2F96 /* TransactionsTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFBE54961965071774317BB /* TransactionsTableHeader.swift */; };
 		18063137EECBAB026F8AB813 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC90BE13D4894F528D63A552 /* String+Extensions.swift */; };
 		1B941EAFF38B687C8396FA1E /* AccountDetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EAC12B5E3F58889D236559 /* AccountDetailScreenView.swift */; };
 		1D45A70C65D7647E1EF371CE /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205D9819735CBDFE21675A3A /* OverlayView.swift */; };
+		1F1EB8129D47E9D655FE56EF /* AccountDetailStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF663E78B0F33D7985030EA /* AccountDetailStackView.swift */; };
 		207D6C4357269DC1C5305020 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84CAA094C2D032BB3CE0807 /* AccountViewModel.swift */; };
 		2124205933BC63FAEF1BF5F9 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F5C7649FC8D7E5C38CA160 /* Mapper.swift */; };
 		2449D333861F701AAA253F12 /* ProvidesAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108AB9052D41DAECCD6D660E /* ProvidesAccounts.swift */; };
@@ -33,6 +35,7 @@
 		3CA01DC80D09BAAF5E97B12F /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72D4FA06582041BFFEF62D /* SettingsScreenView.swift */; };
 		421E51961D5FE1A5347EF2DD /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F075AD10A4D03F26C8FA12 /* HTTPMethod.swift */; };
 		4477F05A19E152348F8C20D9 /* AccountOverviewTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E994250F1D53ABA25459E181 /* AccountOverviewTextCell.swift */; };
+		49D012B63AE3CCFE4D686A88 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4D4866475F7FF8CA9B4671 /* TransactionTableViewCell.swift */; };
 		49FDF023F7E7C85D085E1473 /* AccountDetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27DF5EE02BAD4BA2E2C6AF4 /* AccountDetailScreenViewController.swift */; };
 		4E15C016CBFE79DC891D75D5 /* PaymentsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0590BF6C649D9E099C3E33AE /* PaymentsScreenPresenter.swift */; };
 		4F249CD535E792B1CA61F464 /* TransferScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5130D4AE9A1168FDF5F37A67 /* TransferScreenInteractor.swift */; };
@@ -44,11 +47,11 @@
 		5E885AA7A7E36AD402520AA1 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27C306F0B5C89B6C8A249D /* Strings+Generated.swift */; };
 		600D41176DEF970B2541DC17 /* UIImage+SfSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65367829F91FE4FAB4648A93 /* UIImage+SfSymbol.swift */; };
 		62D6936920D2FC31FA5E5AB8 /* SettingsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0EA0B7118D4E60498CB01A /* SettingsScreenInteractor.swift */; };
+		6466BF0E8DC009F92B9B89E6 /* ScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ECC6E166ABFEDF94D70920 /* ScrollView+Extensions.swift */; };
 		67532C9AA2D43560FF96F54B /* AccountsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC62F89810A0622AEADDA103 /* AccountsScreenView.swift */; };
 		68D39199D4A56D72E877FFC1 /* TabBarItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C7D066AE9D3BF2519A3D05 /* TabBarItemType.swift */; };
 		7932F71265AA5C9D1CF52C08 /* AccountDetailScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5BCB398D6FE14B440085F /* AccountDetailScreenInteractor.swift */; };
 		7C5828703B39EBEB388DD093 /* TransactionsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A784E079E0809FF9FFC5D15E /* TransactionsTableViewManager.swift */; };
-		82C033068B1AF98B19CDD935 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC361D9DE3EC6C32AF0C85 /* TransactionTableViewCell.swift */; };
 		86C62C752820F6EFB33934C8 /* PaymentsScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34B867C5A62EF08DB56139 /* PaymentsScreenContract.swift */; };
 		8A913F4111B1C4897D7D83DB /* FirebaseCollectionKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B153799168FF3C4F5F2E8276 /* FirebaseCollectionKeys.swift */; };
 		8AA646DC46B1067F795BE2B1 /* AccountsScreenTableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F81110FCA258BD64513A3D /* AccountsScreenTableManager.swift */; };
@@ -66,8 +69,6 @@
 		AB488A7E6858EB222FE0E113 /* AccountOverviewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA4B1110FD2367FF86E3410 /* AccountOverviewImageCell.swift */; };
 		AB54D0ECFC20003C63EAA6C7 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76A18E45A995308D783A3E /* OverlayManager.swift */; };
 		AED2FADD55B1126EF53A46D3 /* AccountDetailScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F968F4EB9DC54088EA515E /* AccountDetailScreenRouter.swift */; };
-		B4FDD7D92A9DE49D00B23FD4 /* TransactionsTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FDD7D82A9DE49D00B23FD4 /* TransactionsTableHeader.swift */; };
-		B4FDD7DB2A9EA1DC00B23FD4 /* ScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FDD7DA2A9EA1DC00B23FD4 /* ScrollView+Extensions.swift */; };
 		B738C6C7EDCBA20EEFB0AF35 /* AccountsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72929E57AD96BBF353839695 /* AccountsScreenAssembly.swift */; };
 		BCA0DE30566EE01DBBF4DE05 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 66C22F3E9757749DB326E22E /* FirebaseAuth */; };
 		BD2872B19494900FD19ABCDA /* ServicesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D8D8BF3970E6CD6DB3B05 /* ServicesScreenViewController.swift */; };
@@ -88,6 +89,7 @@
 		DD683AA83823CF68A1ED0FC0 /* ServicesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE61A7CB35F26AA56020328 /* ServicesScreenInteractor.swift */; };
 		E032DF71E43C943475753351 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEA75BBE0C661660AA42421 /* DataMapper.swift */; };
 		E042F716E513528C3EFD7FE7 /* PaymentsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FBC288434D218C2668E52D /* PaymentsScreenView.swift */; };
+		E0F47D7282140A3D76E93A25 /* AccountDetailPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2194F37117D4CB3C1123C04 /* AccountDetailPageView.swift */; };
 		E1CB0743F65A3FD050D1DC75 /* TransferScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A03F672891E5518897F648 /* TransferScreenViewController.swift */; };
 		E3BA39DFEDFBC07683B41E32 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB1EBCD22BB07268138AE57 /* Request.swift */; };
 		E4579FC3516BC30386862969 /* ManagesUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B040D4059193A8E07F5D554 /* ManagesUserSettings.swift */; };
@@ -141,6 +143,7 @@
 		4FBEAAF28469133DA0233D21 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		50C7D066AE9D3BF2519A3D05 /* TabBarItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemType.swift; sourceTree = "<group>"; };
 		5130D4AE9A1168FDF5F37A67 /* TransferScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenInteractor.swift; sourceTree = "<group>"; };
+		52ECC6E166ABFEDF94D70920 /* ScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView+Extensions.swift"; sourceTree = "<group>"; };
 		53F075AD10A4D03F26C8FA12 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		547984CC8761D602DD3002DB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5716BB70094C19D0B1ACA644 /* SettingsScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenContract.swift; sourceTree = "<group>"; };
@@ -157,6 +160,7 @@
 		7A75B326C5065412DF45F3C4 /* SettingsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenViewController.swift; sourceTree = "<group>"; };
 		7DB1EBCD22BB07268138AE57 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		7E925C9587D1B00D8D2CC42E /* AccountsSessionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsSessionApi.swift; sourceTree = "<group>"; };
+		7F4D4866475F7FF8CA9B4671 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		818E180760F09260AAD1553F /* TransferScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenPresenter.swift; sourceTree = "<group>"; };
 		839A4C0F15692927DF3E1D54 /* SettingsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenRouter.swift; sourceTree = "<group>"; };
 		870FD140B02C08B2EB8AE09D /* AccountOverviewCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewCellFactory.swift; sourceTree = "<group>"; };
@@ -165,7 +169,6 @@
 		8FE5EF05BEF7BB5BEC969A4D /* TransferScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenRouter.swift; sourceTree = "<group>"; };
 		904E09830A91A5C49E7C0E41 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		96E69BBF6E013F1E51CE63FD /* TabBarItemFacotry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemFacotry.swift; sourceTree = "<group>"; };
-		9ABC361D9DE3EC6C32AF0C85 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		9E2BDF7292C861A62B0E3E2B /* ServicesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenView.swift; sourceTree = "<group>"; };
 		9F73D99439DF9BA6881C833E /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		A784E079E0809FF9FFC5D15E /* TransactionsTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewManager.swift; sourceTree = "<group>"; };
@@ -174,11 +177,11 @@
 		B1EAC12B5E3F58889D236559 /* AccountDetailScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailScreenView.swift; sourceTree = "<group>"; };
 		B27E82CEF87579C01E6E0881 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
-		B4FDD7D82A9DE49D00B23FD4 /* TransactionsTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableHeader.swift; sourceTree = "<group>"; };
-		B4FDD7DA2A9EA1DC00B23FD4 /* ScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView+Extensions.swift"; sourceTree = "<group>"; };
 		B74ED66C588F5C2944D8324A /* ImageDownloaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderProtocol.swift; sourceTree = "<group>"; };
 		B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		BC33D056B6D641A70321DB20 /* AccountOverviewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewCellProtocol.swift; sourceTree = "<group>"; };
+		BCF663E78B0F33D7985030EA /* AccountDetailStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailStackView.swift; sourceTree = "<group>"; };
+		C2194F37117D4CB3C1123C04 /* AccountDetailPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailPageView.swift; sourceTree = "<group>"; };
 		C3FC342E37276002153F9CC8 /* TransferScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenContract.swift; sourceTree = "<group>"; };
 		C48CA06C96CD02B77DB5AAC9 /* ServicesScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenRouter.swift; sourceTree = "<group>"; };
 		CB32801D13EF28D459296F46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -192,8 +195,9 @@
 		E4F82C7E60425D32D7F21DBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		E84CAA094C2D032BB3CE0807 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		E994250F1D53ABA25459E181 /* AccountOverviewTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewTextCell.swift; sourceTree = "<group>"; };
+		EFFBE54961965071774317BB /* TransactionsTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableHeader.swift; sourceTree = "<group>"; };
 		F1EE1DCF7928EE143EF2CA13 /* AccountsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenViewController.swift; sourceTree = "<group>"; };
-		F2DBD12A69C9059B0A92A05E /* BankingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2DBD12A69C9059B0A92A05E /* BankingApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BankingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7120B30142B7CE6D0F1ACE3 /* PaymentsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenInteractor.swift; sourceTree = "<group>"; };
 		F794C6A6CE57F5B9DDBCEB6C /* XCAssets+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		F905D3DB74C16FAD4BF5B0B8 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -267,10 +271,12 @@
 		4AA3EF50EC7E874752E72E2B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C2194F37117D4CB3C1123C04 /* AccountDetailPageView.swift */,
+				BCF663E78B0F33D7985030EA /* AccountDetailStackView.swift */,
 				61AE365270250DC2BAEFF61E /* AccountDetailView.swift */,
-				9ABC361D9DE3EC6C32AF0C85 /* TransactionTableViewCell.swift */,
-				B4FDD7D82A9DE49D00B23FD4 /* TransactionsTableHeader.swift */,
 				6421A21545506204C54B593B /* AccountNumberShareView.swift */,
+				EFFBE54961965071774317BB /* TransactionsTableHeader.swift */,
+				7F4D4866475F7FF8CA9B4671 /* TransactionTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -460,7 +466,7 @@
 			children = (
 				8B76A18E45A995308D783A3E /* OverlayManager.swift */,
 				205D9819735CBDFE21675A3A /* OverlayView.swift */,
-				B4FDD7DA2A9EA1DC00B23FD4 /* ScrollView+Extensions.swift */,
+				52ECC6E166ABFEDF94D70920 /* ScrollView+Extensions.swift */,
 				9F73D99439DF9BA6881C833E /* SegmentedControl.swift */,
 			);
 			path = UIComponents;
@@ -510,6 +516,34 @@
 			path = AccountOverviewCell;
 			sourceTree = "<group>";
 		};
+		"TEMP_0A91B082-160F-4135-982E-844960D354D0" /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		"TEMP_407B8B3A-B02E-4905-B908-FC9E962EE971" /* SharedResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedResources;
+			sourceTree = "<group>";
+		};
+		"TEMP_4201BE99-0D46-4953-8E3D-4D4C52003D50" /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		"TEMP_BCEBA247-A451-4175-8C65-675B2DD8E3D0" /* SharedResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedResources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -544,6 +578,12 @@
 			attributes = {
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Nikita Shvadlenko";
+				TargetAttributes = {
+					797DB3E721033053FFD57286 = {
+						DevelopmentTeam = BankingApp;
+						ProvisioningStyle = Manual;
+					};
+				};
 			};
 			buildConfigurationList = 2E9B57FF88755D8518D0014A /* Build configuration list for PBXProject "BankingApp" */;
 			compatibilityVersion = "Xcode 11.0";
@@ -607,6 +647,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2A61CC5E13802C90891F32F /* Account.swift in Sources */,
+				E0F47D7282140A3D76E93A25 /* AccountDetailPageView.swift in Sources */,
 				C632631DDC2945C0042DA718 /* AccountDetailScreenAssembly.swift in Sources */,
 				35A92A84A763328B9F8E2130 /* AccountDetailScreenContract.swift in Sources */,
 				7932F71265AA5C9D1CF52C08 /* AccountDetailScreenInteractor.swift in Sources */,
@@ -614,9 +655,9 @@
 				AED2FADD55B1126EF53A46D3 /* AccountDetailScreenRouter.swift in Sources */,
 				1B941EAFF38B687C8396FA1E /* AccountDetailScreenView.swift in Sources */,
 				49FDF023F7E7C85D085E1473 /* AccountDetailScreenViewController.swift in Sources */,
+				1F1EB8129D47E9D655FE56EF /* AccountDetailStackView.swift in Sources */,
 				0B5A72B091EA318623FC462F /* AccountDetailView.swift in Sources */,
 				EEDF3FE55D05AAABE3D5C97C /* AccountDisplayStyle.swift in Sources */,
-				B4FDD7D92A9DE49D00B23FD4 /* TransactionsTableHeader.swift in Sources */,
 				8B729CE6A570ECABA49CB858 /* AccountNumberShareView.swift in Sources */,
 				3315CF6AFFBA61B6FEC6F3A5 /* AccountOverviewCellFactory.swift in Sources */,
 				D2FD7151715D4406A509B199 /* AccountOverviewCellProtocol.swift in Sources */,
@@ -642,7 +683,6 @@
 				9D2ACD211974BACED99C40DA /* ImageDownloaderProtocol.swift in Sources */,
 				E4579FC3516BC30386862969 /* ManagesUserSettings.swift in Sources */,
 				2124205933BC63FAEF1BF5F9 /* Mapper.swift in Sources */,
-				B4FDD7DB2A9EA1DC00B23FD4 /* ScrollView+Extensions.swift in Sources */,
 				C7F6F6A7570A1C63C11D1AAC /* NumberFormatter+Extensions.swift in Sources */,
 				AB54D0ECFC20003C63EAA6C7 /* OverlayManager.swift in Sources */,
 				1D45A70C65D7647E1EF371CE /* OverlayView.swift in Sources */,
@@ -657,6 +697,7 @@
 				2449D333861F701AAA253F12 /* ProvidesAccounts.swift in Sources */,
 				E3BA39DFEDFBC07683B41E32 /* Request.swift in Sources */,
 				997F8C812A9F3EFABAD94DB0 /* SFSymbol.swift in Sources */,
+				6466BF0E8DC009F92B9B89E6 /* ScrollView+Extensions.swift in Sources */,
 				CC274B9B0B9B4EAAE78752C0 /* SegmentedControl.swift in Sources */,
 				9D9BE43890557C08719B4A7F /* ServicesScreenAssembly.swift in Sources */,
 				505240510EDD907305A44797 /* ServicesScreenContract.swift in Sources */,
@@ -679,7 +720,8 @@
 				5E885AA7A7E36AD402520AA1 /* Strings+Generated.swift in Sources */,
 				EAFBEF9EC326EB07490F554C /* TabBarItemFacotry.swift in Sources */,
 				68D39199D4A56D72E877FFC1 /* TabBarItemType.swift in Sources */,
-				82C033068B1AF98B19CDD935 /* TransactionTableViewCell.swift in Sources */,
+				49D012B63AE3CCFE4D686A88 /* TransactionTableViewCell.swift in Sources */,
+				130CF71E57442EC2EDFD2F96 /* TransactionsTableHeader.swift in Sources */,
 				7C5828703B39EBEB388DD093 /* TransactionsTableViewManager.swift in Sources */,
 				999B63D93B1331D08B853314 /* TransferScreenAssembly.swift in Sources */,
 				336B1962911237385FAFA0DC /* TransferScreenContract.swift in Sources */,
@@ -725,8 +767,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SZ5CPZCXJA;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = BankingApp;
 				DISPLAY_NAME = BankingApp;
 				INFOPLIST_FILE = BankingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -734,7 +776,6 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikitaShvad.bankingApp;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -867,9 +908,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SZ5CPZCXJA;
+				CODE_SIGN_IDENTITY = "Apple Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = BankingApp;
 				DISPLAY_NAME = BankingApp;
 				INFOPLIST_FILE = BankingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -877,7 +918,6 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikitaShvad.bankingApp;
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

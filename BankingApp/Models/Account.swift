@@ -15,6 +15,8 @@ struct Account: Codable {
     let image: URL
     let number: String
     let transactions: [Transaction]
+    let accountName: String
+    let type: AccountType
 }
 
 struct Transaction: Codable, Hashable {
@@ -47,4 +49,11 @@ enum TransactionType: String, Codable {
     case credit = "Credit"
     case visaPurchase = "Visa Purchase"
     case onlinePurchase = "Online Purchase"
+}
+
+enum AccountType: String, Codable {
+    // swiftlint:disable identifier_name
+    case go = "Go"
+    case savings = "Savings"
+    case online = "Online Account"
 }
