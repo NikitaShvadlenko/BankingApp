@@ -4,7 +4,10 @@ final class TransactionDetailScreenView: UIView {
 
     lazy var transactionsCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-
+        collectionView.register(
+            TransactionCollectionViewCell.self,
+            forCellWithReuseIdentifier: "\(TransactionCollectionViewCell.self)"
+        )
         return collectionView
     }()
 

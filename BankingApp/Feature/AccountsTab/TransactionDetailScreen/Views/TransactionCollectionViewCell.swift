@@ -50,6 +50,14 @@ final class TransactionCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
+    private lazy var transactionDetailLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = Asset.Colors.primaryLabel.color
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textAlignment = .natural
+        return label
+    }()
+
     private lazy var balanceLabel: UILabel = {
         let label = UILabel()
         label.textColor = Asset.Colors.primaryLabel.color
@@ -76,6 +84,7 @@ final class TransactionCollectionViewCell: UICollectionViewCell {
 
 // MARK: - Private Methods
 extension TransactionCollectionViewCell {
+    // swiftlint:disable function_body_length
     private func setupView() {
         [
             nameLabel,
@@ -85,6 +94,7 @@ extension TransactionCollectionViewCell {
             detailsLabel,
             balanceLabel,
             shareButton,
+            transactionDetailLabel,
             firstSectionSeparator,
             secondSectionSeparator
         ].forEach(contentView.addSubview)
@@ -110,6 +120,34 @@ extension TransactionCollectionViewCell {
         }
 
         firstSectionSeparator.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(1)
+            make.bottom.equalTo(typeLabel.snp.bottom).offset(15)
+        }
+
+        detailsLabel.snp.makeConstraints { make in
+            make.top.equalTo(firstSectionSeparator.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview()
+        }
+
+        transactionDetailLabel.snp.makeConstraints { make in
+            make.top.equalTo(detailsLabel.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+        }
+
+        balanceLabel.snp.makeConstraints { make in
+            make.top.equalTo(transactionDetailLabel.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview()
+        }
+
+        secondSectionSeparator.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(1)
+            make.top.equalTo(balanceLabel.snp.bottom).offset(15)
+        }
+
+        shareButton.snp.makeConstraints { make in
+            make.top.equalTo(secondSectionSeparator.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview()
         }
     }
