@@ -103,7 +103,8 @@ extension AccountDetailPageView {
         }
 
         separatorView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(14)
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.9)
             make.top.equalTo(accountDetailsStackView.snp.bottom).offset(14)
             make.height.equalTo(1)
         }

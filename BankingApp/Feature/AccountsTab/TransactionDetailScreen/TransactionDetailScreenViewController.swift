@@ -38,6 +38,10 @@ extension TransactionDetailScreenViewController: TransactoinPagingViewDelegate {
 
 // MARK: - TransactionDetailScreenViewInput
 extension TransactionDetailScreenViewController: TransactionDetailScreenViewInput {
+    func configurePagingView(pageSelected: Int, pagesTotal: Int) {
+        transactionDetailScreenView.pageView.configureView(totalPages: pagesTotal, currentPage: pageSelected)
+    }
+
     func configureTransactionView(selectedTransactionIndex: Int) {
         transactionDetailScreenView.transactionsCollectionView.scrollToPage(pageNumber: selectedTransactionIndex)
     }

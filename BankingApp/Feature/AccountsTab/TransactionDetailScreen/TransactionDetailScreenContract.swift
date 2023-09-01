@@ -1,6 +1,7 @@
 // sourcery: AutoMockable
 protocol TransactionDetailScreenViewInput: AnyObject {
     func configureViews()
+    func configurePagingView(pageSelected: Int, pagesTotal: Int)
     func configureTransactionView(selectedTransactionIndex: Int)
 }
 

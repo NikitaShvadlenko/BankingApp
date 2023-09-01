@@ -15,6 +15,11 @@ extension TransactionDetailScreenPresenter: TransactionDetailScreenViewOutput {
     func viewDidLoad(_ view: TransactionDetailScreenViewInput) {
         view.configureViews()
         setTransactions()
+        guard
+            let transactionIndex,
+            let transactions
+        else { return }
+        view.configurePagingView(pageSelected: transactionIndex + 1, pagesTotal: transactions.count)
     }
 }
 

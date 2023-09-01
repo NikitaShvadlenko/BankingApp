@@ -10,6 +10,7 @@ final class TransactionDetailScreenView: UIView {
         )
         collectionView.isPagingEnabled = true
         collectionView.bounces = false
+        collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
 
