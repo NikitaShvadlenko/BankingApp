@@ -94,7 +94,7 @@ extension TransactionDetailCollectionViewManager: UICollectionViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = Int(scrollView.contentOffset.x / scrollView.frame.width)
         if pageNumber == transactions.count - 1 {
-            scrollView.scrollToPage(pageNumber: pageNumber)
+            scrollView.scrollToPage(pageNumber: pageNumber, animated: true)
         }
         delegate?.transactionDetailManager(self, didScrollToPageIndex: pageNumber)
     }

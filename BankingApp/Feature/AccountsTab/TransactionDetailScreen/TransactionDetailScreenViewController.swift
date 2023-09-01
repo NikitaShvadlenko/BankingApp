@@ -44,7 +44,7 @@ extension TransactionDetailScreenViewController: TransactionPagingViewDelegate {
         let collectionView = transactionDetailScreenView.transactionsCollectionView
         let collectionViewWidth = collectionView.frame.width
         let currentPageIndex = Int(collectionView.contentOffset.x / collectionViewWidth)
-        collectionView.scrollToPage(pageNumber: currentPageIndex + 1)
+        collectionView.scrollToPage(pageNumber: currentPageIndex + 1, animated: true)
         transactionDetailScreenView.pageView.configureView(totalPages: totalPages, currentPage: currentPageIndex + 2)
     }
 
@@ -52,7 +52,7 @@ extension TransactionDetailScreenViewController: TransactionPagingViewDelegate {
         let collectionView = transactionDetailScreenView.transactionsCollectionView
         let collectionViewWidth = collectionView.frame.width
         let currentPageIndex = Int(collectionView.contentOffset.x / collectionViewWidth)
-        collectionView.scrollToPage(pageNumber: currentPageIndex - 1)
+        collectionView.scrollToPage(pageNumber: currentPageIndex - 1, animated: true)
         transactionDetailScreenView.pageView.configureView(totalPages: totalPages, currentPage: currentPageIndex)
     }
 }
