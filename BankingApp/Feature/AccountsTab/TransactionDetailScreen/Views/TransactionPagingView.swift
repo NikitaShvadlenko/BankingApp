@@ -8,14 +8,14 @@
 
 import UIKit
 
-protocol TransactoinPagingViewDelegate: AnyObject {
+protocol TransactionPagingViewDelegate: AnyObject {
     func transacitonPagingViewDidTapForwardButton(_ transactionPagingView: TransactionPagingView)
     func transacitonPagingViewDidTapBackButton(_ transactionPagingView: TransactionPagingView)
 }
 
 final class TransactionPagingView: UIView {
 
-    weak var delegate: TransactoinPagingViewDelegate?
+    weak var delegate: TransactionPagingViewDelegate?
 
     private lazy var forwardButton: UIButton = {
         let button = UIButton()

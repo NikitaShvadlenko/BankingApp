@@ -7,6 +7,7 @@ final class TransactionDetailScreenPresenter {
     var router: TransactionDetailScreenRouterInput?
     var collectionManager: ManagesTransactionDetailCollection?
     var transactions: [Transaction]?
+    var initialPage: Int?
 }
 
 // MARK: - TransactionDetailScreenViewOutput
@@ -14,10 +15,10 @@ extension TransactionDetailScreenPresenter: TransactionDetailScreenViewOutput {
     func viewDidLoad(_ view: TransactionDetailScreenViewInput) {
         setTransactions()
         guard
-            let transactions
+            let transactions,
+            let initialPage
         else { return }
-        view.configurePagingView(pagesTotal: transactions.count)
-        view.configureViews()
+        view.configureViews(selectedPage: initialPage, pagesTotal: transactions.count)
     }
 }
 
@@ -36,6 +37,12 @@ extension TransactionDetailScreenPresenter: TransactionDetailScreenModuleInput {
     }
 }
 
+// MARK: - TransactionDetailCollectionManagerDelegate
+extension TransactionDetailScreenPresenter: TransactionDetailCollectionManagerDelegate {
+    func transactionDetailManager(_ manager: TransactionDetailCollectionViewManager, didScrollToPageIndex index: Int) {
+        view?.configurePagingView(selectedPage: index + 1)
+    }
+}
 // MARK: - Private methods
 extension TransactionDetailScreenPresenter {
    private func setTransactions() {

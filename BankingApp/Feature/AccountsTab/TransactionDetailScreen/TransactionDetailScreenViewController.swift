@@ -5,7 +5,8 @@ final class TransactionDetailScreenViewController: UIViewController {
     private let transactionDetailScreenView = TransactionDetailScreenView()
 
     var presenter: TransactionDetailScreenViewOutput?
-    var selectedPage: Int?
+    var initialPage: Int?
+    var totalPages = 0
 
     override func loadView() {
         view = transactionDetailScreenView
@@ -16,7 +17,7 @@ final class TransactionDetailScreenViewController: UIViewController {
         presenter?.viewDidLoad(self)
     }
 
-    func setPageVeiwDelegate(_ delegate: TransactoinPagingViewDelegate) {
+    func setPageVeiwDelegate(_ delegate: TransactionPagingViewDelegate) {
         transactionDetailScreenView.pageView.delegate = delegate
     }
 
@@ -26,10 +27,11 @@ final class TransactionDetailScreenViewController: UIViewController {
     }
 
     override func viewDidLayoutSubviews() {
-        if let selectedPage {
+        if let initialPage {
             let collectionView = transactionDetailScreenView.transactionsCollectionView
-            let xOffset = CGFloat(selectedPage) * collectionView.frame.width
+            let xOffset = CGFloat(initialPage) * collectionView.frame.width
             collectionView.setContentOffset(CGPoint(x: xOffset, y: 0), animated: false)
+            self.initialPage = nil
         }
         super.viewDidLayoutSubviews()
     }
@@ -37,27 +39,34 @@ final class TransactionDetailScreenViewController: UIViewController {
 }
 
 // MARK: - TransactoinPagingViewDelegate
-extension TransactionDetailScreenViewController: TransactoinPagingViewDelegate {
+extension TransactionDetailScreenViewController: TransactionPagingViewDelegate {
     func transacitonPagingViewDidTapForwardButton(_ transactionPagingView: TransactionPagingView) {
-        print("Forward Tapped")
+        let collectionView = transactionDetailScreenView.transactionsCollectionView
+        let collectionViewWidth = collectionView.frame.width
+        let currentPageIndex = Int(collectionView.contentOffset.x / collectionViewWidth)
+        collectionView.scrollToPage(pageNumber: currentPageIndex + 1)
+        transactionDetailScreenView.pageView.configureView(totalPages: totalPages, currentPage: currentPageIndex + 2)
     }
 
     func transacitonPagingViewDidTapBackButton(_ transactionPagingView: TransactionPagingView) {
-        print("Back Tapped")
+        let collectionView = transactionDetailScreenView.transactionsCollectionView
+        let collectionViewWidth = collectionView.frame.width
+        let currentPageIndex = Int(collectionView.contentOffset.x / collectionViewWidth)
+        collectionView.scrollToPage(pageNumber: currentPageIndex - 1)
+        transactionDetailScreenView.pageView.configureView(totalPages: totalPages, currentPage: currentPageIndex)
     }
 }
 
 // MARK: - TransactionDetailScreenViewInput
 extension TransactionDetailScreenViewController: TransactionDetailScreenViewInput {
-    func configurePagingView(pagesTotal: Int) {
-        transactionDetailScreenView.pageView.configureView(totalPages: pagesTotal, currentPage: 0)
+    func configurePagingView(selectedPage: Int) {
+        transactionDetailScreenView.pageView.configureView(totalPages: totalPages, currentPage: selectedPage)
     }
 
-    func configureTransactionView(selectedTransactionIndex: Int) {
-
-    }
-
-    func configureViews() {
+    func configureViews(selectedPage: Int, pagesTotal: Int) {
+        self.initialPage = selectedPage
+        self.totalPages = pagesTotal
+        configurePagingView(selectedPage: selectedPage + 1)
     }
 }
 

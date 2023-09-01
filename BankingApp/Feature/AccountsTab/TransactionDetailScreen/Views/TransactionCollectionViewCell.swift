@@ -155,7 +155,8 @@ extension TransactionCollectionViewCell {
         }
 
         firstSectionSeparator.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview().inset(14)
             make.height.equalTo(1)
             make.bottom.equalTo(typeLabel.snp.bottom).offset(15)
         }
@@ -176,7 +177,8 @@ extension TransactionCollectionViewCell {
         }
 
         secondSectionSeparator.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview().inset(14)
             make.height.equalTo(1)
             make.top.equalTo(balanceLabel.snp.bottom).offset(15)
         }

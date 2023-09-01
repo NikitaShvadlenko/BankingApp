@@ -10,10 +10,11 @@ enum TransactionDetailScreenAssembly {
         let router = TransactionDetailScreenRouter()
         let collectionManager = TransactionDetailCollectionViewManager()
 
+        presenter.initialPage = index
+        collectionManager.delegate = presenter
         presenter.transactions = transactions
         presenter.collectionManager = collectionManager
         viewController.setCollectionViewManager(manager: collectionManager)
-        viewController.selectedPage = index
         viewController.presenter = presenter
         viewController.setPageVeiwDelegate(viewController)
 

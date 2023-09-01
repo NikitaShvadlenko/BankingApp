@@ -12,7 +12,12 @@ protocol ManagesTransactionDetailCollection: UICollectionViewDataSource, UIColle
     func setTransactions(transactions: [TransactionDetailViewModel])
 }
 
+protocol TransactionDetailCollectionManagerDelegate: AnyObject {
+    func transactionDetailManager(_ manager: TransactionDetailCollectionViewManager, didScrollToPageIndex index: Int)
+}
+
 final class TransactionDetailCollectionViewManager: NSObject {
+    weak var delegate: TransactionDetailCollectionManagerDelegate?
     var transactions: [TransactionDetailViewModel] = []
 }
 
@@ -86,6 +91,13 @@ extension TransactionDetailCollectionViewManager: ManagesTransactionDetailCollec
 // MARK: - UICollectionViewDelegate
 extension TransactionDetailCollectionViewManager: UICollectionViewDelegate {
 
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNumber = Int(scrollView.contentOffset.x / scrollView.frame.width)
+        if pageNumber == transactions.count - 1 {
+            scrollView.scrollToPage(pageNumber: pageNumber)
+        }
+        delegate?.transactionDetailManager(self, didScrollToPageIndex: pageNumber)
+    }
 }
 
 // MARK: - Constants

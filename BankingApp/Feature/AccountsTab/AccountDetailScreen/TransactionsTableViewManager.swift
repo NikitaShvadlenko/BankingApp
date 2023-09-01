@@ -76,7 +76,7 @@ extension TransactionsTableViewManager: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        guard
         let transaction = dataSource.itemIdentifier(for: indexPath),
-        let transactionIndex = transactions.firstIndex(where: { $0 == transaction } )
+        let transactionIndex = transactions.firstIndex(where: { $0 == transaction })
         else {
            return
        }
