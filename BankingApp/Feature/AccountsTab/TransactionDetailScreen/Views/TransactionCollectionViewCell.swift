@@ -84,8 +84,20 @@ final class TransactionCollectionViewCell: UICollectionViewCell {
 
 // MARK: - Public Methods
 extension TransactionCollectionViewCell {
-    public func configure(with transactionDetailViewModel: TransactionDetailViewModel) {
-        
+    public func configure(
+        with model: TransactionDetailViewModel
+    ) {
+        let formatter = NumberFormatter()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE d MMM yyyy '\(L10n.TransactionDetail.at)' HH:mm"
+        nameLabel.text = model.name
+        amountLabel.text = formatter.dollarsFromAmount(model.amount)
+        dateLabel.text = dateFormatter.string(from: model.date)
+        typeLabel.text = model.type
+        detailsLabel.text = L10n.TransactionDetail.details
+        let formattedBalance = formatter.dollarsFromAmount(model.balanceAfterTransaction)
+        balanceLabel.text = L10n.TransactionDetail.balanceAfterTransaction(formattedBalance)
+        shareButton.configure(title: L10n.TransactionDetail.share)
     }
 }
 

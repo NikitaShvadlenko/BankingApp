@@ -37,7 +37,32 @@ extension TransactionDetailCollectionViewManager: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+extension TransactionDetailCollectionViewManager: UICollectionViewDelegateFlowLayout {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        return collectionView.frame.size
+    }
+}
 // MARK: - UICollectionViewDelegate
 extension TransactionDetailCollectionViewManager {
 
+}
+
+// MARK: - Constants
+extension TransactionDetailCollectionViewManager {
+    private enum Constants {
+        static let leftSectionInset: CGFloat = 20
+        static let topSectionInset: CGFloat = 30
+        static let verticalSectionInset: CGFloat = 16
+        static let collectionViewInsets = UIEdgeInsets(
+            top: topSectionInset,
+            left: leftSectionInset,
+            bottom: verticalSectionInset,
+            right: leftSectionInset
+        )
+    }
 }

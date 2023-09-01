@@ -21,7 +21,7 @@ protocol AccountDetailScreenInteractorOutput: AnyObject {
 
 // sourcery: AutoMockable
 protocol AccountDetailScreenRouterInput {
-    func routeToTransactionsScreen(transactions: [Transaction])
+    func routeToTransactionsScreen(transactions: [Transaction], index: Int)
 }
 
 protocol AccountDetailScreenRouterOutput: AnyObject {

@@ -1,7 +1,9 @@
 import UIKit
 
 enum TransactionDetailScreenAssembly {
-    static func assemble(transactions: [Transaction]) -> AssembledModule<TransactionDetailScreenModuleInput> {
+    static func assemble(
+        transactions: [Transaction], index: Int
+    ) -> AssembledModule<TransactionDetailScreenModuleInput> {
         let viewController = TransactionDetailScreenViewController()
         let presenter = TransactionDetailScreenPresenter()
         let interactor = TransactionDetailScreenInteractor()

@@ -5,6 +5,8 @@ final class TransactionDetailScreenPresenter {
     weak var moduleOutput: TransactionDetailScreenModuleOutput?
     var interactor: TransactionDetailScreenInteractorInput?
     var router: TransactionDetailScreenRouterInput?
+    var transactions: [Transaction]?
+    var transactionIndex: Int?
 }
 
 // MARK: - TransactionDetailScreenViewOutput

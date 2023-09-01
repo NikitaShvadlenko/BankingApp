@@ -65,6 +65,18 @@ internal enum L10n {
     /// Transfer
     internal static let transfer = L10n.tr("Localizable", "TabBar.transfer", fallback: "Transfer")
   }
+  internal enum TransactionDetail {
+    /// at
+    internal static let at = L10n.tr("Localizable", "TransactionDetail.at", fallback: "at")
+    /// Balance after transaction: %@
+    internal static func balanceAfterTransaction(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "TransactionDetail.balanceAfterTransaction", String(describing: p1), fallback: "Balance after transaction: %@")
+    }
+    /// Details:
+    internal static let details = L10n.tr("Localizable", "TransactionDetail.details", fallback: "Details:")
+    /// Share transaction details
+    internal static let share = L10n.tr("Localizable", "TransactionDetail.share", fallback: "Share transaction details")
+  }
   internal enum TransactionDetailPage {
     /// %@ of %@
     internal static func pageNumber(_ p1: Any, _ p2: Any) -> String {

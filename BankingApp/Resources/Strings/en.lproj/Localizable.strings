@@ -25,3 +25,7 @@
 "AccountDetailPage.accountType" = "Account type:";
 
 "TransactionDetailPage.pageNumber" = "%@ of %@";
+"TransactionDetail.at" = "at";
+"TransactionDetail.details"  = "Details:";
+"TransactionDetail.balanceAfterTransaction" = "Balance after transaction: %@";
+"TransactionDetail.share" = "Share transaction details";

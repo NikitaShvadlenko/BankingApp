@@ -7,10 +7,11 @@ final class AccountDetailScreenRouter {
 
 // MARK: - AccountDetailScreenRouterInput
 extension AccountDetailScreenRouter: AccountDetailScreenRouterInput {
-    func routeToTransactionsScreen(transactions: [Transaction]) {
+    func routeToTransactionsScreen(transactions: [Transaction], index: Int) {
         let transactionDetailViewController = TransactionDetailScreenAssembly
             .assemble(
-                transactions: transactions
+                transactions: transactions,
+                index: index
             ).viewController
         viewController?.navigationController?.pushViewController(transactionDetailViewController, animated: true)
     }

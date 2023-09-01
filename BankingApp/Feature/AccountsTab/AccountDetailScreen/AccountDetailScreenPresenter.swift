@@ -39,7 +39,7 @@ extension AccountDetailScreenPresenter: TransactionsTableViewManagerDelegate {
         didSelectItemAt indexPath: IndexPath
     ) {
         guard let account = account else { return }
-        router?.routeToTransactionsScreen(transactions: account.transactions)
+        router?.routeToTransactionsScreen(transactions: account.transactions, index: indexPath.row)
     }
 }
 
