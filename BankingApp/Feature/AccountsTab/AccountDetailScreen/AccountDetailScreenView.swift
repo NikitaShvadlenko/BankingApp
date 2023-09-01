@@ -100,6 +100,7 @@ final class AccountDetailScreenView: UIView {
 // MARK: - UIScrollViewDelegate
 extension AccountDetailScreenView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        tableView.showsVerticalScrollIndicator = false
         let fullWidth = scrollView.contentSize.width
         let contentOffset = scrollView.contentOffset.x
         let scrollPercentage = (contentOffset / (fullWidth - scrollView.bounds.width)) * 100
@@ -107,6 +108,7 @@ extension AccountDetailScreenView: UIScrollViewDelegate {
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        tableView.showsVerticalScrollIndicator = true
         let offset = scrollView.contentOffset.x
         let pageNumber = Int(offset / scrollView.bounds.width)
 
