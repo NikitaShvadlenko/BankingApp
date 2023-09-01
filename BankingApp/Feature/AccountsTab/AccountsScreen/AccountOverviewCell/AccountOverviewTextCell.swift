@@ -60,6 +60,14 @@ final class AccountOverviewTextCell: UITableViewCell, AccountOverviewCellProtoco
         accountImageView.layer.cornerRadius = accountImageView.bounds.width / 2
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        amountLabel.text = nil
+        availibleLabel.text = nil
+        accountNameLabel.text = nil
+        accountImageView.image = nil
+    }
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("not implemented")

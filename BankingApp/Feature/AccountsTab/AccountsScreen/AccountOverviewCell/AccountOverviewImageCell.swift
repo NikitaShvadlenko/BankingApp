@@ -57,6 +57,14 @@ final class AccountOverviewImageCell: UITableViewCell, AccountOverviewCellProtoc
         setupView()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        amountLabel.text = nil
+        availibleLabel.text = nil
+        accountNameLabel.text = nil
+        accountImageView.image = nil
+    }
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("not implemented")
