@@ -82,9 +82,9 @@ internal enum L10n {
     internal static let share = L10n.tr("Localizable", "TransactionDetail.share", fallback: "Share transaction details")
   }
   internal enum TransactionDetailPage {
-    /// %@ of %@
-    internal static func pageNumber(_ p1: Any, _ p2: Any) -> String {
-      return L10n.tr("Localizable", "TransactionDetailPage.pageNumber", String(describing: p1), String(describing: p2), fallback: "%@ of %@")
+    ///  of %@
+    internal static func pageNumber(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "TransactionDetailPage.pageNumber", String(describing: p1), fallback: " of %@")
     }
   }
 }

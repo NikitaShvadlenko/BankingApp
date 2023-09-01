@@ -19,6 +19,8 @@ protocol TransactionDetailCollectionManagerDelegate: AnyObject {
 final class TransactionDetailCollectionViewManager: NSObject {
     weak var delegate: TransactionDetailCollectionManagerDelegate?
     var transactions: [TransactionDetailViewModel] = []
+    private var previousPageIndex: Int = 0
+    private var previousContentOffset: CGFloat = 0
 }
 
 // MARK: - UICollectionViewDataSource
@@ -91,12 +93,23 @@ extension TransactionDetailCollectionViewManager: ManagesTransactionDetailCollec
 // MARK: - UICollectionViewDelegate
 extension TransactionDetailCollectionViewManager: UICollectionViewDelegate {
 
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageNumber = Int(scrollView.contentOffset.x / scrollView.frame.width)
-        if pageNumber == transactions.count - 1 {
-            scrollView.scrollToPage(pageNumber: pageNumber, animated: true)
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x == 0 {
+            return
         }
-        delegate?.transactionDetailManager(self, didScrollToPageIndex: pageNumber)
+        let pageIndex = Int(round(scrollView.contentOffset.x / scrollView.frame.width))
+        guard pageIndex != previousPageIndex else { return }
+        previousPageIndex = pageIndex
+        previousContentOffset = scrollView.contentOffset.x
+        delegate?.transactionDetailManager(self, didScrollToPageIndex: pageIndex)
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageIndex = Int(scrollView.contentOffset.x / scrollView.frame.width)
+        if pageIndex == transactions.count - 1 && scrollView.contentOffset.x > previousContentOffset {
+            let xOffset = CGFloat(pageIndex) * scrollView.frame.width
+            scrollView.setContentOffset(CGPoint(x: xOffset, y: 0), animated: true)
+        }
     }
 }
 

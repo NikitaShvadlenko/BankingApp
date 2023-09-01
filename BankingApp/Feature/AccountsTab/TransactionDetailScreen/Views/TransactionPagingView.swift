@@ -46,6 +46,21 @@ final class TransactionPagingView: UIView {
         return label
     }()
 
+    private lazy var pageSelectedLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = Asset.Colors.primaryLabel.color
+        return label
+    }()
+
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [pageSelectedLabel, pageLabel])
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.distribution = .equalSpacing
+        return stackView
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -61,9 +76,15 @@ final class TransactionPagingView: UIView {
 extension TransactionPagingView {
     public func configureView(totalPages: Int, currentPage: Int) {
         UIView.animate(withDuration: 0.2) {
-            self.pageLabel.text = L10n.TransactionDetailPage.pageNumber(currentPage, totalPages)
+            self.pageSelectedLabel.alpha = 0
+        } completion: { _ in
+            UIView.animate(withDuration: 0.3) {
+                self.pageSelectedLabel.alpha = 1
+            }
         }
 
+        pageSelectedLabel.text = "\(currentPage)"
+        pageLabel.text = L10n.TransactionDetailPage.pageNumber(totalPages)
         forwardButton.alpha = 1
         backwardButton.alpha = 1
 
@@ -82,10 +103,10 @@ extension TransactionPagingView {
         [
             forwardButton,
             backwardButton,
-            pageLabel
+            stackView
         ].forEach(addSubview)
 
-        pageLabel.snp.makeConstraints { make in
+        stackView.snp.makeConstraints { make in
             make.bottom.top.equalToSuperview()
             make.centerX.equalToSuperview()
         }
