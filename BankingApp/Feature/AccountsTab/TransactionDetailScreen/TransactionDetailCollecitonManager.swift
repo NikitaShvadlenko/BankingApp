@@ -13,7 +13,7 @@ protocol ManagesTransactionDetailCollection: UICollectionViewDataSource, UIColle
 }
 
 final class TransactionDetailCollectionViewManager: NSObject {
-    var transactions: [Transaction] = []
+    var transactions: [TransactionDetailViewModel] = []
 }
 
 // MARK: - UICollectionViewDataSource
@@ -26,7 +26,14 @@ extension TransactionDetailCollectionViewManager: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        <#code#>
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: "\(TransactionCollectionViewCell.self)",
+            for: indexPath
+        ) as? TransactionCollectionViewCell else {
+            fatalError("Failed to dequeue cell")
+        }
+        cell.configure(with: transactions[indexPath.item])
+        return cell
     }
 }
 

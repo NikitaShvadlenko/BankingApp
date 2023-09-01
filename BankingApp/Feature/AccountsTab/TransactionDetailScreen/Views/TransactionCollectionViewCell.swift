@@ -68,8 +68,8 @@ final class TransactionCollectionViewCell: UICollectionViewCell {
 
     let shareButton = ShareLabel(style: .imageFirst)
 
-    let firstSectionSeparator = SeparatorView()
-    let secondSectionSeparator = SeparatorView()
+    private let firstSectionSeparator = SeparatorView()
+    private let secondSectionSeparator = SeparatorView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -79,6 +79,13 @@ final class TransactionCollectionViewCell: UICollectionViewCell {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("Not implemented")
+    }
+}
+
+// MARK: - Public Methods
+extension TransactionCollectionViewCell {
+    public func configure(with transactionDetailViewModel: TransactionDetailViewModel) {
+        
     }
 }
 
