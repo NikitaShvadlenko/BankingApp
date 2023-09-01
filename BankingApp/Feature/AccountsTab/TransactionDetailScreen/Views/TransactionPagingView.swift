@@ -19,7 +19,8 @@ final class TransactionPagingView: UIView {
 
     private lazy var forwardButton: UIButton = {
         let button = UIButton()
-        let image = UIImage(sfSymbol: SFSymbol.forward)
+        let configuration = UIImage.SymbolConfiguration(pointSize: 18, weight: .semibold, scale: .large)
+        let image = UIImage(sfSymbol: SFSymbol.forward, withConfiguration: configuration)
         button.setImage(image, for: .normal)
         button.contentMode = .scaleAspectFit
         button.alpha = 0
@@ -30,7 +31,8 @@ final class TransactionPagingView: UIView {
 
     private lazy var backwardButton: UIButton = {
         let button = UIButton()
-        let image = UIImage(sfSymbol: SFSymbol.back)
+        let configuration = UIImage.SymbolConfiguration(pointSize: 18, weight: .semibold, scale: .large)
+        let image = UIImage(sfSymbol: SFSymbol.back, withConfiguration: configuration)
         button.setImage(image, for: .normal)
         button.alpha = 0
         button.contentMode = .scaleAspectFit
@@ -75,12 +77,17 @@ final class TransactionPagingView: UIView {
 // MARK: - Public Methods
 extension TransactionPagingView {
     public func configureView(totalPages: Int, currentPage: Int) {
-        UIView.animate(withDuration: 0.2) {
+        UIView.animate(withDuration: 0.3) {
             self.pageSelectedLabel.alpha = 0
         } completion: { _ in
-            UIView.animate(withDuration: 0.3) {
-                self.pageSelectedLabel.alpha = 1
-            }
+            UIView.animate(
+                withDuration: 0.3,
+                delay: 0,
+                usingSpringWithDamping: 0.5,
+                initialSpringVelocity: 0.1,
+                options: []) {
+                    self.pageSelectedLabel.alpha = 1
+                }
         }
 
         pageSelectedLabel.text = "\(currentPage)"
