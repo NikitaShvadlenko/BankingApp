@@ -16,6 +16,9 @@ enum ShareLabelConstraintStrategyFactory {
 
         case .labelFirst:
             return LabelFirstConstraintStrategy()
+
+        case .imageFirstLeading:
+            return ImageFirstLeadingConstraintStrategy()
         }
     }
 }

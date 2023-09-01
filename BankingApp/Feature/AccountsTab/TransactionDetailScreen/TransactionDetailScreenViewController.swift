@@ -5,6 +5,7 @@ final class TransactionDetailScreenViewController: UIViewController {
     private let transactionDetailScreenView = TransactionDetailScreenView()
 
     var presenter: TransactionDetailScreenViewOutput?
+    var selectedPage: Int?
 
     override func loadView() {
         view = transactionDetailScreenView
@@ -23,6 +24,16 @@ final class TransactionDetailScreenViewController: UIViewController {
         transactionDetailScreenView.transactionsCollectionView.dataSource = manager
         transactionDetailScreenView.transactionsCollectionView.delegate = manager
     }
+
+    override func viewDidLayoutSubviews() {
+        if let selectedPage {
+            let collectionView = transactionDetailScreenView.transactionsCollectionView
+            let xOffset = CGFloat(selectedPage) * collectionView.frame.width
+            collectionView.setContentOffset(CGPoint(x: xOffset, y: 0), animated: false)
+        }
+        super.viewDidLayoutSubviews()
+    }
+
 }
 
 // MARK: - TransactoinPagingViewDelegate
@@ -38,12 +49,12 @@ extension TransactionDetailScreenViewController: TransactoinPagingViewDelegate {
 
 // MARK: - TransactionDetailScreenViewInput
 extension TransactionDetailScreenViewController: TransactionDetailScreenViewInput {
-    func configurePagingView(pageSelected: Int, pagesTotal: Int) {
-        transactionDetailScreenView.pageView.configureView(totalPages: pagesTotal, currentPage: pageSelected)
+    func configurePagingView(pagesTotal: Int) {
+        transactionDetailScreenView.pageView.configureView(totalPages: pagesTotal, currentPage: 0)
     }
 
     func configureTransactionView(selectedTransactionIndex: Int) {
-        transactionDetailScreenView.transactionsCollectionView.scrollToPage(pageNumber: selectedTransactionIndex)
+
     }
 
     func configureViews() {

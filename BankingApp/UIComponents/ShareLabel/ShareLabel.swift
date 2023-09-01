@@ -87,5 +87,6 @@ extension ShareLabel {
     enum Style {
         case imageFirst
         case labelFirst
+        case imageFirstLeading
     }
 }

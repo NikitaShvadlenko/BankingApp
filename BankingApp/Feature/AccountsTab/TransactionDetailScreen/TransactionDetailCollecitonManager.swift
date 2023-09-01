@@ -19,7 +19,7 @@ final class TransactionDetailCollectionViewManager: NSObject {
 // MARK: - UICollectionViewDataSource
 extension TransactionDetailCollectionViewManager: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        transactions.count
+        return transactions.count
     }
 
     func collectionView(
@@ -74,7 +74,6 @@ extension TransactionDetailCollectionViewManager: UICollectionViewDelegateFlowLa
     ) -> CGFloat {
         0
     }
-
 }
 
 // MARK: - ManagesTransactionDetailCollection

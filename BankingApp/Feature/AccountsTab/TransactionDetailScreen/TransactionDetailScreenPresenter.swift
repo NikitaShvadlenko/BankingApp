@@ -7,19 +7,17 @@ final class TransactionDetailScreenPresenter {
     var router: TransactionDetailScreenRouterInput?
     var collectionManager: ManagesTransactionDetailCollection?
     var transactions: [Transaction]?
-    var transactionIndex: Int?
 }
 
 // MARK: - TransactionDetailScreenViewOutput
 extension TransactionDetailScreenPresenter: TransactionDetailScreenViewOutput {
     func viewDidLoad(_ view: TransactionDetailScreenViewInput) {
-        view.configureViews()
         setTransactions()
         guard
-            let transactionIndex,
             let transactions
         else { return }
-        view.configurePagingView(pageSelected: transactionIndex + 1, pagesTotal: transactions.count)
+        view.configurePagingView(pagesTotal: transactions.count)
+        view.configureViews()
     }
 }
 

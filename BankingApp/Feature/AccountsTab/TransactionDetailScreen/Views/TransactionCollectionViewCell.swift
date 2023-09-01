@@ -74,7 +74,7 @@ final class TransactionCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    let shareButton = ShareLabel(style: .imageFirst)
+    let shareButton = ShareLabel(style: .imageFirstLeading)
 
     private let firstSectionSeparator = SeparatorView()
     private let secondSectionSeparator = SeparatorView()
@@ -145,12 +145,12 @@ extension TransactionCollectionViewCell {
         }
 
         processedOnDateLabel.snp.makeConstraints { make in
-            make.top.equalTo(dateLabel.snp.bottom)
+            make.top.equalTo(dateLabel.snp.bottom).offset(2)
             make.leading.trailing.equalToSuperview()
         }
 
         typeLabel.snp.makeConstraints { make in
-            make.top.equalTo(processedOnDateLabel.snp.bottom)
+            make.top.equalTo(processedOnDateLabel.snp.bottom).offset(2)
             make.leading.trailing.equalToSuperview()
         }
 
@@ -166,7 +166,7 @@ extension TransactionCollectionViewCell {
         }
 
         transactionDetailLabel.snp.makeConstraints { make in
-            make.top.equalTo(detailsLabel.snp.bottom)
+            make.top.equalTo(detailsLabel.snp.bottom).offset(2)
             make.leading.trailing.equalToSuperview()
         }
 
@@ -183,7 +183,7 @@ extension TransactionCollectionViewCell {
 
         shareButton.snp.makeConstraints { make in
             make.top.equalTo(secondSectionSeparator.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview()
+            make.leading.equalToSuperview()
             make.height.equalTo(30)
         }
     }
