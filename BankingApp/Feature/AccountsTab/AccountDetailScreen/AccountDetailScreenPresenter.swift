@@ -36,10 +36,11 @@ extension AccountDetailScreenPresenter: AccountDetailScreenViewOutput {
 extension AccountDetailScreenPresenter: TransactionsTableViewManagerDelegate {
     func transactionsTableViewManager(
         _ transactionsTableViewManager: ManagesTransactionsTableView,
-        didSelectItemAt row: Int
-    ) {
-        guard let account = account else { return }
-        router?.routeToTransactionsScreen(transactions: account.transactions, index: row)
+        didSelectTransaction transaction: Transaction) {
+        guard let account = account,
+              let transactionIndex = account.transactions.firstIndex(where: { $0 == transaction })
+        else { return }
+        router?.routeToTransactionsScreen(transactions: account.transactions, index: transactionIndex)
     }
 }
 

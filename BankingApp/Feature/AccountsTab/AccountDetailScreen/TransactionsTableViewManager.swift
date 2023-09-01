@@ -19,7 +19,7 @@ protocol ManagesTransactionsTableView: UITableViewDelegate {
 protocol TransactionsTableViewManagerDelegate: AnyObject {
     func transactionsTableViewManager(
         _ transactionsTableViewManager: ManagesTransactionsTableView,
-        didSelectItemAt row: Int
+        didSelectTransaction transaction: Transaction
     )
 }
 
@@ -75,13 +75,12 @@ extension TransactionsTableViewManager: ManagesTransactionsTableView {
 extension TransactionsTableViewManager: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        guard
-        let transaction = dataSource.itemIdentifier(for: indexPath),
-        let transactionIndex = transactions.firstIndex(where: { $0 == transaction })
+        let transaction = dataSource.itemIdentifier(for: indexPath)
         else {
            return
        }
         tableView.deselectRow(at: indexPath, animated: true)
-        delegate?.transactionsTableViewManager(self, didSelectItemAt: transactionIndex)
+        delegate?.transactionsTableViewManager(self, didSelectTransaction: transaction)
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
