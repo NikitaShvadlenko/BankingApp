@@ -29,3 +29,4 @@
 "TransactionDetail.details"  = "Details:";
 "TransactionDetail.balanceAfterTransaction" = "Balance after transaction: %@";
 "TransactionDetail.share" = "Share transaction details";
+"TransactionDetail.processedOn" = "Processed on: %@";

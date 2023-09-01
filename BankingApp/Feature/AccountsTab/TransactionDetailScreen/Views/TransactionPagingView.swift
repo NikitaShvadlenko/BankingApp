@@ -22,7 +22,7 @@ final class TransactionPagingView: UIView {
         let image = UIImage(sfSymbol: SFSymbol.forward)
         button.setImage(image, for: .normal)
         button.contentMode = .scaleAspectFit
-        button.alpha = 0
+        button.alpha = 1
         button.tintColor = Asset.Colors.segmentedControlSelector.color
         button.addTarget(self, action: #selector(forwardButtonTapped), for: .touchUpInside)
         return button
@@ -32,7 +32,7 @@ final class TransactionPagingView: UIView {
         let button = UIButton()
         let image = UIImage(sfSymbol: SFSymbol.back)
         button.setImage(image, for: .normal)
-        button.alpha = 0
+        button.alpha = 1
         button.contentMode = .scaleAspectFit
         button.tintColor = Asset.Colors.segmentedControlSelector.color
         button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)

@@ -9,6 +9,7 @@ final class TransactionDetailScreenView: UIView {
             forCellWithReuseIdentifier: "\(TransactionCollectionViewCell.self)"
         )
         collectionView.isPagingEnabled = true
+        collectionView.bounces = false
         return collectionView
     }()
 

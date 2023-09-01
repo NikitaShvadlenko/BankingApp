@@ -13,7 +13,7 @@ final class TransactionCollectionViewCell: UICollectionViewCell {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = Asset.Colors.primaryLabel.color
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .natural
         return label
     }()
@@ -21,12 +21,20 @@ final class TransactionCollectionViewCell: UICollectionViewCell {
     private lazy var amountLabel: UILabel = {
         let label = UILabel()
         label.textColor = Asset.Colors.primaryLabel.color
-        label.font = UIFont.systemFont(ofSize: 38, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 34)
         label.textAlignment = .natural
         return label
     }()
 
     private lazy var dateLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = Asset.Colors.primaryLabel.color
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textAlignment = .natural
+        return label
+    }()
+
+    private lazy var processedOnDateLabel: UILabel = {
         let label = UILabel()
         label.textColor = Asset.Colors.primaryLabel.color
         label.font = UIFont.systemFont(ofSize: 16)
@@ -95,9 +103,11 @@ extension TransactionCollectionViewCell {
         dateLabel.text = dateFormatter.string(from: model.date)
         typeLabel.text = model.type
         detailsLabel.text = L10n.TransactionDetail.details
+        transactionDetailLabel.text = model.cardNumber
         let formattedBalance = formatter.dollarsFromAmount(model.balanceAfterTransaction)
         balanceLabel.text = L10n.TransactionDetail.balanceAfterTransaction(formattedBalance)
         shareButton.configure(title: L10n.TransactionDetail.share)
+        processedOnDateLabel.text = L10n.TransactionDetail.processedOn(dateFormatter.string(from: model.dateProcessed))
     }
 }
 
@@ -113,13 +123,14 @@ extension TransactionCollectionViewCell {
             detailsLabel,
             balanceLabel,
             shareButton,
+            processedOnDateLabel,
             transactionDetailLabel,
             firstSectionSeparator,
             secondSectionSeparator
         ].forEach(contentView.addSubview)
 
         nameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(30)
+            make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview()
         }
 
@@ -133,8 +144,13 @@ extension TransactionCollectionViewCell {
             make.leading.trailing.equalToSuperview()
         }
 
-        typeLabel.snp.makeConstraints { make in
+        processedOnDateLabel.snp.makeConstraints { make in
             make.top.equalTo(dateLabel.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+        }
+
+        typeLabel.snp.makeConstraints { make in
+            make.top.equalTo(processedOnDateLabel.snp.bottom)
             make.leading.trailing.equalToSuperview()
         }
 

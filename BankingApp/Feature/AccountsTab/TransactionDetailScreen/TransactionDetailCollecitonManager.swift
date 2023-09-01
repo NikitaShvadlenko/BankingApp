@@ -44,10 +44,10 @@ extension TransactionDetailCollectionViewManager: UICollectionViewDelegateFlowLa
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        let totalWidth = collectionView.bounds.width - Constants.leftSectionInset * 2
-        let availibleWidth = totalWidth - (Constants.spaceBetweenCards * (Constants.numberOfHorizontalCards - 1))
-        let width = availibleWidth / Constants.numberOfHorizontalCards
-        let height = width * 1.3
+        let totalWidth = collectionView.bounds.width
+        let availibleWidth = totalWidth
+        let width = availibleWidth
+        let height = collectionView.bounds.height - Constants.topSectionInset * 2
         return CGSize(width: width, height: height)
     }
 
@@ -56,12 +56,15 @@ extension TransactionDetailCollectionViewManager: UICollectionViewDelegateFlowLa
         layout collectionViewLayout: UICollectionViewLayout,
         insetForSectionAt section: Int
     ) -> UIEdgeInsets {
-        return UIEdgeInsets(
-            top: Constants.verticalSectionInset,
-            left: Constants.leftSectionInset,
-            bottom: Constants.verticalSectionInset,
-            right: Constants.leftSectionInset
-        )
+        return Constants.collectionViewInsets
+    }
+
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumLineSpacingForSectionAt section: Int
+    ) -> CGFloat {
+        0
     }
 
     func collectionView(
@@ -69,7 +72,7 @@ extension TransactionDetailCollectionViewManager: UICollectionViewDelegateFlowLa
         layout collectionViewLayout: UICollectionViewLayout,
         minimumInteritemSpacingForSectionAt section: Int
     ) -> CGFloat {
-        Constants.spaceBetweenCards
+        0
     }
 
 }

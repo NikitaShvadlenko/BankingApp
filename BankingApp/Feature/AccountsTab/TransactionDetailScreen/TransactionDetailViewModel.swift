@@ -12,6 +12,7 @@ struct TransactionDetailViewModel {
     let name: String
     let amount: Double
     let date: Date
+    let dateProcessed: Date
     let type: String
     let cardNumber: String
     let balanceAfterTransaction: Double

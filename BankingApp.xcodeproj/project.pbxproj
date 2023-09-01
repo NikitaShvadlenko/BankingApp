@@ -596,28 +596,28 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		"TEMP_035EC152-C997-46BD-8CAD-E2B53007C0B1" /* SharedResources */ = {
+		"TEMP_4A81952C-9404-4F5B-A877-282D64881650" /* SharedResources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = SharedResources;
 			sourceTree = "<group>";
 		};
-		"TEMP_2ED4D096-8823-4800-B100-595985CD2BE8" /* Packages */ = {
+		"TEMP_ABFF4EE7-01D7-48A1-A063-2FED037DE7B0" /* SharedResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedResources;
+			sourceTree = "<group>";
+		};
+		"TEMP_B2C64301-8CA5-4710-86A6-6EA65E9B09E7" /* Packages */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Packages;
 			sourceTree = "<group>";
 		};
-		"TEMP_CFB6F6CE-9C38-4795-AF02-AECF90FA6559" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_D14091F7-055A-4ABA-B014-FFD9DA193DBC" /* Sources */ = {
+		"TEMP_C9D0E129-E8F4-488A-ADFE-AE570D8F8973" /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 			);

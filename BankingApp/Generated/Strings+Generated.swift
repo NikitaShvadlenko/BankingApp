@@ -74,6 +74,10 @@ internal enum L10n {
     }
     /// Details:
     internal static let details = L10n.tr("Localizable", "TransactionDetail.details", fallback: "Details:")
+    /// Processed on: %@
+    internal static func processedOn(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "TransactionDetail.processedOn", String(describing: p1), fallback: "Processed on: %@")
+    }
     /// Share transaction details
     internal static let share = L10n.tr("Localizable", "TransactionDetail.share", fallback: "Share transaction details")
   }

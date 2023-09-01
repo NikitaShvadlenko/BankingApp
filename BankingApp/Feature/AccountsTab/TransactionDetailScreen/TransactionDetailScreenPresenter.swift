@@ -15,10 +15,6 @@ extension TransactionDetailScreenPresenter: TransactionDetailScreenViewOutput {
     func viewDidLoad(_ view: TransactionDetailScreenViewInput) {
         view.configureViews()
         setTransactions()
-        if let transactionIndex = transactionIndex {
-            view.configureTransactionView(selectedTransactionIndex: transactionIndex)
-        }
-
     }
 }
 
@@ -53,7 +49,8 @@ extension TransactionDetailScreenPresenter {
         let transactionViewModel = TransactionDetailViewModel(
             name: transaction.sentToAccount,
             amount: transaction.amount,
-            date: transaction.dateProcessed,
+            date: transaction.dateSent,
+            dateProcessed: transaction.dateProcessed,
             type: transaction.transactionType.rawValue,
             cardNumber: transaction.transactionDetails.detail,
             balanceAfterTransaction: transaction.transactionDetails.balanceAfterTransaction
