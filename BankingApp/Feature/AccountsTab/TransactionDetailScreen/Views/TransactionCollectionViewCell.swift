@@ -58,11 +58,10 @@ final class TransactionCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    //_____
-    //Details - bold small 16
-    //Balamce after transaction $efewfew 16
-    //____
-    // share button
+    let shareButton = ShareLabel(style: .imageFirst)
+
+    let firstSectionSeparator = SeparatorView()
+    let secondSectionSeparator = SeparatorView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -78,6 +77,40 @@ final class TransactionCollectionViewCell: UICollectionViewCell {
 // MARK: - Private Methods
 extension TransactionCollectionViewCell {
     private func setupView() {
+        [
+            nameLabel,
+            amountLabel,
+            dateLabel,
+            typeLabel,
+            detailsLabel,
+            balanceLabel,
+            shareButton,
+            firstSectionSeparator,
+            secondSectionSeparator
+        ].forEach(contentView.addSubview)
 
+        nameLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(30)
+            make.leading.trailing.equalToSuperview()
+        }
+
+        amountLabel.snp.makeConstraints { make in
+            make.top.equalTo(nameLabel.snp.bottom).offset(8)
+            make.leading.trailing.equalToSuperview()
+        }
+
+        dateLabel.snp.makeConstraints { make in
+            make.top.equalTo(amountLabel.snp.bottom).offset(15)
+            make.leading.trailing.equalToSuperview()
+        }
+
+        typeLabel.snp.makeConstraints { make in
+            make.top.equalTo(dateLabel.snp.bottom)
+            make.leading.trailing.equalToSuperview()
+        }
+
+        firstSectionSeparator.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+        }
     }
 }
