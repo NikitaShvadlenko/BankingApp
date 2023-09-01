@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ManagesTransactionDetailCollection: UICollectionViewDataSource, UICollectionViewDelegate {
-
+    func setTransactions(transactions: [TransactionDetailViewModel])
 }
 
 final class TransactionDetailCollectionViewManager: NSObject {
@@ -44,18 +44,54 @@ extension TransactionDetailCollectionViewManager: UICollectionViewDelegateFlowLa
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        return collectionView.frame.size
+        let totalWidth = collectionView.bounds.width - Constants.leftSectionInset * 2
+        let availibleWidth = totalWidth - (Constants.spaceBetweenCards * (Constants.numberOfHorizontalCards - 1))
+        let width = availibleWidth / Constants.numberOfHorizontalCards
+        let height = width * 1.3
+        return CGSize(width: width, height: height)
+    }
+
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAt section: Int
+    ) -> UIEdgeInsets {
+        return UIEdgeInsets(
+            top: Constants.verticalSectionInset,
+            left: Constants.leftSectionInset,
+            bottom: Constants.verticalSectionInset,
+            right: Constants.leftSectionInset
+        )
+    }
+
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumInteritemSpacingForSectionAt section: Int
+    ) -> CGFloat {
+        Constants.spaceBetweenCards
+    }
+
+}
+
+// MARK: - ManagesTransactionDetailCollection
+extension TransactionDetailCollectionViewManager: ManagesTransactionDetailCollection {
+    func setTransactions(transactions: [TransactionDetailViewModel]) {
+        self.transactions = transactions
     }
 }
+
 // MARK: - UICollectionViewDelegate
-extension TransactionDetailCollectionViewManager {
+extension TransactionDetailCollectionViewManager: UICollectionViewDelegate {
 
 }
 
 // MARK: - Constants
 extension TransactionDetailCollectionViewManager {
     private enum Constants {
-        static let leftSectionInset: CGFloat = 20
+        static let numberOfHorizontalCards: CGFloat = 1
+        static let spaceBetweenCards: CGFloat = 20
+        static let leftSectionInset: CGFloat = 10
         static let topSectionInset: CGFloat = 30
         static let verticalSectionInset: CGFloat = 16
         static let collectionViewInsets = UIEdgeInsets(

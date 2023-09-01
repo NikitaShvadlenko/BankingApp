@@ -3,12 +3,19 @@ import UIKit
 final class TransactionDetailScreenView: UIView {
 
     lazy var transactionsCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.register(
             TransactionCollectionViewCell.self,
             forCellWithReuseIdentifier: "\(TransactionCollectionViewCell.self)"
         )
+        collectionView.isPagingEnabled = true
         return collectionView
+    }()
+
+    private lazy var flowLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        return layout
     }()
 
     lazy var pageView = TransactionPagingView()
@@ -38,8 +45,8 @@ extension TransactionDetailScreenView {
 
         transactionsCollectionView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.top.equalToSuperview()
-            make.bottom.equalTo(pageView.snp.top).inset(-14)
+            make.center.equalToSuperview()
+            make.bottom.equalTo(pageView.snp.top)
         }
     }
 }

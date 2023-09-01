@@ -168,6 +168,7 @@ extension TransactionCollectionViewCell {
         shareButton.snp.makeConstraints { make in
             make.top.equalTo(secondSectionSeparator.snp.bottom).offset(20)
             make.leading.trailing.equalToSuperview()
+            make.height.equalTo(30)
         }
     }
 }

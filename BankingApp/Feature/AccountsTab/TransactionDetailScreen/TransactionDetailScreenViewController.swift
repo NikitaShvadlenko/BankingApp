@@ -18,6 +18,11 @@ final class TransactionDetailScreenViewController: UIViewController {
     func setPageVeiwDelegate(_ delegate: TransactoinPagingViewDelegate) {
         transactionDetailScreenView.pageView.delegate = delegate
     }
+
+    func setCollectionViewManager(manager: ManagesTransactionDetailCollection) {
+        transactionDetailScreenView.transactionsCollectionView.dataSource = manager
+        transactionDetailScreenView.transactionsCollectionView.delegate = manager
+    }
 }
 
 // MARK: - TransactoinPagingViewDelegate
@@ -33,6 +38,10 @@ extension TransactionDetailScreenViewController: TransactoinPagingViewDelegate {
 
 // MARK: - TransactionDetailScreenViewInput
 extension TransactionDetailScreenViewController: TransactionDetailScreenViewInput {
+    func configureTransactionView(selectedTransactionIndex: Int) {
+        transactionDetailScreenView.transactionsCollectionView.scrollToPage(pageNumber: selectedTransactionIndex)
+    }
+
     func configureViews() {
     }
 }
