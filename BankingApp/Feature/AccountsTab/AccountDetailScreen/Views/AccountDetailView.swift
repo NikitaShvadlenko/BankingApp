@@ -10,7 +10,8 @@ import UIKit
 
 final class AccountDetailView: UIView {
 
-    private let bottomBorderView = UIView()
+    private let bottomBorderView = SeparatorView()
+
     private lazy var containerView: UIView = {
         let containerView = UIView()
         containerView.backgroundColor = .white
@@ -83,8 +84,6 @@ extension AccountDetailView {
    private func setupView() {
        addSubview(containerView)
        accountNumberView.addSubview(bottomBorderView)
-
-       bottomBorderView.backgroundColor = Asset.Colors.secondaryLabel.color.withAlphaComponent(0.4)
 
        containerView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()

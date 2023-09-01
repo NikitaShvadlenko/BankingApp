@@ -46,11 +46,7 @@ final class AccountDetailPageView: UIView {
         return view
     }()
 
-    private lazy var separatorView: UIView = {
-        let view = UIView()
-        view.backgroundColor = Asset.Colors.secondaryLabel.color.withAlphaComponent(0.5)
-        return view
-    }()
+    private lazy var separatorView = SeparatorView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -79,6 +79,7 @@
 		B408B0DB2AA15A9E00708E28 /* LabelFirstConstraintStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408B0DA2AA15A9E00708E28 /* LabelFirstConstraintStrategy.swift */; };
 		B408B0DE2AA15C8500708E28 /* ImageFirstConstraintStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408B0DD2AA15C8500708E28 /* ImageFirstConstraintStrategy.swift */; };
 		B408B0E02AA15CDE00708E28 /* ShareLabelConstraintStrategyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408B0DF2AA15CDE00708E28 /* ShareLabelConstraintStrategyFactory.swift */; };
+		B408B0E22AA1609200708E28 /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B408B0E12AA1609200708E28 /* SeparatorView.swift */; };
 		B8A6494D87F24B3A31526EF9 /* AccountsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC96BFCA2DACD0702FEC5F3 /* AccountsScreenViewController.swift */; };
 		B939469ACF4BF846DCA30102 /* AccountOverviewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8CCCCCD3085AC6E57DCAF /* AccountOverviewCellProtocol.swift */; };
 		BC5E8D661AAE1A743BB160CF /* AccountDetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09A51439A80ED394D36C215 /* AccountDetailScreenView.swift */; };
@@ -196,6 +197,7 @@
 		B408B0DA2AA15A9E00708E28 /* LabelFirstConstraintStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFirstConstraintStrategy.swift; sourceTree = "<group>"; };
 		B408B0DD2AA15C8500708E28 /* ImageFirstConstraintStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFirstConstraintStrategy.swift; sourceTree = "<group>"; };
 		B408B0DF2AA15CDE00708E28 /* ShareLabelConstraintStrategyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLabelConstraintStrategyFactory.swift; sourceTree = "<group>"; };
+		B408B0E12AA1609200708E28 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B74ED66C588F5C2944D8324A /* ImageDownloaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderProtocol.swift; sourceTree = "<group>"; };
 		B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 			children = (
 				B408B0D82AA1596100708E28 /* ShareLabelConstraintStrategy.swift */,
 				B408B0DF2AA15CDE00708E28 /* ShareLabelConstraintStrategyFactory.swift */,
+				B408B0E12AA1609200708E28 /* SeparatorView.swift */,
 				B408B0DA2AA15A9E00708E28 /* LabelFirstConstraintStrategy.swift */,
 				B408B0DD2AA15C8500708E28 /* ImageFirstConstraintStrategy.swift */,
 				CD5C575843FA6ADE61D95FF4 /* ShareLabel.swift */,
@@ -776,6 +779,7 @@
 				D0536F526FBF9558E178E83F /* TransactionDetailScreenViewController.swift in Sources */,
 				2E6DD89BA0CF3308E8310905 /* TransactionPagingView.swift in Sources */,
 				7B6793D8B3DAAB89BA9192F8 /* TransactionTableViewCell.swift in Sources */,
+				B408B0E22AA1609200708E28 /* SeparatorView.swift in Sources */,
 				C22381DC6BDE6A8B5A6374D1 /* TransactionsTableHeader.swift in Sources */,
 				70AB18C426E6490BB414E3DC /* TransactionsTableViewManager.swift in Sources */,
 				B408B0DE2AA15C8500708E28 /* ImageFirstConstraintStrategy.swift in Sources */,
