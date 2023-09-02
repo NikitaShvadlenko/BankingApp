@@ -30,3 +30,4 @@
 "TransactionDetail.balanceAfterTransaction" = "Balance after transaction: %@";
 "TransactionDetail.share" = "Share transaction details";
 "TransactionDetail.processedOn" = "Processed on: %@";
+"AccountDetailPage.shareString" = "Hi, my ANZ account name is %@, and the account number is %@";

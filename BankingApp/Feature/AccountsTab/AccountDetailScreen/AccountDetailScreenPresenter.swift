@@ -12,6 +12,12 @@ final class AccountDetailScreenPresenter {
 
 // MARK: - AccountDetailScreenViewOutput
 extension AccountDetailScreenPresenter: AccountDetailScreenViewOutput {
+    func viewDidPressShareAccount(_ view: AccountDetailScreenViewInput) {
+        guard let account else { return }
+        let accountString = L10n.AccountDetailPage.shareString(account.accountName, account.number.formattedAsAcount())
+        router?.presentShareScreen(shareString: accountString)
+    }
+
     func viewDidSearch(_ view: AccountDetailScreenViewInput, text: String) {
         guard let account else { return }
         guard !text.isEmpty else {

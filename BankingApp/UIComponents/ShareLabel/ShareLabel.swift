@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ShareLabelDelegate: AnyObject {
-    func accountNumberTapped()
+    func shareLabelTapped(shareLabel: ShareLabel)
 }
 
 final class ShareLabel: UIView {
@@ -19,7 +19,7 @@ final class ShareLabel: UIView {
 
     private let containerView = UIView()
 
-    private lazy var label: UILabel = {
+    lazy var label: UILabel = {
         let label = UILabel()
         label.textColor = .systemBlue
         label.font = UIFont.systemFont(ofSize: 16)
@@ -78,7 +78,7 @@ extension ShareLabel {
 
     @objc
     private func viewTapped() {
-        delegate?.accountNumberTapped()
+        delegate?.shareLabelTapped(shareLabel: self)
     }
 }
 

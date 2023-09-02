@@ -29,6 +29,10 @@ internal enum L10n {
     internal static let accountName = L10n.tr("Localizable", "AccountDetailPage.accountName", fallback: "Account name:")
     /// Account type:
     internal static let accountType = L10n.tr("Localizable", "AccountDetailPage.accountType", fallback: "Account type:")
+    /// Hi, my ANZ account name is %@, and the account number is %@
+    internal static func shareString(_ p1: Any, _ p2: Any) -> String {
+      return L10n.tr("Localizable", "AccountDetailPage.shareString", String(describing: p1), String(describing: p2), fallback: "Hi, my ANZ account name is %@, and the account number is %@")
+    }
   }
   internal enum AccountsScreen {
     /// Cancel

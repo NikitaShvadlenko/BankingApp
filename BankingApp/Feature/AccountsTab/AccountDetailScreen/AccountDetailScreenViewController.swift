@@ -96,8 +96,8 @@ extension AccountDetailScreenViewController: TransactionsTableViewManagerScrollD
 }
 // MARK: - AccountNumberShareViewDelegate
 extension AccountDetailScreenViewController: ShareLabelDelegate {
-    func accountNumberTapped() {
-        print("AccountNumberTapped")
+    func shareLabelTapped(shareLabel: ShareLabel) {
+        presenter?.viewDidPressShareAccount(self)
     }
 }
 // MARK: - SegmentedSelectionScrollDelegate

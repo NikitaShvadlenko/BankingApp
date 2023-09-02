@@ -51,10 +51,8 @@ extension TransactionDetailCollectionViewManager: UICollectionViewDelegateFlowLa
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        let totalWidth = collectionView.bounds.width
-        let availibleWidth = totalWidth
-        let width = availibleWidth
-        let height = collectionView.bounds.height - Constants.topSectionInset * 2
+        let width = collectionView.bounds.width
+        let height = width * 1.5
         return CGSize(width: width, height: height)
     }
 
@@ -116,15 +114,13 @@ extension TransactionDetailCollectionViewManager: UICollectionViewDelegate {
 // MARK: - Constants
 extension TransactionDetailCollectionViewManager {
     private enum Constants {
-        static let numberOfHorizontalCards: CGFloat = 1
-        static let spaceBetweenCards: CGFloat = 20
         static let leftSectionInset: CGFloat = 10
         static let topSectionInset: CGFloat = 30
-        static let verticalSectionInset: CGFloat = 16
+        static let bottomSectionInset: CGFloat = 30
         static let collectionViewInsets = UIEdgeInsets(
             top: topSectionInset,
             left: leftSectionInset,
-            bottom: verticalSectionInset,
+            bottom: bottomSectionInset,
             right: leftSectionInset
         )
     }
