@@ -1,6 +1,7 @@
 import UIKit
 
 final class PaymentsScreenView: UIView {
+    let label = ShareLabel(style: .imageFirst)
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureViews()
@@ -16,5 +17,12 @@ final class PaymentsScreenView: UIView {
 extension PaymentsScreenView {
     private func configureViews() {
         backgroundColor = .white
+        label.configure(title: "Title")
+        addSubview(label)
+        label.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.equalTo(100)
+            make.height.equalTo(50)
+        }
     }
 }

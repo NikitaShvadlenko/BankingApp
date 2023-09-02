@@ -17,6 +17,7 @@ struct ImageFirstLeadingConstraintStrategy: ShareLabelConstraintStrategy {
 
         containerView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
+            make.width.equalToSuperview()
         }
 
         imageView.snp.makeConstraints { make in
