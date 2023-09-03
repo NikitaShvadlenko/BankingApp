@@ -36,3 +36,5 @@
 "TransferScreen.title" = "Transfer funds";
 "TransferScreen.transfer" = "Transfer";
 "TransferScreen.cancel" = "Cancel";
+"TransferScreen.to" = "To:";
+"TransferScreen.from" = "From:";

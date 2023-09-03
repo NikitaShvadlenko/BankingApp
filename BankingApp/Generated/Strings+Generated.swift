@@ -98,8 +98,12 @@ internal enum L10n {
   internal enum TransferScreen {
     /// Cancel
     internal static let cancel = L10n.tr("Localizable", "TransferScreen.cancel", fallback: "Cancel")
+    /// From:
+    internal static let from = L10n.tr("Localizable", "TransferScreen.from", fallback: "From:")
     /// Transfer funds
     internal static let title = L10n.tr("Localizable", "TransferScreen.title", fallback: "Transfer funds")
+    /// To:
+    internal static let to = L10n.tr("Localizable", "TransferScreen.to", fallback: "To:")
     /// Transfer
     internal static let transfer = L10n.tr("Localizable", "TransferScreen.transfer", fallback: "Transfer")
   }
