@@ -25,8 +25,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 // MARK: - Private Methods
 extension AppDelegate {
-    private func createTabBarController() -> UITabBarController {
-        let tabBarController = UITabBarController()
+    private func createTabBarController() -> TabBarController {
+        let tabBarController = TabBarController()
         var viewControllers = [UIViewController]()
         let tabBarItemTypes = TabBarItemType.allCases
 

@@ -32,3 +32,7 @@
 "TransactionDetail.processedOn" = "Processed on: %@";
 "AccountDetailPage.shareString" = "Hi, my ANZ account name is %@, and the account number is %@";
 "TransactionDetailSharePage.share" = "Share";
+
+"TransferScreen.title" = "Transfer funds";
+"TransferScreen.transfer" = "Transfer";
+"TransferScreen.cancel" = "Cancel";

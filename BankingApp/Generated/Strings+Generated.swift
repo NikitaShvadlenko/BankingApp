@@ -95,6 +95,14 @@ internal enum L10n {
     /// Share
     internal static let share = L10n.tr("Localizable", "TransactionDetailSharePage.share", fallback: "Share")
   }
+  internal enum TransferScreen {
+    /// Cancel
+    internal static let cancel = L10n.tr("Localizable", "TransferScreen.cancel", fallback: "Cancel")
+    /// Transfer funds
+    internal static let title = L10n.tr("Localizable", "TransferScreen.title", fallback: "Transfer funds")
+    /// Transfer
+    internal static let transfer = L10n.tr("Localizable", "TransferScreen.transfer", fallback: "Transfer")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

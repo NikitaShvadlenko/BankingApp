@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 struct TabBarItemFactory {
     static let configuration = UIImage.SymbolConfiguration(pointSize: 14, weight: .light, scale: .large)
@@ -54,7 +55,7 @@ extension TabBarItemFactory {
     }
 
     private static func transferViewController() -> UIViewController {
-        let transferViewController = TransferScreenAssembly.assemble().viewController
+        let transferViewController = TransferHostingViewController()
         transferViewController.tabBarItem = UITabBarItem(
             title: L10n.TabBar.transfer,
             image: UIImage(sfSymbol: SFSymbol.transfer, withConfiguration: configuration),

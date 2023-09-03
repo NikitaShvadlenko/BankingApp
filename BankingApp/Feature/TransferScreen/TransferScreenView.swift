@@ -1,20 +1,36 @@
-import UIKit
+//
+//  TransferScreenView.swift
+//  BankingApp
+//
+//  Created by Nikita Shvad on 03.09.2023.
+//  Copyright © 2023 Nikita Shvadlenko. All rights reserved.
+//
 
-final class TransferScreenView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureViews()
-    }
+import SwiftUI
 
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+struct TransferScreenView: View {
+    @State var canTransfer: Bool = false
+    var buttonColor: Color = Color.blue
+
+    var body: some View {
+        NavigationView {
+            Text("")
+                .navigationTitle(L10n.TransferScreen.title)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        CancelButton(buttonColor: buttonColor)
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        TransferButton(canTransfer: $canTransfer, buttonColor: buttonColor)
+                    }
+                }
+        }
     }
 }
 
-// MARK: - Private methods
-extension TransferScreenView {
-    private func configureViews() {
-        backgroundColor = .white
+struct TransferScreenView_Previews: PreviewProvider {
+    static var previews: some View {
+        TransferScreenView()
     }
 }
