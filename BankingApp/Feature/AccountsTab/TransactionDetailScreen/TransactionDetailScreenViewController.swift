@@ -48,8 +48,8 @@ extension TransactionDetailScreenViewController: TransactionDetailCollectionMana
 
 // MARK: - TransactionDetailCellDelegate
 extension TransactionDetailScreenViewController: TransactionDetailCellDelegate {
-    func shareLabelTapped(shareLabel: ShareLabel) {
-        presenter?.viewDidTapShareLabel(self)
+    func cellDidTapShareForTransaction(_ transaction: TransactionDetailViewModel) {
+        presenter?.viewDidTapShareLabel(self, transaction: transaction)
     }
 }
 // MARK: - TransactoinPagingViewDelegate

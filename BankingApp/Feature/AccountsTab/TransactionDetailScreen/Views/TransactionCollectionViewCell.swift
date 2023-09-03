@@ -8,15 +8,14 @@
 
 import UIKit
 
-protocol TransactionDetailCellDelegate: ShareLabelDelegate {
+protocol TransactionDetailCellDelegate: AnyObject {
+    func cellDidTapShareForTransaction(_ transaction: TransactionDetailViewModel)
 }
 
 final class TransactionCollectionViewCell: UICollectionViewCell {
-    weak var delegate: TransactionDetailCellDelegate? {
-        didSet {
-            shareButton.delegate = delegate
-        }
-    }
+
+    private var transaction: TransactionDetailViewModel?
+    weak var delegate: TransactionDetailCellDelegate?
 
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
@@ -90,6 +89,7 @@ final class TransactionCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
+        shareButton.delegate = self
     }
 
     @available(*, unavailable)
@@ -116,9 +116,17 @@ extension TransactionCollectionViewCell {
         balanceLabel.text = L10n.TransactionDetail.balanceAfterTransaction(formattedBalance)
         shareButton.configure(title: L10n.TransactionDetail.share)
         processedOnDateLabel.text = L10n.TransactionDetail.processedOn(dateFormatter.string(from: model.dateProcessed))
+        self.transaction = model
     }
 }
 
+// MARK: - ShareLabelDelegate
+extension TransactionCollectionViewCell: ShareLabelDelegate {
+    func shareLabelTapped(shareLabel: ShareLabel) {
+        guard let transaction else { return }
+        delegate?.cellDidTapShareForTransaction(transaction)
+    }
+}
 // MARK: - Private Methods
 extension TransactionCollectionViewCell {
     // swiftlint:disable function_body_length

@@ -91,6 +91,10 @@ internal enum L10n {
       return L10n.tr("Localizable", "TransactionDetailPage.pageNumber", String(describing: p1), fallback: " of %@")
     }
   }
+  internal enum TransactionDetailSharePage {
+    /// Share
+    internal static let share = L10n.tr("Localizable", "TransactionDetailSharePage.share", fallback: "Share")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

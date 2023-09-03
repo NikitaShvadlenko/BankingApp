@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -56,7 +56,7 @@
 		70AB18C426E6490BB414E3DC /* TransactionsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC42511BA3C11176F242A24F /* TransactionsTableViewManager.swift */; };
 		796C9D92FB71B2A5A28FF8C8 /* AccountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADC715307BAF096312127ED /* AccountDetailView.swift */; };
 		7B6793D8B3DAAB89BA9192F8 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166BD1B0EEE642FE2E28EED /* TransactionTableViewCell.swift */; };
-		7BC95C1EA318BA2775A0E211 /* TransactionDetailShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B96C5B3034C1D9D0162FC4 /* TransactionDetailShareView.swift */; };
+		7BC95C1EA318BA2775A0E211 /* TransactionDetailShareScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B96C5B3034C1D9D0162FC4 /* TransactionDetailShareScreen.swift */; };
 		7D2C0F5D0BE31ADB2CC9EBB6 /* AccountDetailScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E15DBE80D00C3DC0D30280 /* AccountDetailScreenRouter.swift */; };
 		86C62C752820F6EFB33934C8 /* PaymentsScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34B867C5A62EF08DB56139 /* PaymentsScreenContract.swift */; };
 		87985AC0054BA0937BD05DC4 /* TransactionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2AD7FBF31CC2D5EE62394 /* TransactionDetailViewModel.swift */; };
@@ -187,7 +187,7 @@
 		7D612BA786A48FFA8C984A73 /* TransactionDetailScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailScreenAssembly.swift; sourceTree = "<group>"; };
 		7DB1EBCD22BB07268138AE57 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		7E925C9587D1B00D8D2CC42E /* AccountsSessionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsSessionApi.swift; sourceTree = "<group>"; };
-		80B96C5B3034C1D9D0162FC4 /* TransactionDetailShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailShareView.swift; sourceTree = "<group>"; };
+		80B96C5B3034C1D9D0162FC4 /* TransactionDetailShareScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailShareScreen.swift; sourceTree = "<group>"; };
 		818E180760F09260AAD1553F /* TransferScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferScreenPresenter.swift; sourceTree = "<group>"; };
 		81D2AD7FBF31CC2D5EE62394 /* TransactionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewModel.swift; sourceTree = "<group>"; };
 		839A4C0F15692927DF3E1D54 /* SettingsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenRouter.swift; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 		E7ECA6D9BE889A582C8AC3E8 /* TransactionDetailScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailScreenContract.swift; sourceTree = "<group>"; };
 		EC42511BA3C11176F242A24F /* TransactionsTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsTableViewManager.swift; sourceTree = "<group>"; };
 		ED77CF237C1722FE501D5413 /* ShareLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLabel.swift; sourceTree = "<group>"; };
-		F2DBD12A69C9059B0A92A05E /* BankingApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BankingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2DBD12A69C9059B0A92A05E /* BankingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4657469F44B79A30A5C78B1 /* TransactionDetailScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailScreenInteractor.swift; sourceTree = "<group>"; };
 		F5A2B51B4E8EF40DE5E7C48E /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		F7120B30142B7CE6D0F1ACE3 /* PaymentsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenInteractor.swift; sourceTree = "<group>"; };
@@ -285,6 +285,7 @@
 				186BEAF645AC9B7B07A80587 /* TransactionDetailScreenView.swift */,
 				CB896695F1F384A2AD302A1F /* TransactionDetailScreenViewController.swift */,
 				81D2AD7FBF31CC2D5EE62394 /* TransactionDetailViewModel.swift */,
+				82736A0DDA8EC0201F957C0F /* TransactionDetailShareView */,
 				4247DA307AB41AD3AB3BEF8A /* Views */,
 			);
 			path = TransactionDetailScreen;
@@ -331,7 +332,6 @@
 			children = (
 				57DEC6AC62F90FD52699D3BB /* TransactionCollectionViewCell.swift */,
 				2750FD50D34C88B8331F8418 /* TransactionPagingView.swift */,
-				82736A0DDA8EC0201F957C0F /* TransactionDetailShareView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -462,7 +462,7 @@
 		82736A0DDA8EC0201F957C0F /* TransactionDetailShareView */ = {
 			isa = PBXGroup;
 			children = (
-				80B96C5B3034C1D9D0162FC4 /* TransactionDetailShareView.swift */,
+				80B96C5B3034C1D9D0162FC4 /* TransactionDetailShareScreen.swift */,
 				098FB60AE9B0AF2AB7F60ED5 /* TransactionDetailShareViewController.swift */,
 			);
 			path = TransactionDetailShareView;
@@ -613,34 +613,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		"TEMP_2AD6D9FB-D235-4DBA-9CF8-385796C7ABCA" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_4EA3A8E1-4295-4235-96A4-6426EFD4CC1E" /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Packages;
-			sourceTree = "<group>";
-		};
-		"TEMP_960C5F5A-9CFE-494C-8E65-1C25307DDE9B" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_E7315AE8-04D2-4B4F-BCAD-56E1663A0B95" /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -675,12 +647,6 @@
 			attributes = {
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Nikita Shvadlenko";
-				TargetAttributes = {
-					797DB3E721033053FFD57286 = {
-						DevelopmentTeam = BankingApp;
-						ProvisioningStyle = Manual;
-					};
-				};
 			};
 			buildConfigurationList = 2E9B57FF88755D8518D0014A /* Build configuration list for PBXProject "BankingApp" */;
 			compatibilityVersion = "Xcode 11.0";
@@ -832,7 +798,7 @@
 				E720BFF51856504B69C80EA8 /* TransactionDetailScreenRouter.swift in Sources */,
 				21BE8E86BC9DCE1469A44321 /* TransactionDetailScreenView.swift in Sources */,
 				D0536F526FBF9558E178E83F /* TransactionDetailScreenViewController.swift in Sources */,
-				7BC95C1EA318BA2775A0E211 /* TransactionDetailShareView.swift in Sources */,
+				7BC95C1EA318BA2775A0E211 /* TransactionDetailShareScreen.swift in Sources */,
 				13CF0C084422A039AB3D1FA9 /* TransactionDetailShareViewController.swift in Sources */,
 				87985AC0054BA0937BD05DC4 /* TransactionDetailViewModel.swift in Sources */,
 				DF09638FE4A01ED61D06BD51 /* TransactionPagingView.swift in Sources */,
@@ -883,8 +849,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = BankingApp;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZ5CPZCXJA;
 				DISPLAY_NAME = BankingApp;
 				INFOPLIST_FILE = BankingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -892,6 +858,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikitaShvad.bankingApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1024,9 +991,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = BankingApp;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SZ5CPZCXJA;
 				DISPLAY_NAME = BankingApp;
 				INFOPLIST_FILE = BankingApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1034,6 +1001,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikitaShvad.bankingApp;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

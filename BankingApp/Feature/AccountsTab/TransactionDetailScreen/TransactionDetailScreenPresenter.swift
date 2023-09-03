@@ -12,9 +12,7 @@ final class TransactionDetailScreenPresenter {
 
 // MARK: - TransactionDetailScreenViewOutput
 extension TransactionDetailScreenPresenter: TransactionDetailScreenViewOutput {
-    func viewDidTapShareLabel(_ view: TransactionDetailScreenViewInput) {
-        // TODO: Remove placeholder
-        let transaction = TransactionDetailViewModel(name: "sdf", amount: 22, date: Date(), dateProcessed: Date(), type: "Type", cardNumber: "ee2222", balanceAfterTransaction: 123)
+    func viewDidTapShareLabel(_ view: TransactionDetailScreenViewInput, transaction: TransactionDetailViewModel) {
         router?.routeToShareTransactionViewController(transaction: transaction)
     }
 

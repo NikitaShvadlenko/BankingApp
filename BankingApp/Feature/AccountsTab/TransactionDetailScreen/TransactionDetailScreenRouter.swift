@@ -8,7 +8,12 @@ final class TransactionDetailScreenRouter {
 // MARK: - TransactionDetailScreenRouterInput
 extension TransactionDetailScreenRouter: TransactionDetailScreenRouterInput {
     func routeToShareTransactionViewController(transaction: TransactionDetailViewModel) {
-        viewController?.navigationController?.pushViewController(TransactionDetailShareViewController(model: transaction), animated: true)
+        viewController?
+            .navigationController?
+            .pushViewController(
+                TransactionDetailShareViewController(model: transaction),
+                animated: true
+            )
     }
 }
 

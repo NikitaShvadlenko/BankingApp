@@ -57,7 +57,6 @@ final class TransactionDetailShareView: UIView {
         return label
     }()
 
-    let topSeparatorView = SeparatorView()
     let bottomSeparatorView = SeparatorView()
 
     override init(frame: CGRect) {
@@ -90,7 +89,6 @@ extension TransactionDetailShareView {
 extension TransactionDetailShareView {
     private func setupView() {
         [
-            topSeparatorView,
             nameLabel,
             amountLabel,
             dateLabel,
@@ -101,14 +99,8 @@ extension TransactionDetailShareView {
         ].forEach(addSubview)
         backgroundColor = Asset.Colors.primaryBackground.color
 
-        topSeparatorView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(1)
-        }
-
         nameLabel.snp.makeConstraints { make in
-            make.top.equalTo(topSeparatorView.snp.bottom).offset(30)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(30)
             make.trailing.equalToSuperview()
             make.leading.equalToSuperview().inset(14)
         }

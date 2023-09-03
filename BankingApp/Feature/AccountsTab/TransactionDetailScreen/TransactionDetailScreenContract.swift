@@ -6,7 +6,7 @@ protocol TransactionDetailScreenViewInput: AnyObject {
 
 protocol TransactionDetailScreenViewOutput {
     func viewDidLoad(_ view: TransactionDetailScreenViewInput)
-    func viewDidTapShareLabel(_ view: TransactionDetailScreenViewInput)
+    func viewDidTapShareLabel(_ view: TransactionDetailScreenViewInput, transaction: TransactionDetailViewModel)
 }
 
 // sourcery: AutoMockable
