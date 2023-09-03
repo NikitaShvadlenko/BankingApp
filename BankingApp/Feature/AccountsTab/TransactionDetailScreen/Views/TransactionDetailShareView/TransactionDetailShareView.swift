@@ -10,6 +10,13 @@ import UIKit
 
 final class TransactionDetailShareView: UIView {
 
+    private lazy var logoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(asset: Asset.anzShareLogo)
+        imageView.contentMode = .scaleToFill
+        return imageView
+    }()
+
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = Asset.Colors.primaryLabel.color
@@ -89,7 +96,8 @@ extension TransactionDetailShareView {
             dateLabel,
             processedOnDateLabel,
             typeLabel,
-            bottomSeparatorView
+            bottomSeparatorView,
+            logoImageView
         ].forEach(addSubview)
         backgroundColor = Asset.Colors.primaryBackground.color
 
@@ -130,6 +138,13 @@ extension TransactionDetailShareView {
             make.trailing.equalToSuperview().inset(14)
             make.height.equalTo(1)
             make.bottom.equalTo(typeLabel.snp.bottom).offset(15)
+        }
+
+        logoImageView.snp.makeConstraints { make in
+            make.bottom.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.height.equalTo(100)
+            make.width.equalTo(250)
         }
     }
 }
