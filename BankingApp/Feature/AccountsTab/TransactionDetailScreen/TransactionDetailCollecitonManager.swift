@@ -16,8 +16,15 @@ protocol TransactionDetailCollectionManagerDelegate: AnyObject {
     func transactionDetailManager(_ manager: TransactionDetailCollectionViewManager, didScrollToPageIndex index: Int)
 }
 
+protocol TransactionDetailCollectionManagerCellDelegate: AnyObject {
+    func transactionDetailManagerNeedsDelegateForCell(
+        _ transactionDetailManager: ManagesTransactionDetailCollection
+    ) -> TransactionDetailCellDelegate?
+}
+
 final class TransactionDetailCollectionViewManager: NSObject {
     weak var delegate: TransactionDetailCollectionManagerDelegate?
+    weak var cellDelegate: TransactionDetailCollectionManagerCellDelegate?
     var transactions: [TransactionDetailViewModel] = []
     private var previousPageIndex: Int = 0
     private var previousContentOffset: CGFloat = 0
@@ -39,6 +46,7 @@ extension TransactionDetailCollectionViewManager: UICollectionViewDataSource {
         ) as? TransactionCollectionViewCell else {
             fatalError("Failed to dequeue cell")
         }
+        cell.delegate = cellDelegate?.transactionDetailManagerNeedsDelegateForCell(self)
         cell.configure(with: transactions[indexPath.item])
         return cell
     }
@@ -52,7 +60,12 @@ extension TransactionDetailCollectionViewManager: UICollectionViewDelegateFlowLa
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
         let width = collectionView.bounds.width
-        let height = width * 1.5
+        let adjustedContentInset = collectionView.adjustedContentInset
+        let height =
+        collectionView.bounds.height
+        - adjustedContentInset.top
+        - Constants.topSectionInset
+        - Constants.bottomSectionInset
         return CGSize(width: width, height: height)
     }
 

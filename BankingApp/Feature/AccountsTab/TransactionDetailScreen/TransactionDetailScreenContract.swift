@@ -6,6 +6,7 @@ protocol TransactionDetailScreenViewInput: AnyObject {
 
 protocol TransactionDetailScreenViewOutput {
     func viewDidLoad(_ view: TransactionDetailScreenViewInput)
+    func viewDidTapShareLabel(_ view: TransactionDetailScreenViewInput)
 }
 
 // sourcery: AutoMockable
@@ -18,6 +19,7 @@ protocol TransactionDetailScreenInteractorOutput: AnyObject {
 
 // sourcery: AutoMockable
 protocol TransactionDetailScreenRouterInput {
+   func routeToShareTransactionViewController(transaction: TransactionDetailViewModel)
 }
 
 protocol TransactionDetailScreenRouterOutput: AnyObject {

@@ -79,6 +79,7 @@
 		AEEE51CC00DECEB45728E1CE /* TransactionDetailScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EF9DA026BE903282DD2FB /* TransactionDetailScreenPresenter.swift */; };
 		B2542C12A794DEBE9BDA5874 /* AccountOverviewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DBDEA678FB2A5D33CED35 /* AccountOverviewImageCell.swift */; };
 		B4F2DDCE2AA321AD00B0D1C6 /* TransactionDetailShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DDCD2AA321AD00B0D1C6 /* TransactionDetailShareView.swift */; };
+		B4F2DDD02AA3EF7A00B0D1C6 /* TransactionDetailShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DDCF2AA3EF7A00B0D1C6 /* TransactionDetailShareViewController.swift */; };
 		B8A6494D87F24B3A31526EF9 /* AccountsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC96BFCA2DACD0702FEC5F3 /* AccountsScreenViewController.swift */; };
 		B939469ACF4BF846DCA30102 /* AccountOverviewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8CCCCCD3085AC6E57DCAF /* AccountOverviewCellProtocol.swift */; };
 		BC5E8D661AAE1A743BB160CF /* AccountDetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09A51439A80ED394D36C215 /* AccountDetailScreenView.swift */; };
@@ -206,6 +207,7 @@
 		B27E82CEF87579C01E6E0881 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B4F2DDCD2AA321AD00B0D1C6 /* TransactionDetailShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailShareView.swift; sourceTree = "<group>"; };
+		B4F2DDCF2AA3EF7A00B0D1C6 /* TransactionDetailShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailShareViewController.swift; sourceTree = "<group>"; };
 		B74ED66C588F5C2944D8324A /* ImageDownloaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderProtocol.swift; sourceTree = "<group>"; };
 		B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		BC7027B40EF891D83330EC57 /* ImageFirstConstraintStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFirstConstraintStrategy.swift; sourceTree = "<group>"; };
@@ -274,7 +276,6 @@
 		02772F707BFA58B9FE846DC6 /* TransactionDetailScreen */ = {
 			isa = PBXGroup;
 			children = (
-				0915632C7CA56392B0CAAD18 /* AccountOverviewCell */,
 				33C5F4A1064729806451C598 /* TransactionDetailCollecitonManager.swift */,
 				7D612BA786A48FFA8C984A73 /* TransactionDetailScreenAssembly.swift */,
 				E7ECA6D9BE889A582C8AC3E8 /* TransactionDetailScreenContract.swift */,
@@ -330,7 +331,7 @@
 			children = (
 				57DEC6AC62F90FD52699D3BB /* TransactionCollectionViewCell.swift */,
 				2750FD50D34C88B8331F8418 /* TransactionPagingView.swift */,
-				B4F2DDCD2AA321AD00B0D1C6 /* TransactionDetailShareView.swift */,
+				B4F2DDD12AA3F7A900B0D1C6 /* TransactionDetailShareView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -410,6 +411,7 @@
 				341BA411C5123BAF429DED21 /* AccountsScreenTableManager.swift */,
 				6D7E1895DE866FCF87F317C3 /* AccountsScreenView.swift */,
 				9DC96BFCA2DACD0702FEC5F3 /* AccountsScreenViewController.swift */,
+				0915632C7CA56392B0CAAD18 /* AccountOverviewCell */,
 			);
 			path = AccountsScreen;
 			sourceTree = "<group>";
@@ -531,6 +533,15 @@
 				AFCFD8D952125F6048513C0D /* ShareLabelConstraintStrategyFactory.swift */,
 			);
 			path = ShareLabel;
+			sourceTree = "<group>";
+		};
+		B4F2DDD12AA3F7A900B0D1C6 /* TransactionDetailShareView */ = {
+			isa = PBXGroup;
+			children = (
+				B4F2DDCD2AA321AD00B0D1C6 /* TransactionDetailShareView.swift */,
+				B4F2DDCF2AA3EF7A00B0D1C6 /* TransactionDetailShareViewController.swift */,
+			);
+			path = TransactionDetailShareView;
 			sourceTree = "<group>";
 		};
 		BC6D02584F8B0EF5CD254F73 /* UserDefaultsStorage */ = {
@@ -718,6 +729,7 @@
 				D259B164169FF69846774C09 /* AccountsProvider.swift in Sources */,
 				5AF1FEB492CCA343A19A4519 /* AccountsRequest.swift in Sources */,
 				8819B601BBEF2F2B1B288732 /* AccountsScreenAssembly.swift in Sources */,
+				B4F2DDD02AA3EF7A00B0D1C6 /* TransactionDetailShareViewController.swift in Sources */,
 				3CC8D8DBDDB1476694BECD4E /* AccountsScreenContract.swift in Sources */,
 				96D9F99CD5A363F491B755ED /* AccountsScreenInteractor.swift in Sources */,
 				BC9601F0E786464FFC5B41A3 /* AccountsScreenPresenter.swift in Sources */,

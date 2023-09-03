@@ -37,7 +37,21 @@ final class TransactionDetailScreenViewController: UIViewController {
     }
 
 }
+// MARK: - TransactionDetailCollectionManagerCellDelegate
+extension TransactionDetailScreenViewController: TransactionDetailCollectionManagerCellDelegate {
+    func transactionDetailManagerNeedsDelegateForCell(
+        _ transactionDetailManager: ManagesTransactionDetailCollection
+    ) -> TransactionDetailCellDelegate? {
+        self
+    }
+}
 
+// MARK: - TransactionDetailCellDelegate
+extension TransactionDetailScreenViewController: TransactionDetailCellDelegate {
+    func shareLabelTapped(shareLabel: ShareLabel) {
+        presenter?.viewDidTapShareLabel(self)
+    }
+}
 // MARK: - TransactoinPagingViewDelegate
 extension TransactionDetailScreenViewController: TransactionPagingViewDelegate {
     func transacitonPagingViewDidTapForwardButton(_ transactionPagingView: TransactionPagingView) {

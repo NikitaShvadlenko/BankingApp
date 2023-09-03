@@ -1,4 +1,5 @@
 import UIKit
+import SnapKit
 
 final class TransactionDetailScreenView: UIView {
 
@@ -47,7 +48,7 @@ extension TransactionDetailScreenView {
 
         transactionsCollectionView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
-            make.center.equalToSuperview()
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
             make.bottom.equalTo(pageView.snp.top)
         }
     }

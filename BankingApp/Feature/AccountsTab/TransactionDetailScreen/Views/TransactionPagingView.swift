@@ -14,7 +14,6 @@ protocol TransactionPagingViewDelegate: AnyObject {
 }
 
 final class TransactionPagingView: UIView {
-
     weak var delegate: TransactionPagingViewDelegate?
 
     private lazy var forwardButton: UIButton = {

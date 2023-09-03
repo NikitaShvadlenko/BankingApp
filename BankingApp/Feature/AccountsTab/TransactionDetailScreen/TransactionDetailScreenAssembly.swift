@@ -10,6 +10,7 @@ enum TransactionDetailScreenAssembly {
         let router = TransactionDetailScreenRouter()
         let collectionManager = TransactionDetailCollectionViewManager()
 
+        collectionManager.cellDelegate = viewController
         presenter.initialPage = index
         collectionManager.delegate = presenter
         presenter.transactions = transactions

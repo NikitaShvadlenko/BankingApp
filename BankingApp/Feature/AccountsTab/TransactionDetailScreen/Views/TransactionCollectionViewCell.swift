@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol TransactionDetailCellDelegate: ShareLabelDelegate {
+}
+
 final class TransactionCollectionViewCell: UICollectionViewCell {
+    weak var delegate: TransactionDetailCellDelegate? {
+        didSet {
+            shareButton.delegate = delegate
+        }
+    }
 
     private lazy var nameLabel: UILabel = {
         let label = UILabel()

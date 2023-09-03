@@ -50,7 +50,8 @@ final class TransactionDetailShareView: UIView {
         return label
     }()
 
-    let separatorView = SeparatorView()
+    let topSeparatorView = SeparatorView()
+    let bottomSeparatorView = SeparatorView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -82,36 +83,53 @@ extension TransactionDetailShareView {
 extension TransactionDetailShareView {
     private func setupView() {
         [
+            topSeparatorView,
             nameLabel,
             amountLabel,
             dateLabel,
             processedOnDateLabel,
-            typeLabel
+            typeLabel,
+            bottomSeparatorView
         ].forEach(addSubview)
+        backgroundColor = Asset.Colors.primaryBackground.color
+
+        topSeparatorView.snp.makeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(1)
+        }
 
         nameLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(topSeparatorView.snp.bottom).offset(30)
+            make.trailing.equalToSuperview()
+            make.leading.equalToSuperview().inset(14)
         }
 
         amountLabel.snp.makeConstraints { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(8)
-            make.leading.trailing.equalToSuperview()
+            make.leading.trailing.equalTo(nameLabel)
         }
 
         dateLabel.snp.makeConstraints { make in
             make.top.equalTo(amountLabel.snp.bottom).offset(15)
-            make.leading.trailing.equalToSuperview()
+            make.leading.trailing.equalTo(nameLabel)
         }
 
         processedOnDateLabel.snp.makeConstraints { make in
             make.top.equalTo(dateLabel.snp.bottom).offset(2)
-            make.leading.trailing.equalToSuperview()
+            make.leading.trailing.equalTo(nameLabel)
         }
 
         typeLabel.snp.makeConstraints { make in
             make.top.equalTo(processedOnDateLabel.snp.bottom).offset(2)
-            make.leading.trailing.equalToSuperview()
+            make.leading.trailing.equalTo(nameLabel)
+        }
+
+        bottomSeparatorView.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview().inset(14)
+            make.height.equalTo(1)
+            make.bottom.equalTo(typeLabel.snp.bottom).offset(15)
         }
     }
 }
