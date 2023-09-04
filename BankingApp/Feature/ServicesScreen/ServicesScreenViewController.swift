@@ -3,10 +3,35 @@ import UIKit
 final class ServicesScreenViewController: UIViewController {
 
     private let servicesScreenView = ServicesScreenView()
-    var collectionViewManager: ManagesMenuCollection?
+    let collectionManager: ManagesMenuCollection
+    var applyForCardCoordinator: Coordinator?
+    var viewCardsCoordinator: Coordinator?
+
+    init(
+        collectionManager: ManagesMenuCollection
+    ) {
+        self.collectionManager = collectionManager
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func loadView() {
         view = servicesScreenView
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setCollectionViewManager(collectionManager)
+        setMenuItems()
+        servicesScreenView.collectionView.reloadData()
+    }
+
+    func setCollectionViewManager(_ manager: ManagesMenuCollection) {
+        servicesScreenView.collectionView.dataSource = manager
+        servicesScreenView.collectionView.delegate = manager
     }
 }
 
@@ -24,6 +49,7 @@ extension ServicesScreenViewController {
                 image: cardApplicationSymbol,
                 action: { [weak self] in
                     guard let self else { return }
+                    applyForCardCoordinator?.start()
 
                 }
             ),
@@ -32,10 +58,10 @@ extension ServicesScreenViewController {
                 image: viewCardsSymbol,
                 action: { [weak self] in
                     guard let self else { return }
-
+                    viewCardsCoordinator?.start()
                 }
             )
         ]
-        collectionViewManager?.setViewModel(menuItems)
+        collectionManager.setViewModel(menuItems)
     }
 }

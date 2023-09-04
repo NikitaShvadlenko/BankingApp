@@ -13,6 +13,6 @@ public enum SFSymbol: String, SFSymbolRepresentable {
     case back = "chevron.backward"
     case menu = "ellipsis"
     case search = "magnifyingglass"
-    case card = "creditcard"
-    case cardApplication = "creditcard.circle"
+    case card = "eye"
+    case cardApplication = "creditcard"
 }

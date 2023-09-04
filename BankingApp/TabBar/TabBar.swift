@@ -31,9 +31,10 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate {
         }
 
         if viewController.isKind(of: ServicesScreenViewController.self) {
-            let servicesViewController =  ServicesScreenViewController()
-            servicesViewController.modalPresentationStyle = .fullScreen
-            self.present(servicesViewController, animated: true, completion: nil)
+            let servicesViewController =  ServicesScreenAssembly.assemble()
+            let navigationController = UINavigationController(rootViewController: servicesViewController)
+            navigationController.modalPresentationStyle = .fullScreen
+            self.present(navigationController, animated: true, completion: nil)
             return false
         }
         return true

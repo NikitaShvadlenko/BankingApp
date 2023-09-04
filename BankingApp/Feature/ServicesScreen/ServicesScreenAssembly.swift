@@ -2,9 +2,10 @@ import UIKit
 
 enum ServicesScreenAssembly {
     static func assemble() -> UIViewController {
-        let viewController = ServicesScreenViewController()
-        let router = ServicesScreenRouter()
-
+        let collectionViewManager = MenuCollectionViewManager()
+        let viewController = ServicesScreenViewController(collectionManager: collectionViewManager)
+        let applyForCardCoordinator = ApplyForCardCoordinator(parentViewController: viewController)
+        viewController.applyForCardCoordinator = applyForCardCoordinator
         return viewController
     }
 }

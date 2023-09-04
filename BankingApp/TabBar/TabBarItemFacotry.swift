@@ -65,7 +65,7 @@ extension TabBarItemFactory {
     }
 
     private static func servicesViewController() -> UIViewController {
-        let servicesViewController = ServicesScreenAssembly.assemble().viewController
+        let servicesViewController = ServicesScreenAssembly.assemble()
         servicesViewController.tabBarItem = UITabBarItem(
             title: L10n.TabBar.services,
             image: UIImage(sfSymbol: SFSymbol.services, withConfiguration: configuration),
