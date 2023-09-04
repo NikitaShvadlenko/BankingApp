@@ -35,6 +35,6 @@ struct AccountInfoView: View {
 
 struct AccountInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountInfoView(image: Asset.placeholder.image, accountName: "Flat and Charity", amountText: "$923.04")
+        AccountInfoView(image: Asset.placeholder.image, accountName: "Savings", amountText: "$19,230.04")
     }
 }

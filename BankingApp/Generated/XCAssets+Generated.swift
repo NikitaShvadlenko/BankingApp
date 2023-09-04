@@ -26,6 +26,8 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 internal enum Asset {
   internal static let anzShareLogo = ImageAsset(name: "AnzShareLogo")
   internal enum Colors {
+    internal static let gradientBackgroundEnd = ColorAsset(name: "gradientBackgroundEnd")
+    internal static let gradientBackgroundStart = ColorAsset(name: "gradientBackgroundStart")
     internal static let primaryBackground = ColorAsset(name: "primaryBackground")
     internal static let primaryLabel = ColorAsset(name: "primaryLabel")
     internal static let secondaryLabel = ColorAsset(name: "secondaryLabel")

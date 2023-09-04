@@ -29,6 +29,13 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate {
             self.present(transferViewController, animated: true, completion: nil)
             return false
         }
+
+        if viewController.isKind(of: ServicesScreenViewController.self) {
+            let servicesViewController =  ServicesScreenViewController()
+            servicesViewController.modalPresentationStyle = .fullScreen
+            self.present(servicesViewController, animated: true, completion: nil)
+            return false
+        }
         return true
     }
 }
