@@ -57,6 +57,12 @@ internal enum L10n {
     /// from ANZ...
     internal static let connecting = L10n.tr("Localizable", "OverlayScreen.connecting", fallback: "Loading your details\nfrom ANZ...")
   }
+  internal enum ServicesScreen {
+    /// Apply for card
+    internal static let applyForCard = L10n.tr("Localizable", "ServicesScreen.applyForCard", fallback: "Apply for card")
+    /// View my cards
+    internal static let viewCards = L10n.tr("Localizable", "ServicesScreen.viewCards", fallback: "View my cards")
+  }
   internal enum TabBar {
     /// Accounts
     internal static let accounts = L10n.tr("Localizable", "TabBar.accounts", fallback: "Accounts")

@@ -2,11 +2,11 @@ import UIKit
 
 final class ServicesScreenRouter {
     weak var viewController: UIViewController?
-    weak var presenter: ServicesScreenRouterOutput?
 }
 
 // MARK: - ServicesScreenRouterInput
-extension ServicesScreenRouter: ServicesScreenRouterInput {
+extension ServicesScreenRouter {
+
 }
 
 // MARK: - Private methods

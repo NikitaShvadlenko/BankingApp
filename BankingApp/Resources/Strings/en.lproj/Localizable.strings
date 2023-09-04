@@ -38,3 +38,6 @@
 "TransferScreen.cancel" = "Cancel";
 "TransferScreen.to" = "To:";
 "TransferScreen.from" = "From:";
+
+"ServicesScreen.applyForCard" = "Apply for card";
+"ServicesScreen.viewCards" = "View my cards";

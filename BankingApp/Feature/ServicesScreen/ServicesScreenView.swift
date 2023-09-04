@@ -4,6 +4,23 @@ final class ServicesScreenView: UIView {
 
     private let gradientLayer = CAGradientLayer()
 
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: flowLayout
+        )
+        collectionView.register(MenuItemCell.self, forCellWithReuseIdentifier: "\(MenuItemCell.self)")
+        return collectionView
+    }()
+
+    private lazy var flowLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 40, height: 40)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 40, bottom: 10, right: 40)
+        layout.minimumInteritemSpacing = 10
+        return layout
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureViews()
@@ -23,6 +40,11 @@ final class ServicesScreenView: UIView {
 // MARK: - Private methods
 extension ServicesScreenView {
     private func configureViews() {
+        addSubview(collectionView)
+
+        collectionView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
 
         gradientLayer.colors = [
             Asset.Colors.gradientBackgroundStart.color.cgColor,

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		1134C238897F008DAF8381ED /* PaymentsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18034036EE0AD4B432F631D8 /* PaymentsScreenViewController.swift */; };
 		18063137EECBAB026F8AB813 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC90BE13D4894F528D63A552 /* String+Extensions.swift */; };
 		1954325F5F75E18A579E3228 /* TransactionDetailShareScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF68421B3DFC16FD4F9F0C9 /* TransactionDetailShareScreen.swift */; };
+		1982FC471A30A41D7C2070F0 /* MenuCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D706021DD8D738E5F112241 /* MenuCollectionViewManager.swift */; };
 		1BECE797E5BA3496555686A6 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A67D0A158BAD5E441C8261 /* CancelButton.swift */; };
 		1CD2ACDA55B065934A19FBBB /* AccountDetailScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E559A1C3F1CD95E425020035 /* AccountDetailScreenContract.swift */; };
 		1D45A70C65D7647E1EF371CE /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205D9819735CBDFE21675A3A /* OverlayView.swift */; };
@@ -24,6 +25,7 @@
 		21BE8E86BC9DCE1469A44321 /* TransactionDetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BEAF645AC9B7B07A80587 /* TransactionDetailScreenView.swift */; };
 		2449D333861F701AAA253F12 /* ProvidesAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108AB9052D41DAECCD6D660E /* ProvidesAccounts.swift */; };
 		28103E60324ED2D3AA2DE70E /* TransactionDetailCollecitonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5F4A1064729806451C598 /* TransactionDetailCollecitonManager.swift */; };
+		29239191315F0F04082F34AC /* MenuItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C146079A42092787D858A /* MenuItemViewModel.swift */; };
 		2B6AF2B68E7113C55382E2FE /* SessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790E62D005C609F5EB34217A /* SessionProtocol.swift */; };
 		2B86B901D076CFB62A97C59D /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620876A6DF7E1EF3504B0095 /* TabBar.swift */; };
 		2E58F306F901F9AE7DA4B70D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B26FAE525F40468CAE7C2C4 /* Assets.xcassets */; };
@@ -41,7 +43,6 @@
 		49CE9726AD1D814A1A28E44F /* AccountDetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9175CCB7C97D8A01CAEE853 /* AccountDetailScreenViewController.swift */; };
 		4C91906FC374EE86189AA5EA /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A2B51B4E8EF40DE5E7C48E /* AccountViewModel.swift */; };
 		4E15C016CBFE79DC891D75D5 /* PaymentsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0590BF6C649D9E099C3E33AE /* PaymentsScreenPresenter.swift */; };
-		505240510EDD907305A44797 /* ServicesScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D5012687A2D2C672C5D166 /* ServicesScreenContract.swift */; };
 		52DECB897E6186F4A0DE6FF5 /* AccountDetailPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3AB887B13E4A8AE2B788BA /* AccountDetailPageView.swift */; };
 		596DBCC810996D4D9C9F7CA9 /* AccountsSessionApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E925C9587D1B00D8D2CC42E /* AccountsSessionApi.swift */; };
 		5A4C2DAFBB0145B1E1FB0455 /* PaymentsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7120B30142B7CE6D0F1ACE3 /* PaymentsScreenInteractor.swift */; };
@@ -73,6 +74,7 @@
 		9AAE2EEB74C8A8E56A00A06F /* AccountDetailScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F7BF2E011CCD5039021FFE /* AccountDetailScreenInteractor.swift */; };
 		9D2ACD211974BACED99C40DA /* ImageDownloaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74ED66C588F5C2944D8324A /* ImageDownloaderProtocol.swift */; };
 		9D9BE43890557C08719B4A7F /* ServicesScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D191C7F6A0DA05F4B8A3CE2 /* ServicesScreenAssembly.swift */; };
+		9DAA213187597EDEBDA6C729 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588C23122B8D4CFF0182A32 /* MenuItemCell.swift */; };
 		A250C0365569AD46FE74BC89 /* TransactionDetailScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4657469F44B79A30A5C78B1 /* TransactionDetailScreenInteractor.swift */; };
 		A63B0B4DE4575B9B3E80CC91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C719EA72C5EBB6C2F3F24203 /* LaunchScreen.storyboard */; };
 		A6E9DD4437B3E8AC832F3307 /* SettingsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB253AECFEAECCC05002EF45 /* SettingsScreenPresenter.swift */; };
@@ -104,7 +106,6 @@
 		D67CBF97D2E8425F7FC3D644 /* TransactionDetailScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D612BA786A48FFA8C984A73 /* TransactionDetailScreenAssembly.swift */; };
 		D6C9E142F815FEFD2C529DF9 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */; };
 		DBB9733DF9A9D8A588F2B5F7 /* AccountOverviewTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE4A771DBEE2B7B59165FCE /* AccountOverviewTextCell.swift */; };
-		DD683AA83823CF68A1ED0FC0 /* ServicesScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE61A7CB35F26AA56020328 /* ServicesScreenInteractor.swift */; };
 		DF09638FE4A01ED61D06BD51 /* TransactionPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750FD50D34C88B8331F8418 /* TransactionPagingView.swift */; };
 		E032DF71E43C943475753351 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEA75BBE0C661660AA42421 /* DataMapper.swift */; };
 		E042F716E513528C3EFD7FE7 /* PaymentsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FBC288434D218C2668E52D /* PaymentsScreenView.swift */; };
@@ -116,7 +117,6 @@
 		E720BFF51856504B69C80EA8 /* TransactionDetailScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735261420467B18928E903B9 /* TransactionDetailScreenRouter.swift */; };
 		E8BC0255A4013A73906B038D /* ServicesScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48CA06C96CD02B77DB5AAC9 /* ServicesScreenRouter.swift */; };
 		EAFBEF9EC326EB07490F554C /* TabBarItemFacotry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E69BBF6E013F1E51CE63FD /* TabBarItemFacotry.swift */; };
-		EC9F917F92A80CD80EA42D7B /* ServicesScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351758FFE5C240AFBFB3995F /* ServicesScreenPresenter.swift */; };
 		ECC8298352BE7BA8B076CDF4 /* AccountDetailScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A587F491F4B2EF360E780FB8 /* AccountDetailScreenAssembly.swift */; };
 		EDF326671A52F9C8265D071B /* AccountDisplayStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2290755174F2BD222B1C00D /* AccountDisplayStyle.swift */; };
 		F2A61CC5E13802C90891F32F /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 904E09830A91A5C49E7C0E41 /* Account.swift */; };
@@ -135,6 +135,7 @@
 		0B040D4059193A8E07F5D554 /* ManagesUserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagesUserSettings.swift; sourceTree = "<group>"; };
 		0E69553D0CB4A944CA3600C4 /* TransferButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferButton.swift; sourceTree = "<group>"; };
 		108AB9052D41DAECCD6D660E /* ProvidesAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidesAccounts.swift; sourceTree = "<group>"; };
+		1588C23122B8D4CFF0182A32 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		15F3EBBE5C9768B61445D95B /* SettingsScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenAssembly.swift; sourceTree = "<group>"; };
 		161F44FA0DA28412EF979F1E /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		18034036EE0AD4B432F631D8 /* PaymentsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenViewController.swift; sourceTree = "<group>"; };
@@ -148,11 +149,9 @@
 		3071E4FF459DC839E7F6CD5F /* PlaceholderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderStore.swift; sourceTree = "<group>"; };
 		33C5F4A1064729806451C598 /* TransactionDetailCollecitonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailCollecitonManager.swift; sourceTree = "<group>"; };
 		341BA411C5123BAF429DED21 /* AccountsScreenTableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenTableManager.swift; sourceTree = "<group>"; };
-		351758FFE5C240AFBFB3995F /* ServicesScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenPresenter.swift; sourceTree = "<group>"; };
 		37D53AC6840CCF491F31B303 /* AccountsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsProvider.swift; sourceTree = "<group>"; };
 		386BA920F037805FB31DA148 /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		3A34B867C5A62EF08DB56139 /* PaymentsScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenContract.swift; sourceTree = "<group>"; };
-		3EE61A7CB35F26AA56020328 /* ServicesScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenInteractor.swift; sourceTree = "<group>"; };
 		3FBC2D277E658E89EA45EB05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4166BD1B0EEE642FE2E28EED /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		41A8CCCCCD3085AC6E57DCAF /* AccountOverviewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewCellProtocol.swift; sourceTree = "<group>"; };
@@ -162,6 +161,7 @@
 		4B7238FF17C8A850282D899C /* AssembledModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembledModule.swift; sourceTree = "<group>"; };
 		4D0EA0B7118D4E60498CB01A /* SettingsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenInteractor.swift; sourceTree = "<group>"; };
 		4D191C7F6A0DA05F4B8A3CE2 /* ServicesScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenAssembly.swift; sourceTree = "<group>"; };
+		4D706021DD8D738E5F112241 /* MenuCollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewManager.swift; sourceTree = "<group>"; };
 		4FBEAAF28469133DA0233D21 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		50C7D066AE9D3BF2519A3D05 /* TabBarItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemType.swift; sourceTree = "<group>"; };
 		50F7BF2E011CCD5039021FFE /* AccountDetailScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailScreenInteractor.swift; sourceTree = "<group>"; };
@@ -173,6 +173,7 @@
 		5716BB70094C19D0B1ACA644 /* SettingsScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenContract.swift; sourceTree = "<group>"; };
 		57DEC6AC62F90FD52699D3BB /* TransactionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCollectionViewCell.swift; sourceTree = "<group>"; };
 		59F5C7649FC8D7E5C38CA160 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		5A7C146079A42092787D858A /* MenuItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemViewModel.swift; sourceTree = "<group>"; };
 		5ADC715307BAF096312127ED /* AccountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailView.swift; sourceTree = "<group>"; };
 		5D3AB887B13E4A8AE2B788BA /* AccountDetailPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailPageView.swift; sourceTree = "<group>"; };
 		5DE0440D72A73A51CC81B9C9 /* AccountInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoView.swift; sourceTree = "<group>"; };
@@ -243,7 +244,6 @@
 		F8E15DBE80D00C3DC0D30280 /* AccountDetailScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailScreenRouter.swift; sourceTree = "<group>"; };
 		F905D3DB74C16FAD4BF5B0B8 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F96D8D8BF3970E6CD6DB3B05 /* ServicesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenViewController.swift; sourceTree = "<group>"; };
-		F9D5012687A2D2C672C5D166 /* ServicesScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenContract.swift; sourceTree = "<group>"; };
 		FB253AECFEAECCC05002EF45 /* SettingsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,10 +264,10 @@
 		001C23C0CB3560E122B8DA02 /* ServicesScreen */ = {
 			isa = PBXGroup;
 			children = (
+				4D706021DD8D738E5F112241 /* MenuCollectionViewManager.swift */,
+				1588C23122B8D4CFF0182A32 /* MenuItemCell.swift */,
+				5A7C146079A42092787D858A /* MenuItemViewModel.swift */,
 				4D191C7F6A0DA05F4B8A3CE2 /* ServicesScreenAssembly.swift */,
-				F9D5012687A2D2C672C5D166 /* ServicesScreenContract.swift */,
-				3EE61A7CB35F26AA56020328 /* ServicesScreenInteractor.swift */,
-				351758FFE5C240AFBFB3995F /* ServicesScreenPresenter.swift */,
 				C48CA06C96CD02B77DB5AAC9 /* ServicesScreenRouter.swift */,
 				9E2BDF7292C861A62B0E3E2B /* ServicesScreenView.swift */,
 				F96D8D8BF3970E6CD6DB3B05 /* ServicesScreenViewController.swift */,
@@ -624,34 +624,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		"TEMP_0264BEAD-445D-4C9E-9FFA-D5AAD6F9D900" /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		"TEMP_02C28A3B-827E-48BA-863A-90383287FF0E" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_2D1F35E4-1FD9-48CC-B1A1-13CA79FD63F9" /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Packages;
-			sourceTree = "<group>";
-		};
-		"TEMP_742E6605-B6A6-4FC4-A0D0-1D8B21B2C3B6" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -796,6 +768,9 @@
 				964C2D16109888BDD573E753 /* LabelFirstConstraintStrategy.swift in Sources */,
 				E4579FC3516BC30386862969 /* ManagesUserSettings.swift in Sources */,
 				2124205933BC63FAEF1BF5F9 /* Mapper.swift in Sources */,
+				1982FC471A30A41D7C2070F0 /* MenuCollectionViewManager.swift in Sources */,
+				9DAA213187597EDEBDA6C729 /* MenuItemCell.swift in Sources */,
+				29239191315F0F04082F34AC /* MenuItemViewModel.swift in Sources */,
 				C7F6F6A7570A1C63C11D1AAC /* NumberFormatter+Extensions.swift in Sources */,
 				AB54D0ECFC20003C63EAA6C7 /* OverlayManager.swift in Sources */,
 				1D45A70C65D7647E1EF371CE /* OverlayView.swift in Sources */,
@@ -814,9 +789,6 @@
 				CC274B9B0B9B4EAAE78752C0 /* SegmentedControl.swift in Sources */,
 				D0D5F7A4FAF735A1C98938EA /* SeparatorView.swift in Sources */,
 				9D9BE43890557C08719B4A7F /* ServicesScreenAssembly.swift in Sources */,
-				505240510EDD907305A44797 /* ServicesScreenContract.swift in Sources */,
-				DD683AA83823CF68A1ED0FC0 /* ServicesScreenInteractor.swift in Sources */,
-				EC9F917F92A80CD80EA42D7B /* ServicesScreenPresenter.swift in Sources */,
 				E8BC0255A4013A73906B038D /* ServicesScreenRouter.swift in Sources */,
 				5DFC33DF32A7B0ADE44EDF74 /* ServicesScreenView.swift in Sources */,
 				BD2872B19494900FD19ABCDA /* ServicesScreenViewController.swift in Sources */,
