@@ -15,4 +15,5 @@ public enum SFSymbol: String, SFSymbolRepresentable {
     case search = "magnifyingglass"
     case card = "eye"
     case cardApplication = "creditcard"
+    case xmark = "xmark"
 }

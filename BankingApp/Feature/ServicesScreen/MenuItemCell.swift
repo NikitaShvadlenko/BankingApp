@@ -12,7 +12,7 @@ final class MenuItemCell: UICollectionViewCell {
 
     private lazy var imageContainer: UIView = {
         let view = UIView()
-        view.layer.borderWidth = 4
+        view.layer.borderWidth = 1
         view.addSubview(imageView)
         view.layer.borderColor = Asset.Colors.primaryBackground.color.cgColor
         return view
@@ -31,7 +31,7 @@ final class MenuItemCell: UICollectionViewCell {
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
         label.minimumScaleFactor = 0.5
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 15)
         return label
     }()
 
@@ -61,7 +61,7 @@ extension MenuItemCell {
 
         imageContainer.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.bottom.equalTo(titleLabel.snp.top).offset(-8)
+            make.bottom.equalTo(titleLabel.snp.top).offset(-2)
             make.width.equalTo(imageContainer.snp.height)
             make.centerX.equalTo(titleLabel)
         }

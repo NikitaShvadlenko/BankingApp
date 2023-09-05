@@ -29,9 +29,20 @@ final class ServicesScreenViewController: UIViewController {
         servicesScreenView.collectionView.reloadData()
     }
 
+    func setCloseButtonDelegate(_ delegate: CloseButtonDelegate) {
+        servicesScreenView.delegate = delegate
+    }
+
     func setCollectionViewManager(_ manager: ManagesMenuCollection) {
         servicesScreenView.collectionView.dataSource = manager
         servicesScreenView.collectionView.delegate = manager
+    }
+}
+
+// MARK: - CloseButtonDelegate
+extension ServicesScreenViewController: CloseButtonDelegate {
+    func buttonPressed(_ button: UIButton) {
+        dismiss(animated: true)
     }
 }
 

@@ -6,6 +6,7 @@ enum ServicesScreenAssembly {
         let viewController = ServicesScreenViewController(collectionManager: collectionViewManager)
         let applyForCardCoordinator = ApplyForCardCoordinator(parentViewController: viewController)
         viewController.applyForCardCoordinator = applyForCardCoordinator
+        viewController.setCloseButtonDelegate(viewController)
         return viewController
     }
 }

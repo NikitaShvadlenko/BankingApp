@@ -60,6 +60,8 @@ internal enum L10n {
   internal enum ServicesScreen {
     /// Apply for card
     internal static let applyForCard = L10n.tr("Localizable", "ServicesScreen.applyForCard", fallback: "Apply for card")
+    /// Close
+    internal static let close = L10n.tr("Localizable", "ServicesScreen.close", fallback: "Close")
     /// View my cards
     internal static let viewCards = L10n.tr("Localizable", "ServicesScreen.viewCards", fallback: "View my cards")
   }
