@@ -30,11 +30,11 @@ final class ChooseAccountView: ApplyForCardView {
 
 extension ChooseAccountView {
     private func setupView() {
-        addSubview(tableView)
+        contentView.addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.top.equalTo(contentView)
+            make.leading.trailing.equalTo(contentView)
+            make.bottom.equalTo(contentView)
         }
     }
 }

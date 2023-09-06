@@ -18,6 +18,17 @@ class ApplyForCardView: UIView {
     }()
 
     lazy var pageView = OpenAccountPageView()
+
+    lazy var contentView = UIView()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 // MARK: - Public Methods
@@ -28,22 +39,30 @@ extension ApplyForCardView {
         totalPages: Int,
         pageTitle: String
     ) {
+        titleLabel.text = title
         pageView.configureView(pageNumber: pageNumber, totalPages: totalPages, title: title)
     }
 }
 // MARK: - Private Methods
 extension ApplyForCardView {
     private func setupView() {
+        backgroundColor = Asset.Colors.primaryBackground.color
         addSubview(titleLabel)
         addSubview(pageView)
+        addSubview(contentView)
         titleLabel.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview()
+            make.top.leading.trailing.equalTo(safeAreaLayoutGuide)
         }
 
         pageView.snp.makeConstraints { make in
             make.height.equalTo(44)
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(titleLabel.snp.bottom)
+        }
+
+        contentView.snp.makeConstraints { make in
+            make.top.equalTo(pageView.snp.bottom)
+            make.leading.trailing.bottom.equalToSuperview()
         }
     }
 }

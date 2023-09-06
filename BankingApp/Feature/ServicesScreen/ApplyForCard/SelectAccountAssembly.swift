@@ -9,7 +9,7 @@
 import UIKit
 
 enum SelectAccountAssembly {
-    static func assemble(coordinator: Coordinator) -> UIViewController {
+    static func assemble(coordinator: Coordinator) -> SelectAccountViewController {
         let tableViewManager = SelectAccountTableViewManager()
         let presenter = SelectAccountPresenter()
         let accountsDescriptionProvider = ApplicationAccountDescriptionProvider()

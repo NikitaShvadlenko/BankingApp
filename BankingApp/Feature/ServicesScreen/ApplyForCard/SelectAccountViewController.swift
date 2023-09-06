@@ -47,7 +47,6 @@ extension SelectAccountViewController: SelectAccountViewInput {
 
 // MARK: - Coordinating
 extension SelectAccountViewController: Coordinating {
-
     func setViewController(selectedPageNumber: Int, numberOfPages: Int) {
         selectAccountView.configureView(
             title: L10n.Application.openAnAccount,

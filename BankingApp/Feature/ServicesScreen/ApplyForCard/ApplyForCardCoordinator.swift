@@ -18,6 +18,7 @@ final class ApplyForCardCoordinator: Coordinator {
 
     func start() {
         let selectAccountViewController = SelectAccountAssembly.assemble(coordinator: self)
+        selectAccountViewController.setViewController(selectedPageNumber: 1, numberOfPages: 3)
         parentViewController.navigationController?.pushViewController(selectAccountViewController, animated: true)
     }
 }
