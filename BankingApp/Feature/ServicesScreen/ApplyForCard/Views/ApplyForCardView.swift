@@ -9,7 +9,7 @@
 import UIKit
 
 class ApplyForCardView: UIView {
-    private lazy var titleLabel: UILabel = {
+     lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 26)
         titleLabel.textColor = Asset.Colors.applicationFormLabel.color
@@ -17,7 +17,7 @@ class ApplyForCardView: UIView {
         return titleLabel
     }()
 
-    private lazy var pageView = OpenAccountPageView()
+    lazy var pageView = OpenAccountPageView()
 }
 
 // MARK: - Public Methods

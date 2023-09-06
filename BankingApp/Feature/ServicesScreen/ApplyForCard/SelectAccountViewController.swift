@@ -8,12 +8,17 @@
 
 import UIKit
 
-final class ApplyForCardViewController: UIViewController {
+final class SelectAccountViewController: UIViewController {
+
     override func loadView() {
-        // view = 
+        view = OpenAccountPageView()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 }
 
-extension ApplyForCardViewController {
+extension SelectAccountViewController {
 
 }

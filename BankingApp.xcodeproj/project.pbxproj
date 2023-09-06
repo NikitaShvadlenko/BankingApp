@@ -26,7 +26,7 @@
 		21BE8E86BC9DCE1469A44321 /* TransactionDetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BEAF645AC9B7B07A80587 /* TransactionDetailScreenView.swift */; };
 		2449D333861F701AAA253F12 /* ProvidesAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108AB9052D41DAECCD6D660E /* ProvidesAccounts.swift */; };
 		260B894C20C46D10437AA76B /* ApplyForCardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB4652A01A7519D171072B9 /* ApplyForCardCoordinator.swift */; };
-		26F85537B977B4C9634D3CF7 /* ApplyForCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D5CCE318C602E18619347 /* ApplyForCardViewController.swift */; };
+		26F85537B977B4C9634D3CF7 /* SelectAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E6D5CCE318C602E18619347 /* SelectAccountViewController.swift */; };
 		28103E60324ED2D3AA2DE70E /* TransactionDetailCollecitonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C5F4A1064729806451C598 /* TransactionDetailCollecitonManager.swift */; };
 		29239191315F0F04082F34AC /* MenuItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7C146079A42092787D858A /* MenuItemViewModel.swift */; };
 		296B8F4113089E48D963B592 /* ApplyForCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF3CECEB744897BECE4667 /* ApplyForCardView.swift */; };
@@ -151,7 +151,7 @@
 		273AD419190771B6726C86BA /* OpenAccountPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAccountPageView.swift; sourceTree = "<group>"; };
 		2750FD50D34C88B8331F8418 /* TransactionPagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPagingView.swift; sourceTree = "<group>"; };
 		2A27C306F0B5C89B6C8A249D /* Strings+Generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
-		2E6D5CCE318C602E18619347 /* ApplyForCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyForCardViewController.swift; sourceTree = "<group>"; };
+		2E6D5CCE318C602E18619347 /* SelectAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountViewController.swift; sourceTree = "<group>"; };
 		2EEA75BBE0C661660AA42421 /* DataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
 		3071E4FF459DC839E7F6CD5F /* PlaceholderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderStore.swift; sourceTree = "<group>"; };
 		33C5F4A1064729806451C598 /* TransactionDetailCollecitonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailCollecitonManager.swift; sourceTree = "<group>"; };
@@ -537,7 +537,7 @@
 			children = (
 				8BB4652A01A7519D171072B9 /* ApplyForCardCoordinator.swift */,
 				B4F2DE032AA81F8300B0D1C6 /* Views */,
-				2E6D5CCE318C602E18619347 /* ApplyForCardViewController.swift */,
+				2E6D5CCE318C602E18619347 /* SelectAccountViewController.swift */,
 				877F35EA64269CA245727849 /* Coordinator.swift */,
 			);
 			path = ApplyForCard;
@@ -789,7 +789,7 @@
 				33E2F3D09DE5394376798C2F /* AppDelegate.swift in Sources */,
 				260B894C20C46D10437AA76B /* ApplyForCardCoordinator.swift in Sources */,
 				296B8F4113089E48D963B592 /* ApplyForCardView.swift in Sources */,
-				26F85537B977B4C9634D3CF7 /* ApplyForCardViewController.swift in Sources */,
+				26F85537B977B4C9634D3CF7 /* SelectAccountViewController.swift in Sources */,
 				3580609BEF4E7B10247ECB7D /* AssembledModule.swift in Sources */,
 				1BECE797E5BA3496555686A6 /* CancelButton.swift in Sources */,
 				0D8D651E64132A483E472A70 /* ContentView.swift in Sources */,
