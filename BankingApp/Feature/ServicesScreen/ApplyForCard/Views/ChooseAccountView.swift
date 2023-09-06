@@ -12,7 +12,7 @@ final class ChooseAccountView: ApplyForCardView {
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.rowHeight = 300
+        tableView.estimatedRowHeight = 300
         tableView.separatorStyle = .none
         tableView.register(AccountSelectionCell.self, forCellReuseIdentifier: "\(AccountSelectionCell.self)")
         return tableView
