@@ -25,7 +25,8 @@ extension ApplyForCardView {
     public func configureView(
         title: String,
         pageNumber: Int,
-        totalPages: Int
+        totalPages: Int,
+        pageTitle: String
     ) {
         pageView.configureView(pageNumber: pageNumber, totalPages: totalPages, title: title)
     }

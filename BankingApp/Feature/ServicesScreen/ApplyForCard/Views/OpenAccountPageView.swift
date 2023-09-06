@@ -58,6 +58,11 @@ final class OpenAccountPageView: UIView {
         label.textColor = UIColor(asset: Asset.Colors.applicationFormLabel)
         return label
     }()
+
+    private lazy var contentView: UIView = {
+        let view = UIView()
+        return view
+    }()
 }
 
 // MARK: - Public Methods

@@ -16,9 +16,8 @@ final class ApplyForCardCoordinator: Coordinator {
         self.parentViewController = parentViewController
     }
 
-    let viewController = UIViewController()
     func start() {
-        viewController.view.backgroundColor = .red
-        parentViewController.navigationController?.pushViewController(viewController, animated: true)
+        let selectAccountViewController = SelectAccountAssembly.assemble(coordinator: self)
+        parentViewController.navigationController?.pushViewController(selectAccountViewController, animated: true)
     }
 }

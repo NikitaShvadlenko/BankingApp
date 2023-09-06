@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct ApplicationAccountDescriptionProvider {
-    static func fetchApplicationDescription() -> [ApplicationAccountDescription] {
+struct ApplicationAccountDescriptionProvider: ProvidesAccountApplicationDescription {
+     func fetchApplicationDescription() -> [ApplicationAccountDescription] {
         let accounts = [
             ApplicationAccountDescription(
                 accountName: "Go account",
@@ -55,5 +55,6 @@ struct ApplicationAccountDescriptionProvider {
                 ]
             )
         ]
+        return accounts
     }
 }

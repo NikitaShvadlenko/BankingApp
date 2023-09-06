@@ -44,3 +44,9 @@
 "ServicesScreen.close" = "Close";
 
 "Application.ofPageNumber" = " of %@";
+"Application.accountFee" = "$%@ monthly account fee";
+"Application.interestRates" = "Interest rates:";
+"Application.interestRatesBounds" = "%@ - %@: ";
+"Application.openAnAccount" = "Open an account";
+"Application.chooseAnAccount" = "Choose an account";
+"Application.interestRatesNoUpperBound" = "%@+: ";

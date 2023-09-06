@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ManagesTableView: UITableViewDataSource, UITableViewDelegate {
+protocol ManagesAccountSelectionTableView: UITableViewDataSource, UITableViewDelegate {
     var accounts: [ApplicationAccountDescription] { get }
     func setAccounts(_ accounts: [ApplicationAccountDescription])
 }
@@ -17,7 +17,7 @@ final class SelectAccountTableViewManager: NSObject {
     var accounts: [ApplicationAccountDescription] = []
 }
 
-extension SelectAccountTableViewManager: ManagesTableView {
+extension SelectAccountTableViewManager: ManagesAccountSelectionTableView {
     func setAccounts(_ accounts: [ApplicationAccountDescription]) {
         self.accounts = accounts
     }
@@ -27,6 +27,13 @@ extension SelectAccountTableViewManager: ManagesTableView {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: "\(AccountSelectionCell.self)", for: indexPath
+        ) as? AccountSelectionCell
+        else {
+            fatalError("Failed to dequeue cell")
+        }
+        cell.configure(viewModel: accounts[indexPath.row])
+        return cell
     }
 }

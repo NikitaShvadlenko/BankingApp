@@ -47,10 +47,28 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "AccountsScreen.title", fallback: "Accounts")
   }
   internal enum Application {
+    /// $%@ monthly account fee
+    internal static func accountFee(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "Application.accountFee", String(describing: p1), fallback: "$%@ monthly account fee")
+    }
+    /// Choose an account
+    internal static let chooseAnAccount = L10n.tr("Localizable", "Application.chooseAnAccount", fallback: "Choose an account")
+    /// Interest rates:
+    internal static let interestRates = L10n.tr("Localizable", "Application.interestRates", fallback: "Interest rates:")
+    /// %@ - %@: 
+    internal static func interestRatesBounds(_ p1: Any, _ p2: Any) -> String {
+      return L10n.tr("Localizable", "Application.interestRatesBounds", String(describing: p1), String(describing: p2), fallback: "%@ - %@: ")
+    }
+    /// %@+: 
+    internal static func interestRatesNoUpperBound(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "Application.interestRatesNoUpperBound", String(describing: p1), fallback: "%@+: ")
+    }
     ///  of %@
     internal static func ofPageNumber(_ p1: Any) -> String {
       return L10n.tr("Localizable", "Application.ofPageNumber", String(describing: p1), fallback: " of %@")
     }
+    /// Open an account
+    internal static let openAnAccount = L10n.tr("Localizable", "Application.openAnAccount", fallback: "Open an account")
   }
   internal enum NavigationBar {
     /// Log out

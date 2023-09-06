@@ -9,10 +9,11 @@
 import Foundation
 import UIKit
 
-protocol Coordinator {
+protocol Coordinator: AnyObject {
     func start()
 }
 
 protocol Coordinating {
     var coordinator: Coordinator? { get set }
+    func setViewController(selectedPageNumber: Int, numberOfPages: Int )
 }
