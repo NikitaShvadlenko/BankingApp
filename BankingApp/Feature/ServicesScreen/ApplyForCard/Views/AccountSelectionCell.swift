@@ -143,13 +143,13 @@ extension AccountSelectionCell {
         }
 
         accountDescriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(accountTitleLabel.snp.bottom).offset(14)
+            make.top.equalTo(accountTitleLabel.snp.bottom).offset(-14)
             make.leading.equalTo(selectionBox)
             make.trailing.equalToSuperview()
         }
 
         separatorView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(14)
+            make.leading.trailing.equalToSuperview().inset(-14)
             make.height.equalTo(1)
         }
 
