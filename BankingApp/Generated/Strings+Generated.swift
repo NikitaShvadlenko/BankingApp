@@ -46,6 +46,12 @@ internal enum L10n {
     /// Accounts
     internal static let title = L10n.tr("Localizable", "AccountsScreen.title", fallback: "Accounts")
   }
+  internal enum Application {
+    ///  of %@
+    internal static func ofPageNumber(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "Application.ofPageNumber", String(describing: p1), fallback: " of %@")
+    }
+  }
   internal enum NavigationBar {
     /// Log out
     internal static let loguot = L10n.tr("Localizable", "NavigationBar.loguot", fallback: "Log out")

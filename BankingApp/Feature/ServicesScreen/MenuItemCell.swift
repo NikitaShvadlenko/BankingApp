@@ -61,7 +61,7 @@ extension MenuItemCell {
 
         imageContainer.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.bottom.equalTo(titleLabel.snp.top).offset(-2)
+            make.bottom.equalTo(titleLabel.snp.top).offset(-10)
             make.width.equalTo(imageContainer.snp.height)
             make.centerX.equalTo(titleLabel)
         }

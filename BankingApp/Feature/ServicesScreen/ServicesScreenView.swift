@@ -36,10 +36,19 @@ final class ServicesScreenView: UIView {
         let layout = UICollectionViewFlowLayout()
         let screenHeight = UIScreen.main.bounds.height
         let screenWidth = UIScreen.main.bounds.width
-        let spacing = (screenWidth / 2 - 40 - 40) / 2
-        layout.itemSize = CGSize(width: 80, height: 80)
-        layout.sectionInset = UIEdgeInsets(top: screenHeight/4, left: 60, bottom: 10, right: 60)
-        layout.minimumInteritemSpacing = spacing
+        let itemWidth: CGFloat =
+        (screenWidth -
+        (Constants.interitemSpacing * Constants.numberOfSpaces) -
+        (Constants.horizontalInsets * 2))
+        / Constants.numberOfItemsHorizontal
+        layout.itemSize = CGSize(width: itemWidth, height: 80)
+        layout.sectionInset = UIEdgeInsets(
+            top: screenHeight/4,
+            left: Constants.horizontalInsets,
+            bottom: 10,
+            right: Constants.horizontalInsets
+        )
+        layout.minimumInteritemSpacing = Constants.interitemSpacing
         return layout
     }()
 
@@ -91,5 +100,17 @@ extension ServicesScreenView {
     @objc
     func closeButtonPressed() {
         delegate?.buttonPressed(closeButton)
+    }
+}
+
+extension ServicesScreenView {
+    enum Constants {
+        static let numberOfItemsHorizontal: CGFloat = 3
+        static let interitemSpacing: CGFloat = 10
+        static let itemHeight: CGFloat = 100
+        static let horizontalInsets: CGFloat = 20
+        static var numberOfSpaces: CGFloat {
+            return max(0, Constants.numberOfItemsHorizontal - 1)
+        }
     }
 }
