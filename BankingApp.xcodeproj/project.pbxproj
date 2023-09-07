@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -87,6 +87,7 @@
 		9D2ACD211974BACED99C40DA /* ImageDownloaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74ED66C588F5C2944D8324A /* ImageDownloaderProtocol.swift */; };
 		9D9BE43890557C08719B4A7F /* ServicesScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D191C7F6A0DA05F4B8A3CE2 /* ServicesScreenAssembly.swift */; };
 		9DAA213187597EDEBDA6C729 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1588C23122B8D4CFF0182A32 /* MenuItemCell.swift */; };
+		9F012B762E900E5A9CCEFF1F /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD409BCBB28B6E7EFBD61256 /* Links.swift */; };
 		A250C0365569AD46FE74BC89 /* TransactionDetailScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4657469F44B79A30A5C78B1 /* TransactionDetailScreenInteractor.swift */; };
 		A63B0B4DE4575B9B3E80CC91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C719EA72C5EBB6C2F3F24203 /* LaunchScreen.storyboard */; };
 		A6E9DD4437B3E8AC832F3307 /* SettingsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB253AECFEAECCC05002EF45 /* SettingsScreenPresenter.swift */; };
@@ -95,7 +96,6 @@
 		AB54D0ECFC20003C63EAA6C7 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76A18E45A995308D783A3E /* OverlayManager.swift */; };
 		AEEE51CC00DECEB45728E1CE /* TransactionDetailScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EF9DA026BE903282DD2FB /* TransactionDetailScreenPresenter.swift */; };
 		B2542C12A794DEBE9BDA5874 /* AccountOverviewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DBDEA678FB2A5D33CED35 /* AccountOverviewImageCell.swift */; };
-		B4F2DE222AA978F400B0D1C6 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE212AA978F400B0D1C6 /* Links.swift */; };
 		B8A6494D87F24B3A31526EF9 /* AccountsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC96BFCA2DACD0702FEC5F3 /* AccountsScreenViewController.swift */; };
 		B939469ACF4BF846DCA30102 /* AccountOverviewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8CCCCCD3085AC6E57DCAF /* AccountOverviewCellProtocol.swift */; };
 		BC5E8D661AAE1A743BB160CF /* AccountDetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09A51439A80ED394D36C215 /* AccountDetailScreenView.swift */; };
@@ -237,6 +237,7 @@
 		A587F491F4B2EF360E780FB8 /* AccountDetailScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailScreenAssembly.swift; sourceTree = "<group>"; };
 		A9576A041C02C1A61BD57789 /* TransactionDetailShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailShareViewController.swift; sourceTree = "<group>"; };
 		AB72D4FA06582041BFFEF62D /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
+		AD409BCBB28B6E7EFBD61256 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		AE260D012EE6CC097B1F6A3B /* ImageFirstLeadingConstraintStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFirstLeadingConstraintStrategy.swift; sourceTree = "<group>"; };
 		AF73383655DC9154769275F3 /* TransferTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferTopBar.swift; sourceTree = "<group>"; };
 		AFCFD8D952125F6048513C0D /* ShareLabelConstraintStrategyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLabelConstraintStrategyFactory.swift; sourceTree = "<group>"; };
@@ -244,7 +245,6 @@
 		B153799168FF3C4F5F2E8276 /* FirebaseCollectionKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionKeys.swift; sourceTree = "<group>"; };
 		B27E82CEF87579C01E6E0881 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
-		B4F2DE212AA978F400B0D1C6 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		B74ED66C588F5C2944D8324A /* ImageDownloaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderProtocol.swift; sourceTree = "<group>"; };
 		B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		BC7027B40EF891D83330EC57 /* ImageFirstConstraintStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFirstConstraintStrategy.swift; sourceTree = "<group>"; };
@@ -612,11 +612,11 @@
 		BC6D02584F8B0EF5CD254F73 /* UserDefaultsStorage */ = {
 			isa = PBXGroup;
 			children = (
+				AD409BCBB28B6E7EFBD61256 /* Links.swift */,
 				0B040D4059193A8E07F5D554 /* ManagesUserSettings.swift */,
 				B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */,
 				B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */,
 				0883A36385D417F725D320A3 /* UserSettingManagerError.swift */,
-				B4F2DE212AA978F400B0D1C6 /* Links.swift */,
 			);
 			path = UserDefaultsStorage;
 			sourceTree = "<group>";
@@ -703,6 +703,34 @@
 				4DB2B0D76D274B4E67509B3F /* SelectAccountTableHeader.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		"TEMP_056A2BC9-F11A-4138-9071-C065B2B284F8" /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		"TEMP_5F787C85-0C4E-4FA4-B0CF-9DE1F240B515" /* SharedResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedResources;
+			sourceTree = "<group>";
+		};
+		"TEMP_74F11EE3-5E35-4195-9218-3770E480FE4B" /* SharedResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedResources;
+			sourceTree = "<group>";
+		};
+		"TEMP_D7DC4C48-BBB1-4914-B1A1-9BA671E5C7AD" /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -812,7 +840,6 @@
 				ECC8298352BE7BA8B076CDF4 /* AccountDetailScreenAssembly.swift in Sources */,
 				1CD2ACDA55B065934A19FBBB /* AccountDetailScreenContract.swift in Sources */,
 				9AAE2EEB74C8A8E56A00A06F /* AccountDetailScreenInteractor.swift in Sources */,
-				B4F2DE222AA978F400B0D1C6 /* Links.swift in Sources */,
 				6DD0F9DFE92FE7D343D789A6 /* AccountDetailScreenPresenter.swift in Sources */,
 				7D2C0F5D0BE31ADB2CC9EBB6 /* AccountDetailScreenRouter.swift in Sources */,
 				BC5E8D661AAE1A743BB160CF /* AccountDetailScreenView.swift in Sources */,
@@ -859,6 +886,7 @@
 				CAC1E56DDEB3EC90158FF3FE /* InterestRateDescription.swift in Sources */,
 				964C2D16109888BDD573E753 /* LabelFirstConstraintStrategy.swift in Sources */,
 				CC61927215F199CE5095A1BA /* LinkTextView.swift in Sources */,
+				9F012B762E900E5A9CCEFF1F /* Links.swift in Sources */,
 				E4579FC3516BC30386862969 /* ManagesUserSettings.swift in Sources */,
 				2124205933BC63FAEF1BF5F9 /* Mapper.swift in Sources */,
 				1982FC471A30A41D7C2070F0 /* MenuCollectionViewManager.swift in Sources */,

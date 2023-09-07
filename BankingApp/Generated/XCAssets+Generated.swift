@@ -30,6 +30,7 @@ internal enum Asset {
     internal static let applicationPageViewBackground = ColorAsset(name: "applicationPageViewBackground")
     internal static let gradientBackgroundEnd = ColorAsset(name: "gradientBackgroundEnd")
     internal static let gradientBackgroundStart = ColorAsset(name: "gradientBackgroundStart")
+    internal static let nextButton = ColorAsset(name: "nextButton")
     internal static let primaryBackground = ColorAsset(name: "primaryBackground")
     internal static let primaryLabel = ColorAsset(name: "primaryLabel")
     internal static let secondaryLabel = ColorAsset(name: "secondaryLabel")
