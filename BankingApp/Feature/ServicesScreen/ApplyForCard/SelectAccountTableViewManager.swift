@@ -67,4 +67,16 @@ extension SelectAccountTableViewManager: UITableViewDelegate {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "\(ApplyForCardFooterView.self)")
         return view
     }
+
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        guard let selectedCell = tableView.cellForRow(at: indexPath) else { return nil }
+
+        if selectedCell.isSelected == true {
+            tableView.deselectRow(at: indexPath, animated: true)
+            return nil
+        }
+        return indexPath
+    }
+
+
 }
