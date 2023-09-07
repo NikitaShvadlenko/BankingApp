@@ -15,9 +15,21 @@ protocol ManagesAccountSelectionTableView: UITableViewDataSource, UITableViewDel
     func toggleFooterNextButton(footerSectionIndex: Int)
 }
 
+protocol SelectAccountTableViewDelegate: AnyObject {
+    func selectAccountTableManager(
+        _ selectAccountTableManager: ManagesAccountSelectionTableView,
+        didSelectRowAt: IndexPath
+    )
+    func selectAccountTableManager(
+        _ selectAccountTableManager: ManagesAccountSelectionTableView,
+        didDeselectRowAt: IndexPath
+    )
+}
+
 final class SelectAccountTableViewManager: NSObject {
     var accounts: [ApplicationAccountDescription] = []
     weak var tableView: UITableView?
+    weak var delegate: SelectAccountTableViewDelegate?
 }
 
 // MARK: - ManagesAccountSelectionTableView
@@ -73,10 +85,14 @@ extension SelectAccountTableViewManager: UITableViewDelegate {
 
         if selectedCell.isSelected == true {
             tableView.deselectRow(at: indexPath, animated: true)
+            delegate?.selectAccountTableManager(self, didDeselectRowAt: indexPath)
             return nil
         }
         return indexPath
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.selectAccountTableManager(self, didSelectRowAt: indexPath)
+    }
 
 }
