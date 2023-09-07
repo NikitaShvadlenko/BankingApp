@@ -62,7 +62,7 @@ extension ApplyForCardView {
         }
 
         contentView.snp.makeConstraints { make in
-            make.top.equalTo(pageView.snp.bottom)
+            make.top.equalTo(pageView.snp.bottom).inset(-20)
             make.leading.trailing.bottom.equalToSuperview()
         }
     }

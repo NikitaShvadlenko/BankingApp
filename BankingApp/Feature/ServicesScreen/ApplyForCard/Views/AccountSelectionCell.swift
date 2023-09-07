@@ -14,8 +14,8 @@ final class AccountSelectionCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.addArrangedSubview(accountFeeLabel)
-        stackView.distribution = .fillEqually
-        stackView.spacing = 5
+        stackView.distribution = .fill
+        stackView.spacing = 8
         stackView.alignment = .leading
         return stackView
     }()
@@ -23,7 +23,7 @@ final class AccountSelectionCell: UITableViewCell {
     private lazy var interestRatesStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fillProportionally
         stackView.spacing = 5
         stackView.alignment = .leading
         return stackView
@@ -98,8 +98,8 @@ final class AccountSelectionCell: UITableViewCell {
         selectionBox.image = selected ? selectionImage : nil
         contentView.layer.borderWidth = selected ? 2 : 1
         contentView.layer.borderColor =
-        selected ? Asset.Colors.secondaryLabel.color.cgColor:
-        Asset.Colors.applicationPageViewBackground.color.cgColor
+        selected ? Asset.Colors.applicationFormLabel.color.withAlphaComponent(0.8).cgColor :
+        Asset.Colors.secondaryLabel.color.cgColor
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -179,10 +179,10 @@ extension AccountSelectionCell {
         descriptionStackView.snp.makeConstraints { make in
             make.leading.trailing.equalTo(separatorView)
             make.top.equalTo(separatorView.snp.bottom).offset(14)
+            make.bottom.equalTo(interestRatesStackView.snp.top).inset(-14)
         }
 
         interestRatesStackView.snp.makeConstraints { make in
-            make.top.equalTo(descriptionStackView.snp.bottom).offset(14)
             make.leading.trailing.equalTo(separatorView)
             make.bottom.equalToSuperview().inset(10)
         }
