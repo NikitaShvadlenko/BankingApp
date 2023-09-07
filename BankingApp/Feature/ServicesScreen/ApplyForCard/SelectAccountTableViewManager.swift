@@ -10,15 +10,25 @@ import UIKit
 
 protocol ManagesAccountSelectionTableView: UITableViewDataSource, UITableViewDelegate {
     var accounts: [ApplicationAccountDescription] { get }
+    var tableView: UITableView? { get set }
     func setAccounts(_ accounts: [ApplicationAccountDescription])
+    func toggleFooterNextButton(footerSectionIndex: Int)
 }
 
 final class SelectAccountTableViewManager: NSObject {
     var accounts: [ApplicationAccountDescription] = []
+    weak var tableView: UITableView?
 }
 
 // MARK: - ManagesAccountSelectionTableView
 extension SelectAccountTableViewManager: ManagesAccountSelectionTableView {
+    func toggleFooterNextButton(footerSectionIndex: Int) {
+        guard let footer = tableView?.footerView(forSection: footerSectionIndex) as? ApplyForCardFooterView else {
+            return
+        }
+        footer.toggleNextButton()
+    }
+
     func setAccounts(_ accounts: [ApplicationAccountDescription]) {
         self.accounts = accounts
     }

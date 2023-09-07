@@ -16,6 +16,7 @@ final class ApplyForCardFooterView: UITableViewHeaderFooterView {
 
     weak var delegate: ApplyForCardFooterDelegate?
 
+    private var isButtonActivated = false
     private var separatorView = SeparatorView()
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -72,6 +73,14 @@ final class ApplyForCardFooterView: UITableViewHeaderFooterView {
     }
 }
 
+// MARK: - Public Methods
+extension ApplyForCardFooterView {
+    public func toggleNextButton() {
+        isButtonActivated.toggle()
+        nextButton.backgroundColor = isButtonActivated ?
+        Asset.Colors.applicationFormLabel.color : Asset.Colors.nextButton.color
+    }
+}
 // MARK: - Private Methods
 extension ApplyForCardFooterView {
     private func setupView() {
@@ -109,6 +118,8 @@ extension ApplyForCardFooterView {
 
     @objc
     func nextButtonTapped() {
-        delegate?.viewDidPressNextButton(self)
+        if isButtonActivated {
+            delegate?.viewDidPressNextButton(self)
+        }
     }
 }

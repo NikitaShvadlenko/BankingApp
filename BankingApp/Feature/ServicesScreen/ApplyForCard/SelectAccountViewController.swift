@@ -36,6 +36,7 @@ final class SelectAccountViewController: FormViewController {
     func setTableViewManager(_ manager: ManagesAccountSelectionTableView) {
         selectAccountView.tableView.delegate = manager
         selectAccountView.tableView.dataSource = manager
+        manager.tableView = selectAccountView.tableView
     }
 }
 
