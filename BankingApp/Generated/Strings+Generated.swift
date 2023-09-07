@@ -53,6 +53,8 @@ internal enum L10n {
     }
     /// Application form
     internal static let applicationForm = L10n.tr("Localizable", "Application.applicationForm", fallback: "Application form")
+    /// Cancel
+    internal static let cancel = L10n.tr("Localizable", "Application.cancel", fallback: "Cancel")
     /// Choose an account
     internal static let chooseAnAccount = L10n.tr("Localizable", "Application.chooseAnAccount", fallback: "Choose an account")
     /// Interest rates:

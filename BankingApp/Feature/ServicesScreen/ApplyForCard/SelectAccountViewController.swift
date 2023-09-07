@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class SelectAccountViewController: UIViewController {
+final class SelectAccountViewController: FormViewController {
 
     var presenter: SelectAccountViewOutput?
     weak var coordinator: Coordinator?

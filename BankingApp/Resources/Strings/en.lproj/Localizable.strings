@@ -52,3 +52,4 @@
 "Application.interestRatesNoUpperBound" = "%@+: ";
 "Application.applicationForm" = "Application form";
 "Application.tableHeader" = "Choose an everyday account";
+"Application.cancel" = "Cancel";
