@@ -1,3 +1,4 @@
+
 import UIKit
 
 final class LinkTextView: UITextView {
@@ -5,12 +6,24 @@ final class LinkTextView: UITextView {
     let mainPart: String
     let linkPart: String
     let link: String
+    let trailingPart: String
 
-    init(mainPart: String, linkPart: String, link: String) {
+    private var mainPartAttributes: [NSAttributedString.Key: Any] = [
+        .font: UIFont.systemFont(ofSize: 16),
+        .foregroundColor: UIColor.black
+    ]
+
+    private var linkPartAttributes: [NSAttributedString.Key: Any] = [
+        .font: UIFont.systemFont(ofSize: 16),
+        .foregroundColor: UIColor.blue,
+        .underlineStyle: NSUnderlineStyle.single.rawValue
+    ]
+
+    init(mainPart: String, linkPart: String, link: String, trailingPart: String) {
         self.mainPart = mainPart
         self.linkPart = linkPart
         self.link = link
-
+        self.trailingPart = trailingPart
         super.init(frame: .zero, textContainer: nil)
         setupView()
     }
@@ -23,11 +36,10 @@ final class LinkTextView: UITextView {
 // MARK: - Public Methods
 extension LinkTextView {
     public func configureView(font: UIFont, textColor: UIColor) {
-        linkTextAttributes = [
-            .underlineStyle: NSUnderlineStyle.single.rawValue,
-            .foregroundColor: textColor,
-            .font: font
-        ]
+        mainPartAttributes[.font] = font
+        mainPartAttributes[.foregroundColor] = textColor
+        linkPartAttributes[.font] = font
+        setupView()
     }
 }
 
@@ -38,15 +50,26 @@ extension LinkTextView {
         isScrollEnabled = false
         isUserInteractionEnabled = true
 
-        let text = mainPart + linkPart
-        let attributedString = NSMutableAttributedString(string: text)
-        let linkRange = (text as NSString).range(of: linkPart)
-        attributedString.addAttribute(.link, value: link, range: linkRange)
+        let mainAttributedString = NSMutableAttributedString(string: mainPart, attributes: mainPartAttributes)
 
-        attributedText = attributedString
+        let linkAttributedString = NSMutableAttributedString(
+            string: linkPart, attributes: linkPartAttributes
+        )
+
+        let trailingAttributedString = NSMutableAttributedString(
+            string: trailingPart, attributes: mainPartAttributes
+        )
+
+        linkPartAttributes[.link] = link
+
+        mainAttributedString.append(linkAttributedString)
+        mainAttributedString.append(trailingAttributedString)
+
+        attributedText = mainAttributedString
         delegate = self
     }
 }
+
 // MARK: - UITextViewDelegate
 extension LinkTextView: UITextViewDelegate {
     func textView(

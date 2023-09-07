@@ -52,4 +52,9 @@ extension SelectAccountTableViewManager: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         50
     }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "\(ApplyForCardFooterView.self)")
+        return view
+    }
 }

@@ -19,7 +19,7 @@ final class ApplyForCardFooterView: UITableViewHeaderFooterView {
     private var separatorView = SeparatorView()
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         label.numberOfLines = 1
         label.textColor = Asset.Colors.primaryLabel.color
         label.text = L10n.Application.importantInformation
@@ -30,15 +30,22 @@ final class ApplyForCardFooterView: UITableViewHeaderFooterView {
         let linkView = LinkTextView(
             mainPart: L10n.Application.disclaimerMainPart,
             linkPart: L10n.Application.disclaimerLinkPart,
-            link: Links.anzLink.rawValue
+            link: Links.anzLink.rawValue,
+            trailingPart: "."
         )
-        linkView.text.append(".")
+        linkView.configureView(
+            font: UIFont.systemFont(ofSize: 16),
+            textColor: Asset.Colors.primaryLabel.color
+        )
         return linkView
     }()
 
     private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        button.setTitle(L10n.Application.next, for: .normal)
+        button.setTitleColor(Asset.Colors.primaryBackground.color, for: .normal)
+        button.titleLabel?.backgroundColor = Asset.Colors.applicationPageViewBackground.color
         return button
     }()
 
@@ -72,8 +79,10 @@ extension ApplyForCardFooterView {
         }
 
         linkLabel.snp.makeConstraints { make in
-            make.leading.trailing.equalTo(separatorView)
+            make.leading.equalTo(separatorView).offset(-5)
+            make.trailing.equalTo(separatorView)
             make.top.equalTo(titleLabel.snp.bottom).offset(14)
+            make.height.equalTo(100)
         }
 
         nextButton.snp.makeConstraints { make in

@@ -9,14 +9,16 @@
 import UIKit
 
 final class ChooseAccountView: ApplyForCardView {
-
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.estimatedRowHeight = 300
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = Asset.Colors.primaryBackground.color
-        tableView.register(ApplyForCardFooterView.self, forCellReuseIdentifier: "\(ApplyForCardFooterView.self)")
+        tableView.register(
+            ApplyForCardFooterView.self,
+            forHeaderFooterViewReuseIdentifier: "\(ApplyForCardFooterView.self)")
         tableView.register(
             SelectAccountTableHeader.self,
             forHeaderFooterViewReuseIdentifier: "\(SelectAccountTableHeader.self)"
@@ -24,12 +26,12 @@ final class ChooseAccountView: ApplyForCardView {
         tableView.register(AccountSelectionCell.self, forCellReuseIdentifier: "\(AccountSelectionCell.self)")
         return tableView
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
