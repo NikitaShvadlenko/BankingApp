@@ -17,11 +17,15 @@ final class SelectAccountTableViewManager: NSObject {
     var accounts: [ApplicationAccountDescription] = []
 }
 
+// MARK: - ManagesAccountSelectionTableView
 extension SelectAccountTableViewManager: ManagesAccountSelectionTableView {
     func setAccounts(_ accounts: [ApplicationAccountDescription]) {
         self.accounts = accounts
     }
+}
 
+// MARK: - UITableViewDataSource
+extension SelectAccountTableViewManager: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         accounts.count
     }
@@ -35,5 +39,17 @@ extension SelectAccountTableViewManager: ManagesAccountSelectionTableView {
         }
         cell.configure(viewModel: accounts[indexPath.row])
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension SelectAccountTableViewManager: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "\(SelectAccountTableHeader.self)")
+        return view
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        50
     }
 }

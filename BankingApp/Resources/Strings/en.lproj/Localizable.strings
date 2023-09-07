@@ -50,3 +50,5 @@
 "Application.openAnAccount" = "Open an account";
 "Application.chooseAnAccount" = "Choose an account";
 "Application.interestRatesNoUpperBound" = "%@+: ";
+"Application.applicationForm" = "Application form";
+"Application.tableHeader" = "Choose an everyday account";

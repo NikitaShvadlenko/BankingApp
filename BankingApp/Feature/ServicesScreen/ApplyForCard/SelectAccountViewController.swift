@@ -30,6 +30,7 @@ final class SelectAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad(self)
+        title = L10n.Application.applicationForm
     }
 
     func setTableViewManager(_ manager: ManagesAccountSelectionTableView) {

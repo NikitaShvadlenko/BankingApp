@@ -106,7 +106,20 @@ final class AccountSelectionCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.layer.borderWidth = 1
         contentView.layer.borderColor = Asset.Colors.secondaryLabel.color.cgColor
+        selectionStyle = .none
         setupView()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.frame = contentView.frame.inset(
+            by: UIEdgeInsets(
+                top: 10,
+                left: 10,
+                bottom: 10,
+                right: 10
+            )
+        )
     }
 
     required init?(coder: NSCoder) {

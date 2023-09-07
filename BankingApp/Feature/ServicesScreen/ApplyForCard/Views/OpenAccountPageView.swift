@@ -22,9 +22,10 @@ final class OpenAccountPageView: UIView {
 
     private lazy var pageImage: UIImageView = {
         let imageView = UIImageView()
-        let image = UIImage(sfSymbol: SFSymbol.message)?.withHorizontallyFlippedOrientation()
+        let symbolConfiguration = UIImage.SymbolConfiguration(font: UIFont.systemFont(ofSize: 20), scale: .large)
+        let image = UIImage(sfSymbol: SFSymbol.message, withConfiguration: symbolConfiguration)
         imageView.image = image
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFit
         imageView.tintColor = Asset.Colors.applicationFormLabel.color
         return imageView
     }()
@@ -33,7 +34,7 @@ final class OpenAccountPageView: UIView {
         let label = UILabel()
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
-        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         label.textColor = UIColor(asset: Asset.Colors.applicationFormLabel)
         return label
     }()
@@ -87,8 +88,8 @@ extension OpenAccountPageView {
 
         pageImage.addSubview(numberLabel)
         pageImage.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(20)
-            make.top.bottom.equalToSuperview().inset(10)
+            make.leading.equalToSuperview().inset(8)
+            make.top.bottom.equalToSuperview().inset(5)
             make.width.equalTo(pageImage.snp.height)
         }
 

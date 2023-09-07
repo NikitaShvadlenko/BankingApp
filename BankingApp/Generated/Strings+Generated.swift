@@ -51,6 +51,8 @@ internal enum L10n {
     internal static func accountFee(_ p1: Any) -> String {
       return L10n.tr("Localizable", "Application.accountFee", String(describing: p1), fallback: "$%@ monthly account fee")
     }
+    /// Application form
+    internal static let applicationForm = L10n.tr("Localizable", "Application.applicationForm", fallback: "Application form")
     /// Choose an account
     internal static let chooseAnAccount = L10n.tr("Localizable", "Application.chooseAnAccount", fallback: "Choose an account")
     /// Interest rates:
@@ -69,6 +71,8 @@ internal enum L10n {
     }
     /// Open an account
     internal static let openAnAccount = L10n.tr("Localizable", "Application.openAnAccount", fallback: "Open an account")
+    /// Choose an everyday account
+    internal static let tableHeader = L10n.tr("Localizable", "Application.tableHeader", fallback: "Choose an everyday account")
   }
   internal enum NavigationBar {
     /// Log out

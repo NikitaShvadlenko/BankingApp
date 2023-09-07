@@ -11,9 +11,15 @@ import UIKit
 final class ChooseAccountView: ApplyForCardView {
 
     lazy var tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.estimatedRowHeight = 300
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
+        tableView.backgroundColor = Asset.Colors.primaryBackground.color
+        tableView.register(
+            SelectAccountTableHeader.self,
+            forHeaderFooterViewReuseIdentifier: "\(SelectAccountTableHeader.self)"
+        )
         tableView.register(AccountSelectionCell.self, forCellReuseIdentifier: "\(AccountSelectionCell.self)")
         return tableView
     }()
@@ -33,7 +39,7 @@ extension ChooseAccountView {
         contentView.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.top.equalTo(contentView)
-            make.leading.trailing.equalTo(contentView)
+            make.leading.trailing.equalTo(contentView).inset(14)
             make.bottom.equalTo(contentView)
         }
     }

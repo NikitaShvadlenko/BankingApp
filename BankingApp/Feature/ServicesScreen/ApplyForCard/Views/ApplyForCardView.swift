@@ -51,13 +51,14 @@ extension ApplyForCardView {
         addSubview(pageView)
         addSubview(contentView)
         titleLabel.snp.makeConstraints { make in
-            make.top.leading.trailing.equalTo(safeAreaLayoutGuide)
+            make.top.equalTo(safeAreaLayoutGuide).inset(20)
+            make.leading.trailing.equalToSuperview().inset(14)
         }
 
         pageView.snp.makeConstraints { make in
             make.height.equalTo(44)
             make.leading.trailing.equalToSuperview()
-            make.top.equalTo(titleLabel.snp.bottom)
+            make.top.equalTo(titleLabel.snp.bottom).offset(14)
         }
 
         contentView.snp.makeConstraints { make in
