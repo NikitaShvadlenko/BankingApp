@@ -10,11 +10,13 @@ import UIKit
 
 final class AccountSelectionCell: UITableViewCell {
 
+    private var isConfigured = false
+
     private lazy var descriptionStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.addArrangedSubview(accountFeeLabel)
-        stackView.distribution = .fill
+        stackView.distribution = .fillProportionally
         stackView.spacing = 8
         stackView.alignment = .leading
         return stackView
@@ -122,6 +124,10 @@ final class AccountSelectionCell: UITableViewCell {
         )
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -134,8 +140,11 @@ extension AccountSelectionCell {
         accountDescriptionLabel.text = viewModel.accountDescription
         let fee = Int(viewModel.monthlyFee)
         accountFeeLabel.text = L10n.Application.accountFee(fee)
-        configureDescriptions(viewModel: viewModel)
-        configureInterestRates(viewModel: viewModel)
+        if !isConfigured {
+            configureDescriptions(viewModel: viewModel)
+            configureInterestRates(viewModel: viewModel)
+        }
+        isConfigured = true
     }
 }
 
@@ -196,6 +205,9 @@ extension AccountSelectionCell {
             label.textColor = Asset.Colors.primaryLabel.color
             label.text = description
             label.numberOfLines = 0
+            label.snp.makeConstraints { make in
+                make.height.equalTo(16)
+            }
             descriptionStackView.addArrangedSubview(label)
         }
     }
@@ -220,6 +232,9 @@ extension AccountSelectionCell {
                     .interestRatesNoUpperBound(
                         numbersFormatter.dollarsFromAmount( rate.lowerBound)
                     ) + rate.interestDescription
+            }
+            label.snp.makeConstraints { make in
+                make.height.equalTo(16)
             }
             interestRatesStackView.addArrangedSubview(label)
         }
