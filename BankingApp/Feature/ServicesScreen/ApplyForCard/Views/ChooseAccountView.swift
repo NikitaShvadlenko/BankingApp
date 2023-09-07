@@ -16,6 +16,7 @@ final class ChooseAccountView: ApplyForCardView {
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = Asset.Colors.primaryBackground.color
+        tableView.register(ApplyForCardFooterView.self, forCellReuseIdentifier: "\(ApplyForCardFooterView.self)")
         tableView.register(
             SelectAccountTableHeader.self,
             forHeaderFooterViewReuseIdentifier: "\(SelectAccountTableHeader.self)"

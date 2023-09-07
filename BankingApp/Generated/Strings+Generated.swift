@@ -57,6 +57,12 @@ internal enum L10n {
     internal static let cancel = L10n.tr("Localizable", "Application.cancel", fallback: "Cancel")
     /// Choose an account
     internal static let chooseAnAccount = L10n.tr("Localizable", "Application.chooseAnAccount", fallback: "Choose an account")
+    /// find out more
+    internal static let disclaimerLinkPart = L10n.tr("Localizable", "Application.disclaimerLinkPart", fallback: "find out more")
+    /// Product information is of a general nature and for information purposes only, 
+    internal static let disclaimerMainPart = L10n.tr("Localizable", "Application.disclaimerMainPart", fallback: "Product information is of a general nature and for information purposes only, ")
+    /// Important information:
+    internal static let importantInformation = L10n.tr("Localizable", "Application.importantInformation", fallback: "Important information:")
     /// Interest rates:
     internal static let interestRates = L10n.tr("Localizable", "Application.interestRates", fallback: "Interest rates:")
     /// %@ - %@: 
@@ -67,6 +73,8 @@ internal enum L10n {
     internal static func interestRatesNoUpperBound(_ p1: Any) -> String {
       return L10n.tr("Localizable", "Application.interestRatesNoUpperBound", String(describing: p1), fallback: "%@+: ")
     }
+    /// Next
+    internal static let next = L10n.tr("Localizable", "Application.next", fallback: "Next")
     ///  of %@
     internal static func ofPageNumber(_ p1: Any) -> String {
       return L10n.tr("Localizable", "Application.ofPageNumber", String(describing: p1), fallback: " of %@")

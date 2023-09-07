@@ -53,3 +53,7 @@
 "Application.applicationForm" = "Application form";
 "Application.tableHeader" = "Choose an everyday account";
 "Application.cancel" = "Cancel";
+"Application.importantInformation" = "Important information:";
+"Application.disclaimerMainPart" = "Product information is of a general nature and for information purposes only, ";
+"Application.disclaimerLinkPart" = "find out more";
+"Application.next" = "Next";
