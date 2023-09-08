@@ -8,21 +8,18 @@
 
 import Foundation
 
-protocol OpenAccountInteractorProtocol {
-    func addAccountDetails(_ accountDetails: ApplicationAccountDescription)
-    func saveApplication()
-}
-
 final class OpenAccountInteractor {
-
+    weak var coordinator: OpenAccountInteractorOutput?
+    var builder: BuildsAccountApplication?
 }
 
-extension OpenAccountInteractor: OpenAccountInteractorProtocol {
+extension OpenAccountInteractor: OpenAccountInteractorInput {
     func addAccountDetails(_ accountDetails: ApplicationAccountDescription) {
-
+        builder?.setMonthlyFee(accountDetails.monthlyFee)
+        builder?.setAccountType(accountDetails.accountName)
+        coordinator?.interactorDidSetAccountDetails()
     }
 
     func saveApplication() {
-
     }
 }

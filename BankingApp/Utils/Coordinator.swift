@@ -13,6 +13,6 @@ protocol Coordinator: AnyObject {
     func start()
 }
 
-protocol CoordinatorItem {
+protocol CoordinatorItem: UIViewController {
     var coordinator: Coordinator? { get set }
 }

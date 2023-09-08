@@ -12,7 +12,7 @@ enum SelectAccountAssembly {
     static func assemble(
         coordinator: OpenAccountCoordinator,
         delegate: SelectAccountDelegate
-    ) -> SelectAccountViewController {
+    ) -> OpenAccountCoordinatorItem {
         let tableViewManager = SelectAccountTableViewManager()
         let presenter = SelectAccountPresenter()
         let accountsDescriptionProvider = ApplicationAccountDescriptionProvider()

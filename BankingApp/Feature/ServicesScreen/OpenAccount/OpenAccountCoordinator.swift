@@ -11,7 +11,7 @@ import UIKit
 final class OpenAccountCoordinator: Coordinator {
 
     var parentViewController: UIViewController
-    var interactor: OpenAccountInteractorProtocol?
+    var interactor: OpenAccountInteractorInput?
 
     init(parentViewController: UIViewController) {
         self.parentViewController = parentViewController
@@ -27,6 +27,16 @@ final class OpenAccountCoordinator: Coordinator {
     }
 }
 
+// MARK: - OpenAccountInteractorOutput
+extension OpenAccountCoordinator: OpenAccountInteractorOutput {
+    func interactorDidSetAccountDetails() {
+        let viewController = TaxResidentAssembly.assemble()
+        viewController.setViewController(selectedPageNumber: 2, numberOfPages: 3)
+        parentViewController.navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+// MARK: - SelectAccountDelegate
 extension OpenAccountCoordinator: SelectAccountDelegate {
     func selectAccountViewDidSelectAccountOption(_ accountOption: ApplicationAccountDescription) {
         interactor?.addAccountDetails(accountOption)

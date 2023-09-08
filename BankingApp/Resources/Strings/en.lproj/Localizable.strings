@@ -58,6 +58,8 @@
 "Application.disclaimerLinkPart" = "find out more";
 "Application.next" = "Next";
 
+"Application.residencyStatus" = "Residency status";
+
 "ApplicationResult.underaged" = "You must be over %@ to apply";
 "ApplicationResult.notResident" = "You must be a tax resident to apply";
 "ApplicationResult.underagedAndNotResident" = "You must be over %@ to apply and be a tax resident";

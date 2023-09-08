@@ -81,6 +81,8 @@ internal enum L10n {
     }
     /// Open an account
     internal static let openAnAccount = L10n.tr("Localizable", "Application.openAnAccount", fallback: "Open an account")
+    /// Residency status
+    internal static let residencyStatus = L10n.tr("Localizable", "Application.residencyStatus", fallback: "Residency status")
     /// Choose an everyday account
     internal static let tableHeader = L10n.tr("Localizable", "Application.tableHeader", fallback: "Choose an everyday account")
   }

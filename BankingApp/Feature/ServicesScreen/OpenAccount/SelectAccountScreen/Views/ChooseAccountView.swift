@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ChooseAccountView: ApplyForCardView {
+final class ChooseAccountView: OpenAccountView {
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)

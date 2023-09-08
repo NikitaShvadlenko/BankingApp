@@ -1,5 +1,5 @@
 //
-//  ApplyForCardView.swift
+//  OpenAccountView.swift
 //  BankingApp
 //
 //  Created by Nikita Shvad on 06.09.2023.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ApplyForCardView: UIView {
+class OpenAccountView: UIView {
      lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.font = UIFont.systemFont(ofSize: 26)
@@ -32,7 +32,7 @@ class ApplyForCardView: UIView {
 }
 
 // MARK: - Public Methods
-extension ApplyForCardView {
+extension OpenAccountView {
     public func configureView(
         title: String,
         pageNumber: Int,
@@ -40,11 +40,11 @@ extension ApplyForCardView {
         pageTitle: String
     ) {
         titleLabel.text = title
-        pageView.configureView(pageNumber: pageNumber, totalPages: totalPages, title: title)
+        pageView.configureView(pageNumber: pageNumber, totalPages: totalPages, title: pageTitle)
     }
 }
 // MARK: - Private Methods
-extension ApplyForCardView {
+extension OpenAccountView {
     private func setupView() {
         backgroundColor = Asset.Colors.primaryBackground.color
         addSubview(titleLabel)
