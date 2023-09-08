@@ -11,14 +11,24 @@ import UIKit
 final class OpenAccountCoordinator: Coordinator {
 
     var parentViewController: UIViewController
+    var interactor: OpenAccountInteractorProtocol?
 
     init(parentViewController: UIViewController) {
         self.parentViewController = parentViewController
     }
 
     func start() {
-        let selectAccountViewController = SelectAccountAssembly.assemble(coordinator: self)
+        let selectAccountViewController = SelectAccountAssembly.assemble(
+            coordinator: self,
+            delegate: self
+        )
         selectAccountViewController.setViewController(selectedPageNumber: 1, numberOfPages: 3)
         parentViewController.navigationController?.pushViewController(selectAccountViewController, animated: true)
+    }
+}
+
+extension OpenAccountCoordinator: SelectAccountDelegate {
+    func selectAccountViewDidSelectAccountOption(_ accountOption: ApplicationAccountDescription) {
+        interactor?.addAccountDetails(accountOption)
     }
 }

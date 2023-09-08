@@ -101,6 +101,8 @@
 		B129FB9FEE3A6A2811B2E6B8 /* SelectAccountAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A905DB972FF782A11C7B18 /* SelectAccountAssembly.swift */; };
 		B2542C12A794DEBE9BDA5874 /* AccountOverviewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DBDEA678FB2A5D33CED35 /* AccountOverviewImageCell.swift */; };
 		B4F2DE342AAAECAA00B0D1C6 /* OpenAccountCoordinatorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE332AAAECAA00B0D1C6 /* OpenAccountCoordinatorItem.swift */; };
+		B4F2DE362AAAEF6C00B0D1C6 /* OpenAccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE352AAAEF6C00B0D1C6 /* OpenAccountInteractor.swift */; };
+		B4F2DE392AAAF14200B0D1C6 /* OpenAccountCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE382AAAF14200B0D1C6 /* OpenAccountCoordinatorAssembly.swift */; };
 		B678570899FD62999BA80978 /* ApplyForCardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14335D689B63A553192F8507 /* ApplyForCardFooterView.swift */; };
 		B8A6494D87F24B3A31526EF9 /* AccountsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC96BFCA2DACD0702FEC5F3 /* AccountsScreenViewController.swift */; };
 		B939469ACF4BF846DCA30102 /* AccountOverviewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8CCCCCD3085AC6E57DCAF /* AccountOverviewCellProtocol.swift */; };
@@ -256,6 +258,8 @@
 		B27E82CEF87579C01E6E0881 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		B4F2DE332AAAECAA00B0D1C6 /* OpenAccountCoordinatorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAccountCoordinatorItem.swift; sourceTree = "<group>"; };
+		B4F2DE352AAAEF6C00B0D1C6 /* OpenAccountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAccountInteractor.swift; sourceTree = "<group>"; };
+		B4F2DE382AAAF14200B0D1C6 /* OpenAccountCoordinatorAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAccountCoordinatorAssembly.swift; sourceTree = "<group>"; };
 		B74ED66C588F5C2944D8324A /* ImageDownloaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderProtocol.swift; sourceTree = "<group>"; };
 		B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		BC7027B40EF891D83330EC57 /* ImageFirstConstraintStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFirstConstraintStrategy.swift; sourceTree = "<group>"; };
@@ -487,6 +491,8 @@
 			isa = PBXGroup;
 			children = (
 				16A1F8BDB351BA5A2AB60923 /* OpenAccountCoordinator.swift */,
+				B4F2DE352AAAEF6C00B0D1C6 /* OpenAccountInteractor.swift */,
+				B4F2DE382AAAF14200B0D1C6 /* OpenAccountCoordinatorAssembly.swift */,
 				9935531AEBCCF49AB6338F59 /* OpenAccountViewController.swift */,
 				B4F2DE332AAAECAA00B0D1C6 /* OpenAccountCoordinatorItem.swift */,
 				3AEBEB5E11C90DF303F804F6 /* OpenAccountPageView.swift */,
@@ -879,9 +885,11 @@
 				96D9F99CD5A363F491B755ED /* AccountsScreenInteractor.swift in Sources */,
 				BC9601F0E786464FFC5B41A3 /* AccountsScreenPresenter.swift in Sources */,
 				01233E32F64D0B8A9A199D12 /* AccountsScreenRouter.swift in Sources */,
+				B4F2DE392AAAF14200B0D1C6 /* OpenAccountCoordinatorAssembly.swift in Sources */,
 				CA97BBB814E1FB5627EDEE17 /* AccountsScreenTableManager.swift in Sources */,
 				E1A61A03881E8A28D054728B /* AccountsScreenView.swift in Sources */,
 				B8A6494D87F24B3A31526EF9 /* AccountsScreenViewController.swift in Sources */,
+				B4F2DE362AAAEF6C00B0D1C6 /* OpenAccountInteractor.swift in Sources */,
 				596DBCC810996D4D9C9F7CA9 /* AccountsSessionApi.swift in Sources */,
 				33E2F3D09DE5394376798C2F /* AppDelegate.swift in Sources */,
 				57F28497D0A31627E3B77DA0 /* ApplicationAccountDescription.swift in Sources */,

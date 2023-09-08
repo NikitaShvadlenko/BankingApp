@@ -61,7 +61,6 @@ extension ServicesScreenViewController {
                 action: { [weak self] in
                     guard let self else { return }
                     applyForCardCoordinator?.start()
-
                 }
             ),
             MenuItemViewModel(

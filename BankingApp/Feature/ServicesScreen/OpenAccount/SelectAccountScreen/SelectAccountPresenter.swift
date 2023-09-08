@@ -13,6 +13,7 @@ final class SelectAccountPresenter: SelectAccountViewOutput {
 
     var accountDescriptionProvider: ProvidesAccountApplicationDescription?
     var tableViewManager: ManagesAccountSelectionTableView?
+    weak var selectAccountDelegate: SelectAccountDelegate?
 
     func viewDidLoad(_ view: SelectAccountViewInput) {
         guard let accounts = accountDescriptionProvider?.fetchApplicationDescription() else {
@@ -29,7 +30,9 @@ extension SelectAccountPresenter: SelectAccountTableViewDelegate {
         _ selectAccountTableManager: ManagesAccountSelectionTableView,
         didPressNextButton selectedIndex: IndexPath
     ) {
-        <#code#>
+        guard selectedIndex.row <= selectAccountTableManager.accounts.count else { return }
+        let item = selectAccountTableManager.accounts[selectedIndex.row]
+        selectAccountDelegate?.selectAccountViewDidSelectAccountOption(item)
     }
 
     func selectAccountTableManager(

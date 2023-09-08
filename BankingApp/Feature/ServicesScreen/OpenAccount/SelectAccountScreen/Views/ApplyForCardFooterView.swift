@@ -120,6 +120,13 @@ extension ApplyForCardFooterView {
     @objc
     func nextButtonTapped() {
         if isButtonActivated {
+            UIView.animate(withDuration: 0.1) {
+                self.nextButton.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+            } completion: { _ in
+                UIView.animate(withDuration: 0.1) {
+                    self.nextButton.transform = CGAffineTransform.identity
+                }
+            }
             delegate?.viewDidPressNextButton(self)
         }
     }
