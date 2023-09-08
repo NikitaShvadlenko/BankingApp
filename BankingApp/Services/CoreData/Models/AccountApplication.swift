@@ -20,16 +20,26 @@ public final class AccountApplication: NSManagedObject {
     @NSManaged
     fileprivate(set) var monthlyFee: Double
 
+    @NSManaged
+    fileprivate(set) var applicationStatus: String
+
+    @NSManaged
+    fileprivate(set) var statusText: String
+
     static func insert(
         into context: NSManagedObjectContext,
         accountType: String,
-        monthlyFee: Double
+        monthlyFee: Double,
+        applicationStatus: String,
+        statusText: String
     ) {
         context.performChanges {
             let accountApplication: AccountApplication = context.insertObject()
             accountApplication.accountType = accountType
             accountApplication.monthlyFee = monthlyFee
             accountApplication.date = Date()
+            accountApplication.applicationStatus = applicationStatus
+            accountApplication.statusText = statusText
         }
     }
 }
