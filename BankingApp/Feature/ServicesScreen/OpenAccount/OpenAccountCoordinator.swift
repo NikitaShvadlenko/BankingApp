@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ApplyForCardCoordinator: Coordinator {
+final class OpenAccountCoordinator: Coordinator {
 
     var parentViewController: UIViewController
 

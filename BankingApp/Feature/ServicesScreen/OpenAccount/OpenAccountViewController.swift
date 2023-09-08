@@ -1,5 +1,5 @@
 //
-//  FormViewController.swift
+//  OpenAccountViewController.swift
 //  BankingApp
 //
 //  Created by Nikita Shvad on 07.09.2023.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FormViewController: UIViewController {
+class OpenAccountViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

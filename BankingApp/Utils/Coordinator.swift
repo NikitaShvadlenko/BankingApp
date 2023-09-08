@@ -13,7 +13,6 @@ protocol Coordinator: AnyObject {
     func start()
 }
 
-protocol Coordinating {
+protocol CoordinatorItem {
     var coordinator: Coordinator? { get set }
-    func setViewController(selectedPageNumber: Int, numberOfPages: Int )
 }

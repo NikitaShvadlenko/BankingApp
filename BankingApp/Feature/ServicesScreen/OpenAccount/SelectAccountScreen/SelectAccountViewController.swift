@@ -8,13 +8,13 @@
 
 import UIKit
 
-final class SelectAccountViewController: FormViewController {
+final class SelectAccountViewController: OpenAccountViewController {
 
     var presenter: SelectAccountViewOutput?
     weak var coordinator: Coordinator?
     let selectAccountView = ChooseAccountView()
 
-    init(coordinator: Coordinator) {
+    init(coordinator: OpenAccountCoordinator) {
         self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
@@ -48,7 +48,7 @@ extension SelectAccountViewController: SelectAccountViewInput {
 }
 
 // MARK: - Coordinating
-extension SelectAccountViewController: Coordinating {
+extension SelectAccountViewController: OpenAccountCoordinatorItem {
     func setViewController(selectedPageNumber: Int, numberOfPages: Int) {
         selectAccountView.configureView(
             title: L10n.Application.openAnAccount,
