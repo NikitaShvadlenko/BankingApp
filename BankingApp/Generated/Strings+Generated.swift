@@ -84,6 +84,22 @@ internal enum L10n {
     /// Choose an everyday account
     internal static let tableHeader = L10n.tr("Localizable", "Application.tableHeader", fallback: "Choose an everyday account")
   }
+  internal enum ApplicationResult {
+    /// Application failed
+    internal static let failed = L10n.tr("Localizable", "ApplicationResult.failed", fallback: "Application failed")
+    /// You must be a tax resident to apply
+    internal static let notResident = L10n.tr("Localizable", "ApplicationResult.notResident", fallback: "You must be a tax resident to apply")
+    /// Application successful
+    internal static let success = L10n.tr("Localizable", "ApplicationResult.success", fallback: "Application successful")
+    /// You must be over %@ to apply
+    internal static func underaged(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "ApplicationResult.underaged", String(describing: p1), fallback: "You must be over %@ to apply")
+    }
+    /// You must be over %@ to apply and be a tax resident
+    internal static func underagedAndNotResident(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "ApplicationResult.underagedAndNotResident", String(describing: p1), fallback: "You must be over %@ to apply and be a tax resident")
+    }
+  }
   internal enum NavigationBar {
     /// Log out
     internal static let loguot = L10n.tr("Localizable", "NavigationBar.loguot", fallback: "Log out")

@@ -57,3 +57,9 @@
 "Application.disclaimerMainPart" = "Product information is of a general nature and for information purposes only, ";
 "Application.disclaimerLinkPart" = "find out more";
 "Application.next" = "Next";
+
+"ApplicationResult.underaged" = "You must be over %@ to apply";
+"ApplicationResult.notResident" = "You must be a tax resident to apply";
+"ApplicationResult.underagedAndNotResident" = "You must be over %@ to apply and be a tax resident";
+"ApplicationResult.success" = "Application successful";
+"ApplicationResult.failed" = "Application failed";
