@@ -20,8 +20,28 @@ final class TaxResidentViewController: OpenAccountViewController {
         super.viewDidLoad()
 
     }
+
+    func setTaxResidentViewDelegate(_ delegate: TaxResidentViewDelegate) {
+        taxResidentView.delegate = delegate
+    }
 }
 
+// MARK: - TaxResidentViewDelegate
+extension TaxResidentViewController: TaxResidentViewDelegate {
+    func viewDidPressNextButton(_ view: TaxResidentView) {
+        print("Next button pressed")
+    }
+
+    func viewDidPressPreviousButton(_ view: TaxResidentView) {
+        navigationController?.popViewController(animated: true)
+    }
+
+    func selectionView(_ selectionView: SelectionView, didSelectOption: SelectionViewOption) {
+        print("Option selected")
+    }
+}
+
+// MARK: - OpenAccountCoordinatorItem
 extension TaxResidentViewController: OpenAccountCoordinatorItem {
     func setViewController(selectedPageNumber: Int, numberOfPages: Int) {
         taxResidentView.configureView(

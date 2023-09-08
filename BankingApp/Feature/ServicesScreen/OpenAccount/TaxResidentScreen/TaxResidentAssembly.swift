@@ -11,8 +11,7 @@ import UIKit
 enum TaxResidentAssembly {
     static func assemble() -> OpenAccountCoordinatorItem {
         let viewController = TaxResidentViewController()
-
+        viewController.setTaxResidentViewDelegate(viewController)
         return viewController
     }
 }
-

@@ -11,6 +11,7 @@ import UIKit
 protocol TaxResidentViewDelegate: AnyObject {
     func viewDidPressNextButton(_ view: TaxResidentView)
     func viewDidPressPreviousButton(_ view: TaxResidentView)
+    func selectionView(_ selectionView: SelectionView, didSelectOption: SelectionViewOption)
 }
 
 final class TaxResidentView: OpenAccountView {
@@ -48,7 +49,7 @@ final class TaxResidentView: OpenAccountView {
         button.layer.borderColor = Asset.Colors.applicationFormLabel.color.cgColor
         button.setTitleColor(Asset.Colors.applicationFormLabel.color, for: .normal)
         button.backgroundColor = Asset.Colors.primaryBackground.color
-        button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(previousButtonPressed), for: .touchUpInside)
         return button
     }()
 
@@ -83,11 +84,18 @@ final class TaxResidentView: OpenAccountView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureViews()
+        selectionView.delegate = self
     }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+// MARK: - SelectionViewDelegate
+extension TaxResidentView: SelectionViewDelegate {
+    func selectionView(_ selectionView: SelectionView, didSelectOption selectionViewOption: SelectionViewOption) {
+        delegate?.selectionView(selectionView, didSelectOption: selectionViewOption)
     }
 }
 

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SelectionViewDelegate: AnyObject {
-    func selectionView(_ selectionView: SelectionView, didSelectOption: SelectionViewOption)
+    func selectionView(_ selectionView: SelectionView, didSelectOption selectionViewOption: SelectionViewOption)
 }
 
 enum SelectionViewOption {
@@ -84,11 +84,15 @@ extension SelectionView {
             noButton.layer.borderColor =  Asset.Colors.secondaryLabel.color.cgColor
             yesButton.setTitleColor(Asset.Colors.titleSelectionSelected.color, for: .normal)
             noButton.setTitleColor(Asset.Colors.applicationFormLabel.color, for: .normal)
+            noButton.layer.borderWidth = 1
+            yesButton.layer.borderWidth = 2
         case .no:
             yesButton.layer.borderColor =  Asset.Colors.secondaryLabel.color.cgColor
             noButton.layer.borderColor = Asset.Colors.applicationFormLabel.color.cgColor
             yesButton.setTitleColor(Asset.Colors.applicationFormLabel.color, for: .normal)
             noButton.setTitleColor(Asset.Colors.titleSelectionSelected.color, for: .normal)
+            noButton.layer.borderWidth = 2
+            yesButton.layer.borderWidth = 1
         }
     }
 
