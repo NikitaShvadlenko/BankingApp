@@ -19,6 +19,7 @@ enum SelectAccountAssembly {
         viewController.setTableViewManager(tableViewManager)
         presenter.tableViewManager = tableViewManager
         presenter.accountDescriptionProvider = accountsDescriptionProvider
+        tableViewManager.delegate = presenter
         return viewController
     }
 }

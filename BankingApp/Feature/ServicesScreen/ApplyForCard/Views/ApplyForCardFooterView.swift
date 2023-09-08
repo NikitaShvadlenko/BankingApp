@@ -75,10 +75,11 @@ final class ApplyForCardFooterView: UITableViewHeaderFooterView {
 
 // MARK: - Public Methods
 extension ApplyForCardFooterView {
-    public func toggleNextButton() {
-        isButtonActivated.toggle()
+    public func configure(isButtonActivated: Bool) {
+        self.isButtonActivated = isButtonActivated
         nextButton.backgroundColor = isButtonActivated ?
         Asset.Colors.applicationFormLabel.color : Asset.Colors.nextButton.color
+        nextButton.isUserInteractionEnabled = isButtonActivated
     }
 }
 // MARK: - Private Methods

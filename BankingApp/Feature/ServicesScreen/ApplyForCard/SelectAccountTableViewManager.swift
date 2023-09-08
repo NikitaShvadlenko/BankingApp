@@ -12,21 +12,33 @@ protocol ManagesAccountSelectionTableView: UITableViewDataSource, UITableViewDel
     var accounts: [ApplicationAccountDescription] { get }
     var tableView: UITableView? { get set }
     func setAccounts(_ accounts: [ApplicationAccountDescription])
-    func toggleFooterNextButton(footerSectionIndex: Int)
+    func activateFooterNextButton(footerSectionIndex: Int)
+    func deactivateFooterNextButton(footerSectionIndex: Int)
 }
 
 protocol SelectAccountTableViewDelegate: AnyObject {
     func selectAccountTableManager(
         _ selectAccountTableManager: ManagesAccountSelectionTableView,
-        didSelectRowAt: IndexPath
+        didSelectRowAt indexPath: IndexPath
     )
+
     func selectAccountTableManager(
         _ selectAccountTableManager: ManagesAccountSelectionTableView,
-        didDeselectRowAt: IndexPath
+        didDeselectRowAt indexPath: IndexPath
     )
 }
 
 final class SelectAccountTableViewManager: NSObject {
+    private var isNextButtonActivated = false {
+        didSet {
+            guard
+                let footerIndex = nextButtonFooterSectionIndex,
+                let footerView = tableView?.footerView(forSection: footerIndex) as? ApplyForCardFooterView
+            else { return }
+            footerView.configure(isButtonActivated: isNextButtonActivated)
+        }
+    }
+    private var nextButtonFooterSectionIndex: Int?
     var accounts: [ApplicationAccountDescription] = []
     weak var tableView: UITableView?
     weak var delegate: SelectAccountTableViewDelegate?
@@ -34,11 +46,12 @@ final class SelectAccountTableViewManager: NSObject {
 
 // MARK: - ManagesAccountSelectionTableView
 extension SelectAccountTableViewManager: ManagesAccountSelectionTableView {
-    func toggleFooterNextButton(footerSectionIndex: Int) {
-        guard let footer = tableView?.footerView(forSection: footerSectionIndex) as? ApplyForCardFooterView else {
-            return
-        }
-        footer.toggleNextButton()
+    func activateFooterNextButton(footerSectionIndex: Int) {
+        isNextButtonActivated = true
+    }
+
+    func deactivateFooterNextButton(footerSectionIndex: Int) {
+        isNextButtonActivated = false
     }
 
     func setAccounts(_ accounts: [ApplicationAccountDescription]) {
@@ -76,8 +89,21 @@ extension SelectAccountTableViewManager: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: "\(ApplyForCardFooterView.self)")
+        guard let view = tableView.dequeueReusableHeaderFooterView(
+            withIdentifier: "\(ApplyForCardFooterView.self)"
+        ) as? ApplyForCardFooterView else { fatalError("Failed to dequeue cell") }
+        view.configure(isButtonActivated: isNextButtonActivated)
+        nextButtonFooterSectionIndex = section
         return view
+    }
+
+    func tableView(
+        _ tableView: UITableView,
+        willDisplayFooterView view: UIView,
+        forSection section: Int
+    ) {
+        guard let view = view as? ApplyForCardFooterView else { return }
+        view.configure(isButtonActivated: isNextButtonActivated)
     }
 
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {

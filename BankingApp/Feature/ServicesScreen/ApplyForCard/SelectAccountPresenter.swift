@@ -27,16 +27,15 @@ final class SelectAccountPresenter: SelectAccountViewOutput {
 extension SelectAccountPresenter: SelectAccountTableViewDelegate {
     func selectAccountTableManager(
         _ selectAccountTableManager: ManagesAccountSelectionTableView,
-        didSelectRowAt: IndexPath
+        didSelectRowAt indexPath: IndexPath
     ) {
-        tableViewManager?.toggleFooterNextButton(footerSectionIndex: )
+        selectAccountTableManager.activateFooterNextButton(footerSectionIndex: indexPath.section)
     }
 
     func selectAccountTableManager(
         _ selectAccountTableManager: ManagesAccountSelectionTableView,
-        didDeselectRowAt: IndexPath
+        didDeselectRowAt indexPath: IndexPath
     ) {
-        // ask viewController to cancel the button
+        selectAccountTableManager.deactivateFooterNextButton(footerSectionIndex: indexPath.section)
     }
-
 }
