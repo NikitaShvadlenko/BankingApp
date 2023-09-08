@@ -1,10 +1,13 @@
+"yes" = "Yes";
+"no" = "No";
+
 "TabBar.accounts" = "Accounts";
 "TabBar.payments" = "Payments";
 "TabBar.transfer" = "Transfer";
 "TabBar.services" = "Services";
 "TabBar.settings" = "Settings";
 
-"NavigationBar.loguot" = "Log out";
+"NavigationBar.logout" = "Log out";
 
 "AccountsScreen.title" = "Accounts";
 "AccountsScreen.somethigWentWrong" = "Something went wrong.";
@@ -56,12 +59,17 @@
 "Application.importantInformation" = "Important information:";
 "Application.disclaimerMainPart" = "Product information is of a general nature and for information purposes only, ";
 "Application.disclaimerLinkPart" = "find out more";
+
 "Application.next" = "Next";
+"Application.previous" = "Previous";
 
 "Application.residencyStatus" = "Residency status";
+"Application.taxDetailsTitle" = "Update tax details";
+"Application.taxDetailsDescription" = "Are you a New Zealand tax resident?";
 
 "ApplicationResult.underaged" = "You must be over %@ to apply";
 "ApplicationResult.notResident" = "You must be a tax resident to apply";
 "ApplicationResult.underagedAndNotResident" = "You must be over %@ to apply and be a tax resident";
 "ApplicationResult.success" = "Application successful";
 "ApplicationResult.failed" = "Application failed";
+

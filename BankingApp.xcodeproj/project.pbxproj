@@ -132,6 +132,7 @@
 		D2CAEA6095B708666532AB27 /* SelectAccountTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48537CB0B41028B889A2BB /* SelectAccountTableViewManager.swift */; };
 		D41782153CFC184E5D585373 /* ShareLabelConstraintStrategyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFD8D952125F6048513C0D /* ShareLabelConstraintStrategyFactory.swift */; };
 		D67CBF97D2E8425F7FC3D644 /* TransactionDetailScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D612BA786A48FFA8C984A73 /* TransactionDetailScreenAssembly.swift */; };
+		D6A27B85FAEAF6F46F845743 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F1B7C9BCBD53F7363C8D49 /* SelectionView.swift */; };
 		D6C9E142F815FEFD2C529DF9 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */; };
 		DBB9733DF9A9D8A588F2B5F7 /* AccountOverviewTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE4A771DBEE2B7B59165FCE /* AccountOverviewTextCell.swift */; };
 		DF09638FE4A01ED61D06BD51 /* TransactionPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750FD50D34C88B8331F8418 /* TransactionPagingView.swift */; };
@@ -282,6 +283,7 @@
 		C2784E307A13A8C48436C19D /* AccountsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenInteractor.swift; sourceTree = "<group>"; };
 		C349B32B3C2098E7FBCCAC8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C488BDF51D3D365BD40C4266 /* ShareLabelConstraintStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLabelConstraintStrategy.swift; sourceTree = "<group>"; };
+		C8F1B7C9BCBD53F7363C8D49 /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 		C9175CCB7C97D8A01CAEE853 /* AccountDetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailScreenViewController.swift; sourceTree = "<group>"; };
 		CB32801D13EF28D459296F46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB896695F1F384A2AD302A1F /* TransactionDetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailScreenViewController.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 		2E56CCA8327F47B0C5072AA3 /* TaxResidentScreen */ = {
 			isa = PBXGroup;
 			children = (
+				C8F1B7C9BCBD53F7363C8D49 /* SelectionView.swift */,
 				FEAFF02533036841FA85F21C /* TaxResidentAssembly.swift */,
 				44440042F62227323106CD3C /* TaxResidentView.swift */,
 				F25B6F1912235E2F2054D6DD /* TaxResidentViewController.swift */,
@@ -793,32 +796,32 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		"TEMP_6D2DEC70-5FC0-4F40-9819-00F11FD3323E" /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Packages;
-			sourceTree = "<group>";
-		};
-		"TEMP_945BB208-59BF-44F0-852F-8E87802C3C13" /* SharedResources */ = {
+		"TEMP_635BE1DA-94A3-4E43-8D6B-8CD9D109855A" /* SharedResources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = SharedResources;
 			sourceTree = "<group>";
 		};
-		"TEMP_E1A10DC1-E44C-4082-894C-7CAD45A16EA5" /* Sources */ = {
+		"TEMP_73E3265A-0C72-4386-89EF-4D93EF32CB59" /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		"TEMP_FEB7E008-C58C-4BC0-A2CC-FCCA7198C10E" /* SharedResources */ = {
+		"TEMP_742AC28A-1715-48B9-9B72-59EE240D17C4" /* SharedResources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = SharedResources;
+			sourceTree = "<group>";
+		};
+		"TEMP_E337328F-776F-4A93-9A52-44F0DBC303C4" /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1017,6 +1020,7 @@
 				C91F3E1F13854B2D092AF1C4 /* SelectAccountTableHeader.swift in Sources */,
 				D2CAEA6095B708666532AB27 /* SelectAccountTableViewManager.swift in Sources */,
 				49470D83D54623A599058849 /* SelectAccountViewController.swift in Sources */,
+				D6A27B85FAEAF6F46F845743 /* SelectionView.swift in Sources */,
 				D0D5F7A4FAF735A1C98938EA /* SeparatorView.swift in Sources */,
 				9D9BE43890557C08719B4A7F /* ServicesScreenAssembly.swift in Sources */,
 				5DFC33DF32A7B0ADE44EDF74 /* ServicesScreenView.swift in Sources */,

@@ -76,7 +76,7 @@ extension AccountsScreenViewController {
 
     private func setRightNavigationItem() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: L10n.NavigationBar.loguot,
+            title: L10n.NavigationBar.logout,
             style: .plain,
             target: self,
             action: #selector (didTapLogoutBarButton)

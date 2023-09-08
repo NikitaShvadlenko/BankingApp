@@ -14,6 +14,10 @@ internal enum L10n {
   internal static func amountAvailible(_ p1: Any) -> String {
     return L10n.tr("Localizable", "AmountAvailible", String(describing: p1), fallback: "%@ Availible")
   }
+  /// No
+  internal static let no = L10n.tr("Localizable", "no", fallback: "No")
+  /// Yes
+  internal static let yes = L10n.tr("Localizable", "yes", fallback: "Yes")
   internal enum AccountDetail {
     /// Account details
     internal static let accountDetails = L10n.tr("Localizable", "AccountDetail.accountDetails", fallback: "Account details")
@@ -81,10 +85,16 @@ internal enum L10n {
     }
     /// Open an account
     internal static let openAnAccount = L10n.tr("Localizable", "Application.openAnAccount", fallback: "Open an account")
+    /// Previous
+    internal static let previous = L10n.tr("Localizable", "Application.previous", fallback: "Previous")
     /// Residency status
     internal static let residencyStatus = L10n.tr("Localizable", "Application.residencyStatus", fallback: "Residency status")
     /// Choose an everyday account
     internal static let tableHeader = L10n.tr("Localizable", "Application.tableHeader", fallback: "Choose an everyday account")
+    /// Are you a New Zealand tax resident?
+    internal static let taxDetailsDescription = L10n.tr("Localizable", "Application.taxDetailsDescription", fallback: "Are you a New Zealand tax resident?")
+    /// Update tax details
+    internal static let taxDetailsTitle = L10n.tr("Localizable", "Application.taxDetailsTitle", fallback: "Update tax details")
   }
   internal enum ApplicationResult {
     /// Application failed
@@ -104,7 +114,7 @@ internal enum L10n {
   }
   internal enum NavigationBar {
     /// Log out
-    internal static let loguot = L10n.tr("Localizable", "NavigationBar.loguot", fallback: "Log out")
+    internal static let logout = L10n.tr("Localizable", "NavigationBar.logout", fallback: "Log out")
   }
   internal enum OverlayScreen {
     /// ANZgoMoney.

@@ -36,6 +36,7 @@ internal enum Asset {
     internal static let secondaryLabel = ColorAsset(name: "secondaryLabel")
     internal static let segmentedControlSelector = ColorAsset(name: "segmentedControlSelector")
     internal static let shareLink = ColorAsset(name: "shareLink")
+    internal static let titleSelectionSelected = ColorAsset(name: "titleSelectionSelected")
     internal static let transactionsTableViewLabel = ColorAsset(name: "transactionsTableViewLabel")
     internal static let viewTitle = ColorAsset(name: "viewTitle")
   }
