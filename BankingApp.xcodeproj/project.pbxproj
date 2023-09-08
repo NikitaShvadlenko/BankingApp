@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -96,6 +96,11 @@
 		AB54D0ECFC20003C63EAA6C7 /* OverlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B76A18E45A995308D783A3E /* OverlayManager.swift */; };
 		AEEE51CC00DECEB45728E1CE /* TransactionDetailScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EF9DA026BE903282DD2FB /* TransactionDetailScreenPresenter.swift */; };
 		B2542C12A794DEBE9BDA5874 /* AccountOverviewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DBDEA678FB2A5D33CED35 /* AccountOverviewImageCell.swift */; };
+		B4F2DE252AAAE61400B0D1C6 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE242AAAE61400B0D1C6 /* CoreDataService.swift */; };
+		B4F2DE282AAAE68C00B0D1C6 /* OpenAccountDataStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE262AAAE68C00B0D1C6 /* OpenAccountDataStorage.xcdatamodeld */; };
+		B4F2DE2A2AAAE7B800B0D1C6 /* Managed+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE292AAAE7B800B0D1C6 /* Managed+Extensions.swift */; };
+		B4F2DE2C2AAAE7D400B0D1C6 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE2B2AAAE7D400B0D1C6 /* NSManagedObjectContext+Extensions.swift */; };
+		B4F2DE2F2AAAE83700B0D1C6 /* AccountApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE2E2AAAE83700B0D1C6 /* AccountApplication.swift */; };
 		B8A6494D87F24B3A31526EF9 /* AccountsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC96BFCA2DACD0702FEC5F3 /* AccountsScreenViewController.swift */; };
 		B939469ACF4BF846DCA30102 /* AccountOverviewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8CCCCCD3085AC6E57DCAF /* AccountOverviewCellProtocol.swift */; };
 		BC5E8D661AAE1A743BB160CF /* AccountDetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09A51439A80ED394D36C215 /* AccountDetailScreenView.swift */; };
@@ -245,6 +250,11 @@
 		B153799168FF3C4F5F2E8276 /* FirebaseCollectionKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionKeys.swift; sourceTree = "<group>"; };
 		B27E82CEF87579C01E6E0881 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		B4F2DE242AAAE61400B0D1C6 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		B4F2DE272AAAE68C00B0D1C6 /* OpenAccountDataStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OpenAccountDataStorage.xcdatamodel; sourceTree = "<group>"; };
+		B4F2DE292AAAE7B800B0D1C6 /* Managed+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Managed+Extensions.swift"; sourceTree = "<group>"; };
+		B4F2DE2B2AAAE7D400B0D1C6 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
+		B4F2DE2E2AAAE83700B0D1C6 /* AccountApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountApplication.swift; sourceTree = "<group>"; };
 		B74ED66C588F5C2944D8324A /* ImageDownloaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderProtocol.swift; sourceTree = "<group>"; };
 		B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		BC7027B40EF891D83330EC57 /* ImageFirstConstraintStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFirstConstraintStrategy.swift; sourceTree = "<group>"; };
@@ -609,6 +619,26 @@
 			path = ShareLabel;
 			sourceTree = "<group>";
 		};
+		B4F2DE232AAAE5A600B0D1C6 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B4F2DE242AAAE61400B0D1C6 /* CoreDataService.swift */,
+				B4F2DE292AAAE7B800B0D1C6 /* Managed+Extensions.swift */,
+				B4F2DE2B2AAAE7D400B0D1C6 /* NSManagedObjectContext+Extensions.swift */,
+				B4F2DE2D2AAAE82900B0D1C6 /* Models */,
+				B4F2DE262AAAE68C00B0D1C6 /* OpenAccountDataStorage.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		B4F2DE2D2AAAE82900B0D1C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B4F2DE2E2AAAE83700B0D1C6 /* AccountApplication.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BC6D02584F8B0EF5CD254F73 /* UserDefaultsStorage */ = {
 			isa = PBXGroup;
 			children = (
@@ -675,6 +705,7 @@
 				9F9669C557DE73C8AF50064D /* AccountsProvider */,
 				6C75B19DAFFC00501A4BEB9D /* ApplicationAccountDescriptionProvider */,
 				8EAB999723078F589B242745 /* PlaceholderStore */,
+				B4F2DE232AAAE5A600B0D1C6 /* CoreData */,
 				7178FB188AAD99C188A398D7 /* Session */,
 				BC6D02584F8B0EF5CD254F73 /* UserDefaultsStorage */,
 			);
@@ -703,34 +734,6 @@
 				4DB2B0D76D274B4E67509B3F /* SelectAccountTableHeader.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		"TEMP_056A2BC9-F11A-4138-9071-C065B2B284F8" /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		"TEMP_5F787C85-0C4E-4FA4-B0CF-9DE1F240B515" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_74F11EE3-5E35-4195-9218-3770E480FE4B" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_D7DC4C48-BBB1-4914-B1A1-9BA671E5C7AD" /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -862,11 +865,13 @@
 				BC9601F0E786464FFC5B41A3 /* AccountsScreenPresenter.swift in Sources */,
 				01233E32F64D0B8A9A199D12 /* AccountsScreenRouter.swift in Sources */,
 				CA97BBB814E1FB5627EDEE17 /* AccountsScreenTableManager.swift in Sources */,
+				B4F2DE2C2AAAE7D400B0D1C6 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				E1A61A03881E8A28D054728B /* AccountsScreenView.swift in Sources */,
 				B8A6494D87F24B3A31526EF9 /* AccountsScreenViewController.swift in Sources */,
 				596DBCC810996D4D9C9F7CA9 /* AccountsSessionApi.swift in Sources */,
 				33E2F3D09DE5394376798C2F /* AppDelegate.swift in Sources */,
 				57F28497D0A31627E3B77DA0 /* ApplicationAccountDescription.swift in Sources */,
+				B4F2DE2A2AAAE7B800B0D1C6 /* Managed+Extensions.swift in Sources */,
 				7281B4C4E22500C0B3F1CEF1 /* ApplicationAccountDescriptionProvider.swift in Sources */,
 				260B894C20C46D10437AA76B /* ApplyForCardCoordinator.swift in Sources */,
 				88FC58C0A6B0426F9F2EC354 /* ApplyForCardFooterView.swift in Sources */,
@@ -896,10 +901,12 @@
 				DC80C1ED70D95FE24367FD24 /* OpenAccountPageView.swift in Sources */,
 				AB54D0ECFC20003C63EAA6C7 /* OverlayManager.swift in Sources */,
 				1D45A70C65D7647E1EF371CE /* OverlayView.swift in Sources */,
+				B4F2DE282AAAE68C00B0D1C6 /* OpenAccountDataStorage.xcdatamodeld in Sources */,
 				F643C891F4BBA56D5C3B4E28 /* PaymentsScreenAssembly.swift in Sources */,
 				86C62C752820F6EFB33934C8 /* PaymentsScreenContract.swift in Sources */,
 				5A4C2DAFBB0145B1E1FB0455 /* PaymentsScreenInteractor.swift in Sources */,
 				4E15C016CBFE79DC891D75D5 /* PaymentsScreenPresenter.swift in Sources */,
+				B4F2DE2F2AAAE83700B0D1C6 /* AccountApplication.swift in Sources */,
 				FAC3A9A7B02744148B6922E8 /* PaymentsScreenRouter.swift in Sources */,
 				E042F716E513528C3EFD7FE7 /* PaymentsScreenView.swift in Sources */,
 				1134C238897F008DAF8381ED /* PaymentsScreenViewController.swift in Sources */,
@@ -940,6 +947,7 @@
 				68D39199D4A56D72E877FFC1 /* TabBarItemType.swift in Sources */,
 				1D703558263CA421C90C5BE0 /* TransactionCollectionViewCell.swift in Sources */,
 				28103E60324ED2D3AA2DE70E /* TransactionDetailCollecitonManager.swift in Sources */,
+				B4F2DE252AAAE61400B0D1C6 /* CoreDataService.swift in Sources */,
 				D67CBF97D2E8425F7FC3D644 /* TransactionDetailScreenAssembly.swift in Sources */,
 				972BEDF7B4C8CD352AB6BC14 /* TransactionDetailScreenContract.swift in Sources */,
 				A250C0365569AD46FE74BC89 /* TransactionDetailScreenInteractor.swift in Sources */,
@@ -1210,6 +1218,19 @@
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		B4F2DE262AAAE68C00B0D1C6 /* OpenAccountDataStorage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B4F2DE272AAAE68C00B0D1C6 /* OpenAccountDataStorage.xcdatamodel */,
+			);
+			currentVersion = B4F2DE272AAAE68C00B0D1C6 /* OpenAccountDataStorage.xcdatamodel */;
+			path = OpenAccountDataStorage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F1DB1F22DA3956BBD6A4C6F5 /* Project object */;
 }

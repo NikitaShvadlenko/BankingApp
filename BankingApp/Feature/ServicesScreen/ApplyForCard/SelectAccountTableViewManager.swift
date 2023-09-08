@@ -26,6 +26,11 @@ protocol SelectAccountTableViewDelegate: AnyObject {
         _ selectAccountTableManager: ManagesAccountSelectionTableView,
         didDeselectRowAt indexPath: IndexPath
     )
+
+    func selectAccountTableManager(
+    _ selectAccountTableManager: ManagesAccountSelectionTableView,
+    didPressNextButton selectedIndex: IndexPath
+    )
 }
 
 final class SelectAccountTableViewManager: NSObject {
@@ -93,6 +98,7 @@ extension SelectAccountTableViewManager: UITableViewDelegate {
             withIdentifier: "\(ApplyForCardFooterView.self)"
         ) as? ApplyForCardFooterView else { fatalError("Failed to dequeue cell") }
         view.configure(isButtonActivated: isNextButtonActivated)
+        view.delegate = self
         nextButtonFooterSectionIndex = section
         return view
     }
@@ -121,4 +127,12 @@ extension SelectAccountTableViewManager: UITableViewDelegate {
         delegate?.selectAccountTableManager(self, didSelectRowAt: indexPath)
     }
 
+}
+
+// MARK: - ApplyForCardFooterDelegate
+extension SelectAccountTableViewManager: ApplyForCardFooterDelegate {
+    func viewDidPressNextButton(_ view: ApplyForCardFooterView) {
+        guard let index = tableView?.indexPathForSelectedRow else { return }
+        delegate?.selectAccountTableManager(self, didPressNextButton: index)
+    }
 }

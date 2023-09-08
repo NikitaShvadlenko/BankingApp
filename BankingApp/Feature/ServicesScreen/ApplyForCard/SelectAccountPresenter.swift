@@ -27,6 +27,13 @@ final class SelectAccountPresenter: SelectAccountViewOutput {
 extension SelectAccountPresenter: SelectAccountTableViewDelegate {
     func selectAccountTableManager(
         _ selectAccountTableManager: ManagesAccountSelectionTableView,
+        didPressNextButton selectedIndex: IndexPath
+    ) {
+        <#code#>
+    }
+
+    func selectAccountTableManager(
+        _ selectAccountTableManager: ManagesAccountSelectionTableView,
         didSelectRowAt indexPath: IndexPath
     ) {
         selectAccountTableManager.activateFooterNextButton(footerSectionIndex: indexPath.section)
