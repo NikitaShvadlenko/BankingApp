@@ -66,7 +66,8 @@
 "Application.residencyStatus" = "Residency status";
 "Application.taxDetailsTitle" = "Update tax details";
 "Application.ageCheck" = "Age check";
-"Application.selectYourAge" = "Select your date of birth";
+"Application.selectYourAge" = "Select your date of birth:";
+"Application.yourDateOfBirthIs" = "Date of birth:";
 
 "Application.taxDetailsDescription" = "Are you a New Zealand tax resident?";
 

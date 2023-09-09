@@ -91,14 +91,16 @@ internal enum L10n {
     internal static let previous = L10n.tr("Localizable", "Application.previous", fallback: "Previous")
     /// Residency status
     internal static let residencyStatus = L10n.tr("Localizable", "Application.residencyStatus", fallback: "Residency status")
-    /// Select your age
-    internal static let selectYourAge = L10n.tr("Localizable", "Application.selectYourAge", fallback: "Select your age")
+    /// Select your date of birth:
+    internal static let selectYourAge = L10n.tr("Localizable", "Application.selectYourAge", fallback: "Select your date of birth:")
     /// Choose an everyday account
     internal static let tableHeader = L10n.tr("Localizable", "Application.tableHeader", fallback: "Choose an everyday account")
     /// Are you a New Zealand tax resident?
     internal static let taxDetailsDescription = L10n.tr("Localizable", "Application.taxDetailsDescription", fallback: "Are you a New Zealand tax resident?")
     /// Update tax details
     internal static let taxDetailsTitle = L10n.tr("Localizable", "Application.taxDetailsTitle", fallback: "Update tax details")
+    /// Date of birth:
+    internal static let yourDateOfBirthIs = L10n.tr("Localizable", "Application.yourDateOfBirthIs", fallback: "Date of birth:")
   }
   internal enum ApplicationResult {
     /// Application failed

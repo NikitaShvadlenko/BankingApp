@@ -827,28 +827,28 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		"TEMP_4E87A6A0-5326-4742-AB55-A5D12A770F84" /* Sources */ = {
+		"TEMP_40A46576-4C36-4646-ADE9-45C405851C24" /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		"TEMP_8968CE77-7138-4739-86BB-DCD2903545E5" /* SharedResources */ = {
+		"TEMP_854562DB-FC4A-4FE0-A3A4-EFDFA0FE9AFC" /* SharedResources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = SharedResources;
 			sourceTree = "<group>";
 		};
-		"TEMP_B98D2BC8-28DB-4324-8D6A-8874C747553C" /* Packages */ = {
+		"TEMP_AE6BA405-C3D9-4FD5-9943-667402BA950D" /* Packages */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Packages;
 			sourceTree = "<group>";
 		};
-		"TEMP_FD017988-330F-49CE-A182-1A5612521A06" /* SharedResources */ = {
+		"TEMP_E5108880-AABA-4164-9A28-14505340B0F7" /* SharedResources */ = {
 			isa = PBXGroup;
 			children = (
 			);
