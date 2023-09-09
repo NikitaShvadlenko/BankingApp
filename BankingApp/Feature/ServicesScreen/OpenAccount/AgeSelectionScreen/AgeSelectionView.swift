@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class AgeSelectionView: OpenAccountView  {
+final class AgeSelectionView: OpenAccountView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureViews()
