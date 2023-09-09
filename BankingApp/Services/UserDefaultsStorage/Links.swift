@@ -9,5 +9,6 @@
 import Foundation
 
 enum Links: String {
-    case anzLink = "https://www.anz.co.nz/personal/"
+    case anz = "https://www.anz.co.nz/personal/"
+    case generalTerms = "https://www.anz.co.nz/rates-fees-agreements/general-terms-conditions/"
 }

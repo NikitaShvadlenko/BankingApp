@@ -6,11 +6,12 @@
 //  Copyright © 2023 Nikita Shvadlenko. All rights reserved.
 //
 
+import UIKit.UIFont
 import Foundation
 
 extension String {
 
-     func formattedAsAcount() -> String {
+    func formattedAsAcount() -> String {
         var result = ""
 
         let chunkLengths = [2, 4, 7, 2]
@@ -33,5 +34,25 @@ extension String {
             currentIndex += chunkLength
         }
         return result
+    }
+
+    func bulletPointStyle(bulletPointFont: UIFont, textFont: UIFont) -> NSAttributedString {
+        let bulletPointAttributes: [NSAttributedString.Key: Any] = [
+            .font: bulletPointFont
+        ]
+        let textAttributes: [NSAttributedString.Key: Any] = [
+            .font: textFont
+        ]
+        let bulletPointString = NSMutableAttributedString()
+        let bulletPoints = self.split(separator: "\n")
+        for bullet in bulletPoints {
+            let bulletAttributedString = NSMutableAttributedString(string: "• ", attributes: bulletPointAttributes)
+            let textAttributedString = NSAttributedString(string: String(bullet) + "\n", attributes: textAttributes)
+
+            bulletAttributedString.append(textAttributedString)
+            bulletPointString.append(bulletAttributedString)
+        }
+
+        return bulletPointString
     }
 }

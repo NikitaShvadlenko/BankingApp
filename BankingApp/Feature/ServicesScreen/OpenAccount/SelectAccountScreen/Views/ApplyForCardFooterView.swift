@@ -31,7 +31,7 @@ final class ApplyForCardFooterView: UITableViewHeaderFooterView {
         let linkView = LinkTextView(
             mainPart: L10n.Application.disclaimerMainPart,
             linkPart: L10n.Application.disclaimerLinkPart,
-            link: Links.anzLink.rawValue,
+            link: Links.anz.rawValue,
             trailingPart: "."
         )
         linkView.configureView(

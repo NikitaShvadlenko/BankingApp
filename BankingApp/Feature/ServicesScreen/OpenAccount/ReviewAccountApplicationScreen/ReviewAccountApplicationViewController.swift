@@ -13,8 +13,34 @@ final class ReviewAccountApplicationViewController: OpenAccountViewController {
     weak var delegate: ReviewAccountApplicationDelegate?
     weak var coordinator: Coordinator?
     let reviewAccountApplicationView = ReviewAccountApplicationView()
+
+    let accountName: String
+    let taxResidencyStatus: String
+    let dateOfBirth: Date
+
+    init(accountName: String, taxResidencyStatus: String, dateOfBirth: Date) {
+        self.accountName = accountName
+        self.taxResidencyStatus = taxResidencyStatus
+        self.dateOfBirth = dateOfBirth
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("Not implemented")
+    }
+
     override func loadView() {
         view = reviewAccountApplicationView
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        reviewAccountApplicationView.configure(
+            accountName: accountName,
+            taxResidencyStatus: taxResidencyStatus,
+            dateOfBirth: dateOfBirth
+        )
     }
 }
 

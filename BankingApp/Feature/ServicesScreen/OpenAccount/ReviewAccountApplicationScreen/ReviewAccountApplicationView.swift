@@ -15,6 +15,8 @@ final class ReviewAccountApplicationView: OpenAccountView {
         configureViews()
     }
 
+    let reviewAccountApplicationDisclaimerView = ReviewAccountApplicationDisclaimerView()
+
     private lazy var scrollViewContentView: UIView = {
         let view = UIView()
         return view
@@ -35,7 +37,8 @@ final class ReviewAccountApplicationView: OpenAccountView {
         [
             accountDetailsTitleLabel,
             accountChosenLabel,
-            accountNameLabel
+            accountNameLabel,
+            reviewAccountApplicationDisclaimerView
         ].forEach(view.addSubview)
         return view
     }()
@@ -116,6 +119,8 @@ final class ReviewAccountApplicationView: OpenAccountView {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 18)
         label.textAlignment = .natural
+        label.numberOfLines = 0
+        label.textColor = Asset.Colors.primaryLabel.color
         return label
     }()
 
@@ -127,12 +132,19 @@ final class ReviewAccountApplicationView: OpenAccountView {
 
 // MARK: - Public methods
 extension ReviewAccountApplicationView {
-    public func configure(accountName: String, isTaxResident: Bool, dateOfBirth: Date) {
+    public func configure(accountName: String, taxResidencyStatus: String, dateOfBirth: Date) {
         accountNameLabel.text = accountName
+        taxResidencyLabel.text = taxResidencyStatus
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateStyle = .long
+        let formattedDate = dateFormatter.string(from: dateOfBirth)
+        dateOfBirthLabel.text = L10n.ApplicationReview.dateOfBirth(formattedDate)
     }
 }
 // MARK: - Private methods
 extension ReviewAccountApplicationView {
+    // swiftlint:disable function_body_length
     private func configureViews() {
         backgroundColor = Asset.Colors.primaryBackground.color
         contentView.addSubview(scrollView)
@@ -166,6 +178,12 @@ extension ReviewAccountApplicationView {
             make.leading.trailing.equalTo(scrollViewContentView).inset(20)
         }
 
+        reviewAccountApplicationDisclaimerView.snp.makeConstraints { make in
+            make.top.equalTo(dateOfBirthContainerView.snp.bottom).offset(20)
+            make.leading.trailing.equalTo(scrollViewContentView).inset(20)
+            make.bottom.equalTo(scrollViewContentView).inset(20)
+        }
+        
         accountDetailsTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(accountDetailsContainerView).inset(20)
             make.leading.trailing.equalTo(accountDetailsContainerView).inset(20)
@@ -177,8 +195,8 @@ extension ReviewAccountApplicationView {
         }
 
         accountNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(accountChosenLabel.snp.bottom)
-            make.leading.trailing.equalTo(accountNameLabel)
+            make.top.equalTo(accountChosenLabel.snp.bottom).offset(10)
+            make.leading.trailing.equalTo(accountChosenLabel)
             make.bottom.equalTo(accountDetailsContainerView).inset(20)
         }
 

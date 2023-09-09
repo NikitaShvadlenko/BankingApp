@@ -127,6 +127,10 @@ internal enum L10n {
     }
   }
   internal enum ApplicationReview {
+    /// If you've given someone else access to all of your accounts, then they'll also have access to this new account. /nTo set up an account with different access rules, you'll need to contact us.
+    internal static let accountAccessDetails = L10n.tr("Localizable", "ApplicationReview.accountAccessDetails", fallback: "If you've given someone else access to all of your accounts, then they'll also have access to this new account. /nTo set up an account with different access rules, you'll need to contact us.")
+    /// Account access
+    internal static let accountAccessTitle = L10n.tr("Localizable", "ApplicationReview.accountAccessTitle", fallback: "Account access")
     /// Account chosen
     internal static let accountChosen = L10n.tr("Localizable", "ApplicationReview.accountChosen", fallback: "Account chosen")
     /// Account details
@@ -137,12 +141,37 @@ internal enum L10n {
     internal static func dateOfBirth(_ p1: Any) -> String {
       return L10n.tr("Localizable", "ApplicationReview.dateOfBirth", String(describing: p1), fallback: "Your date of birth is %@.")
     }
+    /// You have authority to provide this information and that it is true and complete. By opening this account you agree to the 
+    internal static let firstPartOfLinkLabel = L10n.tr("Localizable", "ApplicationReview.firstPartOfLinkLabel", fallback: "You have authority to provide this information and that it is true and complete. By opening this account you agree to the ")
+    /// You'll provide any extra information we need about your tax residency, if asked.
+    internal static let firstPoint = L10n.tr("Localizable", "ApplicationReview.firstPoint", fallback: "You'll provide any extra information we need about your tax residency, if asked.")
+    /// As an account holder, you confirm and declare that:
+    internal static let importantInformation = L10n.tr("Localizable", "ApplicationReview.importantInformation", fallback: "As an account holder, you confirm and declare that:")
+    /// 
+    /// %@
+    /// %@
+    /// %@
+    internal static func importantInformationBulletPoints(_ p1: Any, _ p2: Any, _ p3: Any) -> String {
+      return L10n.tr("Localizable", "ApplicationReview.importantInformationBulletPoints", String(describing: p1), String(describing: p2), String(describing: p3), fallback: "\n%@\n%@\n%@")
+    }
+    /// Important information
+    internal static let importantInformationTitle = L10n.tr("Localizable", "ApplicationReview.importantInformationTitle", fallback: "Important information")
+    /// ANZ General Terms and Conditions 
+    internal static let linkPart = L10n.tr("Localizable", "ApplicationReview.linkPart", fallback: "ANZ General Terms and Conditions ")
     /// Not a New Zealand Resident.
     internal static let notResident = L10n.tr("Localizable", "ApplicationReview.notResident", fallback: "Not a New Zealand Resident.")
+    /// Open account
+    internal static let openAccount = L10n.tr("Localizable", "ApplicationReview.openAccount", fallback: "Open account")
     /// New Zealand tax resident.
     internal static let resident = L10n.tr("Localizable", "ApplicationReview.resident", fallback: "New Zealand tax resident.")
+    /// The current residential address information we have for you is correct.
+    internal static let secondPoint = L10n.tr("Localizable", "ApplicationReview.secondPoint", fallback: "The current residential address information we have for you is correct.")
     /// Your tax details
     internal static let taxDetails = L10n.tr("Localizable", "ApplicationReview.taxDetails", fallback: "Your tax details")
+    /// You'll contact us if any of the information you have provided changes.
+    internal static let thirdPoint = L10n.tr("Localizable", "ApplicationReview.thirdPoint", fallback: "You'll contact us if any of the information you have provided changes.")
+    /// that apply to accounts.
+    internal static let trailingPart = L10n.tr("Localizable", "ApplicationReview.trailingPart", fallback: "that apply to accounts.")
   }
   internal enum NavigationBar {
     /// Log out

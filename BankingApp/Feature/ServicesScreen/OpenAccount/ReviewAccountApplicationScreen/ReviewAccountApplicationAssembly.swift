@@ -11,9 +11,16 @@ import Foundation
 enum ReviewAccountApplicationAssembly {
     static func assemble(
         coordinator: OpenAccountCoordinator,
-        delegate: ReviewAccountApplicationDelegate
+        delegate: ReviewAccountApplicationDelegate,
+        dateOfBirth: Date,
+        taxDetails: String,
+        accountName: String
     ) -> OpenAccountCoordinatorItem {
-        let viewController = ReviewAccountApplicationViewController()
+        let viewController = ReviewAccountApplicationViewController(
+            accountName: accountName,
+            taxResidencyStatus: taxDetails,
+            dateOfBirth: dateOfBirth
+        )
         viewController.coordinator = coordinator
         viewController.delegate = delegate
         return viewController

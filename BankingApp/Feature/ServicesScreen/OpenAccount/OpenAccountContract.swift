@@ -13,10 +13,12 @@ protocol OpenAccountInteractorInput {
     func addTaxResidentStatus(_ isTaxResident: Bool)
     func addDateOfBirth(_ dateOfBirth: Date)
     func saveApplication()
+    func fetchApplicationDetails()
 }
 
 protocol OpenAccountInteractorOutput: AnyObject {
     func interactorDidSetAccountDetails()
     func interactorDidSetTaxResidency()
     func interactorDidSetAge()
+    func interactorDidFetchAccountReviewDetails(dateOfBirth: Date, taxDetails: String, accountName: String)
 }

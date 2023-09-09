@@ -14,6 +14,23 @@ final class OpenAccountInteractor {
 }
 
 extension OpenAccountInteractor: OpenAccountInteractorInput {
+    func fetchApplicationDetails() {
+        guard
+        let dateOfBirth = builder?.dateOfBirth,
+        let isTaxResident = builder?.isTaxResident,
+        let accountName = builder?.accountType
+        else {
+            return
+        }
+        var taxDetails: String
+        taxDetails = isTaxResident ? L10n.ApplicationReview.resident : L10n.ApplicationReview.notResident
+        coordinator?.interactorDidFetchAccountReviewDetails(
+            dateOfBirth: dateOfBirth,
+            taxDetails: taxDetails,
+            accountName: accountName
+        )
+    }
+
     func addDateOfBirth(_ dateOfBirth: Date) {
         builder?.setDateOfBirth(dateOfBirth)
         coordinator?.interactorDidSetAge()

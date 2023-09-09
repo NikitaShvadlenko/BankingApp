@@ -30,13 +30,20 @@ final class OpenAccountCoordinator: Coordinator {
 
 // MARK: - OpenAccountInteractorOutput
 extension OpenAccountCoordinator: OpenAccountInteractorOutput {
-    func interactorDidSetAge() {
+    func interactorDidFetchAccountReviewDetails(dateOfBirth: Date, taxDetails: String, accountName: String) {
         let viewController = ReviewAccountApplicationAssembly.assemble(
             coordinator: self,
-            delegate: self
+            delegate: self,
+            dateOfBirth: dateOfBirth,
+            taxDetails: taxDetails,
+            accountName: accountName
         )
         viewController.setViewController(selectedPageNumber: 4, numberOfPages: totalNumberOfPages)
         parentViewController.navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    func interactorDidSetAge() {
+        interactor?.fetchApplicationDetails()
     }
 
     func interactorDidSetTaxResidency() {
