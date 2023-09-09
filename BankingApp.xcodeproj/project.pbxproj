@@ -42,6 +42,8 @@
 		336CC4CB1D032FDF5CC53080 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 55E8EB8F79A115BB0EAD015C /* FirebaseFirestore */; };
 		33E2F3D09DE5394376798C2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC2D277E658E89EA45EB05 /* AppDelegate.swift */; };
 		3580609BEF4E7B10247ECB7D /* AssembledModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7238FF17C8A850282D899C /* AssembledModule.swift */; };
+		35839B1E9345260E266CD191 /* AgeSelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBCDE503D7F2776FA7192B0D /* AgeSelectionDelegate.swift */; };
+		3A83E564ACD443E85718DFD4 /* TaxResidentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06462FF6B4BCD605B77E6C58 /* TaxResidentDelegate.swift */; };
 		3CA01DC80D09BAAF5E97B12F /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB72D4FA06582041BFFEF62D /* SettingsScreenView.swift */; };
 		3CC8D8DBDDB1476694BECD4E /* AccountsScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481289582945CFB20EC91066 /* AccountsScreenContract.swift */; };
 		3E52C1B9CF17FD555E241D6E /* ImageFirstLeadingConstraintStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE260D012EE6CC097B1F6A3B /* ImageFirstLeadingConstraintStrategy.swift */; };
@@ -58,6 +60,7 @@
 		5AF1FEB492CCA343A19A4519 /* AccountsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB63F3329911EBC02E9B9B91 /* AccountsRequest.swift */; };
 		5DFC33DF32A7B0ADE44EDF74 /* ServicesScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2BDF7292C861A62B0E3E2B /* ServicesScreenView.swift */; };
 		5E885AA7A7E36AD402520AA1 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A27C306F0B5C89B6C8A249D /* Strings+Generated.swift */; };
+		5F1CE9FE8BFFB667063F5D6F /* AgeSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F9F4DEBD58333A673FFDC0 /* AgeSelectionView.swift */; };
 		600D41176DEF970B2541DC17 /* UIImage+SfSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65367829F91FE4FAB4648A93 /* UIImage+SfSymbol.swift */; };
 		6255290135B091A9ACBC2100 /* OpenAccountCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDF63DD947E254C7D372E3E /* OpenAccountCoordinator.swift */; };
 		62D6936920D2FC31FA5E5AB8 /* SettingsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0EA0B7118D4E60498CB01A /* SettingsScreenInteractor.swift */; };
@@ -76,6 +79,7 @@
 		7B6793D8B3DAAB89BA9192F8 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4166BD1B0EEE642FE2E28EED /* TransactionTableViewCell.swift */; };
 		7D2C0F5D0BE31ADB2CC9EBB6 /* AccountDetailScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E15DBE80D00C3DC0D30280 /* AccountDetailScreenRouter.swift */; };
 		7DFA333B6F5C6E31076CE5D3 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CDAA83FB2E038641F19047 /* NSManagedObjectContext+Extensions.swift */; };
+		80B7C9B2E65EE5470D6F7E81 /* AgeSelectionAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E419DD1ED44106C67D85988 /* AgeSelectionAssembly.swift */; };
 		86C62C752820F6EFB33934C8 /* PaymentsScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A34B867C5A62EF08DB56139 /* PaymentsScreenContract.swift */; };
 		87985AC0054BA0937BD05DC4 /* TransactionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2AD7FBF31CC2D5EE62394 /* TransactionDetailViewModel.swift */; };
 		8819B601BBEF2F2B1B288732 /* AccountsScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5658A08B761B9F6194243E90 /* AccountsScreenAssembly.swift */; };
@@ -83,7 +87,6 @@
 		8C2A40F69D98674D4F912B79 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A36B596A8A92184D1595E9C9 /* SnapKit */; };
 		900E337EC98DD4D18FA462EF /* OpenAccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B908B840BA11425B4BE8CD76 /* OpenAccountInteractor.swift */; };
 		932A0B787FCB84070CA6B2A5 /* TransferScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D719B98BF697191FF2E7A53B /* TransferScreenView.swift */; };
-		93FFD14A6B5098973CFC5DD7 /* TaxResidentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44440042F62227323106CD3C /* TaxResidentView.swift */; };
 		964C2D16109888BDD573E753 /* LabelFirstConstraintStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678CA0E56E4A457E5B046278 /* LabelFirstConstraintStrategy.swift */; };
 		96D9F99CD5A363F491B755ED /* AccountsScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2784E307A13A8C48436C19D /* AccountsScreenInteractor.swift */; };
 		972BEDF7B4C8CD352AB6BC14 /* TransactionDetailScreenContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ECA6D9BE889A582C8AC3E8 /* TransactionDetailScreenContract.swift */; };
@@ -105,6 +108,7 @@
 		ABD9D760E016C4C984F5E588 /* AccountSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E4A6F947B06800D25AD6F5 /* AccountSelectionCell.swift */; };
 		AEEE51CC00DECEB45728E1CE /* TransactionDetailScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35EF9DA026BE903282DD2FB /* TransactionDetailScreenPresenter.swift */; };
 		B129FB9FEE3A6A2811B2E6B8 /* SelectAccountAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A905DB972FF782A11C7B18 /* SelectAccountAssembly.swift */; };
+		B14D3101C5B8C85BA79BC9C2 /* SelectAccountDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424807E39C326C6792476E11 /* SelectAccountDelegate.swift */; };
 		B2542C12A794DEBE9BDA5874 /* AccountOverviewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DBDEA678FB2A5D33CED35 /* AccountOverviewImageCell.swift */; };
 		B678570899FD62999BA80978 /* ApplyForCardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14335D689B63A553192F8507 /* ApplyForCardFooterView.swift */; };
 		B8A6494D87F24B3A31526EF9 /* AccountsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC96BFCA2DACD0702FEC5F3 /* AccountsScreenViewController.swift */; };
@@ -132,7 +136,6 @@
 		D2CAEA6095B708666532AB27 /* SelectAccountTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A48537CB0B41028B889A2BB /* SelectAccountTableViewManager.swift */; };
 		D41782153CFC184E5D585373 /* ShareLabelConstraintStrategyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCFD8D952125F6048513C0D /* ShareLabelConstraintStrategyFactory.swift */; };
 		D67CBF97D2E8425F7FC3D644 /* TransactionDetailScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D612BA786A48FFA8C984A73 /* TransactionDetailScreenAssembly.swift */; };
-		D6A27B85FAEAF6F46F845743 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F1B7C9BCBD53F7363C8D49 /* SelectionView.swift */; };
 		D6C9E142F815FEFD2C529DF9 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */; };
 		DBB9733DF9A9D8A588F2B5F7 /* AccountOverviewTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE4A771DBEE2B7B59165FCE /* AccountOverviewTextCell.swift */; };
 		DF09638FE4A01ED61D06BD51 /* TransactionPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2750FD50D34C88B8331F8418 /* TransactionPagingView.swift */; };
@@ -140,12 +143,14 @@
 		E042F716E513528C3EFD7FE7 /* PaymentsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FBC288434D218C2668E52D /* PaymentsScreenView.swift */; };
 		E1A61A03881E8A28D054728B /* AccountsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7E1895DE866FCF87F317C3 /* AccountsScreenView.swift */; };
 		E20B785F5DA408CA93A57550 /* TransactionDetailShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9576A041C02C1A61BD57789 /* TransactionDetailShareViewController.swift */; };
+		E2147717E7DAB7A879244369 /* AgeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFFF5312D6A457B6C21C90 /* AgeSelectionViewController.swift */; };
 		E3BA39DFEDFBC07683B41E32 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB1EBCD22BB07268138AE57 /* Request.swift */; };
 		E4579FC3516BC30386862969 /* ManagesUserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B040D4059193A8E07F5D554 /* ManagesUserSettings.swift */; };
 		E7026F91913B6392D8025445 /* ImageFirstConstraintStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7027B40EF891D83330EC57 /* ImageFirstConstraintStrategy.swift */; };
 		E720BFF51856504B69C80EA8 /* TransactionDetailScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735261420467B18928E903B9 /* TransactionDetailScreenRouter.swift */; };
 		E9F27EAC97A625C3FB14EA1D /* TaxResidentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B6F1912235E2F2054D6DD /* TaxResidentViewController.swift */; };
 		EAFBEF9EC326EB07490F554C /* TabBarItemFacotry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E69BBF6E013F1E51CE63FD /* TabBarItemFacotry.swift */; };
+		EB5FDAF3E048F5562978EA6E /* TaxResidentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9EF677C67D325763D45BAA /* TaxResidentView.swift */; };
 		ECC8298352BE7BA8B076CDF4 /* AccountDetailScreenAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A587F491F4B2EF360E780FB8 /* AccountDetailScreenAssembly.swift */; };
 		ED22DE1F5EC8AA0991D1BB77 /* OpenAccountBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7353CF2AC53085E10AAB9BE2 /* OpenAccountBuilder.swift */; };
 		EDF326671A52F9C8265D071B /* AccountDisplayStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2290755174F2BD222B1C00D /* AccountDisplayStyle.swift */; };
@@ -159,13 +164,14 @@
 		FAC3A9A7B02744148B6922E8 /* PaymentsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027ACB59A52A89C09E20A6F7 /* PaymentsScreenRouter.swift */; };
 		FB11FC1BE4212AE27B035B3B /* AccountApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2F4F5310121D44FE2AF368 /* AccountApplication.swift */; };
 		FC9DD26FE0DDF384D8829D6E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC0BCEA81C0580376D3420B /* Coordinator.swift */; };
-		FCC0D4F00C7594BB80A9163A /* SelectAccountDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C340ED97354FCEC44D61CAC /* SelectAccountDelegate.swift */; };
+		FD1F0E7276AEC0DBE69EB7A4 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E599BA0C379BF87710D0952 /* SelectionView.swift */; };
 		FEFA456D213BBD5FC18317E9 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAD65035D4A3FBAB9DEDBD9 /* CoreDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		027ACB59A52A89C09E20A6F7 /* PaymentsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenRouter.swift; sourceTree = "<group>"; };
 		0590BF6C649D9E099C3E33AE /* PaymentsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenPresenter.swift; sourceTree = "<group>"; };
+		06462FF6B4BCD605B77E6C58 /* TaxResidentDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxResidentDelegate.swift; sourceTree = "<group>"; };
 		07E7618C22AE5BDED034A2AE /* AccountApplicationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountApplicationForm.swift; sourceTree = "<group>"; };
 		0883A36385D417F725D320A3 /* UserSettingManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingManagerError.swift; sourceTree = "<group>"; };
 		09EAD97375D0479BA2B3D5DF /* AccountDetailStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailStackView.swift; sourceTree = "<group>"; };
@@ -201,8 +207,8 @@
 		3FBC2D277E658E89EA45EB05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4166BD1B0EEE642FE2E28EED /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
 		41A8CCCCCD3085AC6E57DCAF /* AccountOverviewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewCellProtocol.swift; sourceTree = "<group>"; };
+		424807E39C326C6792476E11 /* SelectAccountDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountDelegate.swift; sourceTree = "<group>"; };
 		438CEEAF7FF47225A6C46CF3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		44440042F62227323106CD3C /* TaxResidentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxResidentView.swift; sourceTree = "<group>"; };
 		481289582945CFB20EC91066 /* AccountsScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenContract.swift; sourceTree = "<group>"; };
 		487BC1CD67672E7C40CAA643 /* OpenAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAccountViewController.swift; sourceTree = "<group>"; };
 		4B26FAE525F40468CAE7C2C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -210,6 +216,7 @@
 		4D0EA0B7118D4E60498CB01A /* SettingsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenInteractor.swift; sourceTree = "<group>"; };
 		4D191C7F6A0DA05F4B8A3CE2 /* ServicesScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenAssembly.swift; sourceTree = "<group>"; };
 		4D706021DD8D738E5F112241 /* MenuCollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewManager.swift; sourceTree = "<group>"; };
+		4E419DD1ED44106C67D85988 /* AgeSelectionAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeSelectionAssembly.swift; sourceTree = "<group>"; };
 		4FBEAAF28469133DA0233D21 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		50C7D066AE9D3BF2519A3D05 /* TabBarItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemType.swift; sourceTree = "<group>"; };
 		50F7BF2E011CCD5039021FFE /* AccountDetailScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailScreenInteractor.swift; sourceTree = "<group>"; };
@@ -235,6 +242,7 @@
 		678CA0E56E4A457E5B046278 /* LabelFirstConstraintStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFirstConstraintStrategy.swift; sourceTree = "<group>"; };
 		6BC0BCEA81C0580376D3420B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6D7E1895DE866FCF87F317C3 /* AccountsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenView.swift; sourceTree = "<group>"; };
+		6FFFFF5312D6A457B6C21C90 /* AgeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeSelectionViewController.swift; sourceTree = "<group>"; };
 		735261420467B18928E903B9 /* TransactionDetailScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailScreenRouter.swift; sourceTree = "<group>"; };
 		7353CF2AC53085E10AAB9BE2 /* OpenAccountBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAccountBuilder.swift; sourceTree = "<group>"; };
 		75EC16421D769F74B57D5F3B /* AccountOverviewCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewCellFactory.swift; sourceTree = "<group>"; };
@@ -243,6 +251,7 @@
 		7B9CBAE2017A4EF49B4CC798 /* SelectAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountViewController.swift; sourceTree = "<group>"; };
 		7D612BA786A48FFA8C984A73 /* TransactionDetailScreenAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailScreenAssembly.swift; sourceTree = "<group>"; };
 		7DB1EBCD22BB07268138AE57 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		7E599BA0C379BF87710D0952 /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 		7E925C9587D1B00D8D2CC42E /* AccountsSessionApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsSessionApi.swift; sourceTree = "<group>"; };
 		7EF68421B3DFC16FD4F9F0C9 /* TransactionDetailShareScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailShareScreen.swift; sourceTree = "<group>"; };
 		81D2AD7FBF31CC2D5EE62394 /* TransactionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewModel.swift; sourceTree = "<group>"; };
@@ -255,7 +264,6 @@
 		99637AE0C676552834544AA4 /* AccountDetailScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailScreenPresenter.swift; sourceTree = "<group>"; };
 		9BE4A771DBEE2B7B59165FCE /* AccountOverviewTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountOverviewTextCell.swift; sourceTree = "<group>"; };
 		9C2F4F5310121D44FE2AF368 /* AccountApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountApplication.swift; sourceTree = "<group>"; };
-		9C340ED97354FCEC44D61CAC /* SelectAccountDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountDelegate.swift; sourceTree = "<group>"; };
 		9DC96BFCA2DACD0702FEC5F3 /* AccountsScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenViewController.swift; sourceTree = "<group>"; };
 		9E2BDF7292C861A62B0E3E2B /* ServicesScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenView.swift; sourceTree = "<group>"; };
 		9F73D99439DF9BA6881C833E /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
@@ -283,11 +291,11 @@
 		C2784E307A13A8C48436C19D /* AccountsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenInteractor.swift; sourceTree = "<group>"; };
 		C349B32B3C2098E7FBCCAC8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C488BDF51D3D365BD40C4266 /* ShareLabelConstraintStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLabelConstraintStrategy.swift; sourceTree = "<group>"; };
-		C8F1B7C9BCBD53F7363C8D49 /* SelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 		C9175CCB7C97D8A01CAEE853 /* AccountDetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailScreenViewController.swift; sourceTree = "<group>"; };
 		CB32801D13EF28D459296F46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB896695F1F384A2AD302A1F /* TransactionDetailScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailScreenViewController.swift; sourceTree = "<group>"; };
 		CC90BE13D4894F528D63A552 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		CC9EF677C67D325763D45BAA /* TaxResidentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxResidentView.swift; sourceTree = "<group>"; };
 		CCBA95E6B6CB09B1B8609B36 /* ProvidesAccountApplicationDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidesAccountApplicationDescription.swift; sourceTree = "<group>"; };
 		CE6BA0C9E6B302BF46F64935 /* SelectAccountContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountContract.swift; sourceTree = "<group>"; };
 		CEEFCD98693B56C933E1DCAE /* SelectAccountTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountTableHeader.swift; sourceTree = "<group>"; };
@@ -306,6 +314,7 @@
 		F25B6F1912235E2F2054D6DD /* TaxResidentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxResidentViewController.swift; sourceTree = "<group>"; };
 		F2CDAA83FB2E038641F19047 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		F2DBD12A69C9059B0A92A05E /* BankingApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BankingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2F9F4DEBD58333A673FFDC0 /* AgeSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeSelectionView.swift; sourceTree = "<group>"; };
 		F4657469F44B79A30A5C78B1 /* TransactionDetailScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailScreenInteractor.swift; sourceTree = "<group>"; };
 		F5A2B51B4E8EF40DE5E7C48E /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		F7120B30142B7CE6D0F1ACE3 /* PaymentsScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsScreenInteractor.swift; sourceTree = "<group>"; };
@@ -316,6 +325,7 @@
 		F96D8D8BF3970E6CD6DB3B05 /* ServicesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesScreenViewController.swift; sourceTree = "<group>"; };
 		FA76ADF7C0816F42BE7EEE6A /* OpenAccountContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAccountContract.swift; sourceTree = "<group>"; };
 		FB253AECFEAECCC05002EF45 /* SettingsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenPresenter.swift; sourceTree = "<group>"; };
+		FBCDE503D7F2776FA7192B0D /* AgeSelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeSelectionDelegate.swift; sourceTree = "<group>"; };
 		FEAFF02533036841FA85F21C /* TaxResidentAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxResidentAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -408,6 +418,17 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		237702AFED09E12FD643D047 /* AgeSelectionScreen */ = {
+			isa = PBXGroup;
+			children = (
+				4E419DD1ED44106C67D85988 /* AgeSelectionAssembly.swift */,
+				FBCDE503D7F2776FA7192B0D /* AgeSelectionDelegate.swift */,
+				F2F9F4DEBD58333A673FFDC0 /* AgeSelectionView.swift */,
+				6FFFFF5312D6A457B6C21C90 /* AgeSelectionViewController.swift */,
+			);
+			path = AgeSelectionScreen;
+			sourceTree = "<group>";
+		};
 		272B4DC96459AC2610BA37E0 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,10 +453,10 @@
 		2E56CCA8327F47B0C5072AA3 /* TaxResidentScreen */ = {
 			isa = PBXGroup;
 			children = (
-				C8F1B7C9BCBD53F7363C8D49 /* SelectionView.swift */,
 				FEAFF02533036841FA85F21C /* TaxResidentAssembly.swift */,
-				44440042F62227323106CD3C /* TaxResidentView.swift */,
+				06462FF6B4BCD605B77E6C58 /* TaxResidentDelegate.swift */,
 				F25B6F1912235E2F2054D6DD /* TaxResidentViewController.swift */,
+				AB7457E730156B72A2D8B653 /* Views */,
 			);
 			path = TaxResidentScreen;
 			sourceTree = "<group>";
@@ -445,6 +466,7 @@
 			children = (
 				D6A905DB972FF782A11C7B18 /* SelectAccountAssembly.swift */,
 				CE6BA0C9E6B302BF46F64935 /* SelectAccountContract.swift */,
+				424807E39C326C6792476E11 /* SelectAccountDelegate.swift */,
 				AF2CBD3083E487A6B1411845 /* SelectAccountPresenter.swift */,
 				3A48537CB0B41028B889A2BB /* SelectAccountTableViewManager.swift */,
 				7B9CBAE2017A4EF49B4CC798 /* SelectAccountViewController.swift */,
@@ -525,7 +547,7 @@
 				3AEBEB5E11C90DF303F804F6 /* OpenAccountPageView.swift */,
 				34029F094D71D6FE0BD295FB /* OpenAccountView.swift */,
 				487BC1CD67672E7C40CAA643 /* OpenAccountViewController.swift */,
-				9C340ED97354FCEC44D61CAC /* SelectAccountDelegate.swift */,
+				237702AFED09E12FD643D047 /* AgeSelectionScreen */,
 				3863DDCB8443608D485B7AD5 /* SelectAccountScreen */,
 				2E56CCA8327F47B0C5072AA3 /* TaxResidentScreen */,
 			);
@@ -702,6 +724,15 @@
 			path = ShareLabel;
 			sourceTree = "<group>";
 		};
+		AB7457E730156B72A2D8B653 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7E599BA0C379BF87710D0952 /* SelectionView.swift */,
+				CC9EF677C67D325763D45BAA /* TaxResidentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BC6D02584F8B0EF5CD254F73 /* UserDefaultsStorage */ = {
 			isa = PBXGroup;
 			children = (
@@ -796,32 +827,32 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		"TEMP_635BE1DA-94A3-4E43-8D6B-8CD9D109855A" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_73E3265A-0C72-4386-89EF-4D93EF32CB59" /* Sources */ = {
+		"TEMP_4E87A6A0-5326-4742-AB55-A5D12A770F84" /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		"TEMP_742AC28A-1715-48B9-9B72-59EE240D17C4" /* SharedResources */ = {
+		"TEMP_8968CE77-7138-4739-86BB-DCD2903545E5" /* SharedResources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = SharedResources;
 			sourceTree = "<group>";
 		};
-		"TEMP_E337328F-776F-4A93-9A52-44F0DBC303C4" /* Packages */ = {
+		"TEMP_B98D2BC8-28DB-4324-8D6A-8874C747553C" /* Packages */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Packages;
+			sourceTree = "<group>";
+		};
+		"TEMP_FD017988-330F-49CE-A182-1A5612521A06" /* SharedResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedResources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -958,6 +989,10 @@
 				E1A61A03881E8A28D054728B /* AccountsScreenView.swift in Sources */,
 				B8A6494D87F24B3A31526EF9 /* AccountsScreenViewController.swift in Sources */,
 				596DBCC810996D4D9C9F7CA9 /* AccountsSessionApi.swift in Sources */,
+				80B7C9B2E65EE5470D6F7E81 /* AgeSelectionAssembly.swift in Sources */,
+				35839B1E9345260E266CD191 /* AgeSelectionDelegate.swift in Sources */,
+				5F1CE9FE8BFFB667063F5D6F /* AgeSelectionView.swift in Sources */,
+				E2147717E7DAB7A879244369 /* AgeSelectionViewController.swift in Sources */,
 				33E2F3D09DE5394376798C2F /* AppDelegate.swift in Sources */,
 				57F28497D0A31627E3B77DA0 /* ApplicationAccountDescription.swift in Sources */,
 				7281B4C4E22500C0B3F1CEF1 /* ApplicationAccountDescriptionProvider.swift in Sources */,
@@ -1015,12 +1050,12 @@
 				CC274B9B0B9B4EAAE78752C0 /* SegmentedControl.swift in Sources */,
 				B129FB9FEE3A6A2811B2E6B8 /* SelectAccountAssembly.swift in Sources */,
 				152C72CC3D7F12E45B3FB2DF /* SelectAccountContract.swift in Sources */,
-				FCC0D4F00C7594BB80A9163A /* SelectAccountDelegate.swift in Sources */,
+				B14D3101C5B8C85BA79BC9C2 /* SelectAccountDelegate.swift in Sources */,
 				0290A47DE87203FBC4851BBF /* SelectAccountPresenter.swift in Sources */,
 				C91F3E1F13854B2D092AF1C4 /* SelectAccountTableHeader.swift in Sources */,
 				D2CAEA6095B708666532AB27 /* SelectAccountTableViewManager.swift in Sources */,
 				49470D83D54623A599058849 /* SelectAccountViewController.swift in Sources */,
-				D6A27B85FAEAF6F46F845743 /* SelectionView.swift in Sources */,
+				FD1F0E7276AEC0DBE69EB7A4 /* SelectionView.swift in Sources */,
 				D0D5F7A4FAF735A1C98938EA /* SeparatorView.swift in Sources */,
 				9D9BE43890557C08719B4A7F /* ServicesScreenAssembly.swift in Sources */,
 				5DFC33DF32A7B0ADE44EDF74 /* ServicesScreenView.swift in Sources */,
@@ -1044,7 +1079,8 @@
 				EAFBEF9EC326EB07490F554C /* TabBarItemFacotry.swift in Sources */,
 				68D39199D4A56D72E877FFC1 /* TabBarItemType.swift in Sources */,
 				0D5E801499E693950852FBD8 /* TaxResidentAssembly.swift in Sources */,
-				93FFD14A6B5098973CFC5DD7 /* TaxResidentView.swift in Sources */,
+				3A83E564ACD443E85718DFD4 /* TaxResidentDelegate.swift in Sources */,
+				EB5FDAF3E048F5562978EA6E /* TaxResidentView.swift in Sources */,
 				E9F27EAC97A625C3FB14EA1D /* TaxResidentViewController.swift in Sources */,
 				1D703558263CA421C90C5BE0 /* TransactionCollectionViewCell.swift in Sources */,
 				28103E60324ED2D3AA2DE70E /* TransactionDetailCollecitonManager.swift in Sources */,

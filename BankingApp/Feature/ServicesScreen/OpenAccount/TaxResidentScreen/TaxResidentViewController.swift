@@ -9,8 +9,12 @@
 import UIKit
 
 final class TaxResidentViewController: OpenAccountViewController {
+
+    var selectedOption: SelectionViewOption?
+
     let taxResidentView = TaxResidentView()
     weak var coordinator: Coordinator?
+    weak var delegate: TaxResidentDelegate?
 
     override func loadView() {
         view = taxResidentView
@@ -29,15 +33,17 @@ final class TaxResidentViewController: OpenAccountViewController {
 // MARK: - TaxResidentViewDelegate
 extension TaxResidentViewController: TaxResidentViewDelegate {
     func viewDidPressNextButton(_ view: TaxResidentView) {
-        print("Next button pressed")
+        guard let selectedOption else { return }
+        delegate?.taxResidentView(self, didSelectOption: selectedOption)
     }
 
     func viewDidPressPreviousButton(_ view: TaxResidentView) {
         navigationController?.popViewController(animated: true)
     }
 
-    func selectionView(_ selectionView: SelectionView, didSelectOption: SelectionViewOption) {
-        print("Option selected")
+    func selectionView(_ selectionView: SelectionView, didSelectOption option: SelectionViewOption) {
+        taxResidentView.isNextButtonEnabled = true
+        selectedOption = option
     }
 }
 

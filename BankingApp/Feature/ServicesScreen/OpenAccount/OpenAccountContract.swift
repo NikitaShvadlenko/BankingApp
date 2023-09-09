@@ -10,9 +10,12 @@ import Foundation
 
 protocol OpenAccountInteractorInput {
     func addAccountDetails(_ accountDetails: ApplicationAccountDescription)
+    func addTaxResidentStatus(_ isTaxResident: Bool)
+    func addDateOfBirth(_ dateOfBirth: Date)
     func saveApplication()
 }
 
 protocol OpenAccountInteractorOutput: AnyObject {
     func interactorDidSetAccountDetails()
+    func interactorDidSetTaxResidency()
 }

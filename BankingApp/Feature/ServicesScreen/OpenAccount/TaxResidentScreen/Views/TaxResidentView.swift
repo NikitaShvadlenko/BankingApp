@@ -11,7 +11,7 @@ import UIKit
 protocol TaxResidentViewDelegate: AnyObject {
     func viewDidPressNextButton(_ view: TaxResidentView)
     func viewDidPressPreviousButton(_ view: TaxResidentView)
-    func selectionView(_ selectionView: SelectionView, didSelectOption: SelectionViewOption)
+    func selectionView(_ selectionView: SelectionView, didSelectOption option: SelectionViewOption)
 }
 
 final class TaxResidentView: OpenAccountView {
@@ -23,8 +23,10 @@ final class TaxResidentView: OpenAccountView {
             nextButton.isUserInteractionEnabled = isNextButtonEnabled
             if isNextButtonEnabled {
                 nextButton.alpha = 1
+                nextButton.isUserInteractionEnabled = true
             } else {
                 nextButton.alpha = 0.5
+                nextButton.isUserInteractionEnabled = false
             }
         }
     }
@@ -33,7 +35,7 @@ final class TaxResidentView: OpenAccountView {
         let button = UIButton()
         button.setTitle(L10n.Application.next, for: .normal)
         button.setTitleColor(Asset.Colors.primaryBackground.color, for: .normal)
-        button.backgroundColor = Asset.Colors.nextButton.color
+        button.backgroundColor = Asset.Colors.applicationFormLabel.color
         button.alpha = 0.5
         button.isUserInteractionEnabled = false
         button.addTarget(self, action: #selector(nextButtonPressed), for: .touchUpInside)

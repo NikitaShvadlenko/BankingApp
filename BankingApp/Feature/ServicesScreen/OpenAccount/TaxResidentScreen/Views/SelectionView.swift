@@ -12,10 +12,30 @@ protocol SelectionViewDelegate: AnyObject {
     func selectionView(_ selectionView: SelectionView, didSelectOption selectionViewOption: SelectionViewOption)
 }
 
-enum SelectionViewOption {
+enum SelectionViewOption: RawRepresentable {
     case yes
     // swiftlint:disable identifier_name
     case no
+
+    typealias RawValue = Bool
+
+    init?(rawValue: Bool) {
+        switch rawValue {
+        case true:
+            self = .yes
+        case false:
+            self = .no
+        }
+    }
+
+    var rawValue: Bool {
+        switch self {
+        case .yes:
+            return true
+        case .no:
+            return false
+        }
+    }
 }
 
 final class SelectionView: UIView {

@@ -1,20 +1,19 @@
 //
-//  TaxResidentAssembly.swift
+//  AgeSelectionAssembly.swift
 //  BankingApp
 //
-//  Created by Nikita Shvad on 08.09.2023.
+//  Created by Nikita Shvad on 09.09.2023.
 //  Copyright © 2023 Nikita Shvadlenko. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-enum TaxResidentAssembly {
+enum AgeSelectionAssembly {
     static func assemble(
         coordinator: OpenAccountCoordinator,
-        delegate: TaxResidentDelegate
+        delegate: AgeSelectionDelegate
     ) -> OpenAccountCoordinatorItem {
-        let viewController = TaxResidentViewController()
-        viewController.setTaxResidentViewDelegate(viewController)
+        let viewController = AgeSelectionViewController()
         viewController.coordinator = coordinator
         viewController.delegate = delegate
         return viewController

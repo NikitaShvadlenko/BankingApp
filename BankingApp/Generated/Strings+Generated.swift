@@ -55,6 +55,8 @@ internal enum L10n {
     internal static func accountFee(_ p1: Any) -> String {
       return L10n.tr("Localizable", "Application.accountFee", String(describing: p1), fallback: "$%@ monthly account fee")
     }
+    /// Age check
+    internal static let ageCheck = L10n.tr("Localizable", "Application.ageCheck", fallback: "Age check")
     /// Application form
     internal static let applicationForm = L10n.tr("Localizable", "Application.applicationForm", fallback: "Application form")
     /// Cancel
@@ -89,6 +91,8 @@ internal enum L10n {
     internal static let previous = L10n.tr("Localizable", "Application.previous", fallback: "Previous")
     /// Residency status
     internal static let residencyStatus = L10n.tr("Localizable", "Application.residencyStatus", fallback: "Residency status")
+    /// Select your age
+    internal static let selectYourAge = L10n.tr("Localizable", "Application.selectYourAge", fallback: "Select your age")
     /// Choose an everyday account
     internal static let tableHeader = L10n.tr("Localizable", "Application.tableHeader", fallback: "Choose an everyday account")
     /// Are you a New Zealand tax resident?
