@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -755,7 +755,6 @@
 		BC6D02584F8B0EF5CD254F73 /* UserDefaultsStorage */ = {
 			isa = PBXGroup;
 			children = (
-				AD409BCBB28B6E7EFBD61256 /* Links.swift */,
 				0B040D4059193A8E07F5D554 /* ManagesUserSettings.swift */,
 				B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */,
 				B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */,
@@ -836,6 +835,7 @@
 		DDDFB450BFBECA2D1C4B8AAD /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AD409BCBB28B6E7EFBD61256 /* Links.swift */,
 				9F9669C557DE73C8AF50064D /* AccountsProvider */,
 				6C75B19DAFFC00501A4BEB9D /* ApplicationAccountDescriptionProvider */,
 				79EBBBD8117AF3DA7FCFAE55 /* CoreData */,
@@ -856,34 +856,6 @@
 				547984CC8761D602DD3002DB /* User.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		"TEMP_344126FB-71C0-4C46-B195-55014EDD9206" /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Packages;
-			sourceTree = "<group>";
-		};
-		"TEMP_552326CC-CE92-417D-A8E3-10DD4F0A2E8F" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_8E348FF0-165F-44EC-A730-68A4F36E9D6F" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_9A9D74A5-65A2-4568-80D1-B08BD60043DB" /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

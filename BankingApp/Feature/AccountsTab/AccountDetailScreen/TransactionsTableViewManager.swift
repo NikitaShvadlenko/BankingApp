@@ -107,7 +107,7 @@ extension TransactionsTableViewManager {
             grouping: transactions,
             by: { Calendar.current.startOfDay(for: $0.dateProcessed) }
         )
-        let sortedDates = groupedItems.keys.sorted()
+        let sortedDates = groupedItems.keys.sorted(by: { $0 > $1 })
         self.sortedDates.append(contentsOf: sortedDates)
         for date in sortedDates {
             if let itemsForDate = groupedItems[date] {
