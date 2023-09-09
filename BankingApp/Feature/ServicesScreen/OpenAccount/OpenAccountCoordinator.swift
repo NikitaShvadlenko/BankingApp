@@ -29,6 +29,11 @@ final class OpenAccountCoordinator: Coordinator {
 
 // MARK: - OpenAccountInteractorOutput
 extension OpenAccountCoordinator: OpenAccountInteractorOutput {
+    func interactorDidSetAge() {
+        let viewController = UIViewController()
+        parentViewController.navigationController?.pushViewController(viewController, animated: true)
+    }
+
     func interactorDidSetTaxResidency() {
         let viewController = AgeSelectionAssembly.assemble(coordinator: self, delegate: self)
         viewController.setViewController(selectedPageNumber: 3, numberOfPages: 3)

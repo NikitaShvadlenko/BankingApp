@@ -16,6 +16,7 @@ enum AgeSelectionAssembly {
         let viewController = AgeSelectionViewController()
         viewController.coordinator = coordinator
         viewController.delegate = delegate
+        viewController.setAgeSelectionViewDelegate(viewController)
         return viewController
     }
 }

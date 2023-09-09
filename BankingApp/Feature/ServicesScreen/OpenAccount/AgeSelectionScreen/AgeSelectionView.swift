@@ -11,11 +11,25 @@ import UIKit
 protocol AgeSelectionViewDelegate: AnyObject {
     func viewDidPressNextButton(_ veiw: AgeSelectionView)
     func viewDidPressPreviousButton(_ veiw: AgeSelectionView)
+    func viewDidSelectDate(_ view: AgeSelectionView, date: Date)
 }
 
 final class AgeSelectionView: OpenAccountView {
 
     weak var delegate: AgeSelectionViewDelegate?
+
+    var isNextButtonEnabled: Bool = false {
+        didSet {
+            nextButton.isUserInteractionEnabled = isNextButtonEnabled
+            if isNextButtonEnabled {
+                nextButton.alpha = 1
+                nextButton.isUserInteractionEnabled = true
+            } else {
+                nextButton.alpha = 0.5
+                nextButton.isUserInteractionEnabled = false
+            }
+        }
+    }
 
     private lazy var dateOfBirthTitleLabel: UILabel = {
         let label = UILabel()
@@ -43,7 +57,7 @@ final class AgeSelectionView: OpenAccountView {
         return view
     }()
 
-    private lazy var datePicker: UIDatePicker = {
+    lazy var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         var dateComponents = DateComponents()
         dateComponents.year = -45
@@ -53,6 +67,7 @@ final class AgeSelectionView: OpenAccountView {
         ) {
             datePicker.date = date
         }
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
         datePicker.datePickerMode = .date
         datePicker.preferredDatePickerStyle = .compact
         datePicker.contentMode = .center
@@ -86,11 +101,10 @@ final class AgeSelectionView: OpenAccountView {
         button.layer.borderColor = Asset.Colors.applicationFormLabel.color.cgColor
         button.setTitleColor(Asset.Colors.applicationFormLabel.color, for: .normal)
         button.backgroundColor = Asset.Colors.primaryBackground.color
-       button.addTarget(self, action: #selector(previousButtonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(previousButtonPressed), for: .touchUpInside)
         return button
     }()
 
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureViews()
@@ -108,7 +122,7 @@ extension AgeSelectionView {
         backgroundColor = Asset.Colors.primaryBackground.color
         contentView.addSubview(dateOfBirthTitleLabel)
         contentView.addSubview(containerView)
-        containerView.addSubview(verticalStackView)
+        contentView.addSubview(verticalStackView)
         dateOfBirthTitleLabel.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(contentView).inset(20)
         }
@@ -144,5 +158,11 @@ extension AgeSelectionView {
     @objc
     private func previousButtonPressed() {
         delegate?.viewDidPressPreviousButton(self)
+    }
+
+    @objc
+    private func datePickerValueChanged(_ sender: UIDatePicker) {
+        let date = sender.date
+        delegate?.viewDidSelectDate(self, date: date)
     }
 }

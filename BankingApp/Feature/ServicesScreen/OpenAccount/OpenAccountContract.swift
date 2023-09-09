@@ -18,4 +18,5 @@ protocol OpenAccountInteractorInput {
 protocol OpenAccountInteractorOutput: AnyObject {
     func interactorDidSetAccountDetails()
     func interactorDidSetTaxResidency()
+    func interactorDidSetAge()
 }

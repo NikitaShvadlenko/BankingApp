@@ -16,6 +16,7 @@ final class OpenAccountInteractor {
 extension OpenAccountInteractor: OpenAccountInteractorInput {
     func addDateOfBirth(_ dateOfBirth: Date) {
         builder?.setDateOfBirth(dateOfBirth)
+        coordinator?.interactorDidSetAge()
     }
 
     func addTaxResidentStatus(_ isTaxResident: Bool) {
