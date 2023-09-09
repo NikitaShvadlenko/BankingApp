@@ -17,8 +17,18 @@ protocol OpenAccountInteractorInput {
 }
 
 protocol OpenAccountInteractorOutput: AnyObject {
-    func interactorDidSetAccountDetails()
-    func interactorDidSetTaxResidency()
-    func interactorDidSetAge()
-    func interactorDidFetchAccountReviewDetails(dateOfBirth: Date, taxDetails: String, accountName: String)
+    func interactorDidSetAccountDetails(_ interactor: OpenAccountInteractorInput)
+    func interactorDidSetTaxResidency(_ interactor: OpenAccountInteractorInput)
+    func interactorDidSetAge(_ interactor: OpenAccountInteractorInput)
+    func interactorDidFetchAccountReviewDetails(
+        _ interactor: OpenAccountInteractorInput,
+        dateOfBirth: Date,
+        taxDetails: String,
+        accountName: String
+    )
+
+    func interactorDidSaveApplication(
+        _ interactor: OpenAccountInteractorInput,
+        result: Result<AccountApplicationForm, Error>
+    )
 }

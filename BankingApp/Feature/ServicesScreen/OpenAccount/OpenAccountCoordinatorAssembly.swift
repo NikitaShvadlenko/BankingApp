@@ -13,7 +13,9 @@ enum OpenAccountCoordinatorAssembly {
         let coordinator = OpenAccountCoordinator(parentViewController: parentViewController)
         let interactor = OpenAccountInteractor()
         let builder = OpenAccountBuilder()
+        let context = CoreDataService.shared.context
         interactor.builder = builder
+        interactor.context = context
         interactor.coordinator = coordinator
         coordinator.interactor = interactor
         return coordinator

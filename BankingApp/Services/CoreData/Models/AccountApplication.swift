@@ -24,14 +24,14 @@ public final class AccountApplication: NSManagedObject {
     fileprivate(set) var applicationStatus: String
 
     @NSManaged
-    fileprivate(set) var statusText: String
+    fileprivate(set) var statusText: String?
 
     static func insert(
         into context: NSManagedObjectContext,
         accountType: String,
         monthlyFee: Double,
         applicationStatus: String,
-        statusText: String
+        statusText: String?
     ) {
         context.performChanges {
             let accountApplication: AccountApplication = context.insertObject()

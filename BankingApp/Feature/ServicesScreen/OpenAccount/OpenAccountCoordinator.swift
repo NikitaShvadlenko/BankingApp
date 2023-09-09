@@ -30,7 +30,24 @@ final class OpenAccountCoordinator: Coordinator {
 
 // MARK: - OpenAccountInteractorOutput
 extension OpenAccountCoordinator: OpenAccountInteractorOutput {
-    func interactorDidFetchAccountReviewDetails(dateOfBirth: Date, taxDetails: String, accountName: String) {
+    func interactorDidSaveApplication(
+        _ interactor: OpenAccountInteractorInput,
+        result: Result<AccountApplicationForm, Error>
+    ) {
+        switch result {
+        case .success:
+            print("Success!")
+        case .failure(let error):
+            print(error)
+        }
+    }
+
+    func interactorDidFetchAccountReviewDetails(
+        _ interactor: OpenAccountInteractorInput,
+        dateOfBirth: Date,
+        taxDetails: String,
+        accountName: String
+    ) {
         let viewController = ReviewAccountApplicationAssembly.assemble(
             coordinator: self,
             delegate: self,
@@ -42,17 +59,17 @@ extension OpenAccountCoordinator: OpenAccountInteractorOutput {
         parentViewController.navigationController?.pushViewController(viewController, animated: true)
     }
 
-    func interactorDidSetAge() {
-        interactor?.fetchApplicationDetails()
+    func interactorDidSetAge(_ interactor: OpenAccountInteractorInput) {
+        interactor.fetchApplicationDetails()
     }
 
-    func interactorDidSetTaxResidency() {
+    func interactorDidSetTaxResidency(_ interactor: OpenAccountInteractorInput) {
         let viewController = AgeSelectionAssembly.assemble(coordinator: self, delegate: self)
         viewController.setViewController(selectedPageNumber: 3, numberOfPages: totalNumberOfPages)
         parentViewController.navigationController?.pushViewController(viewController, animated: true)
     }
 
-    func interactorDidSetAccountDetails() {
+    func interactorDidSetAccountDetails(_ interactor: OpenAccountInteractorInput) {
         let viewController = TaxResidentAssembly.assemble(
             coordinator: self,
             delegate: self
@@ -65,7 +82,7 @@ extension OpenAccountCoordinator: OpenAccountInteractorOutput {
 // MARK: - ReviewAccountApplicationDelegate
 extension OpenAccountCoordinator: ReviewAccountApplicationDelegate {
     func reviewAccountApplicationView(_ view: ReviewAccountApplicationViewController, didReviewTerms didAccept: Bool) {
-        print("Interactor Build and coordinator route to result")
+        interactor?.saveApplication()
     }
 }
 // MARK: - AgeSelectionDelegate

@@ -192,7 +192,7 @@ extension ReviewAccountApplicationView {
             make.leading.trailing.equalTo(scrollViewContentView).inset(20)
             make.bottom.equalTo(scrollViewContentView).inset(20)
         }
-        
+
         accountDetailsTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(accountDetailsContainerView).inset(20)
             make.leading.trailing.equalTo(accountDetailsContainerView).inset(20)
