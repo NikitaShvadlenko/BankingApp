@@ -51,10 +51,6 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "AccountsScreen.title", fallback: "Accounts")
   }
   internal enum Application {
-    /// Account chosen
-    internal static let accountChosen = L10n.tr("Localizable", "Application.accountChosen", fallback: "Account chosen")
-    /// Account details
-    internal static let accountDetails = L10n.tr("Localizable", "Application.accountDetails", fallback: "Account details")
     /// $%@ monthly account fee
     internal static func accountFee(_ p1: Any) -> String {
       return L10n.tr("Localizable", "Application.accountFee", String(describing: p1), fallback: "$%@ monthly account fee")
@@ -129,6 +125,24 @@ internal enum L10n {
     internal static func underagedAndNotResident(_ p1: Any) -> String {
       return L10n.tr("Localizable", "ApplicationResult.underagedAndNotResident", String(describing: p1), fallback: "You must be over %@ to apply and be a tax resident")
     }
+  }
+  internal enum ApplicationReview {
+    /// Account chosen
+    internal static let accountChosen = L10n.tr("Localizable", "ApplicationReview.accountChosen", fallback: "Account chosen")
+    /// Account details
+    internal static let accountDetails = L10n.tr("Localizable", "ApplicationReview.accountDetails", fallback: "Account details")
+    /// Your personal details
+    internal static let ageTitle = L10n.tr("Localizable", "ApplicationReview.ageTitle", fallback: "Your personal details")
+    /// Your date of birth is %@.
+    internal static func dateOfBirth(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "ApplicationReview.dateOfBirth", String(describing: p1), fallback: "Your date of birth is %@.")
+    }
+    /// Not a New Zealand Resident.
+    internal static let notResident = L10n.tr("Localizable", "ApplicationReview.notResident", fallback: "Not a New Zealand Resident.")
+    /// New Zealand tax resident.
+    internal static let resident = L10n.tr("Localizable", "ApplicationReview.resident", fallback: "New Zealand tax resident.")
+    /// Your tax details
+    internal static let taxDetails = L10n.tr("Localizable", "ApplicationReview.taxDetails", fallback: "Your tax details")
   }
   internal enum NavigationBar {
     /// Log out

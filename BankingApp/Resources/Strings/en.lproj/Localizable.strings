@@ -70,8 +70,6 @@
 "Application.yourDateOfBirthIs" = "Date of birth:";
 "Application.reviewAndConfirm" = "Review & confirm:";
 "Application.reviewAndConfirmTitle" = "Review and confirm account opening";
-"Application.accountDetails" = "Account details";
-"Application.accountChosen" = "Account chosen";
 "Application.monthlyFee" = "%@";
 "Application.taxDetailsDescription" = "Are you a New Zealand tax resident?";
 
@@ -81,3 +79,10 @@
 "ApplicationResult.success" = "Application successful";
 "ApplicationResult.failed" = "Application failed";
 
+"ApplicationReview.taxDetails" = "Your tax details";
+"ApplicationReview.notResident" = "Not a New Zealand Resident.";
+"ApplicationReview.resident" = "New Zealand tax resident.";
+"ApplicationReview.ageTitle" = "Your personal details";
+"ApplicationReview.dateOfBirth" = "Your date of birth is %@.";
+"ApplicationReview.accountDetails" = "Account details";
+"ApplicationReview.accountChosen" = "Account chosen";
