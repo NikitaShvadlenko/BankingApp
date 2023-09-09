@@ -12,6 +12,7 @@ final class OpenAccountCoordinator: Coordinator {
 
     var parentViewController: UIViewController
     var interactor: OpenAccountInteractorInput?
+    var totalNumberOfPages = 4
 
     init(parentViewController: UIViewController) {
         self.parentViewController = parentViewController
@@ -22,7 +23,7 @@ final class OpenAccountCoordinator: Coordinator {
             coordinator: self,
             delegate: self
         )
-        selectAccountViewController.setViewController(selectedPageNumber: 1, numberOfPages: 3)
+        selectAccountViewController.setViewController(selectedPageNumber: 1, numberOfPages: totalNumberOfPages)
         parentViewController.navigationController?.pushViewController(selectAccountViewController, animated: true)
     }
 }
@@ -30,13 +31,17 @@ final class OpenAccountCoordinator: Coordinator {
 // MARK: - OpenAccountInteractorOutput
 extension OpenAccountCoordinator: OpenAccountInteractorOutput {
     func interactorDidSetAge() {
-        let viewController = UIViewController()
+        let viewController = ReviewAccountApplicationAssembly.assemble(
+            coordinator: self,
+            delegate: self
+        )
+        viewController.setViewController(selectedPageNumber: 4, numberOfPages: totalNumberOfPages)
         parentViewController.navigationController?.pushViewController(viewController, animated: true)
     }
 
     func interactorDidSetTaxResidency() {
         let viewController = AgeSelectionAssembly.assemble(coordinator: self, delegate: self)
-        viewController.setViewController(selectedPageNumber: 3, numberOfPages: 3)
+        viewController.setViewController(selectedPageNumber: 3, numberOfPages: totalNumberOfPages)
         parentViewController.navigationController?.pushViewController(viewController, animated: true)
     }
 
@@ -45,11 +50,17 @@ extension OpenAccountCoordinator: OpenAccountInteractorOutput {
             coordinator: self,
             delegate: self
         )
-        viewController.setViewController(selectedPageNumber: 2, numberOfPages: 3)
+        viewController.setViewController(selectedPageNumber: 2, numberOfPages: totalNumberOfPages)
         parentViewController.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
+// MARK: - ReviewAccountApplicationDelegate
+extension OpenAccountCoordinator: ReviewAccountApplicationDelegate {
+    func reviewAccountApplicationView(_ view: ReviewAccountApplicationView, didReviewTerms didAccept: Bool) {
+        print("Interactor Build and coordinator route to result")
+    }
+}
 // MARK: - AgeSelectionDelegate
 extension OpenAccountCoordinator: AgeSelectionDelegate {
     func viewDidSelectDateOfBirth(_ view: AgeSelectionViewController, dateOfBirth: Date) {

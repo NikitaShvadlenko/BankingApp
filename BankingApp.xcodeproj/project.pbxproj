@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -110,6 +110,10 @@
 		B129FB9FEE3A6A2811B2E6B8 /* SelectAccountAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A905DB972FF782A11C7B18 /* SelectAccountAssembly.swift */; };
 		B14D3101C5B8C85BA79BC9C2 /* SelectAccountDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424807E39C326C6792476E11 /* SelectAccountDelegate.swift */; };
 		B2542C12A794DEBE9BDA5874 /* AccountOverviewImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DBDEA678FB2A5D33CED35 /* AccountOverviewImageCell.swift */; };
+		B4F2DE5B2AAC220400B0D1C6 /* ReviewAccountApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE5A2AAC220400B0D1C6 /* ReviewAccountApplicationViewController.swift */; };
+		B4F2DE5D2AAC224D00B0D1C6 /* ReviewAccountApplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE5C2AAC224D00B0D1C6 /* ReviewAccountApplicationView.swift */; };
+		B4F2DE5F2AAC22F400B0D1C6 /* ReviewAccountApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE5E2AAC22F400B0D1C6 /* ReviewAccountApplicationDelegate.swift */; };
+		B4F2DE612AAC23F100B0D1C6 /* ReviewAccountApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE602AAC23F100B0D1C6 /* ReviewAccountApplicationAssembly.swift */; };
 		B678570899FD62999BA80978 /* ApplyForCardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14335D689B63A553192F8507 /* ApplyForCardFooterView.swift */; };
 		B8A6494D87F24B3A31526EF9 /* AccountsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC96BFCA2DACD0702FEC5F3 /* AccountsScreenViewController.swift */; };
 		B939469ACF4BF846DCA30102 /* AccountOverviewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8CCCCCD3085AC6E57DCAF /* AccountOverviewCellProtocol.swift */; };
@@ -279,6 +283,10 @@
 		B153799168FF3C4F5F2E8276 /* FirebaseCollectionKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionKeys.swift; sourceTree = "<group>"; };
 		B27E82CEF87579C01E6E0881 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		B4B8DFCEFF151A9B9791CB72 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		B4F2DE5A2AAC220400B0D1C6 /* ReviewAccountApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAccountApplicationViewController.swift; sourceTree = "<group>"; };
+		B4F2DE5C2AAC224D00B0D1C6 /* ReviewAccountApplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAccountApplicationView.swift; sourceTree = "<group>"; };
+		B4F2DE5E2AAC22F400B0D1C6 /* ReviewAccountApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAccountApplicationDelegate.swift; sourceTree = "<group>"; };
+		B4F2DE602AAC23F100B0D1C6 /* ReviewAccountApplicationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAccountApplicationAssembly.swift; sourceTree = "<group>"; };
 		B74ED66C588F5C2944D8324A /* ImageDownloaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderProtocol.swift; sourceTree = "<group>"; };
 		B908B840BA11425B4BE8CD76 /* OpenAccountInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAccountInteractor.swift; sourceTree = "<group>"; };
 		B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
@@ -547,6 +555,7 @@
 				3AEBEB5E11C90DF303F804F6 /* OpenAccountPageView.swift */,
 				34029F094D71D6FE0BD295FB /* OpenAccountView.swift */,
 				487BC1CD67672E7C40CAA643 /* OpenAccountViewController.swift */,
+				B4F2DE592AAC21D500B0D1C6 /* ReviewAccountApplicationScreen */,
 				237702AFED09E12FD643D047 /* AgeSelectionScreen */,
 				3863DDCB8443608D485B7AD5 /* SelectAccountScreen */,
 				2E56CCA8327F47B0C5072AA3 /* TaxResidentScreen */,
@@ -733,6 +742,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B4F2DE592AAC21D500B0D1C6 /* ReviewAccountApplicationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				B4F2DE5A2AAC220400B0D1C6 /* ReviewAccountApplicationViewController.swift */,
+				B4F2DE5E2AAC22F400B0D1C6 /* ReviewAccountApplicationDelegate.swift */,
+				B4F2DE602AAC23F100B0D1C6 /* ReviewAccountApplicationAssembly.swift */,
+				B4F2DE5C2AAC224D00B0D1C6 /* ReviewAccountApplicationView.swift */,
+			);
+			path = ReviewAccountApplicationScreen;
+			sourceTree = "<group>";
+		};
 		BC6D02584F8B0EF5CD254F73 /* UserDefaultsStorage */ = {
 			isa = PBXGroup;
 			children = (
@@ -825,34 +845,6 @@
 				547984CC8761D602DD3002DB /* User.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		"TEMP_40A46576-4C36-4646-ADE9-45C405851C24" /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		"TEMP_854562DB-FC4A-4FE0-A3A4-EFDFA0FE9AFC" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_AE6BA405-C3D9-4FD5-9943-667402BA950D" /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Packages;
-			sourceTree = "<group>";
-		};
-		"TEMP_E5108880-AABA-4164-9A28-14505340B0F7" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -986,6 +978,7 @@
 				BC9601F0E786464FFC5B41A3 /* AccountsScreenPresenter.swift in Sources */,
 				01233E32F64D0B8A9A199D12 /* AccountsScreenRouter.swift in Sources */,
 				CA97BBB814E1FB5627EDEE17 /* AccountsScreenTableManager.swift in Sources */,
+				B4F2DE5D2AAC224D00B0D1C6 /* ReviewAccountApplicationView.swift in Sources */,
 				E1A61A03881E8A28D054728B /* AccountsScreenView.swift in Sources */,
 				B8A6494D87F24B3A31526EF9 /* AccountsScreenViewController.swift in Sources */,
 				596DBCC810996D4D9C9F7CA9 /* AccountsSessionApi.swift in Sources */,
@@ -1052,6 +1045,7 @@
 				152C72CC3D7F12E45B3FB2DF /* SelectAccountContract.swift in Sources */,
 				B14D3101C5B8C85BA79BC9C2 /* SelectAccountDelegate.swift in Sources */,
 				0290A47DE87203FBC4851BBF /* SelectAccountPresenter.swift in Sources */,
+				B4F2DE5B2AAC220400B0D1C6 /* ReviewAccountApplicationViewController.swift in Sources */,
 				C91F3E1F13854B2D092AF1C4 /* SelectAccountTableHeader.swift in Sources */,
 				D2CAEA6095B708666532AB27 /* SelectAccountTableViewManager.swift in Sources */,
 				49470D83D54623A599058849 /* SelectAccountViewController.swift in Sources */,
@@ -1075,6 +1069,7 @@
 				F9BEFE42C3CE20DE290FE2B1 /* StoresPlaceholders.swift in Sources */,
 				18063137EECBAB026F8AB813 /* String+Extensions.swift in Sources */,
 				5E885AA7A7E36AD402520AA1 /* Strings+Generated.swift in Sources */,
+				B4F2DE612AAC23F100B0D1C6 /* ReviewAccountApplicationAssembly.swift in Sources */,
 				2B86B901D076CFB62A97C59D /* TabBar.swift in Sources */,
 				EAFBEF9EC326EB07490F554C /* TabBarItemFacotry.swift in Sources */,
 				68D39199D4A56D72E877FFC1 /* TabBarItemType.swift in Sources */,
@@ -1106,6 +1101,7 @@
 				600D41176DEF970B2541DC17 /* UIImage+SfSymbol.swift in Sources */,
 				FA37BFD5BC89FB0559DF430E /* User.swift in Sources */,
 				C29611BE00B06AB4358233A8 /* UserDefaults+Extensions.swift in Sources */,
+				B4F2DE5F2AAC22F400B0D1C6 /* ReviewAccountApplicationDelegate.swift in Sources */,
 				D6C9E142F815FEFD2C529DF9 /* UserDefaultsManager.swift in Sources */,
 				C8892AA8C89B1DAF6F2604BF /* UserSettingManagerError.swift in Sources */,
 				A9A2D1DB9E82236BC5959D2A /* XCAssets+Generated.swift in Sources */,
