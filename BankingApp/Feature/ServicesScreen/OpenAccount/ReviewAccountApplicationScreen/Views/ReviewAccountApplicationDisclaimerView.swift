@@ -8,25 +8,69 @@
 
 import UIKit
 
+protocol ReviewAccountApplicationDisclaimerViewDelegate: AnyObject {
+    func reviewAccountApplicationDisclaimerViewDidTriggerBox(
+        _ view: ReviewAccountApplicationDisclaimerView,
+        isSelected: Bool
+    )
+    func reviewAccountApplicationDisclaimerView(
+        _ view: ReviewAccountApplicationDisclaimerView,
+        didTapOpenAccountButton button: UIButton
+    )
+}
+
 final class ReviewAccountApplicationDisclaimerView: UIView {
 
+    weak var delegate: ReviewAccountApplicationDisclaimerViewDelegate?
+
+    private var isBoxSelected: Bool = false {
+        didSet {
+            selectionBox.backgroundColor =
+            isBoxSelected ? Asset.Colors.segmentedControlSelector.color : Asset.Colors.primaryBackground.color
+            selectionBox.image = isBoxSelected ? selectionImage : nil
+        }
+    }
+
     let topSeparatorView = SeparatorView()
+
+    private lazy var selectionImage: UIImage = {
+        guard let image = UIImage(sfSymbol: SFSymbol.checkmark)?.withRenderingMode(.alwaysTemplate) else {
+            return UIImage()
+        }
+        let newSize = CGSize(width: 18, height: 18)
+        UIGraphicsBeginImageContextWithOptions(newSize, false, image.scale)
+        image.draw(in: CGRect(origin: .zero, size: newSize))
+
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()?.withTintColor(.white) ?? UIImage()
+        UIGraphicsEndImageContext()
+
+        return resizedImage
+    }()
 
     private lazy var selectionBox: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.borderWidth = 1
+        imageView.clipsToBounds = true
+        imageView.contentMode = .center
+        imageView.tintColor = Asset.Colors.primaryBackground.color
         imageView.layer.cornerRadius = 4
         imageView.layer.borderColor = Asset.Colors.secondaryLabel.color.cgColor
-        // TODO: Selection
+        imageView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(
+            target: self,
+            action: #selector(selectionBoxTapped)
+        )
+        imageView.addGestureRecognizer(tapGesture)
+
         return imageView
     }()
 
     private lazy var openAccountButton: UIButton = {
         let button = UIButton()
         button.setTitle(L10n.ApplicationReview.openAccount, for: .normal)
-        button.backgroundColor = Asset.Colors.nextButton.color
+        button.backgroundColor = Asset.Colors.applicationFormLabel.color
         button.titleLabel?.textColor = Asset.Colors.primaryBackground.color
-        // TODO: addTarget
+        button.addTarget(self, action: #selector(openAccountButtonTapped), for: .touchUpInside)
         return button
     }()
 
@@ -187,8 +231,26 @@ extension ReviewAccountApplicationDisclaimerView {
         openAccountButton.snp.makeConstraints { make in
             make.top.equalTo(linkTextView.snp.bottom).offset(20)
             make.leading.trailing.equalTo(topSeparatorView)
-            make.height.equalTo(80)
+            make.height.equalTo(60)
             make.bottom.equalToSuperview().inset(20)
         }
+    }
+
+    @objc
+    private func selectionBoxTapped() {
+        isBoxSelected.toggle()
+        delegate?.reviewAccountApplicationDisclaimerViewDidTriggerBox(self, isSelected: isBoxSelected)
+    }
+
+    @objc
+    private func openAccountButtonTapped() {
+        UIView.animate(withDuration: 0.1) {
+            self.openAccountButton.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        } completion: { _ in
+            UIView.animate(withDuration: 0.1) {
+                self.openAccountButton.transform = CGAffineTransform.identity
+            }
+        }
+        delegate?.reviewAccountApplicationDisclaimerView(self, didTapOpenAccountButton: openAccountButton)
     }
 }
