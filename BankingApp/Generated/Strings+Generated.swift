@@ -51,6 +51,10 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "AccountsScreen.title", fallback: "Accounts")
   }
   internal enum Application {
+    /// Account chosen
+    internal static let accountChosen = L10n.tr("Localizable", "Application.accountChosen", fallback: "Account chosen")
+    /// Account details
+    internal static let accountDetails = L10n.tr("Localizable", "Application.accountDetails", fallback: "Account details")
     /// $%@ monthly account fee
     internal static func accountFee(_ p1: Any) -> String {
       return L10n.tr("Localizable", "Application.accountFee", String(describing: p1), fallback: "$%@ monthly account fee")
@@ -79,6 +83,10 @@ internal enum L10n {
     internal static func interestRatesNoUpperBound(_ p1: Any) -> String {
       return L10n.tr("Localizable", "Application.interestRatesNoUpperBound", String(describing: p1), fallback: "%@+: ")
     }
+    /// %@
+    internal static func monthlyFee(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "Application.monthlyFee", String(describing: p1), fallback: "%@")
+    }
     /// Next
     internal static let next = L10n.tr("Localizable", "Application.next", fallback: "Next")
     ///  of %@
@@ -91,6 +99,10 @@ internal enum L10n {
     internal static let previous = L10n.tr("Localizable", "Application.previous", fallback: "Previous")
     /// Residency status
     internal static let residencyStatus = L10n.tr("Localizable", "Application.residencyStatus", fallback: "Residency status")
+    /// Review & confirm:
+    internal static let reviewAndConfirm = L10n.tr("Localizable", "Application.reviewAndConfirm", fallback: "Review & confirm:")
+    /// Review and confirm account opening
+    internal static let reviewAndConfirmTitle = L10n.tr("Localizable", "Application.reviewAndConfirmTitle", fallback: "Review and confirm account opening")
     /// Select your date of birth:
     internal static let selectYourAge = L10n.tr("Localizable", "Application.selectYourAge", fallback: "Select your date of birth:")
     /// Choose an everyday account

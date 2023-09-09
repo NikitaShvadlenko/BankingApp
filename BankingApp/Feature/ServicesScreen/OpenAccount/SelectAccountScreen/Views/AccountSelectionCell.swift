@@ -16,18 +16,22 @@ final class AccountSelectionCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.addArrangedSubview(accountFeeLabel)
-        stackView.distribution = .fillProportionally
-        stackView.spacing = 8
+        stackView.distribution = .fill
+        stackView.spacing = 5
         stackView.alignment = .leading
+        stackView.setContentHuggingPriority(.defaultLow, for: .vertical)
+        stackView.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         return stackView
     }()
 
     private lazy var interestRatesStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
         stackView.spacing = 5
         stackView.alignment = .leading
+        stackView.setContentHuggingPriority(.defaultLow, for: .vertical)
+        stackView.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         return stackView
     }()
 
@@ -60,6 +64,7 @@ final class AccountSelectionCell: UITableViewCell {
         label.textColor = Asset.Colors.applicationFormLabel.color
         label.font = UIFont.systemFont(ofSize: 19)
         label.textAlignment = .natural
+        label.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         return label
     }()
 
@@ -68,7 +73,6 @@ final class AccountSelectionCell: UITableViewCell {
         label.textColor = Asset.Colors.primaryLabel.color
         label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         label.textAlignment = .natural
-        label.numberOfLines = 0
         label.text = L10n.Application.interestRates
         return label
     }()
@@ -87,7 +91,6 @@ final class AccountSelectionCell: UITableViewCell {
         label.textColor = Asset.Colors.primaryLabel.color
         label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         label.textAlignment = .natural
-        label.numberOfLines = 0
         return label
     }()
 
@@ -145,6 +148,7 @@ extension AccountSelectionCell {
             configureInterestRates(viewModel: viewModel)
         }
         isConfigured = true
+        layoutIfNeeded()
     }
 }
 
@@ -160,6 +164,9 @@ extension AccountSelectionCell {
             interestRatesStackView
         ].forEach(contentView.addSubview)
 
+        accountFeeLabel.snp.makeConstraints { make in
+            make.height.greaterThanOrEqualTo(16)
+        }
         selectionBox.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(14)
             make.top.equalToSuperview().inset(14)
@@ -177,21 +184,22 @@ extension AccountSelectionCell {
             make.top.equalTo(accountTitleLabel.snp.bottom).offset(14)
             make.leading.equalTo(selectionBox)
             make.trailing.equalToSuperview()
+            make.height.greaterThanOrEqualTo(30)
         }
 
         separatorView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(14)
             make.height.equalTo(1)
-            make.top.equalTo(accountDescriptionLabel.snp.bottom).offset(14)
+            make.top.equalTo(accountDescriptionLabel.snp.bottom).offset(8)
         }
 
         descriptionStackView.snp.makeConstraints { make in
             make.leading.trailing.equalTo(separatorView)
-            make.top.equalTo(separatorView.snp.bottom).offset(14)
-            make.bottom.equalTo(interestRatesStackView.snp.top).inset(-14)
+            make.top.equalTo(separatorView.snp.bottom).offset(30).priority(.high)
         }
 
         interestRatesStackView.snp.makeConstraints { make in
+            make.top.equalTo(descriptionStackView.snp.bottom).offset(14)
             make.leading.trailing.equalTo(separatorView)
             make.bottom.equalToSuperview().inset(10)
         }
@@ -206,7 +214,7 @@ extension AccountSelectionCell {
             label.text = description
             label.numberOfLines = 0
             label.snp.makeConstraints { make in
-                make.height.equalTo(16)
+                make.height.greaterThanOrEqualTo(16).priority(.high)
             }
             descriptionStackView.addArrangedSubview(label)
         }
@@ -216,6 +224,9 @@ extension AccountSelectionCell {
         guard let rates = viewModel.interestRates else { return }
         let numbersFormatter = NumberFormatter()
         interestRatesStackView.addArrangedSubview(interestRatesLabel)
+        interestRatesLabel.snp.makeConstraints { make in
+            make.height.greaterThanOrEqualTo(16)
+        }
         for rate in rates {
             let label = UILabel()
             label.font = UIFont.systemFont(ofSize: 15)
@@ -234,7 +245,7 @@ extension AccountSelectionCell {
                     ) + rate.interestDescription
             }
             label.snp.makeConstraints { make in
-                make.height.equalTo(16)
+                make.height.greaterThanOrEqualTo(16).priority(.high)
             }
             interestRatesStackView.addArrangedSubview(label)
         }

@@ -12,7 +12,7 @@ final class ChooseAccountView: OpenAccountView {
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
-        tableView.estimatedRowHeight = 300
+        tableView.estimatedRowHeight = 450
         tableView.separatorStyle = .none
         tableView.allowsMultipleSelection = false
         tableView.showsVerticalScrollIndicator = false

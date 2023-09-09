@@ -68,7 +68,11 @@
 "Application.ageCheck" = "Age check";
 "Application.selectYourAge" = "Select your date of birth:";
 "Application.yourDateOfBirthIs" = "Date of birth:";
-
+"Application.reviewAndConfirm" = "Review & confirm:";
+"Application.reviewAndConfirmTitle" = "Review and confirm account opening";
+"Application.accountDetails" = "Account details";
+"Application.accountChosen" = "Account chosen";
+"Application.monthlyFee" = "%@";
 "Application.taxDetailsDescription" = "Are you a New Zealand tax resident?";
 
 "ApplicationResult.underaged" = "You must be over %@ to apply";

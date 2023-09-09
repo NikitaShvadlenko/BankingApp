@@ -22,10 +22,10 @@ final class ReviewAccountApplicationViewController: OpenAccountViewController {
 extension ReviewAccountApplicationViewController: OpenAccountCoordinatorItem {
     func setViewController(selectedPageNumber: Int, numberOfPages: Int) {
         reviewAccountApplicationView.configureView(
-            title: L10n.Application.openAnAccount,
+            title: L10n.Application.reviewAndConfirmTitle,
             pageNumber: selectedPageNumber,
             totalPages: numberOfPages,
-            pageTitle: L10n.Application.ageCheck
+            pageTitle: L10n.Application.reviewAndConfirm
         )
     }
 }
