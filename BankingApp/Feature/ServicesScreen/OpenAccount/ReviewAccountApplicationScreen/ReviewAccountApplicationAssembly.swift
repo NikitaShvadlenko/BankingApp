@@ -21,6 +21,7 @@ enum ReviewAccountApplicationAssembly {
             taxResidencyStatus: taxDetails,
             dateOfBirth: dateOfBirth
         )
+        viewController.setReviewApplicationViewDelegate(viewController)
         viewController.coordinator = coordinator
         viewController.delegate = delegate
         return viewController

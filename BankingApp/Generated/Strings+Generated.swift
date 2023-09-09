@@ -204,6 +204,14 @@ internal enum L10n {
     /// Transfer
     internal static let transfer = L10n.tr("Localizable", "TabBar.transfer", fallback: "Transfer")
   }
+  internal enum TermsAlert {
+    /// Close
+    internal static let close = L10n.tr("Localizable", "TermsAlert.close", fallback: "Close")
+    /// You must accept terms to continue
+    internal static let message = L10n.tr("Localizable", "TermsAlert.message", fallback: "You must accept terms to continue")
+    /// Accept terms
+    internal static let title = L10n.tr("Localizable", "TermsAlert.title", fallback: "Accept terms")
+  }
   internal enum TransactionDetail {
     /// at
     internal static let at = L10n.tr("Localizable", "TransactionDetail.at", fallback: "at")

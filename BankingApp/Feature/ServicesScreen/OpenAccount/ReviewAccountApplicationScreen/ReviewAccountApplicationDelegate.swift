@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ReviewAccountApplicationDelegate: AnyObject {
-    func reviewAccountApplicationView(_ view: ReviewAccountApplicationView, didReviewTerms didAccept: Bool)
+    func reviewAccountApplicationView(_ view: ReviewAccountApplicationViewController, didReviewTerms didAccept: Bool)
 }
