@@ -97,6 +97,7 @@ final class ReviewAccountApplicationDisclaimerView: UIView {
             link: Links.generalTerms.rawValue,
             trailingPart: L10n.ApplicationReview.trailingPart
         )
+
         linkView.configureView(
             font: UIFont.systemFont(ofSize: 18),
             textColor: Asset.Colors.primaryLabel.color
@@ -112,11 +113,11 @@ final class ReviewAccountApplicationDisclaimerView: UIView {
     required init?(coder: NSCoder) {
         fatalError("Not implemented")
     }
-
 }
 
 // MARK: - Private Methods
 extension ReviewAccountApplicationDisclaimerView {
+    // swiftlint:disable function_body_length
     private func setupView() {
         [
             topSeparatorView,
@@ -180,7 +181,7 @@ extension ReviewAccountApplicationDisclaimerView {
             make.leading.equalTo(selectionBox.snp.trailing).offset(10)
             make.top.equalTo(selectionBox.snp.top).inset(-10)
             make.trailing.equalTo(topSeparatorView)
-            make.height.greaterThanOrEqualTo(100).priority(.high)
+            make.height.greaterThanOrEqualTo(120)
         }
 
         openAccountButton.snp.makeConstraints { make in

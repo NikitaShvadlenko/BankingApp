@@ -124,6 +124,15 @@ final class ReviewAccountApplicationView: OpenAccountView {
         return label
     }()
 
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let convertedPoint = reviewAccountApplicationDisclaimerView.convert(point, from: self)
+        if reviewAccountApplicationDisclaimerView.bounds.contains(convertedPoint),
+        let hitView = reviewAccountApplicationDisclaimerView.hitTest(convertedPoint, with: event) {
+            return hitView
+        }
+        return super.hitTest(point, with: event)
+    }
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

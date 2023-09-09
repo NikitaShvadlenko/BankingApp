@@ -1,4 +1,3 @@
-
 import UIKit
 
 final class LinkTextView: UITextView {
@@ -25,6 +24,7 @@ final class LinkTextView: UITextView {
         self.link = link
         self.trailingPart = trailingPart
         super.init(frame: .zero, textContainer: nil)
+        dataDetectorTypes = .link
         setupView()
     }
 
