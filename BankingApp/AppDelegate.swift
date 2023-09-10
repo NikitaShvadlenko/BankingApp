@@ -34,9 +34,7 @@ extension AppDelegate {
             let viewController = TabBarItemFactory.viewController(for: tabBarItemType)
             viewControllers.append(viewController)
         }
-
         tabBarController.setViewControllers(viewControllers, animated: false)
-
         return tabBarController
     }
 
