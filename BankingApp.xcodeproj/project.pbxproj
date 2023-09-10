@@ -123,6 +123,8 @@
 		B4F2DE772AAD541300B0D1C6 /* AccountApplicationsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE762AAD541300B0D1C6 /* AccountApplicationsAssembly.swift */; };
 		B4F2DE792AAD55D800B0D1C6 /* AccountApplicationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE782AAD55D800B0D1C6 /* AccountApplicationsPresenter.swift */; };
 		B4F2DE7B2AAD561200B0D1C6 /* AccountApplicationsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE7A2AAD561200B0D1C6 /* AccountApplicationsContract.swift */; };
+		B4F2DE7D2AAD58D000B0D1C6 /* AccountApplicationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE7C2AAD58D000B0D1C6 /* AccountApplicationsInteractor.swift */; };
+		B4F2DE7F2AAD5A9F00B0D1C6 /* AccountApplicationsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE7E2AAD5A9F00B0D1C6 /* AccountApplicationsTableViewManager.swift */; };
 		B8A6494D87F24B3A31526EF9 /* AccountsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC96BFCA2DACD0702FEC5F3 /* AccountsScreenViewController.swift */; };
 		B939469ACF4BF846DCA30102 /* AccountOverviewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8CCCCCD3085AC6E57DCAF /* AccountOverviewCellProtocol.swift */; };
 		BC5E8D661AAE1A743BB160CF /* AccountDetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09A51439A80ED394D36C215 /* AccountDetailScreenView.swift */; };
@@ -303,6 +305,8 @@
 		B4F2DE762AAD541300B0D1C6 /* AccountApplicationsAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountApplicationsAssembly.swift; sourceTree = "<group>"; };
 		B4F2DE782AAD55D800B0D1C6 /* AccountApplicationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountApplicationsPresenter.swift; sourceTree = "<group>"; };
 		B4F2DE7A2AAD561200B0D1C6 /* AccountApplicationsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountApplicationsContract.swift; sourceTree = "<group>"; };
+		B4F2DE7C2AAD58D000B0D1C6 /* AccountApplicationsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountApplicationsInteractor.swift; sourceTree = "<group>"; };
+		B4F2DE7E2AAD5A9F00B0D1C6 /* AccountApplicationsTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountApplicationsTableViewManager.swift; sourceTree = "<group>"; };
 		B74ED66C588F5C2944D8324A /* ImageDownloaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderProtocol.swift; sourceTree = "<group>"; };
 		B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		BC7027B40EF891D83330EC57 /* ImageFirstConstraintStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFirstConstraintStrategy.swift; sourceTree = "<group>"; };
@@ -776,6 +780,8 @@
 				B4F2DE722AAD538F00B0D1C6 /* AccountApplicationsViewController.swift */,
 				B4F2DE762AAD541300B0D1C6 /* AccountApplicationsAssembly.swift */,
 				B4F2DE7A2AAD561200B0D1C6 /* AccountApplicationsContract.swift */,
+				B4F2DE7E2AAD5A9F00B0D1C6 /* AccountApplicationsTableViewManager.swift */,
+				B4F2DE7C2AAD58D000B0D1C6 /* AccountApplicationsInteractor.swift */,
 				B4F2DE782AAD55D800B0D1C6 /* AccountApplicationsPresenter.swift */,
 				B4F2DE742AAD53B100B0D1C6 /* AccountApplicationsView.swift */,
 			);
@@ -1057,6 +1063,7 @@
 				0D8D651E64132A483E472A70 /* ContentView.swift in Sources */,
 				FC9DD26FE0DDF384D8829D6E /* Coordinator.swift in Sources */,
 				B4F2DE772AAD541300B0D1C6 /* AccountApplicationsAssembly.swift in Sources */,
+				B4F2DE7D2AAD58D000B0D1C6 /* AccountApplicationsInteractor.swift in Sources */,
 				FEFA456D213BBD5FC18317E9 /* CoreDataService.swift in Sources */,
 				E032DF71E43C943475753351 /* DataMapper.swift in Sources */,
 				8A913F4111B1C4897D7D83DB /* FirebaseCollectionKeys.swift in Sources */,
@@ -1152,6 +1159,7 @@
 				D0536F526FBF9558E178E83F /* TransactionDetailScreenViewController.swift in Sources */,
 				1954325F5F75E18A579E3228 /* TransactionDetailShareScreen.swift in Sources */,
 				B4F2DE7B2AAD561200B0D1C6 /* AccountApplicationsContract.swift in Sources */,
+				B4F2DE7F2AAD5A9F00B0D1C6 /* AccountApplicationsTableViewManager.swift in Sources */,
 				E20B785F5DA408CA93A57550 /* TransactionDetailShareViewController.swift in Sources */,
 				87985AC0054BA0937BD05DC4 /* TransactionDetailViewModel.swift in Sources */,
 				DF09638FE4A01ED61D06BD51 /* TransactionPagingView.swift in Sources */,

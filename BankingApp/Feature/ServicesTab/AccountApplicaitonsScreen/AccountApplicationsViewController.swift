@@ -21,10 +21,19 @@ final class AccountApplicationsViewController: UIViewController {
         super.viewDidLoad()
         presenter?.viewDidLoad(self)
     }
+
+    func setTableViewManager(_ manager: ManagesAccountApplicationsTable) {
+        accountApplicationsView.tableView.dataSource = manager
+        accountApplicationsView.tableView.delegate = manager
+    }
 }
 
 // MARK: - AccountApplicationsViewInput
 extension AccountApplicationsViewController: AccountApplicationsViewInput {
+    func setApplications() {
+        accountApplicationsView.tableView.reloadData()
+    }
+
     func configureViews() {
 
     }

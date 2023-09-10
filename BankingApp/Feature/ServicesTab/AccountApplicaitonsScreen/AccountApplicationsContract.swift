@@ -10,8 +10,20 @@ import Foundation
 
 protocol AccountApplicationsViewInput: AnyObject {
     func configureViews()
+    func setApplications()
 }
 
 protocol AccountApplicationsViewOutput {
     func viewDidLoad(_ view: AccountApplicationsViewInput)
+}
+
+protocol AccountApplicationsInteractorInput {
+    func fetchAccountApplications()
+}
+
+protocol AccountApplicationsInteractorOutput: AnyObject {
+    func interactor(
+        _ interactor: AccountApplicationsInteractorInput,
+        didFetchApplications result: Result<[AccountApplication], Error> 
+    )
 }
