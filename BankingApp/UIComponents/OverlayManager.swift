@@ -19,8 +19,6 @@ final class OverlayManager: ManagesOverlay {
 
     static let shared = OverlayManager()
 
-    private init() {}
-
     func presentOverlayView(_ view: UIView) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
               let window = appDelegate.window

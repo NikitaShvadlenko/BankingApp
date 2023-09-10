@@ -6,6 +6,7 @@ import FirebaseFirestore
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let overlayManager = OverlayManager()
 
     func application(
         _ application: UIApplication,
@@ -21,6 +22,15 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = window
         window.makeKeyAndVisible()
         return true
+    }
+
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        overlayManager.removeOverlayView()
+    }
+
+    func applicationWillResignActive(_ application: UIApplication) {
+        let privacyOverlay = PrivacyOverlayView()
+        overlayManager.presentOverlayView(privacyOverlay)
     }
 }
 // MARK: - Private Methods

@@ -78,7 +78,8 @@ extension TransactionDetailShareView {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEE d MMM yyyy '\(L10n.TransactionDetail.at)' HH:mm"
         nameLabel.text = model.name
-        amountLabel.text = formatter.dollarsFromAmount(model.amount)
+        if model.amount > 0 { amountLabel.textColor = Asset.Colors.green.color }
+        amountLabel.text = formatter.transactionAmount(model.amount)
         dateLabel.text = dateFormatter.string(from: model.date)
         typeLabel.text = model.type
         processedOnDateLabel.text = L10n.TransactionDetail.processedOn(dateFormatter.string(from: model.dateProcessed))
