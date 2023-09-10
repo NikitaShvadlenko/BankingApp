@@ -27,6 +27,8 @@ protocol OpenAccountInteractorOutput: AnyObject {
         accountName: String
     )
 
+    func interactorDidFetchAccountReviewDetails(with error: Error)
+
     func interactorDidSaveApplication(
         _ interactor: OpenAccountInteractorInput,
         result: Result<AccountApplicationForm, Error>

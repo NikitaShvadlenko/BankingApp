@@ -30,6 +30,10 @@ final class OpenAccountCoordinator: Coordinator {
 
 // MARK: - OpenAccountInteractorOutput
 extension OpenAccountCoordinator: OpenAccountInteractorOutput {
+    func interactorDidFetchAccountReviewDetails(with error: Error) {
+        handleError(error: error)
+    }
+
     func interactorDidSaveApplication(
         _ interactor: OpenAccountInteractorInput,
         result: Result<AccountApplicationForm, Error>
@@ -39,26 +43,7 @@ extension OpenAccountCoordinator: OpenAccountInteractorOutput {
             let viewController = ApplicationResultAssembly.assemble(coordinator: self, delegate: self)
             parentViewController.navigationController?.pushViewController(viewController, animated: true)
         case .failure(let error):
-            guard let builderError = error as? OpenAccountBuilder.OpenAccountBuilderError else {
-                presentErrorAlert(
-                    alertTitle: L10n.ApplicationBuildError.title,
-                    alertMessage: L10n.ApplicationBuildError.unknownError(error.localizedDescription)
-                )
-                return
-            }
-
-            switch builderError {
-            case .fieldsNotFilled:
-                presentErrorAlert(
-                    alertTitle: L10n.ApplicationBuildError.title,
-                    alertMessage: L10n.ApplicationBuildError.fieldsNotFilled
-                )
-            case .invalidDateOfBirth:
-                presentErrorAlert(
-                    alertTitle: L10n.ApplicationBuildError.title,
-                    alertMessage: L10n.ApplicationBuildError.incorrectDate
-                )
-            }
+            handleError(error: error)
         }
     }
 
@@ -159,5 +144,28 @@ extension OpenAccountCoordinator {
 
         alertController.addAction(action)
         parentViewController.present(alertController, animated: true)
+    }
+
+    private func handleError(error: Error) {
+        guard let builderError = error as? OpenAccountBuilder.OpenAccountBuilderError else {
+            presentErrorAlert(
+                alertTitle: L10n.ApplicationBuildError.title,
+                alertMessage: L10n.ApplicationBuildError.unknownError(error.localizedDescription)
+            )
+            return
+        }
+
+        switch builderError {
+        case .fieldsNotFilled:
+            presentErrorAlert(
+                alertTitle: L10n.ApplicationBuildError.title,
+                alertMessage: L10n.ApplicationBuildError.fieldsNotFilled
+            )
+        case .invalidDateOfBirth:
+            presentErrorAlert(
+                alertTitle: L10n.ApplicationBuildError.title,
+                alertMessage: L10n.ApplicationBuildError.incorrectDate
+            )
+        }
     }
 }

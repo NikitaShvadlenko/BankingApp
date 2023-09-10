@@ -22,6 +22,9 @@ extension OpenAccountInteractor: OpenAccountInteractorInput {
             let isTaxResident = builder?.isTaxResident,
             let accountName = builder?.accountType
         else {
+            coordinator?.interactorDidFetchAccountReviewDetails(
+                with: OpenAccountBuilder.OpenAccountBuilderError.fieldsNotFilled
+            )
             return
         }
         var taxDetails: String
