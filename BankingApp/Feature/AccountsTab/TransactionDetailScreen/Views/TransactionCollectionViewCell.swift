@@ -96,6 +96,11 @@ final class TransactionCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("Not implemented")
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        amountLabel.textColor = Asset.Colors.transactionsTableViewLabel.color
+    }
 }
 
 // MARK: - Public Methods
@@ -103,19 +108,15 @@ extension TransactionCollectionViewCell {
     public func configure(
         with model: TransactionDetailViewModel
     ) {
-        let formatter = NumberFormatter()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEE d MMM yyyy '\(L10n.TransactionDetail.at)' HH:mm"
+        configureDateLabel(date: model.date)
+        configureProcessedOnLabel(date: model.dateProcessed)
+        configureAmountLabel(amount: model.amount)
+        configureBalanceLabel(balance: model.balanceAfterTransaction)
         nameLabel.text = model.name
-        amountLabel.text = formatter.dollarsFromAmount(model.amount)
-        dateLabel.text = dateFormatter.string(from: model.date)
         typeLabel.text = model.type
         detailsLabel.text = L10n.TransactionDetail.details
         transactionDetailLabel.text = model.cardNumber
-        let formattedBalance = formatter.dollarsFromAmount(model.balanceAfterTransaction)
-        balanceLabel.text = L10n.TransactionDetail.balanceAfterTransaction(formattedBalance)
         shareButton.configure(title: L10n.TransactionDetail.share)
-        processedOnDateLabel.text = L10n.TransactionDetail.processedOn(dateFormatter.string(from: model.dateProcessed))
         self.transaction = model
     }
 }
@@ -129,6 +130,32 @@ extension TransactionCollectionViewCell: ShareLabelDelegate {
 }
 // MARK: - Private Methods
 extension TransactionCollectionViewCell {
+
+    private func configureBalanceLabel(balance: Double) {
+        let formatter = NumberFormatter()
+        let formattedBalance = formatter.dollarsFromAmount(balance)
+        balanceLabel.text = L10n.TransactionDetail.balanceAfterTransaction(formattedBalance)
+    }
+
+    private func configureAmountLabel(amount: Double) {
+        let formatter = NumberFormatter()
+        amountLabel.text = formatter.transactionAmount(amount)
+        if amount > 0 {
+            amountLabel.textColor = Asset.Colors.green.color
+        }
+    }
+    private func configureProcessedOnLabel(date: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE d MMM yyyy '\(L10n.TransactionDetail.at)' HH:mm"
+        processedOnDateLabel.text = L10n.TransactionDetail.processedOn(dateFormatter.string(from: date))
+    }
+
+    private func configureDateLabel(date: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEE d MMM yyyy '\(L10n.TransactionDetail.at)' HH:mm"
+        dateLabel.text = dateFormatter.string(from: date)
+    }
+
     // swiftlint:disable function_body_length
     private func setupView() {
         [

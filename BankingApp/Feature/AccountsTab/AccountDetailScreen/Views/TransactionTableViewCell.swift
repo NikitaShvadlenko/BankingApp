@@ -42,6 +42,11 @@ final class TransactionTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        transactionAmountLabel.textColor = Asset.Colors.transactionsTableViewLabel.color
+    }
 }
 
 // MARK: - Public Methods
@@ -54,9 +59,10 @@ extension TransactionTableViewCell {
             transactionName = name
         }
         let numberFormatter = NumberFormatter()
-        let formattedAmount = numberFormatter.dollarsFromAmount(amount)
+        let formattedAmount = numberFormatter.transactionAmount(amount)
         transactionNameLabel.text = transactionName
         transactionAmountLabel.text = formattedAmount
+        if amount > 0 { transactionAmountLabel.textColor = Asset.Colors.green.color }
     }
 }
 
