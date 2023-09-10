@@ -94,11 +94,6 @@ extension AccountsScreenViewController {
         presenter?.viewDidTapDisplayStyleButton(self)
     }
 
-    @objc
-    private func didTapLogoutBarButton() {
-
-    }
-
     private func displayFailedToRetrieveDataAlert() {
         let alertController = UIAlertController(
             title: L10n.AccountsScreen.somethigWentWrong,

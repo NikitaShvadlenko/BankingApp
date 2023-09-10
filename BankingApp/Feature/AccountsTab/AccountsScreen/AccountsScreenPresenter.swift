@@ -23,10 +23,6 @@ extension AccountsScreenPresenter: AccountsScreenViewOutput {
         interactor?.setNextDisplayStyle()
     }
 
-    func viewDidTapLogoutButton(_ view: AccountsScreenViewInput) {
-        print("Asking interactor to logout")
-    }
-
     func viewDidLoad(_ view: AccountsScreenViewInput) {
         view.configureViews()
         interactor?.fetchAccounts(for: "Jake Smith")

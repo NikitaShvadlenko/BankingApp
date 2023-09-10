@@ -11,7 +11,6 @@ protocol AccountsScreenViewInput: AnyObject {
 protocol AccountsScreenViewOutput {
     func viewDidLoad(_ view: AccountsScreenViewInput)
     func viewDidTapDisplayStyleButton(_ view: AccountsScreenViewInput)
-    func viewDidTapLogoutButton(_ view: AccountsScreenViewInput)
     func viewDidRequestAccountDisplayStyle(_ view: AccountsScreenViewInput)
     func viewDidRequestAccountsInformation(_ view: AccountsScreenViewInput)
 }
@@ -48,4 +47,3 @@ protocol AccountsScreenRouterInput {
 
 protocol AccountsScreenRouterOutput: AnyObject {
 }
-
