@@ -43,7 +43,7 @@
 "TransferScreen.from" = "From:";
 
 "ServicesScreen.applyForCard" = "Apply for card";
-"ServicesScreen.viewCards" = "View my cards";
+"ServicesScreen.viewCards" = "View my applications";
 "ServicesScreen.close" = "Close";
 
 "Application.ofPageNumber" = " of %@";

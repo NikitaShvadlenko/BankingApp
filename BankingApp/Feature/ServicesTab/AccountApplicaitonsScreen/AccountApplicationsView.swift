@@ -17,7 +17,6 @@ final class AccountApplicationsView: UIView {
             AccountApplicationTableViewCell.self,
             forCellReuseIdentifier: "\(AccountApplicationTableViewCell.self)"
          )
-         tableView.rowHeight = 44
          return tableView
     }()
 
