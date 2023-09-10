@@ -15,14 +15,10 @@ struct TabBarItemFactory {
         switch tabBarItemType {
         case .accounts:
             return accountsViewController()
-        case .payments:
-            return paymentsViewController()
         case .transfer:
             return transferViewController()
         case .services:
             return servicesViewController()
-        case .settings:
-            return settingsViewController()
         }
     }
 }
@@ -44,16 +40,6 @@ extension TabBarItemFactory {
         return accountsScreenNavigationController
     }
 
-    private static func paymentsViewController() -> UIViewController {
-        let paymentsViewController = PaymentsScreenAssembly.assemble().viewController
-        paymentsViewController.tabBarItem = UITabBarItem(
-            title: L10n.TabBar.payments,
-            image: UIImage(sfSymbol: SFSymbol.dollarSign, withConfiguration: configuration),
-            selectedImage: UIImage(sfSymbol: SFSymbol.dollarSign, withConfiguration: configuration)
-        )
-        return paymentsViewController
-    }
-
     private static func transferViewController() -> UIViewController {
         let transferViewController = TransferHostingViewController()
         transferViewController.tabBarItem = UITabBarItem(
@@ -72,15 +58,5 @@ extension TabBarItemFactory {
             selectedImage: UIImage(sfSymbol: SFSymbol.services, withConfiguration: configuration)
         )
         return servicesViewController
-    }
-
-    private static func settingsViewController() -> UIViewController {
-        let settingsViewController = SettingsScreenAssembly.assemble().viewController
-        settingsViewController.tabBarItem = UITabBarItem(
-            title: L10n.TabBar.settings,
-            image: UIImage(sfSymbol: SFSymbol.settings, withConfiguration: configuration),
-            selectedImage: UIImage(sfSymbol: SFSymbol.settings, withConfiguration: configuration)
-        )
-        return settingsViewController
     }
 }

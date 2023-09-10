@@ -10,8 +10,6 @@ import UIKit
 
 enum TabBarItemType: CaseIterable {
     case accounts
-    case payments
     case transfer
     case services
-    case settings
 }
