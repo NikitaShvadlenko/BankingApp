@@ -58,7 +58,6 @@ extension AccountsScreenViewController {
     private func configureNavigationBar() {
         setNavigationBarTitle()
         setLeftNavigationItem()
-        setRightNavigationItem()
     }
 
     private func setNavigationBarTitle() {
@@ -71,15 +70,6 @@ extension AccountsScreenViewController {
             style: .plain,
             target: self,
             action: #selector (didTapAccountsBarButton)
-        )
-    }
-
-    private func setRightNavigationItem() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            title: L10n.NavigationBar.logout,
-            style: .plain,
-            target: self,
-            action: #selector (didTapLogoutBarButton)
         )
     }
 

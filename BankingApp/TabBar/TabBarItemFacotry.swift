@@ -15,8 +15,6 @@ struct TabBarItemFactory {
         switch tabBarItemType {
         case .accounts:
             return accountsViewController()
-        case .transfer:
-            return transferViewController()
         case .services:
             return servicesViewController()
         }
@@ -38,16 +36,6 @@ extension TabBarItemFactory {
         )
 
         return accountsScreenNavigationController
-    }
-
-    private static func transferViewController() -> UIViewController {
-        let transferViewController = TransferHostingViewController()
-        transferViewController.tabBarItem = UITabBarItem(
-            title: L10n.TabBar.transfer,
-            image: UIImage(sfSymbol: SFSymbol.transfer, withConfiguration: configuration),
-            selectedImage: UIImage(sfSymbol: SFSymbol.transfer, withConfiguration: configuration)
-        )
-        return transferViewController
     }
 
     private static func servicesViewController() -> UIViewController {

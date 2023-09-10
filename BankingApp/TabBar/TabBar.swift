@@ -23,13 +23,6 @@ final class TabBarController: UITabBarController, UITabBarControllerDelegate {
         _ tabBarController: UITabBarController,
         shouldSelect viewController: UIViewController
     ) -> Bool {
-        if viewController.isKind(of: TransferHostingViewController.self) {
-            let transferViewController =  TransferHostingViewController()
-            transferViewController.modalPresentationStyle = .fullScreen
-            self.present(transferViewController, animated: true, completion: nil)
-            return false
-        }
-
         if viewController.isKind(of: ServicesScreenViewController.self) {
             let servicesViewController =  ServicesScreenAssembly.assemble()
             let navigationController = UINavigationController(rootViewController: servicesViewController)

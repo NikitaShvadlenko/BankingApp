@@ -1,5 +1,5 @@
 //
-//  ExtendedHitButton.swift
+//  ExtendedHitImageView.swift
 //  BankingApp
 //
 //  Created by Nikita Shvad on 10.09.2023.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-final class ExtendedHitButton: UIButton {
-   private var hitTestEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: -20, left: -20, bottom: -20, right: -20)
+final class ExtendedHitImageView: UIImageView {
+    private var hitTestEdgeInsets: UIEdgeInsets = UIEdgeInsets(top: -20, left: -20, bottom: -20, right: -20)
 
     override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         let relativeFrame = self.bounds

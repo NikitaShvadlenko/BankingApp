@@ -48,7 +48,7 @@ final class ReviewAccountApplicationDisclaimerView: UIView {
     }()
 
     private lazy var selectionBox: UIImageView = {
-        let imageView = UIImageView()
+        let imageView = ExtendedHitImageView()
         imageView.layer.borderWidth = 1
         imageView.clipsToBounds = true
         imageView.contentMode = .center
