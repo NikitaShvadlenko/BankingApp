@@ -10,16 +10,16 @@ import Foundation
 
 extension NumberFormatter {
     func dollarsFromAmount(_ amount: Double) -> String {
-        var result = ""
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 2
+        formatter.positivePrefix = "$"
+        formatter.negativePrefix = "-$"
 
         guard let formattedAmount = formatter.string(from: NSNumber(value: amount)) else {
             return ""
         }
-        result = String("$" + formattedAmount)
-        return result
+        return formattedAmount
     }
 }
