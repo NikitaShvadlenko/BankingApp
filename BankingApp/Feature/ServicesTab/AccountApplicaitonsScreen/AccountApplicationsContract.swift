@@ -27,3 +27,7 @@ protocol AccountApplicationsInteractorOutput: AnyObject {
         didFetchApplications result: Result<[AccountApplication], Error> 
     )
 }
+
+protocol AccountApplicationsRouterInput {
+    func routeToDetailView(application: AccountApplication)
+}

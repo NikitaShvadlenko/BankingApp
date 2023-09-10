@@ -127,17 +127,17 @@ internal enum L10n {
   internal enum ApplicationResult {
     /// Application failed
     internal static let failed = L10n.tr("Localizable", "ApplicationResult.failed", fallback: "Application failed")
-    /// You must be a tax resident to apply
-    internal static let notResident = L10n.tr("Localizable", "ApplicationResult.notResident", fallback: "You must be a tax resident to apply")
+    /// You must be a tax resident to apply.
+    internal static let notResident = L10n.tr("Localizable", "ApplicationResult.notResident", fallback: "You must be a tax resident to apply.")
     /// Application successful
     internal static let success = L10n.tr("Localizable", "ApplicationResult.success", fallback: "Application successful")
-    /// You must be over %@ to apply
+    /// You must be over %@ to apply.
     internal static func underaged(_ p1: Any) -> String {
-      return L10n.tr("Localizable", "ApplicationResult.underaged", String(describing: p1), fallback: "You must be over %@ to apply")
+      return L10n.tr("Localizable", "ApplicationResult.underaged", String(describing: p1), fallback: "You must be over %@ to apply.")
     }
-    /// You must be over %@ to apply and be a tax resident
+    /// You must be over %@ to apply and be a tax resident.
     internal static func underagedAndNotResident(_ p1: Any) -> String {
-      return L10n.tr("Localizable", "ApplicationResult.underagedAndNotResident", String(describing: p1), fallback: "You must be over %@ to apply and be a tax resident")
+      return L10n.tr("Localizable", "ApplicationResult.underagedAndNotResident", String(describing: p1), fallback: "You must be over %@ to apply and be a tax resident.")
     }
   }
   internal enum ApplicationResultView {
@@ -197,6 +197,12 @@ internal enum L10n {
     /// that apply to accounts.
     internal static let trailingPart = L10n.tr("Localizable", "ApplicationReview.trailingPart", fallback: "that apply to accounts.")
   }
+  internal enum ApplicationStatus {
+    /// The application has been rejected.
+    internal static let rejected = L10n.tr("Localizable", "ApplicationStatus.rejected", fallback: "The application has been rejected.")
+    /// The application has been accepted!
+    internal static let success = L10n.tr("Localizable", "ApplicationStatus.success", fallback: "The application has been accepted!")
+  }
   internal enum CloseAlert {
     /// Leave
     internal static let leave = L10n.tr("Localizable", "CloseAlert.leave", fallback: "Leave")
@@ -223,8 +229,8 @@ internal enum L10n {
     internal static let applyForCard = L10n.tr("Localizable", "ServicesScreen.applyForCard", fallback: "Apply for card")
     /// Close
     internal static let close = L10n.tr("Localizable", "ServicesScreen.close", fallback: "Close")
-    /// View my cards
-    internal static let viewCards = L10n.tr("Localizable", "ServicesScreen.viewCards", fallback: "View my cards")
+    /// View my applications
+    internal static let viewCards = L10n.tr("Localizable", "ServicesScreen.viewCards", fallback: "View my applications")
   }
   internal enum TabBar {
     /// Accounts

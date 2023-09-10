@@ -72,7 +72,7 @@ extension OpenAccountInteractor: OpenAccountInteractorInput {
                 into: context,
                 accountType: applicationForm.accountType,
                 monthlyFee: applicationForm.monthlyFee,
-                applicationStatus: applicationStatus.rawValue,
+                applicationStatus: applicationStatus,
                 statusText: statusText
             )
             coordinator?.interactorDidSaveApplication(self, result: .success(applicationForm))

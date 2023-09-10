@@ -10,9 +10,15 @@ import UIKit
 
 protocol ManagesAccountApplicationsTable: UITableViewDataSource, UITableViewDelegate {
     func setApplications(_ applications: [AccountApplication])
+    var applications: [AccountApplication] { get }
+}
+
+protocol AccountApplicationsTableManagerDelegate: AnyObject {
+    func accountApplicationsTableManager(_ manager: ManagesAccountApplicationsTable, didSelectRowAt indexPath: IndexPath)
 }
 
 final class AccountApplicationsTableViewManager: NSObject {
+    weak var delegate: AccountApplicationsTableManagerDelegate?
     var applications: [AccountApplication] = []
 }
 
@@ -34,13 +40,10 @@ extension AccountApplicationsTableViewManager: UITableViewDataSource {
         ) as? AccountApplicationTableViewCell
         else { fatalError() }
         let application = applications[indexPath.row]
-        guard let status = ApplicationStatus(rawValue: application.applicationStatus) else {
-            return cell
-        }
         cell.configure(
             date: application.date,
             accountName: application.accountType,
-            status: status
+            status: application.applicationStatus
         )
         return cell
     }
@@ -48,5 +51,8 @@ extension AccountApplicationsTableViewManager: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension AccountApplicationsTableViewManager: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        delegate?.accountApplicationsTableManager(self, didSelectRowAt: indexPath)
+    }
 }

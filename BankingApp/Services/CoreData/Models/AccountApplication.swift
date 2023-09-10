@@ -21,7 +21,7 @@ public final class AccountApplication: NSManagedObject {
     fileprivate(set) var monthlyFee: Double
 
     @NSManaged
-    fileprivate(set) var applicationStatus: String
+    fileprivate(set) var applicationStatusRawValue: String
 
     @NSManaged
     fileprivate(set) var statusText: String?
@@ -30,7 +30,7 @@ public final class AccountApplication: NSManagedObject {
         into context: NSManagedObjectContext,
         accountType: String,
         monthlyFee: Double,
-        applicationStatus: String,
+        applicationStatus: ApplicationStatus,
         statusText: String?
     ) {
         context.performChanges {
@@ -47,5 +47,19 @@ public final class AccountApplication: NSManagedObject {
 extension AccountApplication: Managed {
     static var defaultSortDescriptors: [NSSortDescriptor] {
         return [NSSortDescriptor(key: #keyPath(date), ascending: false)]
+    }
+}
+
+extension AccountApplication {
+    var applicationStatus: ApplicationStatus {
+        get {
+            guard let applicationStatus = ApplicationStatus(rawValue: applicationStatusRawValue) else {
+                fatalError("Failed to convert")
+            }
+            return applicationStatus
+        }
+        set {
+            applicationStatusRawValue = newValue.rawValue
+        }
     }
 }

@@ -12,6 +12,18 @@ final class AccountApplicationsPresenter {
     weak var view: AccountApplicationsViewInput?
     var interactor: AccountApplicationsInteractorInput?
     var applicationsTableManager: ManagesAccountApplicationsTable?
+    var router: AccountApplicationsRouterInput?
+}
+
+// MARK: - AccountApplicationsTableManagerDelegate
+extension AccountApplicationsPresenter: AccountApplicationsTableManagerDelegate {
+    func accountApplicationsTableManager(
+        _ manager: ManagesAccountApplicationsTable,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        let application = manager.applications[indexPath.row]
+        router?.routeToDetailView(application: application)
+    }
 }
 
 // MARK: - AccountApplicationsViewOutput

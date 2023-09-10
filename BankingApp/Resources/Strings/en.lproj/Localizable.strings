@@ -73,9 +73,9 @@
 "Application.monthlyFee" = "%@";
 "Application.taxDetailsDescription" = "Are you a New Zealand tax resident?";
 
-"ApplicationResult.underaged" = "You must be over %@ to apply";
-"ApplicationResult.notResident" = "You must be a tax resident to apply";
-"ApplicationResult.underagedAndNotResident" = "You must be over %@ to apply and be a tax resident";
+"ApplicationResult.underaged" = "You must be over %@ to apply.";
+"ApplicationResult.notResident" = "You must be a tax resident to apply.";
+"ApplicationResult.underagedAndNotResident" = "You must be over %@ to apply and be a tax resident.";
 "ApplicationResult.success" = "Application successful";
 "ApplicationResult.failed" = "Application failed";
 
@@ -118,3 +118,5 @@
 "ApplicationBuildError.title" = "Application not saved.";
 "ApplicationBuildError.unknownError" = "Unknown error %@.";
 "ApplicationBuildError.ok" = "Ok";
+"ApplicationStatus.success" = "The application has been accepted!";
+"ApplicationStatus.rejected" = "The application has been rejected.";
