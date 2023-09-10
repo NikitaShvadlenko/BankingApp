@@ -220,9 +220,9 @@ extension AccountDetailScreenViewController {
                 target: self,
                 action: #selector(searchButtonPressed)
             )
-            result = [menuButton, searchButton]
+            result = [searchButton]
         } else {
-            result = [menuButton]
+            result = []
         }
 
         navigationItem.rightBarButtonItems = result
