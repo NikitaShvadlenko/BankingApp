@@ -49,10 +49,3 @@ protocol AccountsScreenRouterInput {
 protocol AccountsScreenRouterOutput: AnyObject {
 }
 
-protocol AccountsScreenModuleInput: AnyObject {
-	func configureModule(output: AccountsScreenModuleOutput?)
-}
-
-// sourcery: AutoMockable
-protocol AccountsScreenModuleOutput: AnyObject {
-}

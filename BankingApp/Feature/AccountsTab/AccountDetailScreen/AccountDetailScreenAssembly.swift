@@ -1,7 +1,7 @@
 import UIKit
 
 enum AccountDetailScreenAssembly {
-    static func assemble(account: Account, imageData: Data?) -> AssembledModule<AccountDetailScreenModuleInput> {
+    static func assemble(account: Account, imageData: Data?) -> UIViewController {
         let viewController = AccountDetailScreenViewController()
         let presenter = AccountDetailScreenPresenter()
         let interactor = AccountDetailScreenInteractor()
@@ -24,9 +24,6 @@ enum AccountDetailScreenAssembly {
         router.viewController = viewController
         router.presenter = presenter
 
-        return AssembledModule(
-            viewController: viewController,
-            moduleInput: presenter
-        )
+        return viewController
     }
 }

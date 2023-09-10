@@ -50,7 +50,6 @@
 		331D162677845999B2BC7694 /* ShareLabelConstraintStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C488BDF51D3D365BD40C4266 /* ShareLabelConstraintStrategy.swift */; };
 		336CC4CB1D032FDF5CC53080 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 55E8EB8F79A115BB0EAD015C /* FirebaseFirestore */; };
 		33E2F3D09DE5394376798C2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC2D277E658E89EA45EB05 /* AppDelegate.swift */; };
-		3580609BEF4E7B10247ECB7D /* AssembledModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7238FF17C8A850282D899C /* AssembledModule.swift */; };
 		3781D48A42F6B2C622D803F7 /* OpenAccountInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCB83EF9B04047DECA91BCC /* OpenAccountInteractor.swift */; };
 		39E0AF6002C5B9360FE671A4 /* AccountApplicationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827F37E59E2EDADF48BEE1A6 /* AccountApplicationsInteractor.swift */; };
 		3C80DB5031F12A3579C9568A /* AccountApplicationsAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC600DF06EF086F24AD45CC0 /* AccountApplicationsAssembly.swift */; };
@@ -221,7 +220,6 @@
 		47CED098EEAE135221625A50 /* ApplicationResultAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationResultAssembly.swift; sourceTree = "<group>"; };
 		481289582945CFB20EC91066 /* AccountsScreenContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsScreenContract.swift; sourceTree = "<group>"; };
 		4B26FAE525F40468CAE7C2C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4B7238FF17C8A850282D899C /* AssembledModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssembledModule.swift; sourceTree = "<group>"; };
 		4FBEAAF28469133DA0233D21 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		50C7D066AE9D3BF2519A3D05 /* TabBarItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemType.swift; sourceTree = "<group>"; };
 		50F7BF2E011CCD5039021FFE /* AccountDetailScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailScreenInteractor.swift; sourceTree = "<group>"; };
@@ -553,7 +551,6 @@
 		65E47B4887C9EC319CDDE702 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				4B7238FF17C8A850282D899C /* AssembledModule.swift */,
 				6BC0BCEA81C0580376D3420B /* Coordinator.swift */,
 				B27E82CEF87579C01E6E0881 /* NumberFormatter+Extensions.swift */,
 				CC90BE13D4894F528D63A552 /* String+Extensions.swift */,
@@ -1051,7 +1048,6 @@
 				BE4181B7E33CB58987F40CD8 /* ApplicationResultViewController.swift in Sources */,
 				A483667B9CDA1CADC810E6C7 /* ApplicationStatus.swift in Sources */,
 				6AD962C665F1736CA71C1F51 /* ApplyForCardFooterView.swift in Sources */,
-				3580609BEF4E7B10247ECB7D /* AssembledModule.swift in Sources */,
 				1BECE797E5BA3496555686A6 /* CancelButton.swift in Sources */,
 				B1331B1B0234449CCCF81CF5 /* ChooseAccountView.swift in Sources */,
 				0D8D651E64132A483E472A70 /* ContentView.swift in Sources */,

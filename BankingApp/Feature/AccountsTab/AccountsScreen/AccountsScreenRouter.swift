@@ -13,7 +13,7 @@ extension AccountsScreenRouter: AccountsScreenRouterInput {
     ) {
         let accountDetailView = AccountDetailScreenAssembly.assemble(
             account: account, imageData: imageData
-        ).viewController
+        )
         viewController?.navigationController?.pushViewController(accountDetailView, animated: true)
     }
 }

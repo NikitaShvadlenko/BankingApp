@@ -2,7 +2,6 @@ import Foundation
 
 final class TransactionDetailScreenPresenter {
     weak var view: TransactionDetailScreenViewInput?
-    weak var moduleOutput: TransactionDetailScreenModuleOutput?
     var interactor: TransactionDetailScreenInteractorInput?
     var router: TransactionDetailScreenRouterInput?
     var collectionManager: ManagesTransactionDetailCollection?
@@ -32,13 +31,6 @@ extension TransactionDetailScreenPresenter: TransactionDetailScreenInteractorOut
 
 // MARK: - TransactionDetailScreenRouterOutput
 extension TransactionDetailScreenPresenter: TransactionDetailScreenRouterOutput {
-}
-
-// MARK: - TransactionDetailScreenModuleInput
-extension TransactionDetailScreenPresenter: TransactionDetailScreenModuleInput {
-    func configureModule(output: TransactionDetailScreenModuleOutput?) {
-        self.moduleOutput = output
-    }
 }
 
 // MARK: - TransactionDetailCollectionManagerDelegate

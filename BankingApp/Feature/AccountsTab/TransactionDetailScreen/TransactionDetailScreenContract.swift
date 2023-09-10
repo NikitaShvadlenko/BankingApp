@@ -24,11 +24,3 @@ protocol TransactionDetailScreenRouterInput {
 
 protocol TransactionDetailScreenRouterOutput: AnyObject {
 }
-
-protocol TransactionDetailScreenModuleInput: AnyObject {
-	func configureModule(output: TransactionDetailScreenModuleOutput?)
-}
-
-// sourcery: AutoMockable
-protocol TransactionDetailScreenModuleOutput: AnyObject {
-}

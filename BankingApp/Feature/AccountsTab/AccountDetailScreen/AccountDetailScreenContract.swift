@@ -28,11 +28,3 @@ protocol AccountDetailScreenRouterInput {
 
 protocol AccountDetailScreenRouterOutput: AnyObject {
 }
-
-protocol AccountDetailScreenModuleInput: AnyObject {
-	func configureModule(output: AccountDetailScreenModuleOutput?)
-}
-
-// sourcery: AutoMockable
-protocol AccountDetailScreenModuleOutput: AnyObject {
-}

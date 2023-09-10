@@ -24,7 +24,7 @@ extension AccountDetailScreenRouter: AccountDetailScreenRouterInput {
             .assemble(
                 transactions: transactions,
                 index: index
-            ).viewController
+            )
         transactionDetailViewController.hidesBottomBarWhenPushed = true
         viewController?.navigationController?.pushViewController(transactionDetailViewController, animated: true)
     }

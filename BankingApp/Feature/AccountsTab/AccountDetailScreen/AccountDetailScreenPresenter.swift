@@ -2,7 +2,6 @@ import Foundation
 
 final class AccountDetailScreenPresenter {
     weak var view: AccountDetailScreenViewInput?
-    weak var moduleOutput: AccountDetailScreenModuleOutput?
     var interactor: AccountDetailScreenInteractorInput?
     var router: AccountDetailScreenRouterInput?
     var account: Account?
@@ -56,13 +55,6 @@ extension AccountDetailScreenPresenter: AccountDetailScreenInteractorOutput {
 
 // MARK: - AccountDetailScreenRouterOutput
 extension AccountDetailScreenPresenter: AccountDetailScreenRouterOutput {
-}
-
-// MARK: - AccountDetailScreenModuleInput
-extension AccountDetailScreenPresenter: AccountDetailScreenModuleInput {
-    func configureModule(output: AccountDetailScreenModuleOutput?) {
-        self.moduleOutput = output
-    }
 }
 
 // MARK: - Private methods

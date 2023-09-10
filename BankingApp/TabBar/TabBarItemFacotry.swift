@@ -26,7 +26,7 @@ struct TabBarItemFactory {
 // MARK: - ViewControllerImplementation
 extension TabBarItemFactory {
     private static func accountsViewController() -> UIViewController {
-        let accountsScreenViewController = AccountsScreenAssembly.assemble().viewController
+        let accountsScreenViewController = AccountsScreenAssembly.assemble()
         let accountsScreenNavigationController = UINavigationController(
             rootViewController: accountsScreenViewController
         )

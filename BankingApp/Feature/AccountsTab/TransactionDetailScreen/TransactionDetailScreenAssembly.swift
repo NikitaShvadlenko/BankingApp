@@ -3,7 +3,7 @@ import UIKit
 enum TransactionDetailScreenAssembly {
     static func assemble(
         transactions: [Transaction], index: Int
-    ) -> AssembledModule<TransactionDetailScreenModuleInput> {
+    ) -> UIViewController {
         let viewController = TransactionDetailScreenViewController()
         let presenter = TransactionDetailScreenPresenter()
         let interactor = TransactionDetailScreenInteractor()
@@ -28,9 +28,6 @@ enum TransactionDetailScreenAssembly {
         router.viewController = viewController
         router.presenter = presenter
 
-        return AssembledModule(
-            viewController: viewController,
-            moduleInput: presenter
-        )
+        return viewController
     }
 }
