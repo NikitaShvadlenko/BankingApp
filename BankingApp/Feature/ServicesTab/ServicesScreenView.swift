@@ -11,7 +11,7 @@ final class ServicesScreenView: UIView {
     private let gradientLayer = CAGradientLayer()
 
     private lazy var closeButton: UIButton = {
-        let button = UIButton()
+        let button = ExtendedHitButton()
         button.tintColor = Asset.Colors.primaryBackground.color
         button.setTitle(L10n.ServicesScreen.close, for: .normal)
         button.setImage(UIImage(sfSymbol: SFSymbol.xmark), for: .normal)
