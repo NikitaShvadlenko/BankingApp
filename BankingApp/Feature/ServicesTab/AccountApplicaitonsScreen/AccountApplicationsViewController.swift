@@ -20,6 +20,7 @@ final class AccountApplicationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad(self)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
     func setTableViewManager(_ manager: ManagesAccountApplicationsTable) {
