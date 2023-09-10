@@ -16,3 +16,9 @@ final class PlaceholderStore: StoresPlaceholders {
         return data
     }
 }
+
+extension PlaceholderStore: ProvidesUserDetails {
+    func fetchUsername() -> String {
+        "Jake Smith"
+    }
+}

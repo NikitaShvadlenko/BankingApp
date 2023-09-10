@@ -206,13 +206,6 @@ extension AccountDetailScreenViewController {
         let searchImage = UIImage(sfSymbol: SFSymbol.search)
         var result: [UIBarButtonItem]
 
-        let menuButton = UIBarButtonItem(
-            image: menuImage,
-            style: .plain,
-            target: self,
-            action: #selector(menuButtonPressed)
-        )
-
         if includingSearchButton {
             let searchButton = UIBarButtonItem(
                 image: searchImage,

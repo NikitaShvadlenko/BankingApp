@@ -1,7 +1,7 @@
 import UIKit
 
 enum AccountsScreenAssembly {
-    static func assemble() -> UIViewController{
+    static func assemble() -> UIViewController {
         let viewController = AccountsScreenViewController()
         let presenter = AccountsScreenPresenter()
         let interactor = AccountsScreenInteractor()
@@ -27,6 +27,7 @@ enum AccountsScreenAssembly {
         interactor.accountProvider = accountsProvider
         interactor.presenter = presenter
         interactor.userSettingsManager = storage
+        interactor.accountNameProvider = placeholderStore
 
         router.viewController = viewController
         router.presenter = presenter

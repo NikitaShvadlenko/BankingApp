@@ -118,6 +118,7 @@
 		B4F2DE932AADA4DA00B0D1C6 /* PrivacyOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE922AADA4DA00B0D1C6 /* PrivacyOverlayView.swift */; };
 		B4F2DE952AADAD1C00B0D1C6 /* ExtendedHitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE942AADAD1C00B0D1C6 /* ExtendedHitButton.swift */; };
 		B4F2DE972AADB8B700B0D1C6 /* ExtendedHitImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE962AADB8B700B0D1C6 /* ExtendedHitImageView.swift */; };
+		B4F2DE992AADBAE100B0D1C6 /* ProvidesUserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F2DE982AADBAE100B0D1C6 /* ProvidesUserDetails.swift */; };
 		B8A6494D87F24B3A31526EF9 /* AccountsScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC96BFCA2DACD0702FEC5F3 /* AccountsScreenViewController.swift */; };
 		B939469ACF4BF846DCA30102 /* AccountOverviewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A8CCCCCD3085AC6E57DCAF /* AccountOverviewCellProtocol.swift */; };
 		BC5E8D661AAE1A743BB160CF /* AccountDetailScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09A51439A80ED394D36C215 /* AccountDetailScreenView.swift */; };
@@ -282,6 +283,7 @@
 		B4F2DE922AADA4DA00B0D1C6 /* PrivacyOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyOverlayView.swift; sourceTree = "<group>"; };
 		B4F2DE942AADAD1C00B0D1C6 /* ExtendedHitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedHitButton.swift; sourceTree = "<group>"; };
 		B4F2DE962AADB8B700B0D1C6 /* ExtendedHitImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedHitImageView.swift; sourceTree = "<group>"; };
+		B4F2DE982AADBAE100B0D1C6 /* ProvidesUserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvidesUserDetails.swift; sourceTree = "<group>"; };
 		B641FBE01868611D910A2637 /* AccountApplicationsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountApplicationsRouter.swift; sourceTree = "<group>"; };
 		B74ED66C588F5C2944D8324A /* ImageDownloaderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderProtocol.swift; sourceTree = "<group>"; };
 		B969FDB28DC2AED27C38A343 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
@@ -630,6 +632,7 @@
 			isa = PBXGroup;
 			children = (
 				3071E4FF459DC839E7F6CD5F /* PlaceholderStore.swift */,
+				B4F2DE982AADBAE100B0D1C6 /* ProvidesUserDetails.swift */,
 				195EB3B3DADC32C9F5D797D2 /* StoresPlaceholders.swift */,
 			);
 			path = PlaceholderStore;
@@ -963,6 +966,7 @@
 				0D4754CCB511D336CE28D4CC /* AccountApplicationDetailViewController.swift in Sources */,
 				28345A3313CD3D314DB926B3 /* AccountApplicationDetailViewModel.swift in Sources */,
 				2CE92704E867C73D8459AFD9 /* AccountApplicationForm.swift in Sources */,
+				B4F2DE992AADBAE100B0D1C6 /* ProvidesUserDetails.swift in Sources */,
 				16DED7C3C2CB676D0A63D19B /* AccountApplicationTableViewCell.swift in Sources */,
 				3C80DB5031F12A3579C9568A /* AccountApplicationsAssembly.swift in Sources */,
 				29B519BD21DB14F22051BE8F /* AccountApplicationsContract.swift in Sources */,

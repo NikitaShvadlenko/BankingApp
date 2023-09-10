@@ -14,7 +14,10 @@ protocol ManagesAccountApplicationsTable: UITableViewDataSource, UITableViewDele
 }
 
 protocol AccountApplicationsTableManagerDelegate: AnyObject {
-    func accountApplicationsTableManager(_ manager: ManagesAccountApplicationsTable, didSelectRowAt indexPath: IndexPath)
+    func accountApplicationsTableManager(
+        _ manager: ManagesAccountApplicationsTable,
+        didSelectRowAt indexPath: IndexPath
+    )
 }
 
 final class AccountApplicationsTableViewManager: NSObject {

@@ -12,7 +12,7 @@ final class AccountsScreenPresenter {
 // MARK: - AccountsScreenViewOutput
 extension AccountsScreenPresenter: AccountsScreenViewOutput {
     func viewDidRequestAccountsInformation(_ view: AccountsScreenViewInput) {
-        interactor?.fetchAccounts(for: "Jake Smith")
+        interactor?.fetchUsername()
     }
 
     func viewDidRequestAccountDisplayStyle(_ view: AccountsScreenViewInput) {
@@ -25,12 +25,19 @@ extension AccountsScreenPresenter: AccountsScreenViewOutput {
 
     func viewDidLoad(_ view: AccountsScreenViewInput) {
         view.configureViews()
-        interactor?.fetchAccounts(for: "Jake Smith")
+        interactor?.fetchUsername()
     }
 }
 
 // MARK: - AccountsScreenInteractorOutput
 extension AccountsScreenPresenter: AccountsScreenInteractorOutput {
+    func interactorDidRetriveUsername(
+        _ interactor: AccountsScreenInteractorInput,
+        name: String
+    ) {
+        interactor.fetchAccounts(for: name)
+    }
+
     func interactor(
         _ interactor: AccountsScreenInteractorInput,
         didFetchImageData data: Data,

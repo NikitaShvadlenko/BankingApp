@@ -6,11 +6,19 @@ final class AccountsScreenInteractor {
     var accountProvider: ProvidesAccounts?
     var imageDownloader: ImageDownloaderProtocol?
     var placeholderStore: StoresPlaceholders?
+    var accountNameProvider: ProvidesUserDetails?
     private let imageCache = NSCache<NSURL, NSData>()
 }
 
 // MARK: - AccountsScreenInteractorInput
 extension AccountsScreenInteractor: AccountsScreenInteractorInput {
+    func fetchUsername() {
+        guard let name = accountNameProvider?.fetchUsername() else {
+            return
+        }
+        presenter?.interactorDidRetriveUsername(self, name: name)
+    }
+
     func fetchImage(url: URL) {
         if let data = imageCache.object(forKey: url as NSURL) as Data? {
             presenter?.interactor(self, didFetchImageData: data, forURL: url)

@@ -21,10 +21,16 @@ protocol AccountsScreenInteractorInput {
     func setNextDisplayStyle()
     func fetchAccounts(for accountName: String)
     func fetchImage(url: URL)
+    func fetchUsername()
 }
 
 // sourcery: AutoMockable
 protocol AccountsScreenInteractorOutput: AnyObject {
+    func interactorDidRetriveUsername(
+    _ interactor: AccountsScreenInteractorInput,
+    name: String
+    )
+
     func interactorDidRetrieveAccountDisplayStyle(
         _ interactor: AccountsScreenInteractorInput,
         result: Result<AccountDisplayStyle, UserSettingManagerError>
