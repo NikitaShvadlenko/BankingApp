@@ -5,7 +5,6 @@ final class ServicesScreenViewController: UIViewController {
     private let servicesScreenView = ServicesScreenView()
     let collectionManager: ManagesMenuCollection
     var applyForCardCoordinator: Coordinator?
-    var viewCardsCoordinator: Coordinator?
 
     init(
         collectionManager: ManagesMenuCollection
@@ -68,7 +67,8 @@ extension ServicesScreenViewController {
                 image: viewCardsSymbol,
                 action: { [weak self] in
                     guard let self else { return }
-                    viewCardsCoordinator?.start()
+                    let viewController = AccountApplicationsAssembly.assemble()
+                    navigationController?.pushViewController(viewController, animated: true)
                 }
             )
         ]

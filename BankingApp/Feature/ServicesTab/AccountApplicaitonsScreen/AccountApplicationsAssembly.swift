@@ -11,6 +11,19 @@ import UIKit
 enum AccountApplicationsAssembly {
     static func assemble() -> UIViewController {
         let viewController = AccountApplicationsViewController()
+        let presenter = AccountApplicationsPresenter()
+        let interactor = AccountApplicationsInteractor()
+        let tableManager = AccountApplicationsTableViewManager()
+        let context = CoreDataService.shared.context
+
+        presenter.view = viewController
+        viewController.presenter = presenter
+        presenter.interactor = interactor
+        interactor.presenter = presenter
+        
+        interactor.context = context
+        presenter.applicationsTableManager = tableManager
+        viewController.setTableViewManager(tableManager)
         return viewController
     }
 }

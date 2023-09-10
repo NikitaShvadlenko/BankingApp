@@ -101,7 +101,14 @@ extension OpenAccountCoordinator: OpenAccountInteractorOutput {
 // MARK: - ApplicationResultDelegate
 extension OpenAccountCoordinator: ApplicationResultDelegate {
     func viewDidSelectViewApplications(_ view: ApplicationResultViewController) {
-        print("Did tap view")
+        let viewController = AccountApplicationsAssembly.assemble()
+        parentViewController.navigationController?.setViewControllers(
+            [
+                parentViewController,
+                viewController
+            ],
+            animated: true
+        )
     }
 
     func viewDidSelectComplete(_ view: ApplicationResultViewController) {

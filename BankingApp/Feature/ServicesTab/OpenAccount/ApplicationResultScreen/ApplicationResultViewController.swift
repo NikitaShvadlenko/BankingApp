@@ -20,7 +20,7 @@ final class ApplicationResultViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigationView()
+        navigationItem.hidesBackButton = true
     }
 
     func setApplicationResultViewDelegate(delegate: ApplicationResultViewDelegate) {
@@ -40,16 +40,4 @@ extension ApplicationResultViewController: ApplicationResultViewDelegate {
 
 // MARK: - CoordinatorItem
 extension ApplicationResultViewController: CoordinatorItem {
-}
-
-// MARK: - Private Methods
-extension ApplicationResultViewController {
-    private func setNavigationView() {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        title = L10n.ApplicationResultView.success
-        navigationItem.hidesBackButton = true
-        navigationController?.navigationBar.largeTitleTextAttributes = [
-            .foregroundColor: Asset.Colors.applicationFormLabel.color
-        ]
-    }
 }

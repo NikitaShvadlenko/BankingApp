@@ -8,11 +8,16 @@
 
 import UIKit
 
-final class AccountApplicationsView: UIView{
+final class AccountApplicationsView: UIView {
      lazy var tableView: UITableView = {
          let tableView = UITableView()
          tableView.estimatedRowHeight = 44
          tableView.backgroundColor = Asset.Colors.primaryBackground.color
+         tableView.register(
+            AccountApplicationTableViewCell.self,
+            forCellReuseIdentifier: "\(AccountApplicationTableViewCell.self)"
+         )
+         tableView.rowHeight = 44
          return tableView
     }()
 

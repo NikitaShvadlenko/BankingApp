@@ -17,6 +17,15 @@ final class ApplicationResultView: UIView {
 
     weak var delegate: ApplicationResultViewDelegate?
 
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
+        label.textColor = Asset.Colors.applicationFormLabel.color
+        label.textAlignment = .natural
+        label.text = L10n.ApplicationResultView.success
+        return label
+    }()
+
     private lazy var messageLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 22)
@@ -62,20 +71,26 @@ extension ApplicationResultView {
     private func setupView() {
         backgroundColor = Asset.Colors.primaryBackground.color
         [
+            titleLabel,
             messageLabel,
             viewApplicationsButton,
             closeButton
         ].forEach(addSubview)
 
-        messageLabel.snp.makeConstraints { make in
+        titleLabel.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).inset(20)
-            make.centerX.equalToSuperview()
+            make.leading.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview()
+        }
+        messageLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.leading.trailing.equalTo(titleLabel)
         }
 
         viewApplicationsButton.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(20)
             make.height.equalTo(40)
-            make.top.equalTo(messageLabel.snp.bottom).offset(80)
+            make.top.equalTo(messageLabel.snp.bottom).offset(40)
         }
 
         closeButton.snp.makeConstraints { make in
