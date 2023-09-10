@@ -22,7 +22,7 @@ final class AccountOverviewTextCell: UITableViewCell, AccountOverviewCellProtoco
      lazy var accountImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
 
