@@ -110,6 +110,20 @@ internal enum L10n {
     /// Date of birth:
     internal static let yourDateOfBirthIs = L10n.tr("Localizable", "Application.yourDateOfBirthIs", fallback: "Date of birth:")
   }
+  internal enum ApplicationBuildError {
+    /// Not all fields were filled. Please check the application.
+    internal static let fieldsNotFilled = L10n.tr("Localizable", "ApplicationBuildError.fieldsNotFilled", fallback: "Not all fields were filled. Please check the application.")
+    /// Could not save date of birth. Application was not saved
+    internal static let incorrectDate = L10n.tr("Localizable", "ApplicationBuildError.incorrectDate", fallback: "Could not save date of birth. Application was not saved")
+    /// Ok
+    internal static let ok = L10n.tr("Localizable", "ApplicationBuildError.ok", fallback: "Ok")
+    /// Application not saved.
+    internal static let title = L10n.tr("Localizable", "ApplicationBuildError.title", fallback: "Application not saved.")
+    /// Unknown error %@.
+    internal static func unknownError(_ p1: Any) -> String {
+      return L10n.tr("Localizable", "ApplicationBuildError.unknownError", String(describing: p1), fallback: "Unknown error %@.")
+    }
+  }
   internal enum ApplicationResult {
     /// Application failed
     internal static let failed = L10n.tr("Localizable", "ApplicationResult.failed", fallback: "Application failed")
@@ -125,6 +139,16 @@ internal enum L10n {
     internal static func underagedAndNotResident(_ p1: Any) -> String {
       return L10n.tr("Localizable", "ApplicationResult.underagedAndNotResident", String(describing: p1), fallback: "You must be over %@ to apply and be a tax resident")
     }
+  }
+  internal enum ApplicationResultView {
+    /// Close
+    internal static let close = L10n.tr("Localizable", "ApplicationResultView.close", fallback: "Close")
+    /// Would you like to view your applications?
+    internal static let message = L10n.tr("Localizable", "ApplicationResultView.message", fallback: "Would you like to view your applications?")
+    /// Applied successfuly!
+    internal static let success = L10n.tr("Localizable", "ApplicationResultView.success", fallback: "Applied successfuly!")
+    /// View applications
+    internal static let viewApplications = L10n.tr("Localizable", "ApplicationResultView.viewApplications", fallback: "View applications")
   }
   internal enum ApplicationReview {
     /// If you've given someone else access to all of your accounts, then they'll also have access to this new account. /nTo set up an account with different access rules, you'll need to contact us.

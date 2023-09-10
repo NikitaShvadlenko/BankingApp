@@ -107,3 +107,14 @@
 "CloseAlert.message" = "Your information will not be saved.";
 "CloseAlert.leave" = "Leave";
 "CloseAlert.stay" = "Stay";
+
+"ApplicationResultView.success" = "Applied successfuly!";
+"ApplicationResultView.viewApplications" = "View applications";
+"ApplicationResultView.close" = "Close";
+"ApplicationResultView.message" = "Would you like to view your applications?";
+
+"ApplicationBuildError.fieldsNotFilled" = "Not all fields were filled. Please check the application.";
+"ApplicationBuildError.incorrectDate" = "Could not save date of birth. Application was not saved";
+"ApplicationBuildError.title" = "Application not saved.";
+"ApplicationBuildError.unknownError" = "Unknown error %@.";
+"ApplicationBuildError.ok" = "Ok";

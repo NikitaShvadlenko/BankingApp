@@ -36,9 +36,29 @@ extension OpenAccountCoordinator: OpenAccountInteractorOutput {
     ) {
         switch result {
         case .success:
-            print("Success!")
+            let viewController = ApplicationResultAssembly.assemble(coordinator: self, delegate: self)
+            parentViewController.navigationController?.pushViewController(viewController, animated: true)
         case .failure(let error):
-            print(error)
+            guard let builderError = error as? OpenAccountBuilder.OpenAccountBuilderError else {
+                presentErrorAlert(
+                    alertTitle: L10n.ApplicationBuildError.title,
+                    alertMessage: L10n.ApplicationBuildError.unknownError(error.localizedDescription)
+                )
+                return
+            }
+
+            switch builderError {
+            case .fieldsNotFilled:
+                presentErrorAlert(
+                    alertTitle: L10n.ApplicationBuildError.title,
+                    alertMessage: L10n.ApplicationBuildError.fieldsNotFilled
+                )
+            case .invalidDateOfBirth:
+                presentErrorAlert(
+                    alertTitle: L10n.ApplicationBuildError.title,
+                    alertMessage: L10n.ApplicationBuildError.incorrectDate
+                )
+            }
         }
     }
 
@@ -78,6 +98,16 @@ extension OpenAccountCoordinator: OpenAccountInteractorOutput {
         parentViewController.navigationController?.pushViewController(viewController, animated: true)
     }
 }
+// MARK: - ApplicationResultDelegate
+extension OpenAccountCoordinator: ApplicationResultDelegate {
+    func viewDidSelectViewApplications(_ view: ApplicationResultViewController) {
+        print("Did tap view")
+    }
+
+    func viewDidSelectComplete(_ view: ApplicationResultViewController) {
+        parentViewController.navigationController?.dismiss(animated: true)
+    }
+}
 
 // MARK: - ReviewAccountApplicationDelegate
 extension OpenAccountCoordinator: ReviewAccountApplicationDelegate {
@@ -103,5 +133,24 @@ extension OpenAccountCoordinator: TaxResidentDelegate {
 extension OpenAccountCoordinator: SelectAccountDelegate {
     func selectAccountViewDidSelectAccountOption(_ accountOption: ApplicationAccountDescription) {
         interactor?.addAccountDetails(accountOption)
+    }
+}
+
+// MARK: - Private methods
+extension OpenAccountCoordinator {
+    private func presentErrorAlert(alertTitle: String, alertMessage: String) {
+        let alertController = UIAlertController(
+            title: alertTitle,
+            message: alertMessage,
+            preferredStyle: .alert
+        )
+
+        let action = UIAlertAction(
+            title: L10n.ApplicationBuildError.ok,
+            style: .cancel
+        )
+
+        alertController.addAction(action)
+        parentViewController.present(alertController, animated: true)
     }
 }
