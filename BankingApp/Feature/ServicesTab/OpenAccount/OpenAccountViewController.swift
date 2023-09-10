@@ -27,6 +27,20 @@ class OpenAccountViewController: UIViewController {
 
     @objc
     private func viewDidPressCancel() {
-        print("Cancel")
+        let alertController = UIAlertController(
+            title: L10n.CloseAlert.title,
+            message: L10n.CloseAlert.message,
+            preferredStyle: .alert
+        )
+
+        let leaveAction = UIAlertAction(title: L10n.CloseAlert.leave, style: .default) { [weak self] _ in
+            self?.navigationController?.dismiss(animated: true)
+        }
+
+        let stayAction = UIAlertAction(title: L10n.CloseAlert.stay, style: .cancel)
+
+        alertController.addAction(stayAction)
+        alertController.addAction(leaveAction)
+        present(alertController, animated: true)
     }
 }

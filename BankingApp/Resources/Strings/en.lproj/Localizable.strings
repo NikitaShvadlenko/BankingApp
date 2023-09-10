@@ -102,3 +102,8 @@
 "TermsAlert.title" = "Accept terms";
 "TermsAlert.message" = "You must accept terms to continue";
 "TermsAlert.close" = "Close";
+
+"CloseAlert.title" = "Leave application?";
+"CloseAlert.message" = "Your information will not be saved.";
+"CloseAlert.leave" = "Leave";
+"CloseAlert.stay" = "Stay";

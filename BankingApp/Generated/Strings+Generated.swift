@@ -173,6 +173,16 @@ internal enum L10n {
     /// that apply to accounts.
     internal static let trailingPart = L10n.tr("Localizable", "ApplicationReview.trailingPart", fallback: "that apply to accounts.")
   }
+  internal enum CloseAlert {
+    /// Leave
+    internal static let leave = L10n.tr("Localizable", "CloseAlert.leave", fallback: "Leave")
+    /// Your information will not be saved.
+    internal static let message = L10n.tr("Localizable", "CloseAlert.message", fallback: "Your information will not be saved.")
+    /// Stay
+    internal static let stay = L10n.tr("Localizable", "CloseAlert.stay", fallback: "Stay")
+    /// Leave application?
+    internal static let title = L10n.tr("Localizable", "CloseAlert.title", fallback: "Leave application?")
+  }
   internal enum NavigationBar {
     /// Log out
     internal static let logout = L10n.tr("Localizable", "NavigationBar.logout", fallback: "Log out")
