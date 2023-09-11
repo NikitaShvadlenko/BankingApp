@@ -80,12 +80,12 @@
 "ApplicationResult.failed" = "Application failed";
 
 "ApplicationReview.taxDetails" = "Your tax details";
-"ApplicationReview.notResident" = "Not a New Zealand Resident.";
+"ApplicationReview.notResident" = "Not a New Zealand resident.";
 "ApplicationReview.resident" = "New Zealand tax resident.";
 "ApplicationReview.ageTitle" = "Your personal details";
 "ApplicationReview.dateOfBirth" = "Your date of birth is %@.";
 "ApplicationReview.accountDetails" = "Account details";
-"ApplicationReview.accountChosen" = "Account chosen";
+"ApplicationReview.accountChosen" = "Account chosen:";
 
 "ApplicationReview.importantInformation" = "As an account holder, you confirm and declare that:";
 "ApplicationReview.importantInformationBulletPoints" = "\n%@\n%@\n%@";

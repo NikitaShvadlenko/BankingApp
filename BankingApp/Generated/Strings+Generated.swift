@@ -155,8 +155,8 @@ internal enum L10n {
     internal static let accountAccessDetails = L10n.tr("Localizable", "ApplicationReview.accountAccessDetails", fallback: "If you've given someone else access to all of your accounts, then they'll also have access to this new account. /nTo set up an account with different access rules, you'll need to contact us.")
     /// Account access
     internal static let accountAccessTitle = L10n.tr("Localizable", "ApplicationReview.accountAccessTitle", fallback: "Account access")
-    /// Account chosen
-    internal static let accountChosen = L10n.tr("Localizable", "ApplicationReview.accountChosen", fallback: "Account chosen")
+    /// Account chosen:
+    internal static let accountChosen = L10n.tr("Localizable", "ApplicationReview.accountChosen", fallback: "Account chosen:")
     /// Account details
     internal static let accountDetails = L10n.tr("Localizable", "ApplicationReview.accountDetails", fallback: "Account details")
     /// Your personal details
@@ -182,8 +182,8 @@ internal enum L10n {
     internal static let importantInformationTitle = L10n.tr("Localizable", "ApplicationReview.importantInformationTitle", fallback: "Important information")
     /// ANZ General Terms and Conditions 
     internal static let linkPart = L10n.tr("Localizable", "ApplicationReview.linkPart", fallback: "ANZ General Terms and Conditions ")
-    /// Not a New Zealand Resident.
-    internal static let notResident = L10n.tr("Localizable", "ApplicationReview.notResident", fallback: "Not a New Zealand Resident.")
+    /// Not a New Zealand resident.
+    internal static let notResident = L10n.tr("Localizable", "ApplicationReview.notResident", fallback: "Not a New Zealand resident.")
     /// Open account
     internal static let openAccount = L10n.tr("Localizable", "ApplicationReview.openAccount", fallback: "Open account")
     /// New Zealand tax resident.
