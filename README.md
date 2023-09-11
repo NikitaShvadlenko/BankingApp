@@ -105,4 +105,4 @@ Snapkit is used for creating UI layout.
 #### Design patterns that were used in the app:
 - MVC, MVP, VIPER, Coordinator - Structural
 - Builder, Singelton, Factory - Creational
-- Strategy, Delegate
+- Strategy, Delegate - Behavioural 
