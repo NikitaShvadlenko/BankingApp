@@ -103,6 +103,6 @@ Snapkit is used for creating UI layout.
 - MVP - presenter is used to create a ViewModel from a passed CoreData item
 
 #### Design patterns that were used in the app:
-MVC, MVP, VIPER, Coordinator - Structural
-Builder, Singelton, Factory - Creational
-Strategy, Delegate
+- MVC, MVP, VIPER, Coordinator - Structural
+- Builder, Singelton, Factory - Creational
+- Strategy, Delegate
