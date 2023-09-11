@@ -2,9 +2,6 @@ BankingApp
 ===
 ![Code size](https://img.shields.io/github/languages/code-size/NikitaShvadlenko/BankingApp) ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/NikitaShvadlenko/BankingApp) ![GitHub contributors](https://img.shields.io/github/contributors/NikitaShvadlenko/BankingApp)
 
-:mega:
-**The .xcodeproj file and generated files were added to the repository so it is possible to view the project without completing Build Instructions.**
-
 ## Required tools
 :mega:
 **All tools are supposed to be installed system-wide.**
@@ -15,6 +12,10 @@ BankingApp
 5. [Genesis](https://github.com/yonaskolb/Genesis) *(optionally, to generate modules from templates)*
 
 ## Build instructions
+
+:mega:
+**It is possible to view the project without completing Build Instructions, because the .xcodeproj file and generated files were added to the repository.**
+
 * #### Change the bundle identifier and code signing options in the `project.yml` *(optionally, if you do not have an access to secrets)*
 
 * #### Generate project
