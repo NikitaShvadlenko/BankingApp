@@ -861,32 +861,32 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		"TEMP_35B634CB-88C7-41C3-BC13-02F1199D2A4A" /* Packages */ = {
+		"TEMP_06CBC70D-63EF-435A-A241-AB0693BA4808" /* SharedResources */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Packages;
+			path = SharedResources;
 			sourceTree = "<group>";
 		};
-		"TEMP_61D5FE08-4D20-42B2-972B-A167C2036FF6" /* Sources */ = {
+		"TEMP_203D8B62-A3E5-47AC-98A5-19575B2BC578" /* SharedResources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedResources;
+			sourceTree = "<group>";
+		};
+		"TEMP_5FA3022A-F96D-43B2-AB02-7A3EB6DAD58B" /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		"TEMP_952F8EF4-CD96-4833-90D2-026EFE954128" /* SharedResources */ = {
+		"TEMP_D3A7D1A0-F917-44B8-8302-DA6855A28357" /* Packages */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = SharedResources;
-			sourceTree = "<group>";
-		};
-		"TEMP_A55678B2-BFFE-464A-A4A8-0CF54079012C" /* SharedResources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SharedResources;
+			path = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
